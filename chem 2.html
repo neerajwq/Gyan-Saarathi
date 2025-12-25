@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrochemistry - Class 12 Chemistry Notes</title>
+<style>
+   :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+.box {
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #eaf2fb;
+}
+ul, ol {
+    margin-left: 25px;
+}
+svg {
+    display: block;
+    margin: 15px auto;
+}
+.formula {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+</style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<h1>Electrochemistry - Class 12 Chemistry</h1>
+
+<div class="box">
+<h2>1. परिचय (Introduction)</h2>
+<p>Electrochemistry वह शाखा है जिसमें रासायनिक ऊर्जा को विद्युत ऊर्जा में और विद्युत ऊर्जा को रासायनिक ऊर्जा में परिवर्तित किया जाता है। यह Galvanic Cells और Electrolytic Cells पर आधारित होती है।</p>
+</div>
+
+<div class="box">
+<h2>2. Electrochemical Cells</h2>
+<h3>2.1 Galvanic / Voltaic Cell</h3>
+<p>Galvanic cell में spontaneous रासायनिक प्रतिक्रिया से विद्युत धारा उत्पन्न होती है।</p>
+
+<h3>Daniell Cell (Zn-Cu Cell)</h3>
+<svg width="400" height="200">
+  <rect x="20" y="60" width="80" height="80" fill="#f39c12"/>
+  <text x="60" y="55" text-anchor="middle">Zn (Anode)</text>
+  <rect x="300" y="60" width="80" height="80" fill="#2980b9"/>
+  <text x="340" y="55" text-anchor="middle" fill="white">Cu (Cathode)</text>
+  <line x1="100" y1="100" x2="300" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black"/>
+    </marker>
+  </defs>
+</svg>
+<p>Zn → Zn²⁺ + 2e⁻ (Oxidation)<br>
+Cu²⁺ + 2e⁻ → Cu (Reduction)</p>
+<p>Cell potential: <span class="formula">Ecell = Ecathode - Eanode</span></p>
+</div>
+
+<div class="box">
+<h3>2.2 Electrolytic Cell</h3>
+<p>Electrolytic cell में non-spontaneous reaction को विद्युत धारा से चलाया जाता है।</p>
+<svg width="400" height="200">
+  <rect x="50" y="60" width="50" height="80" fill="#f39c12"/>
+  <text x="75" y="55" text-anchor="middle">Anode (+)</text>
+  <rect x="300" y="60" width="50" height="80" fill="#2980b9"/>
+  <text x="325" y="55" text-anchor="middle" fill="white">Cathode (-)</text>
+  <line x1="100" y1="100" x2="300" y2="100" stroke="black" stroke-width="2"/>
+  <text x="200" y="90" text-anchor="middle">Electrolyte</text>
+</svg>
+</div>
+
+<div class="box">
+<h2>3. Electrochemical Series</h2>
+<ul>
+<li>धातुओं का क्रम Reduction potential के अनुसार।</li>
+<li>उच्च E° वाले धातु आसानी से reduced होते हैं।</li>
+<li>निष्कर्ष: Anode पर oxidation, Cathode पर reduction।</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>4. Nernst Equation</h2>
+<p>Cell potential ionic concentration पर निर्भर करता है:</p>
+<p class="formula">E = E° - (0.0591/n) log Q</p>
+<ul>
+<li>E = Cell potential (V)</li>
+<li>E° = Standard electrode potential (V)</li>
+<li>n = Number of electrons transferred</li>
+<li>Q = Reaction quotient</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>5. Electrolysis and Faraday's Laws</h2>
+<p>Electrolysis में इलेक्ट्रिक धारा से रासायनिक परिवर्तन होते हैं।</p>
+<p class="formula">m = (M × I × t)/(n × F)</p>
+<ul>
+<li>m = mass of substance deposited / liberated</li>
+<li>M = molar mass</li>
+<li>I = current (A)</li>
+<li>t = time (sec)</li>
+<li>n = electrons transferred</li>
+<li>F = 96500 C/mol (Faraday constant)</li>
+</ul>
+
+<h3>Electrolysis Setup</h3>
+<svg width="400" height="200">
+  <rect x="50" y="60" width="50" height="80" fill="#f39c12"/>
+  <text x="75" y="55" text-anchor="middle">Anode (+)</text>
+  <rect x="300" y="60" width="50" height="80" fill="#2980b9"/>
+  <text x="325" y="55" text-anchor="middle" fill="white">Cathode (-)</text>
+  <line x1="100" y1="100" x2="300" y2="100" stroke="black" stroke-width="2"/>
+  <text x="200" y="90" text-anchor="middle">Electrolyte Solution</text>
+</svg>
+</div>
+
+<div class="box">
+<h2>6. Types of Cells</h2>
+<ul>
+<li>Galvanic Cell (Spontaneous)</li>
+<li>Electrolytic Cell (Non-spontaneous)</li>
+<li>Lead-Acid Battery (Car battery)</li>
+<li>Dry Cell (Portable)</li>
+<li>Concentration Cell</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>7. Applications</h2>
+<ul>
+<li>Electroplating (Gold, Silver, Copper plating)</li>
+<li>Battery Design & Storage</li>
+<li>Corrosion Prevention (Galvanization)</li>
+<li>Industrial Electrolysis (Al, NaOH, Cl2)</li>
+<li>Electrochemical Sensors & Fuel Cells</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>8. महत्वपूर्ण प्रश्न (Important Questions)</h2>
+<ol>
+<li>Daniell Cell और Electrolytic Cell का अंतर स्पष्ट कीजिए।</li>
+<li>Nernst Equation का उपयोग कर cell potential ज्ञात कीजिए।</li>
+<li>Faraday's Law से electrolysis का mass निकालें।</li>
+<li>Lead-acid Battery और Dry Cell के कार्य का वर्णन कीजिए।</li>
+<li>Electrochemical Series का महत्व बताइए।</li>
+<li>Electroplating और Corrosion Prevention के उदाहरण दीजिए।</li>
+</ol>
+</div>
+
+</div>
+</body>
+</html>

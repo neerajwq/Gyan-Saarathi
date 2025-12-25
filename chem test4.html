@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 रसायन विज्ञान: संपूर्ण पाठ्यक्रम मॉक टेस्ट 5 (100 नए प्रश्न)</title>
+    <style>
+         :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #006400; /* Dark Green Header */
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #e0eee0; /* Mint Cream on hover */
+        }
+        .submit-btn {
+            display: block;
+            width: 250px;
+            padding: 12px;
+            margin: 30px auto;
+            background-color: #3cb371; /* Medium Sea Green Button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #2e8b57;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #006400;
+            border-radius: 8px;
+            background-color: #fffaf0;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: darkgreen;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #ffcccb;
+        }
+        h3 {
+            border-bottom: 2px solid #006400;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <!-- <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div> -->
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 रसायन विज्ञान - संपूर्ण पाठ्यक्रम मॉक टेस्ट 5 🧪</h1>
+        <h2>(इकाई I से X तक 100 नए प्रश्न)</h2>
+        <p>निर्देश: सभी 100 प्रश्नों के उत्तर दें।</p>
+    </div>
+    
+    <form id="quizForm">
+    </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (संपूर्ण पाठ्यक्रम रसायन विज्ञान - सेट 5) ---
+        const testQuestions = [
+            // इकाई I: भौतिक रसायन (विलयन, इलेक्ट्रो, बलगतिकी, पृष्ठ) - (Q1-35)
+            { id: 1, question: "अष्टफलकीय रिक्ति (Octahedral Void) की त्रिज्या अनुपात (Radius Ratio) क्या है?", options: ["0.414","0.225","0.732","1.0"], answer: "0.414", chapter: "भौतिक रसायन" },
+            { id: 2, question: "तापमान बढ़ाने पर धातुओं की चालकता (Conductivity) पर क्या प्रभाव पड़ता है?", options: ["घटती है","बढ़ती है","अपरिवर्तित रहती है","पहले घटती है फिर बढ़ती है"], answer: "घटती है", chapter: "भौतिक रसायन" },
+            { id: 3, question: "अर्ध-पारगम्यता (Semi-permeability) का गुण किस झिल्ली में होता है?", options: ["कॉपर फेरोसाइनाइड","पॉलीथीन शीट","कागज","सेलोफेन"], answer: "कॉपर फेरोसाइनाइड", chapter: "भौतिक रसायन" },
+            { id: 4, question: "हेनरी का नियम (Henry's Law) किस शर्त पर लागू होता है?", options: ["दाब कम हो और तापमान उच्च हो","दाब और तापमान दोनों उच्च हों","दाब और तापमान दोनों कम हों","गैस बहुत विलेय हो"], answer: "दाब कम हो और तापमान उच्च हो", chapter: "भौतिक रसायन" },
+            { id: 5, question: "फैराडे का पहला नियम (First Law of Faraday) किससे संबंधित है?", options: ["इलेक्ट्रोड पर जमा पदार्थ की मात्रा","विद्युत अपघट्य का प्रतिरोध","विद्युत धारा की तीव्रता","इलेक्ट्रोड का विभव"], answer: "इलेक्ट्रोड पर जमा पदार्थ की मात्रा", chapter: "भौतिक रसायन" },
+            { id: 6, question: "जंग (Rusting) लगने की प्रक्रिया में एनोड (Anode) पर कौन सी अभिक्रिया होती है?", options: ["ऑक्सीकरण (Oxidation)","अपचयन","संयोजन","अपघटन"], answer: "ऑक्सीकरण (Oxidation)", chapter: "भौतिक रसायन" },
+            { id: 7, question: "किसी अभिक्रिया की कोटि (Order) को कौन निर्धारित करता है?", options: ["अभिक्रिया की क्रियाविधि (Mechanism)","अभिकारक की सांद्रता","उत्पाद की सांद्रता","साम्य स्थिरांक"], answer: "अभिक्रिया की क्रियाविधि (Mechanism)", chapter: "भौतिक रसायन" },
+            { id: 8, question: "शून्य कोटि की अभिक्रिया के लिए दर स्थिरांक (Rate Constant) की इकाई क्या है?", options: ["मोल लीटर⁻¹ सेकंड⁻¹","सेकंड⁻¹","लीटर मोल⁻¹ सेकंड⁻¹","मोल सेकंड⁻¹"], answer: "मोल लीटर⁻¹ सेकंड⁻¹", chapter: "भौतिक रसायन" },
+            { id: 9, question: "पृष्ठ रसायन में जिओलाइट्स (Zeolites) का उपयोग किस प्रकार के उत्प्रेरक के रूप में होता है?", options: ["आकार-चयनात्मक उत्प्रेरक (Shape-selective catalyst)","उत्प्रेरक विष","सजातीय उत्प्रेरक","विषमांगी उत्प्रेरक"], answer: "आकार-चयनात्मक उत्प्रेरक (Shape-selective catalyst)", chapter: "भौतिक रसायन" },
+            { id: 10, question: "टिन्डल प्रभाव (Tyndall Effect) का कारण क्या है?", options: ["कोलॉइडी कणों द्वारा प्रकाश का प्रकीर्णन (Scattering of Light)","प्रकाश का परावर्तन","प्रकाश का अपवर्तन","प्रकाश का ध्रुवण"], answer: ["कोलॉइडी कणों द्वारा प्रकाश का प्रकीर्णन (Scattering of Light)"], chapter: "भौतिक रसायन" },
+            { id: 11, question: "विलयन की मोललता (Molality) की इकाई क्या है?", options: ["मोल किलोग्राम⁻¹","मोल लीटर⁻¹","ग्राम लीटर⁻¹","लीटर मोल⁻¹"], answer: "मोल किलोग्राम⁻¹", chapter: "भौतिक रसायन" },
+            { id: 12, question: "निकेल-कैडमियम सेल (Ni-Cd Cell) किस प्रकार का सेल है?", options: ["द्वितीयक सेल (Secondary Cell)","प्राथमिक सेल","ईंधन सेल","गैल्वेनिक सेल"], answer: "द्वितीयक सेल (Secondary Cell)", chapter: "भौतिक रसायन" },
+            { id: 13, question: "काँच को अतिशीतलित द्रव (Supercooled liquid) क्यों माना जाता है?", options: ["इसकी कोई निश्चित क्रिस्टलीय संरचना नहीं है।","यह उच्च गलनांक दर्शाता है।","यह विद्युत का सुचालक है।","यह पारदर्शी होता है।"], answer: "इसकी कोई निश्चित क्रिस्टलीय संरचना नहीं है।", chapter: "भौतिक रसायन" },
+            { id: 14, question: "तापमान में वृद्धि के साथ भौतिक अधिशोषण (Physisorption) पर क्या प्रभाव पड़ता है?", options: ["घटता है","बढ़ता है","पहले घटता है फिर बढ़ता है","अपरिवर्तित रहता है"], answer: "घटता है", chapter: "भौतिक रसायन" },
+            { id: 15, question: "अर्ध-आयु काल (t₁/₂) अभिकारकों की प्रारंभिक सांद्रता (Initial Concentration) पर किस कोटि की अभिक्रिया के लिए निर्भर नहीं करता?", options: ["प्रथम कोटि (First Order)","शून्य कोटि","द्वितीय कोटि","तृतीय कोटि"], answer: "प्रथम कोटि (First Order)", chapter: "भौतिक रसायन" },
+
+            // इकाई II: अकार्बनिक रसायन (D & F ब्लॉक, उपसहसंयोजक, P-ब्लॉक) - (Q16-30)
+            { id: 16, question: "परिवर्तनीय ऑक्सीकरण अवस्था (Variable Oxidation States) प्रदर्शित करने का कारण क्या है?", options: ["(n-1)d और ns इलेक्ट्रॉन का उपयोग","कम आयनीकरण ऊर्जा","बड़ा परमाणु आकार","अनुचुंबकत्व"], answer: "(n-1)d और ns इलेक्ट्रॉन का उपयोग", chapter: "अकार्बनिक रसायन" },
+            { id: 17, question: "लैंथेनॉइड संकुचन (Lanthanoid Contraction) का कारण क्या है?", options: ["4f इलेक्ट्रॉनों का दुर्बल परिरक्षण प्रभाव (Poor Shielding)","उच्च नाभिकीय आवेश","बड़ा परमाणु आकार","अधिक समन्वय संख्या"], answer: "4f इलेक्ट्रॉनों का दुर्बल परिरक्षण प्रभाव (Poor Shielding)", chapter: "अकार्बनिक रसायन" },
+            { id: 18, question: "P ब्लॉक का कौन सा तत्व 'पायरोफॉस्फोरिक अम्ल' (Pyrophosphoric acid) बनाता है?", options: ["फॉस्फोरस (P)","नाइट्रोजन","आर्सेनिक","एंटीमनी"], answer: "फॉस्फोरस (P)", chapter: "अकार्बनिक रसायन" },
+            { id: 19, question: "कौन सा हैलोजन सबसे प्रबल ऑक्सीकारक (Strongest Oxidizing Agent) है?", options: ["फ्लोरीन (F₂)","क्लोरीन","ब्रोमीन","आयोडीन"], answer: "फ्लोरीन (F₂)", chapter: "अकार्बनिक रसायन" },
+            { id: 20, question: "उपसहसंयोजक यौगिक में 'द्वितीयक संयोजकता' (Secondary Valency) क्या दर्शाती है?", options: ["उपसहसंयोजन संख्या (Coordination Number)","ऑक्सीकरण संख्या","आयनों की संख्या","ज्यामिति"], answer: "उपसहसंयोजन संख्या (Coordination Number)", chapter: "अकार्बनिक रसायन" },
+            { id: 21, question: "[Co(NH₃)₅Cl]Cl₂ और [Co(NH₃)₅Cl]Cl₂ किस प्रकार की समावयवता (Isomerism) दर्शाते हैं?", options: ["आयनीकरण समावयवता (Ionisation Isomerism)","ज्यामितीय समावयवता","लिंकेज समावयवता","ऑप्टिकल समावयवता"], answer: "आयनीकरण समावयवता (Ionisation Isomerism)", chapter: "अकार्बनिक रसायन" },
+            { id: 22, question: "सबसे अधिक स्थिर (Stable) +3 ऑक्सीकरण अवस्था वाला तत्व कौन सा है?", options: ["लैंथेनम (La)","यूरोपियम","सीरियम","ल्यूटेशियम"], answer: "लैंथेनम (La)", chapter: "अकार्बनिक रसायन" },
+            { id: 23, question: "H₃PO₃ की क्षारकता (Basicity) क्या है?", options: ["दो (Dibasic)","एक","तीन","चार"], answer: "दो (Dibasic)", chapter: "अकार्बनिक रसायन" },
+            { id: 24, question: "ऑक्सीजन की उच्चतम ऑक्सीकरण अवस्था क्या है?", options: ["+2 (OF₂)","+1","+3","+4"], answer: "+2 (OF₂)", chapter: "अकार्बनिक रसायन" },
+            { id: 25, question: "क्रिस्टल क्षेत्र सिद्धांत (CFT) किसके बारे में जानकारी नहीं देता है?", options: ["उपसहसंयोजक यौगिकों का रंग","चुंबकीय आघूर्ण","संकरण की प्रकृति","लिगेंड की प्रबलता"], answer: "संकरण की प्रकृति", chapter: "अकार्बनिक रसायन" },
+
+            // इकाई III: कार्बनिक रसायन (हैलोऐल्केन/ऐल्कोहॉल/ऐल्डिहाइड/ऐमीन/जैव-अणु) - (Q26-60)
+            { id: 26, question: "ऐल्कोहॉल और फिनॉल दोनों में उपस्थित क्रियात्मक समूह कौन सा है?", options: ["हाइड्रॉक्सिल समूह (-OH)","कार्बोनिल समूह","ऐल्किल समूह","ईथर समूह"], answer: "हाइड्रॉक्सिल समूह (-OH)", chapter: "कार्बनिक रसायन" },
+            { id: 27, question: "ल्यूकास अभिकर्मक (Lucas Reagent) का उपयोग किसके अंतर के लिए किया जाता है?", options: ["1°, 2°, और 3° ऐल्कोहॉल","ऐल्डिहाइड और कीटोन","ऐमीन","कार्बोक्सिलिक अम्ल"], answer: "1°, 2°, और 3° ऐल्कोहॉल", chapter: "कार्बनिक रसायन" },
+            { id: 28, question: "कार्बोनिल यौगिकों की नाभिकस्नेही योगज अभिक्रिया (Nucleophilic Addition) में क्रियाशीलता का सही क्रम क्या है?", options: ["फॉर्मेल्डिहाइड > ऐसिटेल्डिहाइड > एसीटोन","एसीटोन > ऐसिटेल्डिहाइड > फॉर्मेल्डिहाइड","ऐसिटेल्डिहाइड > फॉर्मेल्डिहाइड > एसीटोन","सभी समान"], answer: "फॉर्मेल्डिहाइड > ऐसिटेल्डिहाइड > एसीटोन", chapter: "कार्बनिक रसायन" },
+            { id: 29, question: "एसिटिक अम्ल (Acetic Acid) बनाने की किण्वन विधि (Fermentation Process) में कौन सा बैक्टीरिया उपयोग होता है?", options: ["ऐसीटोबैक्टर एसीटी (Acetobacter aceti)","लैक्टोबैसिलस","खमीर","राइजोबियम"], answer: "ऐसीटोबैक्टर एसीटी (Acetobacter aceti)", chapter: "कार्बनिक रसायन" },
+            { id: 30, question: "हॉफमैन ब्रोमामाइड निम्नीकरण (Hoffmann Bromamide Degradation) अभिक्रिया का उपयोग किसके निर्माण के लिए किया जाता है?", options: ["प्राथमिक ऐमीन (Primary Amine)","द्वितीयक ऐमीन","तृतीयक ऐमीन","नाइट्रोऐल्केन"], answer: "प्राथमिक ऐमीन (Primary Amine)", chapter: "कार्बनिक रसायन" },
+            { id: 31, question: "DNA में उपस्थित प्यूरीन बेस (Purine Base) कौन सा है?", options: ["एडेनीन (Adenine) और गुआनीन (Guanine)","साइटोसीन और थाइमिन","यूरेसिल और थाइमिन","एडेनीन और साइटोसीन"], answer: "एडेनीन (Adenine) और गुआनीन (Guanine)", chapter: "कार्बनिक रसायन" },
+            { id: 32, question: "आयोडीन का उपयोग आयोडीनयुक्त नमक (Iodized Salt) में किस रूप में होता है?", options: ["KI (पोटेशियम आयोडाइड)","I₂","HI","NaI"], answer: "KI (पोटेशियम आयोडाइड)", chapter: "अन्य" },
+            { id: 33, question: "विटामिन C का रासायनिक नाम क्या है?", options: ["एस्कॉर्बिक अम्ल (Ascorbic Acid)","रेटिनॉल","थायमिन","राइबोफ्लेविन"], answer: "एस्कॉर्बिक अम्ल (Ascorbic Acid)", chapter: "कार्बनिक रसायन" },
+            { id: 34, question: "कार्बिलऐमीन परीक्षण (Carbylamine Test) का अंतिम उत्पाद क्या होता है?", options: ["आइसोसायनाइड (Isocyanide)","साइनाइड","ऐल्कोहॉल","ऐल्डिहाइड"], answer: "आइसोसायनाइड (Isocyanide)", chapter: "कार्बनिक रसायन" },
+            { id: 35, question: "बेंजीन हैलाइड (Aryl Halide) हैलोऐल्केन की तुलना में Sₙ अभिक्रिया के प्रति कम क्रियाशील क्यों होते हैं?", options: ["अनुनाद (Resonance) के कारण C-X बंधन में आंशिक द्वि-आबंध गुण","C-X बंधन की अधिक लंबाई","उच्च ध्रुवीयता","उच्च गलनांक"], answer: "अनुनाद (Resonance) के कारण C-X बंधन में आंशिक द्वि-आबंध गुण", chapter: "कार्बनिक रसायन" },
+
+            // इकाई IV: बहुलक, दैनिक जीवन में रसायन और विविध (Polymers, Chemistry in Everyday Life & Miscellaneous) - (Q61-100)
+            { id: 36, question: "प्राकृतिक रबर (Natural Rubber) किसका बहुलक है?", options: ["आइसोप्रीन (Isoprene)","ब्यूटाडीन","क्लोरोप्रीन","विनाइल क्लोराइड"], answer: "आइसोप्रीन (Isoprene)", chapter: "अन्य" },
+            { id: 37, question: "ताप-सुघट्य बहुलक (Thermoplastic Polymer) का उदाहरण क्या है?", options: ["पॉलीथीन (Polythene)","बैकेलाइट","मेलामाइन","वल्कनीकृत रबर"], answer: "पॉलीथीन (Polythene)", chapter: "अन्य" },
+            { id: 38, question: "किस विटामिन की कमी से रतौंधी (Night Blindness) होती है?", options: ["विटामिन A","विटामिन B","विटामिन C","विटामिन D"], answer: "विटामिन A", chapter: "कार्बनिक रसायन" },
+            { id: 39, question: "बेंजीन डाइएजोनियम क्लोराइड (C₆H₅N₂Cl) किस तापमान पर सबसे अधिक स्थिर होता है?", options: ["0-5°C","25-30°C","50-60°C","100°C से ऊपर"], answer: "0-5°C", chapter: "कार्बनिक रसायन" },
+            { id: 40, question: "कौन सा कार्बोहाइड्रेट अपचायक शर्करा (Reducing Sugar) है?", options: ["ग्लूकोज (Glucose)","सुक्रोज","स्टार्च","सेलूलोज"], answer: "ग्लूकोज (Glucose)", chapter: "कार्बनिक रसायन" },
+            { id: 41, question: "टॉलेंस अभिकर्मक (Tollens Reagent) क्या है?", options: ["अमोनियामय सिल्वर नाइट्रेट विलयन","फेलिंग विलयन का A भाग","कॉपर सल्फेट विलयन","सोडियम बाइकार्बोनेट विलयन"], answer: "अमोनियामय सिल्वर नाइट्रेट विलयन", chapter: "कार्बनिक रसायन" },
+            { id: 42, question: "एंटीहिस्टामाइन (Antihistamine) का कार्य क्या है?", options: ["एलर्जी के प्रभाव को कम करना","दर्द कम करना","बुखार कम करना","जीवाणुओं को मारना"], answer: "एलर्जी के प्रभाव को कम करना", chapter: "अन्य" },
+            { id: 43, question: "कृत्रिम डिटर्जेंट (Synthetic Detergent) में सफाई का गुण किसके कारण होता है?", options: ["हाइड्रोकार्बन श्रृंखला और आयनिक समूह","केवल आयनिक समूह","जल-विरोधी समूह","केवल हाइड्रोकार्बन श्रृंखला"], answer: "हाइड्रोकार्बन श्रृंखला और आयनिक समूह", chapter: "अन्य" },
+            { id: 44, question: "लैंथेनॉइड्स और ऐक्टिनॉइड्स में कौन अधिक रेडियोधर्मी (Radioactive) है?", options: ["ऐक्टिनॉइड्स (Actinoids)","लैंथेनॉइड्स","दोनों समान","कोई नहीं"], answer: "ऐक्टिनॉइड्स (Actinoids)", chapter: "अकार्बनिक रसायन" },
+            { id: 45, question: "वर्ग 15 के तत्वों के हाइड्राइडों में सबसे अधिक स्थायी (Stable) कौन सा है?", options: ["NH₃ (अमोनिया)","PH₃","AsH₃","BiH₃"], answer: "NH₃ (अमोनिया)", chapter: "अकार्बनिक रसायन" },
+            { id: 46, question: "क्लोरोफॉर्म (CHCl₃) के भंडारण में किसका उपयोग किया जाता है?", options: ["थोड़ा एथेनॉल (Ethanol)","थोड़ा जल","नाइट्रोजन गैस","प्रकाश"], answer: "थोड़ा एथेनॉल (Ethanol)", chapter: "कार्बनिक रसायन" },
+            { id: 47, question: "द्वितीयक ऐल्कोहॉल का उत्प्रेरकी निर्जलीकरण (Catalytic Dehydrogenation) का अंतिम उत्पाद क्या है?", options: ["कीटोन (Ketone)","ऐल्डिहाइड","ईथर","ऐल्कीन"], answer: "कीटोन (Ketone)", chapter: "कार्बनिक रसायन" },
+            { id: 48, question: "शॉटकी दोष (Schottky Defect) किस यौगिक में अधिक पाया जाता है?", options: ["उच्च समन्वय संख्या वाले यौगिकों","कम समन्वय संख्या वाले यौगिकों","सहसंयोजक क्रिस्टल","आणविक ठोस"], answer: "उच्च समन्वय संख्या वाले यौगिकों", chapter: "भौतिक रसायन" },
+            { id: 49, question: "मोलर चालकता (Molar Conductivity) की इकाई क्या है?", options: ["सीमेंस सेंटीमीटर² मोल⁻¹","सीमेंस मोल⁻¹","ओम सेंटीमीटर","वोल्ट"], answer: "सीमेंस सेंटीमीटर² मोल⁻¹", chapter: "भौतिक रसायन" },
+            { id: 50, question: "इलेक्ट्रॉनिक विन्यास [Ar]3d⁵4s¹ किस संक्रमण तत्व का है?", options: ["क्रोमियम (Cr)","मैंगनीज","लोहा","निकेल"], answer: "क्रोमियम (Cr)", chapter: "अकार्बनिक रसायन" },
+            { id: 51, question: "जैव-निम्नीकरणीय बहुलक (Biodegradable Polymer) का एक उदाहरण क्या है?", options: ["PHBV","पॉलीथीन","पीवीसी","बैकेलाइट"], answer: "PHBV", chapter: "अन्य" },
+            { id: 52, question: "टर्पेनटाइन तेल में सल्फर का विलयन किस प्रकार का कोलॉइड है?", options: ["सॉल (Sol)","इमल्शन","जेल","फोम"], answer: "सॉल (Sol)", chapter: "भौतिक रसायन" },
+            { id: 53, question: "वह यौगिक जिसमें सबसे अधिक अम्लीय हाइड्रोजन (Acidic Hydrogen) होता है?", options: ["फीनॉल (Phenol)","ऐल्कोहॉल","ईथर","ऐल्डिहाइड"], answer: "फीनॉल (Phenol)", chapter: "कार्बनिक रसायन" },
+            { id: 54, question: "कार्बोक्सिलिक अम्ल और ऐल्कोहॉल की अभिक्रिया से क्या बनता है?", options: ["एस्टर (Ester)","ईथर","कीटोन","ऐल्डिहाइड"], answer: "एस्टर (Ester)", chapter: "कार्बनिक रसायन" },
+            { id: 55, question: "ऐनिलीन (Aniline) की क्रियाशीलता बेंजीन से अधिक क्यों है?", options: ["अमीन समूह का +R प्रभाव (इलेक्ट्रॉन देना)","अमीन समूह का -I प्रभाव","नाइट्रोजन की विद्युत ऋणात्मकता","कम आणविक भार"], answer: "अमीन समूह का +R प्रभाव (इलेक्ट्रॉन देना)", chapter: "कार्बनिक रसायन" },
+            { id: 56, question: "विद्युत अपघटन के दौरान कैथोड (Cathode) पर होने वाली प्रक्रिया क्या है?", options: ["अपचयन (Reduction)","ऑक्सीकरण","निष्क्रियता","विद्युत-संयोजन"], answer: "अपचयन (Reduction)", chapter: "भौतिक रसायन" },
+            { id: 57, question: "रासायनिक अधिशोषण (Chemisorption) की प्रकृति कैसी होती है?", options: ["अनुत्क्रमणीय (Irreversible)","उत्क्रमणीय","बहु-परतीय","दुर्बल"], answer: "अनुत्क्रमणीय (Irreversible)", chapter: "भौतिक रसायन" },
+            { id: 58, question: "कौन सा यौगिक हैलोजन के साथ नाभिकस्नेही प्रतिस्थापन अभिक्रिया (Nucleophilic Substitution) आसानी से करता है?", options: ["ऐल्किल क्लोराइड (Alkyl Chloride)","क्लोरोबेंजीन","विनाइल क्लोराइड","एरिल हैलाइड"], answer: "ऐल्किल क्लोराइड (Alkyl Chloride)", chapter: "कार्बनिक रसायन" },
+            { id: 59, question: "पॉलीसेकेराइड का उदाहरण क्या है?", options: ["स्टार्च (Starch)","सुक्रोज","ग्लूकोज","माल्टोज"], answer: "स्टार्च (Starch)", chapter: "कार्बनिक रसायन" },
+            { id: 60, question: "लैंथेनॉइड्स का सबसे सामान्य ऑक्सीकरण अवस्था क्या है?", options: ["+3","+2","+4","+1"], answer: "+3", chapter: "अकार्बनिक रसायन" },
+            { id: 61, question: "जीवाणुरोधी दवा (Antibacterial Drug) का उदाहरण जो टायफॉइड के लिए उपयोग होता है?", options: ["क्लोरेम्फेनिकोल (Chloramphenicol)","पेनिसिलिन","एस्पिरिन","मॉर्फिन"], answer: "क्लोरेम्फेनिकोल (Chloramphenicol)", chapter: "अन्य" },
+            { id: 62, question: "एक तत्व सरल घनीय (Simple Cubic) संरचना में है, समन्वय संख्या (Coordination Number) क्या है?", options: ["6","8","12","4"], answer: "6", chapter: "भौतिक रसायन" },
+            { id: 63, question: "शुष्क बर्फ (Dry Ice) किसका उदाहरण है?", options: ["आणविक ठोस (Molecular Solid)","आयनिक ठोस","सहसंयोजक ठोस","धात्विक ठोस"], answer: "आणविक ठोस (Molecular Solid)", chapter: "भौतिक रसायन" },
+            { id: 64, question: "राउल्ट का नियम (Raoult's Law) किसके लिए आदर्श रूप से लागू होता है?", options: ["आदर्श विलयन (Ideal Solution)","अनादर्श विलयन","कोलॉइडी विलयन","निलंबन"], answer: "आदर्श विलयन (Ideal Solution)", chapter: "भौतिक रसायन" },
+            { id: 65, question: "विशिष्ट प्रतिरोध (Resistivity) की इकाई क्या है?", options: ["ओम मीटर (ohm meter)","ओम⁻¹ मीटर⁻¹","सीमेंस मीटर⁻¹","वोल्ट"], answer: "ओम मीटर (ohm meter)", chapter: "भौतिक रसायन" },
+            { id: 66, question: "संक्रमण तत्व क्यों अच्छे उत्प्रेरक (Catalysts) होते हैं?", options: ["परिवर्तनीय ऑक्सीकरण अवस्था और बड़े सतह क्षेत्र","कम गलनांक","उच्च घनत्व","कम आयनीकरण ऊर्जा"], answer: "परिवर्तनीय ऑक्सीकरण अवस्था और बड़े सतह क्षेत्र", chapter: "अकार्बनिक रसायन" },
+            { id: 67, question: "कौन सा लिगेंड एक 'उभयदंती लिगेंड' (Ambidentate Ligand) है?", options: ["नाइट्राइटो (NO₂⁻)","क्लोराइड","जल","एथिलीनडाइएमीन"], answer: "नाइट्राइटो (NO₂⁻)", chapter: "अकार्बनिक रसायन" },
+            { id: 68, question: "जीनोन (Xe) किस प्रकार के यौगिक बनाता है?", options: ["फ्लोराइड और ऑक्साइड","क्लोराइड और ब्रोमाइड","केवल ऑक्साइड","केवल फ्लोराइड"], answer: "फ्लोराइड और ऑक्साइड", chapter: "अकार्बनिक रसायन" },
+            { id: 69, question: "ऑर्थोफॉस्फोरिक अम्ल (H₃PO₄) की क्षारकता क्या है?", options: ["तीन (Tribasic)","दो","एक","चार"], answer: "तीन (Tribasic)", chapter: "अकार्बनिक रसायन" },
+            { id: 70, question: "बेंजीन डाइएजोनियम क्लोराइड से फीनॉल बनाने की अभिक्रिया क्या कहलाती है?", options: ["जल-अपघटन (Hydrolysis)","युग्मन अभिक्रिया","सैंडमेयर अभिक्रिया","गैटरमैन अभिक्रिया"], answer: "जल-अपघटन (Hydrolysis)", chapter: "कार्बनिक रसायन" },
+            { id: 71, question: "ऐल्डिहाइड और कीटोन के बीच अंतर करने के लिए शिफ का अभिकर्मक (Schiff's Reagent) का उपयोग किया जाता है। ऐल्डिहाइड क्या देते हैं?", options: ["गुलाबी/मैजेंटा रंग","सफेद अवक्षेप","चांदी का दर्पण","कोई प्रतिक्रिया नहीं"], answer: "गुलाबी/मैजेंटा रंग", chapter: "कार्बनिक रसायन" },
+            { id: 72, question: "अम्लीय प्रबलता (Acid Strength) का सही क्रम क्या है?", options: ["CF₃COOH > CCl₃COOH > CH₃COOH","CH₃COOH > CCl₃COOH > CF₃COOH","CCl₃COOH > CH₃COOH > CF₃COOH","CH₃COOH < CCl₃COOH < CF₃COOH"], answer: "CF₃COOH > CCl₃COOH > CH₃COOH", chapter: "कार्बनिक रसायन" },
+            { id: 73, question: "डीएनए (DNA) में कौन सा पिरिमिडीन बेस अनुपस्थित होता है?", options: ["यूरेसिल (Uracil)","थाइमिन","साइटोसीन","एडेनीन"], answer: "यूरेसिल (Uracil)", chapter: "कार्बनिक रसायन" },
+            { id: 74, question: "प्रोटीन की प्राथमिक संरचना (Primary Structure) किसके कारण बनती है?", options: ["पेप्टाइड बंधन (Peptide Bonds)","हाइड्रोजन बंधन","डाइसल्फाइड बंधन","आयनिक बंधन"], answer: "पेप्टाइड बंधन (Peptide Bonds)", chapter: "कार्बनिक रसायन" },
+            { id: 75, question: "एल्डोल संघनन (Aldol Condensation) अभिक्रिया के लिए क्या आवश्यक है?", options: ["कम से कम एक α-हाइड्रोजन परमाणु","केवल α-हाइड्रोजन रहित ऐल्डिहाइड","सांद्र NaOH","Zn-Hg/HCl"], answer: "कम से कम एक α-हाइड्रोजन परमाणु", chapter: "कार्बनिक रसायन" },
+            { id: 76, question: "ब्यूना-N (Buna-N) किसका बहुलक है?", options: ["1,3-ब्यूटाडीन और एक्रिलोनाइट्राइल","1,3-ब्यूटाडीन और स्टाइरीन","आइसोप्रीन","क्लोरोप्रीन"], answer: "1,3-ब्यूटाडीन और एक्रिलोनाइट्राइल", chapter: "अन्य" },
+            { id: 77, question: "डेटॉल (Dettol) में सक्रिय घटक (Active Ingredient) क्या है?", options: ["क्लोरोजाइलिनॉल (Chloroxylenol)","बिथायोनल","बायोटीन","आयोडोफॉर्म"], answer: "क्लोरोजाइलिनॉल (Chloroxylenol)", chapter: "अन्य" },
+            { id: 78, question: "एंटीबायोटिक जो जीवाणु की कोशिका भित्ति के संश्लेषण को बाधित करता है?", options: ["पेनिसिलिन (Penicillin)","क्लोरैम्फेनिकॉल","टेट्रासाइक्लिन","इरिथ्रोमाइसिन"], answer: "पेनिसिलिन (Penicillin)", chapter: "अन्य" },
+            { id: 79, question: "शून्य कोटि की अभिक्रिया के लिए दर (Rate) किस पर निर्भर करती है?", options: ["अभिकारक की सांद्रता पर निर्भर नहीं करती","अभिकारक की सांद्रता पर रैखिक रूप से निर्भर करती है","समय पर निर्भर करती है","तापमान पर निर्भर नहीं करती"], answer: "अभिकारक की सांद्रता पर निर्भर नहीं करती", chapter: "भौतिक रसायन" },
+            { id: 80, question: "उत्प्रेरक अभिक्रिया के दौरान किसमें परिवर्तन नहीं करता है?", options: ["साम्य स्थिरांक (Equilibrium Constant)","सक्रियण ऊर्जा","अभिक्रिया की दर","क्रियाविधि"], answer: "साम्य स्थिरांक (Equilibrium Constant)", chapter: "भौतिक रसायन" },
+            { id: 81, question: "किस हैलाइड की अभिक्रिया से फिडल क्राफ्ट अभिक्रिया (Friedel-Crafts Reaction) नहीं होती है?", options: ["आयोडीन युक्त बेंजीन (Iodobenzene)","क्लोरोबेंजीन","ब्रोमोबेंजीन","मेथिल क्लोराइड"], answer: "आयोडीन युक्त बेंजीन (Iodobenzene)", chapter: "कार्बनिक रसायन" },
+            { id: 82, question: "हॉफमैन ब्रोमामाइड अभिक्रिया में अभिकर्मक के रूप में किसका उपयोग किया जाता है?", options: ["Br₂/KOH","Zn-Hg/HCl","NaNO₂/HCl","H₂/Ni"], answer: "Br₂/KOH", chapter: "कार्बनिक रसायन" },
+            { id: 83, question: "कौन सा कार्बोहाइड्रेट 'नॉन-रिड्यूसिंग' शर्करा (Non-Reducing Sugar) है?", options: ["सुक्रोज (Sucrose)","ग्लूकोज","फ्रक्टोज","माल्टोज"], answer: "सुक्रोज (Sucrose)", chapter: "कार्बनिक रसायन" },
+            { id: 84, question: "P ब्लॉक तत्वों में सबसे अधिक स्थिर हाइड्राइड कौन सा है?", options: ["NH₃ (अमोनिया)","H₂O","HF","H₂S"], answer: "H₂O", chapter: "अकार्बनिक रसायन" },
+            { id: 85, question: "ट्रांस-आइसोमर (Trans-Isomer) सिस-आइसोमर की तुलना में अधिक स्थायी क्यों होता है?", options: ["कम त्रिविम बाधा (Less Steric Hindrance)","अधिक द्विध्रुव आघूर्ण","अधिक विलेयता","अधिक घनत्व"], answer: "कम त्रिविम बाधा (Less Steric Hindrance)", chapter: "कार्बनिक रसायन" },
+            { id: 86, question: "ऑक्सीजन और सल्फर (Group 16) के हाइड्राइडों में सबसे अधिक अम्लीय कौन सा है?", options: ["H₂S","H₂O","H₂Se","H₂Te"], answer: "H₂Te", chapter: "अकार्बनिक रसायन" },
+            { id: 87, question: "विद्युत अपघट्य विलयन की चालकता (Conductivity) पर तापमान का क्या प्रभाव पड़ता है?", options: ["बढ़ती है","घटती है","पहले घटती है फिर बढ़ती है","अपरिवर्तित रहती है"], answer: "बढ़ती है", chapter: "भौतिक रसायन" },
+            { id: 88, question: "विद्युत रासायनिक सेल (Electrochemical Cell) में इलेक्ट्रोड विभव (Electrode Potential) किससे मापा जाता है?", options: ["मानक हाइड्रोजन इलेक्ट्रोड (SHE)","वोल्टमीटर","एमीटर","सांद्रता सेल"], answer: "मानक हाइड्रोजन इलेक्ट्रोड (SHE)", chapter: "भौतिक रसायन" },
+            { id: 89, question: "ईथर का गलनांक और क्वथनांक संगत ऐल्कोहॉल की तुलना में कम क्यों होता है?", options: ["हाइड्रोजन बंधन की अनुपस्थिति","उच्च द्विध्रुव आघूर्ण","कम आणविक भार","कम ध्रुवीयता"], answer: "हाइड्रोजन बंधन की अनुपस्थिति", chapter: "कार्बनिक रसायन" },
+            { id: 90, question: "एक ऐल्कोहॉल का निर्जलीकरण (Dehydration) हमेशा किस नियम का पालन करता है?", options: ["सेटजेफ का नियम (Saytzeff's Rule)","मार्कोनीकॉफ का नियम","हॉफमैन का नियम","राउल्ट का नियम"], answer: "सेटजेफ का नियम (Saytzeff's Rule)", chapter: "कार्बनिक रसायन" },
+            { id: 91, question: "न्यूक्लियोटाइड (Nucleotide) के घटक क्या हैं?", options: ["शर्करा, फॉस्फेट समूह, नाइट्रोजन बेस","केवल शर्करा और फॉस्फेट समूह","केवल नाइट्रोजन बेस और शर्करा","केवल नाइट्रोजन बेस और फॉस्फेट"], answer: "शर्करा, फॉस्फेट समूह, नाइट्रोजन बेस", chapter: "कार्बनिक रसायन" },
+            { id: 92, question: "हीमोग्लोबिन (Haemoglobin) में कौन सा तत्व उपस्थित होता है?", options: ["लोहा (Fe)","कॉपर","जिंक","मैंगनीज"], answer: "लोहा (Fe)", chapter: "कार्बनिक रसायन" },
+            { id: 93, question: "बहुलक में अंतराणुक बल (Intermolecular Forces) के आधार पर, कौन सा 'इलास्टोमर' (Elastomer) है?", options: ["ब्यूना-S (Buna-S)","पॉलीथीन","नायलॉन-6,6","टेफ्लॉन"], answer: "ब्यूना-S (Buna-S)", chapter: "अन्य" },
+            { id: 94, question: "एंटी-फर्टिलिटी ड्रग (Anti-fertility drug) का उदाहरण क्या है?", options: ["नोरेथिनड्रोन (Norethindrone)","ओमेप्राजोल","एस्पिरिन","मॉर्फिन"], answer: "नोरेथिनड्रोन (Norethindrone)", chapter: "अन्य" },
+            { id: 95, question: "वह विटामिन जो वसा में घुलनशील (Fat Soluble) नहीं है?", options: ["विटामिन C","विटामिन A","विटामिन D","विटामिन K"], answer: "विटामिन C", chapter: "कार्बनिक रसायन" },
+            { id: 96, question: "Fe²⁺ (d⁶) आयन किस प्रकार का चुंबकीय व्यवहार (Magnetic Behavior) प्रदर्शित करता है?", options: ["अनुचुंबकीय (Paramagnetic)","प्रतिचुंबकीय","लौहचुंबकीय","प्रतिलौहचुंबकीय"], answer: "अनुचुंबकीय (Paramagnetic)", chapter: "अकार्बनिक रसायन" },
+            { id: 97, question: "उपसहसंयोजक यौगिकों में, क्रिस्टल क्षेत्र विपाटन ऊर्जा (Crystal Field Splitting Energy) किस पर निर्भर करती है?", options: ["लिगेंड की प्रकृति","धातु आयन की ऑक्सीकरण अवस्था","धातु आयन की ज्यामिति","उपर्युक्त सभी"], answer: "उपर्युक्त सभी", chapter: "अकार्बनिक रसायन" },
+            { id: 98, question: "कौन सा कार्बोक्सिलिक अम्ल 'आयोडोफॉर्म परीक्षण' (Iodoform Test) देता है?", options: ["मेथिल एसीटेट (Methyl Acetate)","प्रोपेनोइक अम्ल","बेंजोइक अम्ल","फार्मिक अम्ल"], answer: "मेथिल एसीटेट (Methyl Acetate)", chapter: "कार्बनिक रसायन" },
+            { id: 99, question: "विलयन का क्वथनांक (Boiling Point) बढ़ने पर विलायक का वाष्प दाब (Vapor Pressure) क्या होता है?", options: ["घटता है","बढ़ता है","अपरिवर्तित रहता है","अनिश्चित"], answer: "घटता है", chapter: "भौतिक रसायन" },
+            { id: 100, question: "प्राथमिक ऐल्कोहॉल का अम्लीय K₂Cr₂O₇ द्वारा अंतिम ऑक्सीकरण उत्पाद क्या है?", options: ["कार्बोक्सिलिक अम्ल (Carboxylic Acid)","ऐल्डिहाइड","ईथर","कीटोन"], answer: "कार्बोक्सिलिक अम्ल (Carboxylic Acid)", chapter: "कार्बनिक रसायन" }
+        ];
+
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            let currentChapter = '';
+
+            testQuestions.forEach((mcq, index) => {
+                // अध्याय के आधार पर हेडिंग जोड़ना
+                if (mcq.chapter !== currentChapter) {
+                    let unitTitle = '';
+                    if (mcq.chapter === 'भौतिक रसायन') unitTitle = 'इकाई I: भौतिक रसायन (विलयन, इलेक्ट्रो, बलगतिकी, पृष्ठ)';
+                    else if (mcq.chapter === 'अकार्बनिक रसायन') unitTitle = 'इकाई II: अकार्बनिक रसायन (D & F ब्लॉक, उपसहसंयोजक, P-ब्लॉक)';
+                    else if (mcq.chapter === 'कार्बनिक रसायन') unitTitle = 'इकाई III: कार्बनिक रसायन (हैलोऐल्केन, ऐल्कोहॉल, ऐल्डिहाइड, ऐमीन, जैव-अणु)';
+                    else if (mcq.chapter === 'अन्य') unitTitle = 'इकाई IV: बहुलक और दैनिक जीवन में रसायन';
+                    
+                    htmlContent += `<h3>${unitTitle}</h3>`;
+                    currentChapter = mcq.chapter;
+                }
+
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    // प्रतीक प्रतिस्थापन: सबस्क्रिप्ट और सुपरस्क्रिप्ट का उपयोग
+                    const displayOption = option
+                        .replace(/लीटर⁻¹/g, 'लीटर<sup>-1</sup>')
+                        .replace(/सेकंड⁻¹/g, 'सेकंड<sup>-1</sup>')
+                        .replace(/किलोग्राम⁻¹/g, 'किलोग्राम<sup>-1</sup>')
+                        .replace(/cm² mol⁻¹/g, 'cm<sup>2</sup> mol<sup>-1</sup>')
+                        .replace(/Ni-Cd/g, 'Ni-Cd')
+                        .replace(/4f/g, '4f')
+                        .replace(/P ब्लॉक/g, 'P ब्लॉक')
+                        .replace(/H₃PO₃/g, 'H<sub>3</sub>PO<sub>3</sub>')
+                        .replace(/\(OF₂\)/g, '(OF<sub>2</sub>)')
+                        .replace(/t₂g/g, 't<sub>2g</sub>').replace(/e₉/g, 'e<sub>g</sub>')
+                        .replace(/1°, 2°, और 3° ऐल्कोहॉल/g, '1&deg;, 2&deg;, और 3&deg; ऐल्कोहॉल')
+                        .replace(/-OH/g, '-OH').replace(/-COOH/g, '-COOH')
+                        .replace(/C₆H₅N₂Cl/g, 'C<sub>6</sub>H<sub>5</sub>N<sub>2</sub>Cl')
+                        .replace(/Fe²⁺/g, 'Fe<sup>2+</sup>').replace(/d⁶/g, 'd<sup>6</sup>')
+                        .replace(/C-X/g, 'C-X')
+                        .replace(/NH₃/g, 'NH<sub>3</sub>').replace(/PH₃/g, 'PH<sub>3</sub>').replace(/AsH₃/g, 'AsH<sub>3</sub>').replace(/BiH₃/g, 'BiH<sub>3</sub>')
+                        .replace(/CHCl₃/g, 'CHCl<sub>3</sub>')
+                        .replace(/CF₃COOH > CCl₃COOH > CH₃COOH/g, 'CF<sub>3</sub>COOH > CCl<sub>3</sub>COOH > CH<sub>3</sub>COOH')
+                        .replace(/CH₃COOH > CCl₃COOH > CF₃COOH/g, 'CH<sub>3</sub>COOH > CCl<sub>3</sub>COOH > CF<sub>3</sub>COOH')
+                        .replace(/CCl₃COOH > CH₃COOH > CF₃COOH/g, 'CCl<sub>3</sub>COOH > CH<sub>3</sub>COOH > CF<sub>3</sub>COOH')
+                        .replace(/CH₃COOH < CCl₃COOH < CF₃COOH/g, 'CH<sub>3</sub>COOH < CCl<sub>3</sub>COOH < CF<sub>3</sub>COOH')
+                        .replace(/H₂O/g, 'H<sub>2</sub>O').replace(/H₂S/g, 'H<sub>2</sub>S').replace(/HF/g, 'HF').replace(/H₂Se/g, 'H<sub>2</sub>Se').replace(/H₂Te/g, 'H<sub>2</sub>Te')
+                        .replace(/Br₂\/KOH/g, 'Br<sub>2</sub>/KOH')
+                        .replace(/Zn-Hg\/HCl/g, 'Zn-Hg/HCl')
+                        .replace(/NaNO₂\/HCl/g, 'NaNO<sub>2</sub>/HCl')
+                        .replace(/H₂\/Ni/g, 'H<sub>2</sub>/Ni')
+                        .replace(/K₂Cr₂O₇/g, 'K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>')
+                        .replace(/Fe²⁺/g, 'Fe<sup>2+</sup>');
+                    
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${displayOption}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+
+                const correctAnswerDisplay = mcq.answer
+                    .replace(/लीटर⁻¹/g, 'लीटर<sup>-1</sup>')
+                    .replace(/सेकंड⁻¹/g, 'सेकंड<sup>-1</sup>')
+                    .replace(/किलोग्राम⁻¹/g, 'किलोग्राम<sup>-1</sup>')
+                    .replace(/cm² mol⁻¹/g, 'cm<sup>2</sup> mol<sup>-1</sup>')
+                    .replace(/Ni-Cd/g, 'Ni-Cd')
+                    .replace(/4f/g, '4f')
+                    .replace(/\(OF₂\)/g, '(OF<sub>2</sub>)')
+                    .replace(/C₆H₅N₂Cl/g, 'C<sub>6</sub>H<sub>5</sub>N<sub>2</sub>Cl')
+                    .replace(/NH₃/g, 'NH<sub>3</sub>')
+                    .replace(/H₂O/g, 'H<sub>2</sub>O')
+                    .replace(/H₂Te/g, 'H<sub>2</sub>Te')
+                    .replace(/Fe²⁺/g, 'Fe<sup>2+</sup>')
+                    .replace(/CF₃COOH > CCl₃COOH > CH₃COOH/g, 'CF<sub>3</sub>COOH > CCl<sub>3</sub>COOH > CH<sub>3</sub>COOH');
+
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid darkgreen';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'darkgreen' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! आपकी तैयारी उच्च स्तर पर है। 💯' : (score / totalQuestions >= 0.5 ? 'सराहनीय! अब विशिष्ट कमजोरियों पर काम करें।' : 'पुनरावृत्ति (Revision) और गहन अभ्यास पर ध्यान दें।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भौतिकी - अध्याय : विद्युत धारा के चुंबकीय प्रभाव - Class 10</title>
+
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:10px 40px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo-section { display:flex; align-items:center; }
+        .logo-img { height:40px; margin-right:15px; border-radius:50%; }
+        .logo-text h1 { font-size:1.5em; margin:0; }
+        .main-nav a { color:var(--text-light); text-decoration:none; margin:0 15px; }
+        .btn-mock-test {
+            background-color:var(--accent-orange);
+            color:var(--primary-blue) !important;
+            padding:8px 15px; border-radius:var(--border-radius); font-weight:bold;
+        }
+        .user-info i { font-size:1.5em; cursor:pointer; }
+
+        .box {
+            background-color:#ffffff;
+            padding:20px;
+            margin:20px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        ul, ol { margin-left:20px; }
+        svg { display:block; margin:16px auto; max-width:100%; height:auto; }
+        b { color:#e74c3c; }
+        .formula { background:#f7f9ff; padding:8px 12px; border-radius:8px; margin-top:10px; display:inline-block; font-weight:bold; }
+        .small-note { font-size:0.95em; color:#555; margin-top:8px; }
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+        <div class="logo-text"><h1>Gyan Saarathi</h1></div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+
+    <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+    </div>
+</header>
+
+<!-- अध्याय परिचय -->
+<div class="box">
+<h1>अध्याय — विद्युत धारा के चुंबकीय प्रभाव</h1>
+<p>
+जब किसी चालक में विद्युत धारा बहती है तो उसके आसपास एक चुंबकीय क्षेत्र उत्पन्न होता है। इस अध्याय में हम विद्युत धारा द्वारा उत्पन्न चुंबकीय क्षेत्र, उसके गुण, धारित चालक पर चुंबकीय बल और उपकरण जैसे मोटर, इलेक्ट्रिक बेल इत्यादि को समझेंगे।
+</p>
+</div>
+
+<!-- चुंबकीय क्षेत्र -->
+<div class="box">
+<h2>1. धारा द्वारा उत्पन्न चुंबकीय क्षेत्र</h2>
+
+<ul>
+    <li>किसी धारित (current-carrying) तार के चारों ओर concentric चुंबकीय क्षेत्र बनता है।</li>
+    <li>दिशा निर्धारित करने के लिए <b>राइट-हैंड थम्ब रूल</b> (Right hand thumb rule) का उपयोग होता है — अंगूठा धारक तार की धारा की दिशा, घुमाव वाली अंगुलियाँ चुंबकीय क्षेत्र की दिशा दर्शाती हैं।</li>
+</ul>
+
+<h3>SVG — लम्बी सीधी तार के चारों ओर चुंबकीय रेखाएँ</h3>
+<svg width="340" height="220">
+  <!-- Straight wire -->
+  <line x1="170" y1="20" x2="170" y2="200" stroke="#000" stroke-width="3"/>
+  <circle cx="170" cy="60" r="24" fill="none" stroke="#1A237E" stroke-width="2"/>
+  <circle cx="170" cy="120" r="44" fill="none" stroke="#1A237E" stroke-width="2"/>
+  <circle cx="170" cy="170" r="74" fill="none" stroke="#1A237E" stroke-width="1.5"/>
+  <text x="180" y="30" font-size="12">I →</text>
+  <text x="20" y="200" font-size="12">चुंबकीय रेखाएँ (B)</text>
+</svg>
+
+<p class="small-note"><b>फॉर्मूला (लंबी सीधे तार के लिए):</b>  
+<div class="formula">B = μ₀ I / (2π r)</div>
+यहाँ B = चुंबकीय क्षेत्र, μ₀ = 4π×10⁻⁷ T·m/A (वैक्यूम में), I = धारा, r = तार से दूरी।</p>
+</div>
+
+<!-- बल on conductor -->
+<div class="box">
+<h2>2. धारित चालक पर चुंबकीय बल (Force on a Current-carrying Conductor)</h2>
+
+<ul>
+    <li>यदि लंबाई L के एक चालक में धारा I बह रही हो और वह चुंबकीय क्षेत्र B में रखा हो तो उस पर बल लगता है।</li>
+    <li>बल का मान और दिशा:</li>
+    <ul>
+        <li>मagnitude: <div class="formula">F = B I L sinθ</div> जहाँ θ = I की दिशा और B की दिशा के बीच का कोण।</li>
+        <li>दिशा: <b>फ्लेमिंग का बायाँ हाथ नियम</b> (Fleming's left hand rule) — अंगूठा बल, प्रथम अंगुली फ़ील्ड (B), मध्यम अंगुली धारा (I) को दर्शाती है।</li>
+    </ul>
+</ul>
+
+<h3>SVG — क्षैतिज चालक पर बल</h3>
+<svg width="340" height="180">
+  <!-- Magnetic field arrows -->
+  <line x1="20" y1="40" x2="320" y2="40" stroke="#000" stroke-width="1"/>
+  <text x="140" y="35" font-size="12">B → (क्षैतिज)</text>
+
+  <!-- Conductor -->
+  <rect x="150" y="60" width="40" height="60" fill="#fff" stroke="#000"/>
+  <text x="155" y="95" font-size="12">I ↑</text>
+
+  <!-- Force arrow -->
+  <line x1="195" y1="85" x2="240" y2="85" stroke="red" stroke-width="3"/>
+  <polygon points="240,80 250,85 240,90" fill="red"/>
+  <text x="245" y="80" font-size="12">F</text>
+</svg>
+
+</div>
+
+<!-- टॉर्क और करंट लूप -->
+<div class="box">
+<h2>3. करंट-लूप पर टॉर्क और इलेक्ट्रिक मोटर का सिद्धांत</h2>
+
+<ul>
+    <li>एक आयताकार करंट-लूप चुंबकीय क्षेत्र में टॉर्क प्राप्त करता है जिससे वह घुमता है — यही मोटर का मूलभूत सिद्धांत है।</li>
+    <li>मौक्तिक सूत्र: <div class="formula">τ = μ × B = I A B sinθ</div> जहाँ μ = आयामिक चुंबकीय मूवमेंट (magnetic moment) = I·A और A = लूप का क्षेत्रफल।</li>
+</ul>
+
+<h3>SVG — करंट लूप और टॉर्क</h3>
+<svg width="360" height="200">
+  <rect x="120" y="70" width="120" height="60" fill="none" stroke="#000"/>
+  <text x="140" y="95" font-size="12">I →</text>
+  <line x1="40" y1="40" x2="320" y2="40" stroke="#000" stroke-width="1"/>
+  <text x="140" y="35" font-size="12">B →</text>
+  <path d="M260 100 Q300 90 320 100" stroke="red" stroke-width="2" fill="none"/>
+  <text x="265" y="85" font-size="12">टॉर्क (τ)</text>
+</svg>
+
+</div>
+
+<!-- सोलिनॉइड और इंडक्शन -->
+<div class="box">
+<h2>4. सोलिनॉइड और चुंबकीय क्षेत्र</h2>
+
+<ul>
+    <li>सोलिनॉइड (घुमावदार तार) के अंदर समान और सुदृढ़ चुंबकीय क्षेत्र बनता है और बाहर अपेक्षाकृत कम।</li>
+    <li>इडिंग/रैखिक सूत्र (कठोर मान): <div class="formula">B (inside) = μ₀ n I</div> जहाँ n = प्रति इकाई लंबाई पर घुमावों की संख्या (N/L)।</li>
+</ul>
+
+<h3>SVG — सोलिनॉइड का सरलीकृत दृश्य</h3>
+<svg width="380" height="180">
+  <rect x="80" y="40" width="200" height="100" fill="none" stroke="#000"/>
+  <!-- Coil turns -->
+  <path d="M90 50 q20 20 40 0 q20 20 40 0 q20 20 40 0 q20 20 40 0" stroke="#1A237E" stroke-width="3" fill="none"/>
+  <text x="150" y="30" font-size="12">सोलिनॉइड</text>
+  <text x="20" y="160" font-size="12">B (अंदर मजबूत)</text>
+</svg>
+
+</div>
+
+<!-- अनुप्रयोग -->
+<div class="box">
+<h2>5. अनुप्रयोग (Applications)</h2>
+
+<ul>
+    <li><b>इलेक्ट्रिक मोटर:</b> करंट-लूप पर लगने वाले बल व टॉर्क से घूर्णन मिलता है — मोटर यही सिद्धांत उपयोग करती है।</li>
+    <li><b>इलेक्ट्रोमैग्नेट:</b> सोलिनॉइड में लोहे का कोर डालकर मजबूत अस्थायी चुंबक बनाया जाता है।</li>
+    <li><b>इलेक्ट्रिक बेल, स्पीकर, जनरेटर (basic principle), और रिले</b> — सभी में धारा-चुंबक प्रभाव महत्वपूर्ण है।</li>
+</ul>
+</div>
+
+<!-- सुरक्षा टिप्स -->
+<div class="box">
+<h2>6. प्रयोगात्मक सावधानियाँ</h2>
+
+<ul>
+    <li>उच्च धारा से तार गरम हो सकता है — प्रयोग में उचित धारा और समय रखें।</li>
+    <li>मोटर और सोलिनॉइड में बिजली जोड़ने से पहले कनेक्शन जाँच लें।</li>
+    <li>चुम्बकीय क्षेत्र को जानने के लिए फ्लक्स मीटर/गॉसमीटर का उपयोग कर सकते हैं (प्रायोगिक)।</li>
+</ul>
+</div>
+
+<!-- महत्वपूर्ण प्रश्न -->
+<div class="box">
+<h2>7. महत्वपूर्ण प्रश्न</h2>
+
+<ol>
+    <li>राइट-हैंड थम्ब रूल क्या बताती है? एक उदाहरण दीजिए।</li>
+    <li>लंबी सीधी तार पर B = μ₀ I / (2πr) सूत्र व्युत्पन्न अर्थ समझाइए।</li>
+    <li>F = B I L sinθ को प्रयोग के संदर्भ में समझाइए।</li>
+    <li>सोलिनॉइड के अंदर B का मान कैसे बढ़ाया जा सकता है?</li>
+    <li>इलेक्ट्रिक मोटर किस सिद्धांत पर कार्य करती है? संक्षेप में समझाइए।</li>
+</ol>
+</div>
+
+</body>
+</html>

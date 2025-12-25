@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 14 — अर्धचालक उपकरण (Semiconductor Devices)</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+  /* body {font-family:'Noto Sans Devanagari', Arial, sans-serif; line-height:1.65; padding:22px; background:#f7faff; color:#0b1220}
+  h1 {color:#0b66a3; text-align:center; margin-bottom:16px}
+  h2 {color:#0e3b5b; margin-top:20px} */
+  .card {background:#ffffff; padding:15px; border-radius:10px; margin:15px 0; box-shadow:0 6px 18px rgba(10,30,60,0.07)}
+  .formula {background:#eef6ff; padding:10px; border-left:4px solid #0b66a3; border-radius:6px; font-weight:600; margin:10px 0; font-size:1.05rem}
+  ul {margin-left:20px}
+  pre {background:#eef4f8; padding:10px; border-radius:6px; overflow:auto}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<h1>अध्याय 14 — अर्धचालक उपकरण (Semiconductor Devices)</h1>
+<p style="text-align:center;color:#4b5966">Class 12 Physics के लिए विस्तृत और सरल नोट्स</p>
+
+<!-- SECTION 1 -->
+<section class="card">
+<h2>1. अर्धचालक (Semiconductors)</h2>
+<p>अर्धचालक वे पदार्थ हैं जिनकी विद्युत चालकता धातुओं और इन्सुलेटर के बीच होती है।</p>
+<ul>
+  <li>प्रकार: intrinsic और extrinsic</li>
+  <li>Intrinsic: शुद्ध अर्धचालक (pure), जैसे सिलिकॉन (Si), जर्मेनियम (Ge)</li>
+  <li>Extrinsic: डोपिंग के बाद, दो प्रकार - n-type और p-type</li>
+</ul>
+</section>
+
+<!-- SECTION 2 -->
+<section class="card">
+<h2>2. n-type और p-type अर्धचालक</h2>
+<ul>
+  <li>n-type: इलेक्ट्रॉनों की अधिकता (डोनर अणु)</li>
+  <li>p-type: होल्स की अधिकता (एक्सेप्टर अणु)</li>
+</ul>
+</section>
+
+<!-- SECTION 3 -->
+<section class="card">
+<h2>3. pn जंक्शन (pn Junction)</h2>
+<p>n-type और p-type अर्धचालक का जोड़।</p>
+<ul>
+  <li>Depletion region बनता है</li>
+  <li>Barrier potential ~ 0.7V (Si), 0.3V (Ge)</li>
+</ul>
+<div class="formula">V_bi = (kT/q) ln(Na Nd / ni²)</div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="card">
+<h2>4. pn जंक्शन डायोड</h2>
+<ul>
+  <li>Forward bias: diode conducts</li>
+  <li>Reverse bias: diode blocks current</li>
+  <li>V-I Characteristics दिखाते हैं knee voltage और saturation current</li>
+</ul>
+<div class="formula">I = I_s (e^{V/(kT/q)} - 1)</div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="card">
+<h2>5. डायोड के प्रयोग</h2>
+<ul>
+  <li>Rectifier (Half-wave, Full-wave)</li>
+  <li>Clipping और Clamping Circuits</li>
+</ul>
+</section>
+
+<!-- SECTION 6 -->
+<section class="card">
+<h2>6. जंक्शन ट्रांजिस्टर (BJT)</h2>
+<ul>
+  <li>Types: NPN और PNP</li>
+  <li>Three terminals: Emitter (E), Base (B), Collector (C)</li>
+  <li>Modes: Common Emitter, Common Base, Common Collector</li>
+</ul>
+<div class="formula">I_C = β I_B, I_E = I_B + I_C</div>
+</section>
+
+<!-- SECTION 7 -->
+<section class="card">
+<h2>7. ट्रांजिस्टर के प्रयोग</h2>
+<ul>
+  <li>Amplifier</li>
+  <li>Switching device</li>
+</ul>
+</section>
+
+<!-- SECTION 8 -->
+<section class="card">
+<h2>8. फोटोडायोड और एलईडी</h2>
+<ul>
+  <li>LED: Light Emitting Diode, forward bias में प्रकाश उत्सर्जित करता है</li>
+  <li>Photodiode: Reverse bias में प्रकाश के प्रति संवेदनशील, photovoltaic effect</li>
+</ul>
+</section>
+
+<!-- SECTION 9 -->
+<section class="card">
+<h2>9. सरलीकृत महत्वपूर्ण सूत्र</h2>
+<div class="formula">I_D = I_s (e^{V_D/(kT/q)} - 1)</div>
+<div class="formula">I_C = β I_B</div>
+<div class="formula">I_E = I_B + I_C</div>
+<div class="formula">V_bi = (kT/q) ln(Na Nd / ni²)</div>
+</section>
+
+<footer style="text-align:center;color:#4b5966;margin-top:20px">अध्याय 14 के अर्धचालक उपकरणों की पूरी व्याख्या। MCQ और Numericals जोड़ने के लिए आप कह सकते हैं।</footer>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 जीव विज्ञान: मॉक टेस्ट (वंशागति और विविधता के सिद्धांत)</title>
+    <style>
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #008080; /* Teal Header */
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #ccf2ff; /* Lighter Blue on hover */
+        }
+        .submit-btn {
+            display: block;
+            width: 250px;
+            padding: 12px;
+            margin: 30px auto;
+            background-color: #ff6347; /* Tomato Red Button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #e84c3c;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #008080;
+            border-radius: 8px;
+            background-color: #f0ffff;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+        h3 {
+            border-bottom: 2px solid #008080;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 जीव विज्ञान - मॉक टेस्ट (100 प्रश्न) 🧬</h1>
+        <h2>इकाई VIII: वंशागति और विविधता के सिद्धांत</h2>
+        <p>निर्देश: सभी 100 प्रश्नों के उत्तर दें।</p>
+    </div>
+    
+    <form id="quizForm">
+    </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी ---
+        const testQuestions = [
+            // मेंडलवाद (Mendelism)
+            { id: 1, question: "मेंडल ने अपने प्रयोगों के लिए किस पौधे का चयन किया?", options: ["मक्का","चना","पायसम सैटिवम (मटर)","गेहूँ"], answer: "पायसम सैटिवम (मटर)", chapter: "मेंडलवाद" },
+            { id: 2, question: "मेंडल के पहले नियम को क्या कहा जाता है?", options: ["प्रभाविता का नियम","पृथक्करण का नियम","स्वतंत्र अपव्यूहन का नियम","संकरण का नियम"], answer: "प्रभाविता का नियम", chapter: "मेंडलवाद" },
+            { id: 3, question: "एकसंकर क्रॉस (Monohybrid Cross) में F2 पीढ़ी का जीनोटाइप अनुपात क्या है?", options: ["3:1","1:2:1","9:3:3:1","1:1"], answer: "1:2:1", chapter: "मेंडलवाद" },
+            { id: 4, question: "द्विसंकर क्रॉस (Dihybrid Cross) में F2 पीढ़ी का फीनोटाइप अनुपात क्या है?", options: ["1:2:1","3:1","9:3:3:1","1:1:1:1"], answer: "9:3:3:1", chapter: "मेंडलवाद" },
+            { id: 5, question: "जीन के वैकल्पिक रूप (Alternative forms) को क्या कहते हैं?", options: ["युग्मक","एलिल","क्रोमोसोम","लोकी"], answer: "एलिल", chapter: "मेंडलवाद" },
+            { id: 6, question: "यदि दो एलिल समान हों, तो उस स्थिति को क्या कहते हैं?", options: ["विषमयुग्मजी","समयुग्मजी","प्रभावी","अप्रभावी"], answer: "समयुग्मजी", chapter: "मेंडलवाद" },
+            { id: 7, question: "वह प्रक्रिया जिसके द्वारा F1 पीढ़ी को अप्रभावी जनक के साथ क्रॉस कराया जाता है?", options: ["बैक क्रॉस","टेस्ट क्रॉस","रेसिप्रोकल क्रॉस","मोनोहाइब्रिड क्रॉस"], answer: "टेस्ट क्रॉस", chapter: "मेंडलवाद" },
+            { id: 8, question: "प्रभाविता का नियम कहाँ लागू नहीं होता है?", options: ["सह-प्रभाविता (Co-dominance)","अपूर्ण प्रभाविता (Incomplete Dominance)","दोनों 'A' और 'B'","केवल पूर्ण प्रभाविता"], answer: "दोनों 'A' और 'B'", chapter: "मेंडलवाद" },
+            { id: 9, question: "मानव में ABO रक्त समूह किस प्रकार की वंशागति का उदाहरण है?", options: ["बहु-एलिलवाद (Multiple Allelism)","अप्रभावी वंशागति","यौन-सहलग्न वंशागति","सह-प्रभाविता"], answer: "बहु-एलिलवाद (Multiple Allelism)", chapter: "मेंडलवाद" },
+            { id: 10, question: "मेंडल का 'पृथक्करण का नियम' किस सिद्धांत पर आधारित है?", options: ["युग्मकों की शुद्धता","स्वतंत्र अपव्यूहन","बहुजीनी वंशागति","प्रभाविता"], answer: "युग्मकों की शुद्धता", chapter: "मेंडलवाद" },
+
+            // अपूर्ण प्रभाविता और सह-प्रभाविता (Incomplete & Co-dominance)
+            { id: 11, question: "अपूर्ण प्रभाविता (Incomplete Dominance) का उदाहरण क्या है?", options: ["स्नैपड्रैगन (Mirabilis jalapa) में फूल का रंग","मानव ABO रक्त समूह","मटर में पौधे की ऊँचाई","फ्रूट फ्लाई में आँख का रंग"], answer: "स्नैपड्रैगन (Mirabilis jalapa) में फूल का रंग", chapter: "प्रभाविता के विचलन" },
+            { id: 12, question: "अपूर्ण प्रभाविता में, F2 पीढ़ी का फीनोटाइप अनुपात क्या होता है?", options: ["3:1","1:2:1","9:3:3:1","1:1"], answer: "1:2:1", chapter: "प्रभाविता के विचलन" },
+            { id: 13, question: "सह-प्रभाविता (Co-dominance) में विषमयुग्मजी (Heterozygous) जीव में क्या दिखता है?", options: ["दोनों एलिल की अभिव्यक्ति","केवल प्रभावी एलिल की अभिव्यक्ति","दोनों एलिल का मिश्रण","कोई अभिव्यक्ति नहीं"], answer: "दोनों एलिल की अभिव्यक्ति", chapter: "प्रभाविता के विचलन" },
+            { id: 14, question: "मानव में ABO रक्त समूह किसका उदाहरण नहीं है?", options: ["अपूर्ण प्रभाविता","सह-प्रभाविता","बहु-एलिलवाद","प्रभाविता"], answer: "अपूर्ण प्रभाविता", chapter: "प्रभाविता के विचलन" },
+            { id: 15, question: "मानव में एक ही जीन द्वारा एक से अधिक फीनोटाइप को नियंत्रित करने को क्या कहते हैं?", options: ["प्लिओट्रॉपी (Pleiotropy)","पॉलीजीनी","एपीस्टैसिस","सह-प्रभाविता"], answer: "प्लिओट्रॉपी (Pleiotropy)", chapter: "प्रभाविता के विचलन" },
+            { id: 16, question: "AB रक्त समूह वाला व्यक्ति किस एलिल संयोजन का प्रदर्शन करता है?", options: ["IᴬIᴬ","IᴬIᴮ","Iᴬi","ii"], answer: "IᴬIᴮ", chapter: "प्रभाविता के विचलन" },
+            { id: 17, question: "यदि माँ का रक्त समूह A और पिता का रक्त समूह B हो, तो बच्चे का रक्त समूह क्या नहीं हो सकता?", options: ["A","B","AB","O"], answer: "सभी हो सकते हैं (यदि माता-पिता विषमयुग्मजी हैं)", chapter: "प्रभाविता के विचलन" },
+            { id: 18, question: "सह-प्रभाविता में F2 पीढ़ी का जीनोटाइप अनुपात क्या होता है?", options: ["1:2:1","3:1","2:1","4:0"], answer: "1:2:1", chapter: "प्रभाविता के विचलन" },
+            { id: 19, question: "बहुजीनी वंशागति (Polygenic Inheritance) किसका उदाहरण है?", options: ["मानव त्वचा का रंग","एबीओ रक्त समूह","सिकल सेल एनीमिया","हीमोफीलिया"], answer: "मानव त्वचा का रंग", chapter: "प्रभाविता के विचलन" },
+            { id: 20, question: "प्लिओट्रॉपी में, एक जीन का प्रभाव कहाँ दिखाई देता है?", options: ["कई फीनोटाइपिक लक्षण","केवल एक फीनोटाइपिक लक्षण","केवल आनुवंशिक सामग्री पर","केवल शरीर के आकार पर"], answer: "कई फीनोटाइपिक लक्षण", chapter: "प्रभाविता के विचलन" },
+
+            // क्रोमोसोमल सिद्धांत (Chromosomal Theory)
+            { id: 21, question: "वंशागति का क्रोमोसोमल सिद्धांत किसने प्रस्तावित किया?", options: ["सटन और बोवेरी","मेंडल","मॉर्गन","ह्यूगो डी व्रीस"], answer: "सटन और बोवेरी", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 22, question: "वंशागति की इकाई क्या है?", options: ["जीन","कोशिका","प्रोटॉन","न्यूट्रॉन"], answer: "जीन", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 23, question: "क्रोमोसोम (गुणसूत्र) कहाँ पाए जाते हैं?", options: ["केंद्रक","राइबोसोम","माइटोकॉन्ड्रिया","कोशिका द्रव्य"], answer: "केंद्रक", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 24, question: "सहलग्नता (Linkage) की खोज किसने की थी?", options: ["टी.एच. मॉर्गन","मेंडल","लेमार्क","डार्विन"], answer: "टी.एच. मॉर्गन", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 25, question: "सहलग्नता का अर्थ क्या है?", options: ["एक ही क्रोमोसोम पर जीन का साथ रहना","विभिन्न क्रोमोसोम पर जीन का अलग होना","जीन का विलुप्त होना","जीन का दोहराव"], answer: "एक ही क्रोमोसोम पर जीन का साथ रहना", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 26, question: "क्रॉसिंग ओवर (Crossing Over) किस अवस्था में होता है?", options: ["प्रोफेज I","मेटाफेज II","एनाफेज I","टेलोफेज II"], answer: "प्रोफेज I", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 27, question: "सहलग्नता और क्रॉसिंग ओवर के बीच क्या संबंध है?", options: ["सहलग्नता क्रॉसिंग ओवर को कम करती है","सहलग्नता क्रॉसिंग ओवर को बढ़ाती है","उनका कोई संबंध नहीं है","सहलग्नता क्रॉसिंग ओवर की दर निर्धारित करती है"], answer: "सहलग्नता क्रॉसिंग ओवर को कम करती है", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 28, question: "मानव में ऑटोसोम (Autosomes) की संख्या कितनी होती है?", options: ["22 जोड़े","23 जोड़े","1 जोड़ा","46"], answer: "22 जोड़े", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 29, question: "ड्रोसोफिला मेलानोगास्टर (फल मक्खी) पर किसने काम किया?", options: ["टी.एच. मॉर्गन","मेंडल","सटन","बोवेरी"], answer: "टी.एच. मॉर्गन", chapter: "क्रोमोसोमल सिद्धांत" },
+            { id: 30, question: "वंशागति का क्रोमोसोमल सिद्धांत क्या बताता है?", options: ["जीन क्रोमोसोम पर स्थित होते हैं","जीन केंद्रक में स्थित होते हैं","क्रोमोसोम का कोई महत्व नहीं है","डीएनए में कोई जीन नहीं है"], answer: "जीन क्रोमोसोम पर स्थित होते हैं", chapter: "क्रोमोसोमल सिद्धांत" },
+
+            // लिंग निर्धारण (Sex Determination)
+            { id: 31, question: "मानव में लिंग निर्धारण का प्रकार क्या है?", options: ["XX-XY","ZZ-ZW","XX-XO","हेप्लो-डिप्लोइडी"], answer: "XX-XY", chapter: "लिंग निर्धारण" },
+            { id: 32, question: "पुरुषों में कौन से लिंग क्रोमोसोम होते हैं?", options: ["XX","XY","XO","YY"], answer: "XY", chapter: "लिंग निर्धारण" },
+            { id: 33, question: "स्त्रियों में कौन से लिंग क्रोमोसोम होते हैं?", options: ["XX","XY","XO","YY"], answer: "XX", chapter: "लिंग निर्धारण" },
+            { id: 34, question: "टिड्डी (Grasshopper) में लिंग निर्धारण का प्रकार क्या है?", options: ["XX-XO","XX-XY","ZZ-ZW","हेप्लो-डिप्लोइडी"], answer: "XX-XO", chapter: "लिंग निर्धारण" },
+            { id: 35, question: "मक्खियों (Birds) में लिंग निर्धारण का प्रकार क्या है?", options: ["ZZ-ZW","XX-XY","XX-XO","हेप्लो-डिप्लोइडी"], answer: "ZZ-ZW", chapter: "लिंग निर्धारण" },
+            { id: 36, question: "मक्खियों में विषमयुग्मकी लिंग (Heterogametic Sex) कौन सा है?", options: ["मादा (ZW)","नर (ZZ)","दोनों","कोई नहीं"], answer: "मादा (ZW)", chapter: "लिंग निर्धारण" },
+            { id: 37, question: "मधुमक्खी में ड्रोन (Drone) का लिंग निर्धारण कैसे होता है?", options: ["हेप्लो-डिप्लोइडी","XY सिस्टम","XO सिस्टम","तापमान द्वारा"], answer: "हेप्लो-डिप्लोइडी", chapter: "लिंग निर्धारण" },
+            { id: 38, question: "मधुमक्खी में निषेचित अंडे से क्या बनता है?", options: ["मादा (रानी/कर्मी)","नर (ड्रोन)","दोनों","निर्धारित नहीं"], answer: "मादा (रानी/कर्मी)", chapter: "लिंग निर्धारण" },
+            { id: 39, question: "मानव में बच्चे के लिंग का निर्धारण कौन करता है?", options: ["पिता का क्रोमोसोम","माता का क्रोमोसोम","दोनों का मिश्रण","तापमान"], answer: "पिता का क्रोमोसोम", chapter: "लिंग निर्धारण" },
+            { id: 40, question: "XO प्रकार के लिंग निर्धारण में, 'O' किसका प्रतिनिधित्व करता है?", options: ["एक अनुपस्थित X क्रोमोसोम","ऑटोसोम","ऑक्सीजन","जीरो"], answer: "एक अनुपस्थित X क्रोमोसोम", chapter: "लिंग निर्धारण" },
+
+            // उत्परिवर्तन और आनुवंशिक विकार (Mutation & Genetic Disorders)
+            { id: 41, question: "उत्परिवर्तन (Mutation) शब्द किसने दिया?", options: ["ह्यूगो डी व्रीस","मेंडल","मॉर्गन","सटन"], answer: "ह्यूगो डी व्रीस", chapter: "उत्परिवर्तन और विकार" },
+            { id: 42, question: "जब किसी जीन में एक नाइट्रोजनी आधार (Base) बदल जाता है, तो उसे क्या कहते हैं?", options: ["बिंदु उत्परिवर्तन (Point Mutation)","क्रोमोसोमल उत्परिवर्तन","फ्रेमशिफ्ट उत्परिवर्तन","डिलीशन"], answer: "बिंदु उत्परिवर्तन (Point Mutation)", chapter: "उत्परिवर्तन और विकार" },
+            { id: 43, question: "सिकल सेल एनीमिया किसका एक उदाहरण है?", options: ["बिंदु उत्परिवर्तन","क्रोमोसोमल विपथन","बहुजीनी वंशागति","सह-प्रभाविता"], answer: "बिंदु उत्परिवर्तन", chapter: "उत्परिवर्तन और विकार" },
+            { id: 44, question: "हीमोफीलिया (Haemophilia) किस प्रकार का विकार है?", options: ["X-सहलग्न अप्रभावी","Y-सहलग्न अप्रभावी","ऑटोसोमल अप्रभावी","ऑटोसोमल प्रभावी"], answer: "X-सहलग्न अप्रभावी", chapter: "उत्परिवर्तन और विकार" },
+            { id: 45, question: "डाउन सिंड्रोम (Down's Syndrome) किस क्रोमोसोम की ट्राइसोमी (Trisomy) के कारण होता है?", options: ["21वाँ","18वाँ","13वाँ","X क्रोमोसोम"], answer: "21वाँ", chapter: "उत्परिवर्तन और विकार" },
+            { id: 46, question: "टर्नर सिंड्रोम (Turner's Syndrome) में क्रोमोसोम की संख्या क्या होती है?", options: ["45 (XO)","47 (XXY)","47 (XXX)","46"], answer: "45 (XO)", chapter: "उत्परिवर्तन और विकार" },
+            { id: 47, question: "क्लाइनफेल्टर सिंड्रोम (Klinefelter's Syndrome) का जीनोटाइप क्या है?", options: ["XXY","XO","XYY","XXX"], answer: "XXY", chapter: "उत्परिवर्तन और विकार" },
+            { id: 48, question: "फ्रेमशिफ्ट उत्परिवर्तन किसके कारण होता है?", options: ["डिलीशन या इन्सर्शन","केवल सब्स्टिट्यूशन","केवल ट्रांसलोकेशन","जीन का दोहराव"], answer: "डिलीशन या इन्सर्शन", chapter: "उत्परिवर्तन और विकार" },
+            { id: 49, question: "मानव में फिनाइलकेटोनूरिया (Phenylketonuria) किस प्रकार का विकार है?", options: ["ऑटोसोमल अप्रभावी","X-सहलग्न अप्रभावी","ऑटोसोमल प्रभावी","क्रोमोसोमल विपथन"], answer: "ऑटोसोमल अप्रभावी", chapter: "उत्परिवर्तन और विकार" },
+            { id: 50, question: "वर्णांधता (Colour Blindness) किस प्रकार की वंशागति का उदाहरण है?", options: ["X-सहलग्न अप्रभावी","ऑटोसोमल प्रभावी","Y-सहलग्न","अपूर्ण प्रभाविता"], answer: "X-सहलग्न अप्रभावी", chapter: "उत्परिवर्तन और विकार" },
+
+            // एक्स-सहलग्न वंशागति (X-Linked Inheritance)
+            { id: 51, question: "एक्स-सहलग्न जीन कहाँ स्थित होते हैं?", options: ["X क्रोमोसोम पर","Y क्रोमोसोम पर","ऑटोसोम पर","माइटोकॉन्ड्रिया में"], answer: "X क्रोमोसोम पर", chapter: "यौन-सहलग्नता" },
+            { id: 52, question: "हीमोफीलिया से पीड़ित पुरुष का जीनोटाइप क्या होगा?", options: ["XʰY","XᴴY","XᴴXᴴ","XʰXʰ"], answer: "XʰY", chapter: "यौन-सहलग्नता" },
+            { id: 53, question: "एक X-सहलग्न अप्रभावी विकार की वाहक (Carrier) कौन हो सकती है?", options: ["मादा","पुरुष","दोनों","कोई नहीं"], answer: "मादा", chapter: "यौन-सहलग्नता" },
+            { id: 54, question: "वर्णांधता से पीड़ित पुरुष की बेटी (यदि माँ सामान्य है) क्या होगी?", options: ["वाहक (Carrier)","पीड़ित","सामान्य","विकार-मुक्त"], answer: "वाहक (Carrier)", chapter: "यौन-सहलग्नता" },
+            { id: 55, question: "क्रिस-क्रॉस वंशागति (Criss-cross inheritance) किससे संबंधित है?", options: ["यौन-सहलग्न वंशागति","ऑटोसोमल वंशागति","बहुजीनी वंशागति","कोडोमिनेंस"], answer: "यौन-सहलग्न वंशागति", chapter: "यौन-सहलग्नता" },
+            { id: 56, question: "किस सिंड्रोम में व्यक्ति का लिंग पुरुष होता है लेकिन उसमें कुछ मादा लक्षण भी होते हैं?", options: ["क्लाइनफेल्टर सिंड्रोम","टर्नर सिंड्रोम","डाउन सिंड्रोम","एडवर्ड सिंड्रोम"], answer: "क्लाइनफेल्टर सिंड्रोम", chapter: "यौन-सहलग्नता" },
+            { id: 57, question: "ट्रेनर सिंड्रोम वाली स्त्री बाँझ क्यों होती है?", options: ["अविकसित अंडाशय के कारण","अतिरिक्त X क्रोमोसोम के कारण","ट्राइसोमी के कारण","Y क्रोमोसोम की उपस्थिति के कारण"], answer: "अविकसित अंडाशय के कारण", chapter: "यौन-सहलग्नता" },
+            { id: 58, question: "मानव में Y-सहलग्न वंशागति का एक लक्षण क्या है?", options: ["हाइपरट्राइकोसिस (कानों पर बाल)","वर्णांधता","हीमोफीलिया","सिकल सेल एनीमिया"], answer: "हाइपरट्राइकोसिस (कानों पर बाल)", chapter: "यौन-सहलग्नता" },
+            { id: 59, question: "X-सहलग्न वंशागति में, नर में अप्रभावी जीन का फीनोटाइप में दिखना क्यों आम है?", options: ["वे केवल एक X क्रोमोसोम रखते हैं","वे दो X क्रोमोसोम रखते हैं","अप्रभावी जीन अप्रभावी नहीं होते","उत्परिवर्तन अधिक होता है"], answer: "वे केवल एक X क्रोमोसोम रखते हैं", chapter: "यौन-सहलग्नता" },
+            { id: 60, question: "एक पुरुष अपनी वर्णांधता की जीन किससे प्राप्त कर सकता है?", options: ["केवल माँ से","केवल पिता से","दोनों से","किसी से नहीं"], answer: "केवल माँ से", chapter: "यौन-सहलग्नता" },
+
+            // पेडिग्री विश्लेषण और जीनोम (Pedigree Analysis & Genome)
+            { id: 61, question: "वंशावली विश्लेषण (Pedigree Analysis) में 'वर्ग' (Square) क्या दर्शाता है?", options: ["पुरुष","मादा","अज्ञात लिंग","वाहक"], answer: "पुरुष", chapter: "विश्लेषण" },
+            { id: 62, question: "वंशावली विश्लेषण में 'गोला' (Circle) क्या दर्शाता है?", options: ["मादा","पुरुष","वाहक","पीड़ित"], answer: "मादा", chapter: "विश्लेषण" },
+            { id: 63, question: "वंशावली चार्ट में एक पीढ़ी के भीतर अप्रभावी लक्षण के अचानक दिखने की संभावना कब होती है?", options: ["ऑटोसोमल अप्रभावी विकार","ऑटोसोमल प्रभावी विकार","X-सहलग्न प्रभावी विकार","बहुजीनी विकार"], answer: "ऑटोसोमल अप्रभावी विकार", chapter: "विश्लेषण" },
+            { id: 64, question: "मानव में सिकल सेल एनीमिया के लिए जीनोटाइप 'Hbs Hbs' क्या दर्शाता है?", options: ["पीड़ित व्यक्ति","वाहक व्यक्ति","सामान्य व्यक्ति","समयुग्मजी प्रभावी"], answer: "पीड़ित व्यक्ति", chapter: "विश्लेषण" },
+            { id: 65, question: "थैलेसीमिया (Thalassemia) किस प्रकार का विकार है?", options: ["ऑटोसोमल अप्रभावी","X-सहलग्न अप्रभावी","क्रोमोसोमल","सह-प्रभाविता"], answer: "ऑटोसोमल अप्रभावी", chapter: "विश्लेषण" },
+            { id: 66, question: "मानव जीनोम में कितने क्रोमोसोम होते हैं?", options: ["46","23","48","24"], answer: "46", chapter: "विश्लेषण" },
+            { id: 67, question: "एक अप्रभावी लक्षण पीढ़ी दर पीढ़ी स्किप (skip) हो सकता है, यह किस प्रकार की वंशागति को इंगित करता है?", options: ["ऑटोसोमल अप्रभावी","ऑटोसोमल प्रभावी","X-सहलग्न प्रभावी","Y-सहलग्न"], answer: "ऑटोसोमल अप्रभावी", chapter: "विश्लेषण" },
+            { id: 68, question: "हंटिंगटन रोग (Huntington's Disease) किस प्रकार का विकार है?", options: ["ऑटोसोमल प्रभावी","ऑटोसोमल अप्रभावी","X-सहलग्न अप्रभावी","Y-सहलग्न"], answer: "ऑटोसोमल प्रभावी", chapter: "विश्लेषण" },
+            { id: 69, question: "पीढ़ी में निरंतर उपस्थिति वाला विकार क्या कहलाता है?", options: ["प्रभावी विकार","अप्रभावी विकार","उत्परिवर्तन","विषमयुग्मजी विकार"], answer: "प्रभावी विकार", chapter: "विश्लेषण" },
+            { id: 70, question: "आनुवंशिक परामर्श (Genetic Counselling) में पेडिग्री विश्लेषण क्यों महत्वपूर्ण है?", options: ["विकार के वंशागति पैटर्न को निर्धारित करने के लिए","केवल लिंग का निर्धारण करने के लिए","केवल जीन की संख्या गिनने के लिए","रक्त समूह जानने के लिए"], answer: "विकार के वंशागति पैटर्न को निर्धारित करने के लिए", chapter: "विश्लेषण" },
+
+            // अतिरिक्त अवधारणाएँ (Additional Concepts)
+            { id: 71, question: "जीन कहाँ स्थित होते हैं?", options: ["लोकी","राइबोसोम","माइटोकॉन्ड्रिया","लाइसोसोम"], answer: "लोकी", chapter: "अतिरिक्त" },
+            { id: 72, question: "वंशागति के क्रोमोसोमल सिद्धांत का प्रायोगिक सत्यापन किसने किया?", options: ["टी.एच. मॉर्गन","मेंडल","वाटसन और क्रिक","हर्शे और चेज़"], answer: "टी.एच. मॉर्गन", chapter: "अतिरिक्त" },
+            { id: 73, question: "जब दो जीन एक-दूसरे के बहुत पास हों तो क्या होता है?", options: ["उच्च सहलग्नता","उच्च क्रॉसिंग ओवर","कोई सहलग्नता नहीं","केवल उत्परिवर्तन"], answer: "उच्च सहलग्नता", chapter: "अतिरिक्त" },
+            { id: 74, question: "जीन मानचित्र (Gene Mapping) की आवृत्ति किस पर निर्भर करती है?", options: ["क्रॉसिंग ओवर की आवृत्ति","उत्परिवर्तन की दर","क्रोमोसोम का आकार","जीन की संख्या"], answer: "क्रॉसिंग ओवर की आवृत्ति", chapter: "अतिरिक्त" },
+            { id: 75, question: "जीन मानचित्र की इकाई क्या है?", options: ["सेंटीमॉर्गन (cM)","मीटर","किग्रा","सेकंड"], answer: "सेंटीमॉर्गन (cM)", chapter: "अतिरिक्त" },
+            { id: 76, question: "हेप्लो-डिप्लोइडी (Haplo-diploidy) किसमें पाया जाता है?", options: ["मधुमक्खी","मानव","टिड्डी","पक्षी"], answer: "मधुमक्खी", chapter: "अतिरिक्त" },
+            { id: 77, question: "बहु-एलिलवाद (Multiple Allelism) का अर्थ क्या है?", options: ["एक जीन के दो से अधिक एलिल","एक जीन के केवल दो एलिल","कई जीन एक लक्षण को नियंत्रित करते हैं","कोई एलिल नहीं"], answer: "एक जीन के दो से अधिक एलिल", chapter: "अतिरिक्त" },
+            { id: 78, question: "सिकल सेल एनीमिया में, लाल रक्त कोशिका का आकार क्या हो जाता है?", options: ["हंसिया के आकार का","गोल","चौकोर","अनियमित"], answer: "हंसिया के आकार का", chapter: "अतिरिक्त" },
+            { id: 79, question: "वर्णांधता में व्यक्ति किस रंग में अंतर नहीं कर पाता है?", options: ["लाल और हरा","नीला और पीला","सफेद और काला","सभी रंग"], answer: "लाल और हरा", chapter: "अतिरिक्त" },
+            { id: 80, question: "आनुवंशिक कोड में तीन न्यूक्लियोटाइड के सेट को क्या कहते हैं?", options: ["कोडॉन","जीन","एलिल","ट्राइसोमी"], answer: "कोडॉन", chapter: "अतिरिक्त" },
+
+            // मेंडल के नियमों का अनुप्रयोग
+            { id: 81, question: "जब एक शुद्ध लंबे (TT) पौधे को शुद्ध बौने (tt) पौधे से क्रॉस कराया जाता है, तो F1 पीढ़ी कैसी होगी?", options: ["सभी लंबे","सभी बौने","आधे लंबे, आधे बौने","मध्यम ऊँचाई"], answer: "सभी लंबे", chapter: "अनुप्रयोग" },
+            { id: 82, question: "F1 पीढ़ी के पौधों को स्व-परागित करने पर F2 पीढ़ी में लंबे और बौने पौधे का अनुपात क्या होगा?", options: ["1:2:1","3:1","9:3:3:1","1:1"], answer: "3:1", chapter: "अनुप्रयोग" },
+            { id: 83, question: "यदि दो विषमयुग्मजी व्यक्ति (Aa) एक लक्षण के लिए संभोग करते हैं, तो अप्रभावी फीनोटाइप की संभावना क्या है?", options: ["1/4","1/2","3/4","1/8"], answer: "1/4", chapter: "अनुप्रयोग" },
+            { id: 84, question: "एक व्यक्ति जिसका जीनोटाइप TtRr है, वह कितने प्रकार के युग्मक बनाएगा?", options: ["4","2","1","8"], answer: "4", chapter: "अनुप्रयोग" },
+            { id: 85, question: "स्वतंत्र अपव्यूहन का नियम किस पर लागू होता है?", options: ["दो या दो से अधिक जीन","केवल एक जीन","क्रोमोसोम का कोई महत्व नहीं है","केवल अप्रभावी जीन"], answer: "दो या दो से अधिक जीन", chapter: "अनुप्रयोग" },
+            { id: 86, question: "सहलग्नता किसका अपवाद है?", options: ["स्वतंत्र अपव्यूहन का नियम","प्रभाविता का नियम","पृथक्करण का नियम","युग्मकों की शुद्धता का नियम"], answer: "स्वतंत्र अपव्यूहन का नियम", chapter: "अनुप्रयोग" },
+            { id: 87, question: "जीनोटाइप और फीनोटाइप अनुपात 1:2:1 किसमें समान होता है?", options: ["अपूर्ण प्रभाविता","सह-प्रभाविता","दोनों 'A' और 'B'","केवल पूर्ण प्रभाविता"], answer: "दोनों 'A' और 'B'", chapter: "अनुप्रयोग" },
+            { id: 88, question: "यदि माता-पिता दोनों वर्णांधता के वाहक हों, तो बेटे के पीड़ित होने की संभावना क्या है?", options: ["50%","25%","75%","100%"], answer: "50%", chapter: "अनुप्रयोग" },
+            { id: 89, question: "वह संकरण जिसमें लक्षणों के दो जोड़े शामिल होते हैं?", options: ["द्विसंकर क्रॉस","एकसंकर क्रॉस","टेस्ट क्रॉस","बैक क्रॉस"], answer: "द्विसंकर क्रॉस", chapter: "अनुप्रयोग" },
+            { id: 90, question: "यदि किसी लक्षण के लिए F2 फीनोटाइप 1:2:1 हो, तो यह क्या दर्शाता है?", options: ["अपूर्ण प्रभाविता","पूर्ण प्रभाविता","सह-प्रभाविता","दोनों 'A' और 'C'"], answer: "दोनों 'A' और 'C'", chapter: "अनुप्रयोग" },
+            
+            // विविध
+            { id: 91, question: "किसी व्यक्ति का आनुवंशिक गठन (Genetic makeup) क्या कहलाता है?", options: ["जीनोटाइप","फीनोटाइप","एलिल","जीन"], answer: "जीनोटाइप", chapter: "विविध" },
+            { id: 92, question: "किसी व्यक्ति की बाहरी उपस्थिति (Outward appearance) क्या कहलाती है?", options: ["फीनोटाइप","जीनोटाइप","जीन","एलिल"], answer: "फीनोटाइप", chapter: "विविध" },
+            { id: 93, question: "वह विकार जो संतान में तभी व्यक्त होता है जब दोनों माता-पिता से अप्रभावी एलिल विरासत में मिलते हैं?", options: ["ऑटोसोमल अप्रभावी","ऑटोसोमल प्रभावी","X-सहलग्न प्रभावी","सह-प्रभाविता"], answer: "ऑटोसोमल अप्रभावी", chapter: "विविध" },
+            { id: 94, question: "मानव में कुल क्रोमोसोम संख्या का सूत्र क्या है?", options: ["22 जोड़े ऑटोसोम + 1 जोड़ा सेक्स क्रोमोसोम","46 ऑटोसोम + 2 सेक्स क्रोमोसोम","22 ऑटोसोम + 1 सेक्स क्रोमोसोम","23 ऑटोसोम + 1 सेक्स क्रोमोसोम"], answer: "22 जोड़े ऑटोसोम + 1 जोड़ा सेक्स क्रोमोसोम", chapter: "विविध" },
+            { id: 95, question: "जीन की अभिव्यक्ति को नियंत्रित करने वाले कारक क्या हो सकते हैं?", options: ["पर्यावरण","तापमान","पोषण","सभी विकल्प"], answer: "सभी विकल्प", chapter: "विविध" },
+            { id: 96, question: "आनुवंशिकी (Genetics) के जनक कौन हैं?", options: ["ग्रेगर मेंडल","टी.एच. मॉर्गन","ह्यूगो डी व्रीस","वाटसन"], answer: "ग्रेगर मेंडल", chapter: "विविध" },
+            { id: 97, question: "वंशागति की इकाई के रूप में 'जीन' शब्द किसने दिया?", options: ["जोहान्सन","मेंडल","मॉर्गन","सटन"], answer: "जोहान्सन", chapter: "विविध" },
+            { id: 98, question: "जब क्रोमोसोम की संख्या में परिवर्तन होता है, तो उसे क्या कहते हैं?", options: ["क्रोमोसोमल विपथन","बिंदु उत्परिवर्तन","डिलीशन","फ्रेमशिफ्ट"], answer: "क्रोमोसोमल विपथन", chapter: "विविध" },
+            { id: 99, question: "किसी भी आनुवंशिक क्रॉस में नए संयोजन (Recombinants) क्यों उत्पन्न होते हैं?", options: ["क्रॉसिंग ओवर","उत्परिवर्तन","सहलग्नता","प्रभाविता"], answer: "क्रॉसिंग ओवर", chapter: "विविध" },
+            { id: 100, question: "एक जीन उत्पाद जो कोशिका में अन्य जीनों की अभिव्यक्ति को प्रभावित करता है, उसे क्या कहते हैं?", options: ["नियामक जीन (Regulatory Gene)","अप्रभावी जीन","प्रभावी जीन","ऑटोसोम"], answer: "नियामक जीन (Regulatory Gene)", chapter: "विविध" }
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            let currentChapter = '';
+
+            testQuestions.forEach((mcq, index) => {
+                // अध्याय के आधार पर हेडिंग जोड़ना
+                if (mcq.chapter !== currentChapter) {
+                    htmlContent += `<h3>${mcq.chapter.toUpperCase()}</h3>`;
+                    currentChapter = mcq.chapter;
+                }
+
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    // गणितीय अभिव्यक्तियों को HTML एंटिटी में बदलने का प्रयास (यदि कोई हो)
+                    const displayOption = option.replace(/IᴬIᴮ/g, 'I<sup>A</sup>I<sup>B</sup>').replace(/IᴬIᴬ/g, 'I<sup>A</sup>I<sup>A</sup>').replace(/Iᴬi/g, 'I<sup>A</sup>i').replace(/ii/g, 'ii').replace(/XʰY/g, 'X<sup>h</sup>Y').replace(/XᴴY/g, 'X<sup>H</sup>Y').replace(/XᴴXᴴ/g, 'X<sup>H</sup>X<sup>H</sup>').replace(/XʰXʰ/g, 'X<sup>h</sup>X<sup>h</sup>').replace(/Hbs Hbs/g, 'Hb<sup>s</sup>Hb<sup>s</sup>');
+
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${displayOption}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+
+                const correctAnswerDisplay = mcq.answer.replace(/IᴬIᴮ/g, 'I<sup>A</sup>I<sup>B</sup>').replace(/IᴬIᴬ/g, 'I<sup>A</sup>I<sup>A</sup>').replace(/Iᴬi/g, 'I<sup>A</sup>i').replace(/ii/g, 'ii').replace(/XʰY/g, 'X<sup>h</sup>Y').replace(/XᴴY/g, 'X<sup>H</sup>Y').replace(/XᴴXᴴ/g, 'X<sup>H</sup>X<sup>H</sup>').replace(/XʰXʰ/g, 'X<sup>h</sup>X<sup>h</sup>').replace(/Hbs Hbs/g, 'Hb<sup>s</sup>Hb<sup>s</sup>');
+
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! आनुवंशिकी पर आपकी पकड़ मजबूत है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। मुख्य सिद्धांतों पर अधिक ध्यान दें।' : 'सिद्धांतों को फिर से दोहराएं।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

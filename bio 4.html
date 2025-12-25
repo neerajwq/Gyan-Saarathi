@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 5 : वंशागति तथा विविधता के सिद्धांत – पूर्ण नोट्स (UP Board Class 12)</title>
+
+<style>
+    :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    .box{
+        background:#fff;
+        padding:20px;
+        margin:20px 0;
+        border-left: 6px solid #4CAF50;
+        border-radius:6px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+    table{
+        width:100%;
+        border-collapse: collapse;
+        margin:15px 0;
+    }
+    table,th,td{
+        border:1px solid #555;
+    }
+    th,td{
+        padding:10px;
+        text-align:center;
+    }
+    th{
+        background:#4CAF50;
+        color:#fff;
+    }
+</style>
+</head>
+
+<body>
+     <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+
+<h1>अध्याय 5 : वंशागति तथा विविधता के सिद्धांत (Principles of Inheritance & Variation)</h1>
+
+<p>
+इस अध्याय में जीवों में गुणों का माता-पिता से संतान तक संचरण (Inheritance) एवं संतान की एक-दूसरे से भिन्नता (Variation) का अध्ययन किया जाता है। यह आनुवंशिकी (Genetics) का मूल आधार है।
+</p>
+
+<!-- Mendel -->
+<div class="box">
+<h2>1. मेंडल एवं उनका कार्य</h2>
+
+<ul>
+    <li>आनुवंशिकी के जनक (Father of Genetics) – ग्रेगर जॉन मेंडल</li>
+    <li>मेंडल ने प्रयोग किया – मटर के पौधे (Pisum sativum) पर</li>
+    <li>कुल 7 जोड़ी विपरीत लक्षणों का अध्ययन किया</li>
+</ul>
+
+<h3>मेंडल द्वारा चुने गए 7 लक्षण</h3>
+
+<table>
+<tr>
+<th>लक्षण</th>
+<th>प्रधान (Dominant)</th>
+<th>अपप्रधान (Recessive)</th>
+</tr>
+
+<tr><td>बीज का आकार</td><td>गोल</td><td>झुर्रीदार</td></tr>
+<tr><td>बीज का रंग</td><td>पीला</td><td>हरा</td></tr>
+<tr><td>फूल का रंग</td><td>बैंगनी</td><td>सफेद</td></tr>
+<tr><td>फली का आकार</td><td>फुली हुई</td><td>सिकुड़ी</td></tr>
+<tr><td>फली का रंग</td><td>हरा</td><td>पीला</td></tr>
+<tr><td>फूल की स्थिति</td><td>अक्षीय</td><td>अंतिक</td></tr>
+<tr><td>पौधे की ऊँचाई</td><td>लंबा</td><td>बौना</td></tr>
+</table>
+</div>
+
+<!-- Mendel Laws -->
+<div class="box">
+<h2>2. मेंडल के आनुवंशिक नियम (Mendel’s Laws)</h2>
+
+<h3>(i) प्रभुत्व का नियम (Law of Dominance)</h3>
+<p>जब दो भिन्न एलिली (T और t) एक साथ उपस्थित होती हैं, तो केवल प्रधान लक्षण (T) अभिव्यक्त होता है।</p>
+
+<h3>(ii) पृथक्करण का नियम (Law of Segregation)</h3>
+<p>गैमेट बनने पर दोनों एलिली (T और t) अलग-अलग हो जाती हैं।</p>
+
+<h3>(iii) स्वतन्त्र वर्गीकरण का नियम (Law of Independent Assortment)</h3>
+<p>दो भिन्न लक्षणों की एलिली एक-दूसरे से स्वतंत्र रूप से संयोजित होती हैं।</p>
+
+</div>
+
+<!-- Terms -->
+<div class="box">
+<h2>3. महत्वपूर्ण शब्दावली (Important Terms)</h2>
+
+<ul>
+<li><b>जीन (Gene):</b> वंशागति की इकाई</li>
+<li><b>एलिल (Allele):</b> जीन के वैकल्पिक रूप (T/t)</li>
+<li><b>जीनोटाइप:</b> आनुवंशिक संरचना (जैसे TT, Tt, tt)</li>
+<li><b>फीनोटाइप:</b> बाह्य अभिव्यक्ति (लंबा / बौना)</li>
+<li><b>होमोज़ाइगस:</b> समान एलिली (TT या tt)</li>
+<li><b>हेटेरोज़ाइगस:</b> भिन्न एलिली (Tt)</li>
+<li><b>मोनोहाइब्रिड क्रॉस:</b> एक लक्षण का क्रॉस</li>
+<li><b>डाईहाइब्रिड क्रॉस:</b> दो लक्षणों का क्रॉस</li>
+</ul>
+
+</div>
+
+<!-- Monohybrid -->
+<div class="box">
+<h2>4. मोनोहाइब्रिड क्रॉस (Monohybrid Cross)</h2>
+
+<h3>उदाहरण: लंबा × बौना</h3>
+
+<table>
+<tr><th>Parents</th><td>TT × tt</td></tr>
+<tr><th>Gametes</th><td>T , t</td></tr>
+<tr><th>F₁ पीढ़ी</th><td>सभी Tt – <b>लंबे</b></td></tr>
+</table>
+
+<h3>F₂ पीढ़ी</h3>
+
+<table>
+<tr>
+<th>Genotype ratio</th>
+<th>Phenotype ratio</th>
+</tr>
+<tr>
+<td>1 TT : 2 Tt : 1 tt</td>
+<td>3 लंबा : 1 बौना</td>
+</tr>
+</table>
+
+</div>
+
+<!-- Dihybrid -->
+<div class="box">
+<h2>5. डाईहाइब्रिड क्रॉस (Dihybrid Cross)</h2>
+
+<h3>उदाहरण: गोल-पीला × झुर्रीदार-हरा</h3>
+
+<p><b>Parents:</b> RRYY × rryy</p>
+
+<h3>F₁ पीढ़ी</h3>
+<p>सभी RrYy (गोल-पीला)</p>
+
+<h3>F₂ पीढ़ी – Ratio</h3>
+
+<table>
+<tr>
+<th>Phenotype Ratio</th>
+</tr>
+<tr>
+<td><b>9 : 3 : 3 : 1</b></td>
+</tr>
+</table>
+
+</div>
+
+<!-- Test Cross -->
+<div class="box">
+<h2>6. टेस्ट क्रॉस (Test Cross)</h2>
+<p>
+किसी अज्ञात जीनोटाइप (T_) वाले पौधे का क्रॉस <b>होमोज़ाइगस अपप्रधान</b> (tt) से कराया जाता है।
+</p>
+
+<ul>
+<li>यदि सभी संतानें लंबी → Parent = TT</li>
+<li>यदि 1:1 लंबा : बौना → Parent = Tt</li>
+</ul>
+</div>
+
+<!-- Sex Determination -->
+<div class="box">
+<h2>7. लिंग निर्धारण (Sex Determination)</h2>
+
+<p><b>मनुष्य में XX–XY प्रकार</b> का लिंग निर्धारण होता है।</p>
+
+<ul>
+<li>पुरुष के गुणसूत्र – XY</li>
+<li>महिला के गुणसूत्र – XX</li>
+<li>पुरुष गैमीट निर्धारण करता है (X या Y देने वाला पुरुष)</li>
+</ul>
+</div>
+
+<!-- Disorders -->
+<div class="box">
+<h2>8. आनुवंशिक विकार (Genetic Disorders)</h2>
+
+<h3>(A) गुणसूत्रीय विकार (Chromosomal Disorders)</h3>
+<ul>
+    <li><b>डाउन सिंड्रोम:</b> 21वें गुणसूत्र की त्रिसोमी (2n+1)</li>
+    <li><b>टर्नर सिंड्रोम:</b> XO (महिला)</li>
+    <li><b>क्लाइनफेल्टर सिंड्रोम:</b> XXY (पुरुष)</li>
+</ul>
+
+<h3>(B) मेंडेलियन विकार</h3>
+<ul>
+    <li>सिकल सेल एनीमिया</li>
+    <li>हीमोफीलिया</li>
+    <li>थैलसीमिया</li>
+</ul>
+
+</div>
+
+<!-- Important Questions -->
+<div class="box">
+<h2>9. महत्वपूर्ण प्रश्न</h2>
+
+<ol>
+<li>मेंडल के प्रयोगों एवं उनके तीन नियमों की व्याख्या कीजिए।</li>
+<li>मोनोहाइब्रिड क्रॉस का वर्णन उपयुक्त आकृति सहित कीजिए।</li>
+<li>डाईहाइब्रिड क्रॉस समझाइए तथा 9:3:3:1 अनुपात की व्याख्या कीजिए।</li>
+<li>जीन, एलिल, जीनोटाइप तथा फीनोटाइप क्या हैं?</li>
+<li>डाउन सिंड्रोम, टर्नर सिंड्रोम और सिकल सेल एनीमिया का वर्णन कीजिए।</li>
+</ol>
+</div>
+
+</div>
+</body>
+</html>

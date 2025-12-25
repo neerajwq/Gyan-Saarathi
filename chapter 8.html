@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कक्षा 12 भौतिकी — अध्याय 8: विद्युत-चुंबकीय तरंगें (Electromagnetic Waves)</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+  /* body{font-family:'Noto Sans Devanagari',Arial,sans-serif;background:#f7fbff;padding:22px;color:#07203a;line-height:1.65} */
+  /* .container{max-width:980px;margin:0 auto} */
+  header{text-align:center;margin-bottom:14px}
+  /* h1{color:#0b66a3} */
+  /* h2{color:#0e3b5b} */
+  .card{background:#ffffff;padding:16px;border-radius:10px;margin:14px 0;box-shadow:0 6px 18px rgba(10,30,60,0.06)}
+  .formula{background:#eef6ff;padding:10px;border-left:4px solid #0b66a3;border-radius:6px;font-weight:600;margin:10px 0}
+  pre{background:#f3f7fb;padding:10px;border-radius:6px;overflow:auto}
+  ul{margin-left:18px}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<header>
+  <h1>अध्याय 8 — विद्युत-चुंबकीय तरंगें (Electromagnetic Waves)</h1>
+  <p style="color:#4b5966">Class 12 Physics — सरल हिंदी में पूरा अध्याय, फॉर्मूला और महत्वपूर्ण बिंदु।</p>
+</header>
+
+<section class="card">
+<h2>1. परिचय (Introduction)</h2>
+<p>विद्युत-चुंबकीय तरंगें ऐसी तरंगें हैं जिनमें <b>विद्युत क्षेत्र (E)</b> और <b>चुंबकीय क्षेत्र (B)</b> आपस में लम्बवत और तरंग की दिशा के लम्बवत होते हैं।</p>
+</section>
+
+<section class="card">
+<h2>2. मैक्सवेल का योगदान (Maxwell’s Contribution)</h2>
+<ul>
+<li>चुंबकीय क्षेत्र समय के साथ बदलता है → विद्युत क्षेत्र उत्पन्न करता है।</li>
+<li>विद्युत क्षेत्र समय के साथ बदलता है → चुंबकीय क्षेत्र उत्पन्न करता है।</li>
+<li>इन बदलावों से निर्वात में स्वयं फैलने वाली विद्युत-चुंबकीय तरंगें बनती हैं।</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>3. Maxwell का समीकरण (In free space)</h2>
+<ul>
+<li>Gauss's Law: ∇·E = 0</li>
+<li>Gauss's Law for Magnetism: ∇·B = 0</li>
+<li>Faraday's Law: ∇×E = - ∂B/∂t</li>
+<li>Ampere-Maxwell Law: ∇×B = μ₀ε₀ ∂E/∂t</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>4. तरंग समीकरण (Wave Equation)</h2>
+<div class="formula">∇²E = μ₀ε₀ ∂²E/∂t²</div>
+<div class="formula">∇²B = μ₀ε₀ ∂²B/∂t²</div>
+<p>इससे तरंग की गति v = 1/√(μ₀ε₀) निकलती है।</p>
+<div class="formula">c = 3 × 10⁸ m/s</div>
+</section>
+
+<section class="card">
+<h2>5. विद्युत और चुंबकीय क्षेत्र (E & B fields)</h2>
+<ul>
+<li>E, B और तरंग की दिशा एक-दूसरे के लम्बवत हैं।</li>
+<li>इन्हें सामांतर बनाने के लिए Right-Hand Rule का प्रयोग।</li>
+<li>तरंग ऊर्जा समान रूप से E और B में संग्रहीत होती है।</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>6. तरंग का वेव लेंथ, आवृत्ति और वेग</h2>
+<div class="formula">c = f λ</div>
+<ul>
+<li>f = आवृत्ति, λ = तरंगदैर्ध्य, c = तरंग की गति</li>
+<li>सभी विद्युत-चुंबकीय तरंगें निर्वात में समान गति c पर चलती हैं।</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>7. विद्युत-चुंबकीय स्पेक्ट्रम</h2>
+<ul>
+<li>रेडियो, माइक्रोवेव, इन्फ्रारेड, दृश्य प्रकाश, पराबैंगनी, एक्स-रे, गामा किरणें।</li>
+<li>तरंगदैर्ध्य घटता है → आवृत्ति बढ़ती है।</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>8. ऊर्जा और तीव्रता</h2>
+<div class="formula">S = (1/μ₀) E × B</div>
+<p>जहाँ S = Poynting vector, ऊर्जा का प्रवाह प्रति यूनिट क्षेत्र।</p>
+</section>
+
+<section class="card">
+<h2>9. अनुप्रयोग (Applications)</h2>
+<ul>
+<li>रेडियो, टीवी, मोबाइल, सैटेलाइट संचार</li>
+<li>माइक्रोवेव ओवन, रडार</li>
+<li>दूरसंचार और चिकित्सा (X-ray)</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>10. मुख्य सूत्र (Quick Formula)</h2>
+<ul>
+<li>c = 1/√(μ₀ε₀)</li>
+<li>c = f λ</li>
+<li>S = (1/μ₀) E × B</li>
+</ul>
+</section>
+
+<footer style="text-align:center;color:#4b5966;margin-top:12px">
+HTML में अध्याय 8 के सभी महत्वपूर्ण बिंदु, सूत्र और Maxwell के नियम शामिल हैं। MCQ और उदाहरण जोड़े जा सकते हैं।
+</footer>
+</div>
+</body>
+</html>

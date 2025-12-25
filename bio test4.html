@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 जीव विज्ञान: संपूर्ण पाठ्यक्रम मॉक टेस्ट (100 प्रश्न)</title>
+    <style>
+         :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #3cb371; /* Medium Sea Green Header */
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #e0f2f1; /* Light Teal on hover */
+        }
+        .submit-btn {
+            display: block;
+            width: 250px;
+            padding: 12px;
+            margin: 30px auto;
+            background-color: #4682b4; /* Steel Blue Button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #3a6b91;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #3cb371;
+            border-radius: 8px;
+            background-color: #e6ffe6;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #ffcccc;
+        }
+        h3 {
+            border-bottom: 2px solid #3cb371;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+      <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 जीव विज्ञान - संपूर्ण पाठ्यक्रम मॉक टेस्ट 🔬</h1>
+        <h2>(इकाई I से V तक 100 प्रश्न)</h2>
+        <p>निर्देश: सभी 100 प्रश्नों के उत्तर दें।</p>
+    </div>
+    
+    <form id="quizForm">
+    </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (संपूर्ण पाठ्यक्रम) ---
+        const testQuestions = [
+            // इकाई I: जनन (Reproduction) - (Q1-20)
+            { id: 1, question: "अनावृतबीजी (Gymnosperms) में दोहरा निषेचन (Double Fertilisation) क्यों नहीं होता है?", options: ["उनमें अंडाशय नहीं होता","उनमें भ्रूणकोश नहीं होता","उनमें पराग नली अनुपस्थित होती है","वे बीजाणुधारी होते हैं"], answer: "उनमें अंडाशय नहीं होता", chapter: "जनन" },
+            { id: 2, question: "आलू में कायिक प्रवर्धन (Vegetative Propagation) किस संरचना द्वारा होता है?", options: ["आँख (Eye)","जड़","पत्ती","राइज़ोम"], answer: "आँख (Eye)", chapter: "जनन" },
+            { id: 3, question: "मानव में निषेचन (Fertilisation) कहाँ होता है?", options: ["डिंबवाहिनी नली (Fallopian Tube) के एम्पुलरी-इस्थमिक जंक्शन पर","गर्भाशय","योनि","अंडाशय"], answer: "डिंबवाहिनी नली (Fallopian Tube) के एम्पुलरी-इस्थमिक जंक्शन पर", chapter: "जनन" },
+            { id: 4, question: "मानव में प्लेसेंटा (Placenta) का कार्य क्या है?", options: ["भ्रूण को पोषण प्रदान करना और अपशिष्ट हटाना","केवल हार्मोन का उत्पादन करना","अंडे का उत्पादन करना","शुक्राणुओं का भंडारण"], answer: "भ्रूण को पोषण प्रदान करना और अपशिष्ट हटाना", chapter: "जनन" },
+            { id: 5, question: "परिवार नियोजन कार्यक्रम (Family Planning Programme) भारत में कब शुरू किया गया?", options: ["1951","1961","1971","1981"], answer: "1951", chapter: "जनन" },
+            { id: 6, question: "मासिक धर्म चक्र (Menstrual Cycle) का नियमन करने वाला हार्मोन कौन सा है?", options: ["LH और FSH","केवल एस्ट्रोजन","केवल प्रोजेस्टेरोन","थायरोक्सिन"], answer: "LH और FSH", chapter: "जनन" },
+            { id: 7, question: "एक अंडाशय (Ovule) में मादा युग्मकोद्भिद (Female Gametophyte) क्या कहलाता है?", options: ["भ्रूणकोश (Embryo Sac)","अंडाशय","परागकोश","बीजांड"], answer: "भ्रूणकोश (Embryo Sac)", chapter: "जनन" },
+            { id: 8, question: "शुक्राणुजनन (Spermatogenesis) की प्रक्रिया कहाँ होती है?", options: ["वृषण (Testes) की शुक्रजनक नलिकाओं में","अंडाशय","अधिवृषण","प्रोस्टेट ग्रंथि"], answer: "वृषण (Testes) की शुक्रजनक नलिकाओं में", chapter: "जनन" },
+            { id: 9, question: "जननांगों पर मस्से (Genital Warts) किस यौन संचारित रोग (STD) का लक्षण है?", options: ["जननांग हर्पीस (Genital Herpes)","गोनोरिया","सिफलिस","HPV संक्रमण"], answer: "HPV संक्रमण", chapter: "जनन" },
+            { id: 10, question: "जल परागण (Hydrophily) किस पौधे में होता है?", options: ["वेलिसनेरिया (Vallisneria)","गुलाब","मटर","मक्का"], answer: "वेलिसनेरिया (Vallisneria)", chapter: "जनन" },
+            { id: 11, question: "प्रसव (Parturition) के लिए कौन सा हार्मोन जिम्मेदार है?", options: ["ऑक्सीटोसिन","प्रोजेस्टेरोन","एस्ट्रोजन","LH"], answer: "ऑक्सीटोसिन", chapter: "जनन" },
+            { id: 12, question: "जनसंख्या विस्फोट (Population Explosion) का कारण क्या है?", options: ["मृत्यु दर में कमी","जन्म दर में कमी","केवल जन्म दर में वृद्धि","केवल मृत्यु दर में वृद्धि"], answer: "मृत्यु दर में कमी", chapter: "जनन" },
+            { id: 13, question: "वह संवर्धन माध्यम (Culture Medium) जिसका उपयोग युग्मक अंतर फैलोपियन स्थानांतरण (GIFT) में होता है?", options: ["फैलोपियन नली (Fallopian Tube)","गर्भाशय","इन विट्रो कल्चर प्लेट","योनि"], answer: "फैलोपियन नली (Fallopian Tube)", chapter: "जनन" },
+            { id: 14, question: "परागकण (Pollen Grain) की बाहरी परत क्या कहलाती है?", options: ["एग्जाइन (Exine)","इनटाइन","पराग पुटी","बीजाणु"], answer: "एग्जाइन (Exine)", chapter: "जनन" },
+            { id: 15, question: "कोरियोनिक विली (Chorionic Villi) और गर्भाशय ऊतक मिलकर क्या बनाते हैं?", options: ["प्लेसेंटा","भ्रूणकोश","अंडवाहिनी","शुक्रवाहिका"], answer: "प्लेसेंटा", chapter: "जनन" },
+            { id: 16, question: "एककोशिकीय जीवों में जनन का सबसे सामान्य तरीका क्या है?", options: ["विखंडन (Fission)","लैंगिक जनन","मुकुलन","खंडन"], answer: "विखंडन (Fission)", chapter: "जनन" },
+            { id: 17, question: "वृषण (Testis) में कौन सी कोशिकाएँ एंड्रोजन (Androgen) हार्मोन स्रावित करती हैं?", options: ["लेडिग कोशिकाएँ (Leydig Cells)","सर्टोली कोशिकाएँ","शुक्रजनक कोशिकाएँ","जनन कोशिकाएँ"], answer: "लेडिग कोशिकाएँ (Leydig Cells)", chapter: "जनन" },
+            { id: 18, question: "अंडोत्सर्ग (Ovulation) किस हार्मोन के उच्च स्तर से प्रेरित होता है?", options: ["LH सर्ज","FSH","एस्ट्रोजन","प्रोजेस्टेरोन"], answer: "LH सर्ज", chapter: "जनन" },
+            { id: 19, question: "बीज (Seed) का निर्माण किसके बिना हो सकता है?", options: ["निषेचन (Fertilisation)","परागण","युग्मक","परागनली"], answer: "निषेचन (Fertilisation)", chapter: "जनन" },
+            { id: 20, question: "सर्जिकल गर्भनिरोधक (Surgical Contraceptive) का पुरुष रूप क्या है?", options: ["वैसेक्टोमी (Vasectomy)","ट्यूबेक्टोमी","कंडोम","IUD"], answer: "वैसेक्टोमी (Vasectomy)", chapter: "जनन" },
+
+            // इकाई II: आनुवंशिकी और विकास (Genetics and Evolution) - (Q21-45)
+            { id: 21, question: "मानव में 'X-सहलग्न अप्रभावी विकार' का उदाहरण क्या है?", options: ["हीमोफीलिया","डाउन सिंड्रोम","फिनाइलकेटोनूरिया","सिकल सेल एनीमिया"], answer: "हीमोफीलिया", chapter: "आनुवंशिकी और विकास" },
+            { id: 22, question: "डीएनए से mRNA बनने की प्रक्रिया क्या कहलाती है?", options: ["प्रतिलेखन (Transcription)","प्रतिलिपीकरण","अनुवादन","उत्परिवर्तन"], answer: "प्रतिलेखन (Transcription)", chapter: "आनुवंशिकी और विकास" },
+            { id: 23, question: "कोशिका में प्रोटीन संश्लेषण का स्थल कहाँ है?", options: ["राइबोसोम","केंद्रक","माइटोकॉन्ड्रिया","लाइसोसोम"], answer: "राइबोसोम", chapter: "आनुवंशिकी और विकास" },
+            { id: 24, question: "मानव जीनोम परियोजना (Human Genome Project) में कुल कितने जीन पाए जाने का अनुमान था?", options: ["लगभग 30,000","लगभग 3,000","लगभग 1,00,000","लगभग 10,000"], answer: "लगभग 30,000", chapter: "आनुवंशिकी और विकास" },
+            { id: 25, question: "टिड्डी (Grasshopper) में किस प्रकार का लिंग निर्धारण तंत्र पाया जाता है?", options: ["XX-XO","XX-XY","ZZ-ZW","हेप्लो-डिप्लोइडी"], answer: "XX-XO", chapter: "आनुवंशिकी और विकास" },
+            { id: 26, question: "ओपेरॉन मॉडल (Operon Model) को किसने प्रस्तावित किया?", options: ["जैकब और मोनोड","वाटसन और क्रिक","मॉर्गन","मेंडल"], answer: "जैकब और मोनोड", chapter: "आनुवंशिकी और विकास" },
+            { id: 27, question: "डार्विन के अनुसार विकास का मुख्य तंत्र क्या है?", options: ["प्राकृतिक चयन (Natural Selection)","उपार्जित लक्षणों की वंशागति","उत्परिवर्तन","पुनर्संयोजन"], answer: "प्राकृतिक चयन (Natural Selection)", chapter: "आनुवंशिकी और विकास" },
+            { id: 28, question: "मानव में अवशेषी अंग (Vestigial Organ) का एक उदाहरण क्या है?", options: ["वर्मीफॉर्म अपेंडिक्स (Vermiform Appendix)","फेफड़े","यकृत","हृदय"], answer: "वर्मीफॉर्म अपेंडिक्स (Vermiform Appendix)", chapter: "आनुवंशिकी और विकास" },
+            { id: 29, question: "डीएनए फिंगरप्रिंटिंग (DNA Fingerprinting) का विकास किसने किया?", options: ["एलेक जेफ्रीस (Alec Jeffreys)","वाटसन और क्रिक","हरगोविंद खुराना","डॉ. एम.एस. स्वामीनाथन"], answer: "एलेक जेफ्रीस (Alec Jeffreys)", chapter: "आनुवंशिकी और विकास" },
+            { id: 30, question: "लैंगिग जनन के दौरान विविधता (Variation) का स्रोत क्या है?", options: ["क्रॉसिंग ओवर (Crossing Over)","उत्परिवर्तन","जीन प्रवाह","सभी विकल्प"], answer: "सभी विकल्प", chapter: "आनुवंशिकी और विकास" },
+            { id: 31, question: "ट्रांसलेशन (Translation) में अमीनो एसिड को राइबोसोम तक कौन लाता है?", options: ["tRNA","mRNA","rRNA","DNA"], answer: "tRNA", chapter: "आनुवंशिकी और विकास" },
+            { id: 32, question: "मानव में 21वें क्रोमोसोम की ट्राइसोमी के कारण होने वाला सिंड्रोम क्या है?", options: ["डाउन सिंड्रोम","टर्नर सिंड्रोम","क्लाइनफेल्टर सिंड्रोम","एडवर्ड सिंड्रोम"], answer: "डाउन सिंड्रोम", chapter: "आनुवंशिकी और विकास" },
+            { id: 33, question: "एक द्वि-संकर क्रॉस (Dihybrid Cross) में F2 फीनोटाइप अनुपात क्या है?", options: ["9:3:3:1","3:1","1:2:1","1:1:1:1"], answer: "9:3:3:1", chapter: "आनुवंशिकी और विकास" },
+            { id: 34, question: "पृथ्वी पर जीवन की उत्पत्ति (Origin of Life) के रासायनिक विकास सिद्धांत को किसने प्रस्तावित किया?", options: ["ओपेरिन और हाल्डेन","लुई पाश्चर","चार्ल्स डार्विन","मिलर"], answer: "ओपेरिन और हाल्डेन", chapter: "आनुवंशिकी और विकास" },
+            { id: 35, question: "जीन म्यूटेशन (Gene Mutation) का परिणाम क्या होता है?", options: ["एलिल में परिवर्तन","क्रोमोसोम की संख्या में परिवर्तन","गुणसूत्रों की संरचना में परिवर्तन","कोशिका झिल्ली में परिवर्तन"], answer: "एलिल में परिवर्तन", chapter: "आनुवंशिकी और विकास" },
+            { id: 36, question: "लेक ओपेरॉन (Lac Operon) में इंड्यूसर (Inducer) का कार्य कौन करता है?", options: ["लैक्टोज","रिप्रेसर प्रोटीन","ग्लूकोज","राइबोसोम"], answer: "लैक्टोज", chapter: "आनुवंशिकी और विकास" },
+            { id: 37, question: "हार्डी-वेनबर्ग सिद्धांत किससे संबंधित है?", options: ["जनसंख्या में एलिल और जीनोटाइप आवृत्तियों से","उत्परिवर्तन की दर से","प्राकृतिक चयन की दर से","जीन प्रवाह की दर से"], answer: "जनसंख्या में एलिल और जीनोटाइप आवृत्तियों से", chapter: "आनुवंशिकी और विकास" },
+            { id: 38, question: "मानव में सबसे छोटा जीन कौन सा है?", options: ["SRY","डिस्ट्रोफिन","इंसुलिन","ऑक्सीटोसिन"], answer: "SRY", chapter: "आनुवंशिकी और विकास" },
+            { id: 39, question: "न्यूक्लियोसोम (Nucleosome) किसका एक दोहराव वाली इकाई है?", options: ["क्रोमेटिन","डीएनए","आरएनए","प्रोटीन"], answer: "क्रोमेटिन", chapter: "आनुवंशिकी और विकास" },
+            { id: 40, question: "मेंडल के किस नियम को 'सार्वभौमिक' (Universal) नहीं माना जाता है?", options: ["प्रभाविता का नियम","पृथक्करण का नियम","स्वतंत्र अपव्यूहन का नियम","युग्मकों की शुद्धता का नियम"], answer: "प्रभाविता का नियम", chapter: "आनुवंशिकी और विकास" },
+            { id: 41, question: "समरूप अंग (Analogous Organs) किसके कारण विकसित होते हैं?", options: ["अभिसारी विकास (Convergent Evolution)","अपसारी विकास","प्राकृतिक चयन","उत्परिवर्तन"], answer: "अभिसारी विकास (Convergent Evolution)", chapter: "आनुवंशिकी और विकास" },
+            { id: 42, question: "समजात अंग (Homologous Organs) क्या दर्शाते हैं?", options: ["अपसारी विकास (Divergent Evolution)","अभिसारी विकास","स्थिरता","जीन प्रवाह"], answer: "अपसारी विकास (Divergent Evolution)", chapter: "आनुवंशिकी और विकास" },
+            { id: 43, question: "लैंगिक जनन के दौरान नए संयोजनों (Recombinants) का मुख्य कारण क्या है?", options: ["क्रॉसिंग ओवर","उत्परिवर्तन","फ्रेमशिफ्ट","जीन म्यूटेशन"], answer: "क्रॉसिंग ओवर", chapter: "आनुवंशिकी और विकास" },
+            { id: 44, question: "एकाधिक एलिलवाद (Multiple Allelism) का उदाहरण क्या है?", options: ["मानव रक्त समूह (ABO)","पौधे की ऊँचाई","मानव त्वचा का रंग","फूल का रंग"], answer: "मानव रक्त समूह (ABO)", chapter: "आनुवंशिकी और विकास" },
+            { id: 45, question: "प्रोटीन संश्लेषण कहाँ होता है?", options: ["कोशिका द्रव्य और राइबोसोम","केंद्रक और माइटोकॉन्ड्रिया","लाइसोसोम और रिक्तिकाएँ","गॉल्जी उपकरण"], answer: "कोशिका द्रव्य और राइबोसोम", chapter: "आनुवंशिकी और विकास" },
+
+            // इकाई III: मानव कल्याण में जीव विज्ञान (Biology and Human Welfare) - (Q46-65)
+            { id: 46, question: "टाइफाइड (Typhoid) रोग का कारक जीव कौन सा है?", options: ["साल्मोनेला टाइफी (Salmonella typhi)","प्लाज्मोडियम","राइनोवायरस","विब्रियो कोलेरी"], answer: "साल्मोनेला टाइफी (Salmonella typhi)", chapter: "मानव कल्याण" },
+            { id: 47, question: "एड्स (AIDS) का कारक क्या है?", options: ["HIV (ह्यूमन इम्यूनोडेफिशिएंसी वायरस)","ई. कोलाई","बैक्टीरिया","फंगस"], answer: "HIV (ह्यूमन इम्यूनोडेफिशिएंसी वायरस)", chapter: "मानव कल्याण" },
+            { id: 48, question: "रोगों के खिलाफ शरीर की रक्षा करने की क्षमता क्या कहलाती है?", options: ["प्रतिरक्षा (Immunity)","जनन","उत्परिवर्तन","विवर्तन"], answer: "प्रतिरक्षा (Immunity)", chapter: "मानव कल्याण" },
+            { id: 49, question: "शराब या ड्रग्स के बार-बार उपयोग से बचने की शारीरिक और मनोवैज्ञानिक आवश्यकता क्या कहलाती है?", options: ["निर्भरता (Dependence)","सहनशीलता","मादक पदार्थों का सेवन","व्यसन"], answer: "निर्भरता (Dependence)", chapter: "मानव कल्याण" },
+            { id: 50, question: "प्राथमिक लसीका अंग (Primary Lymphoid Organ) का उदाहरण क्या है?", options: ["अस्थि मज्जा (Bone Marrow)","प्लीहा (Spleen)","लिम्फ नोड्स","टॉन्सिल"], answer: "अस्थि मज्जा (Bone Marrow)", chapter: "मानव कल्याण" },
+            { id: 51, question: "बायोगैस (Biogas) में मुख्य रूप से कौन सी गैस होती है?", options: ["मीथेन (Methane)","कार्बन डाइऑक्साइड","हाइड्रोजन","ऑक्सीजन"], answer: "मीथेन (Methane)", chapter: "मानव कल्याण" },
+            { id: 52, question: "जैव नियंत्रण कारक (Biocontrol Agent) के रूप में किस फंगस का उपयोग किया जाता है?", options: ["ट्राइकोडर्मा (Trichoderma)","यीस्ट","पेनिसिलियम","एस्परगिलस"], answer: "ट्राइकोडर्मा (Trichoderma)", chapter: "मानव कल्याण" },
+            { id: 53, question: "प्लाज्मोडियम (Plasmodium) का संक्रामक रूप जो मानव शरीर में प्रवेश करता है?", options: ["स्पोरोजोइट्स (Sporozoites)","गैमेटोसाइट्स","ट्रोफोजोइट्स","मेरोजोइट्स"], answer: "स्पोरोजोइट्स (Sporozoites)", chapter: "मानव कल्याण" },
+            { id: 54, question: "डीएनए पर काम करने वाले बैक्टीरिया को नष्ट करने के लिए किस एंजाइम का उपयोग किया जाता है?", options: ["प्रतिबंध एंडोन्यूक्लिएज (Restriction Endonuclease)","लाइगेज","टैक्स पॉलीमरेज","एमाइलेज"], answer: "प्रतिबंध एंडोन्यूक्लिएज (Restriction Endonuclease)", chapter: "मानव कल्याण" },
+            { id: 55, question: "मलेरिया का संवाहक (Vector) कौन है?", options: ["मादा एनोफिलीज मच्छर","एडीज मच्छर","क्यूलेक्स मच्छर","घरेलू मक्खी"], answer: "मादा एनोफिलीज मच्छर", chapter: "मानव कल्याण" },
+            { id: 56, question: "टीकाकरण (Vaccination) किस प्रकार की प्रतिरक्षा पर आधारित है?", options: ["सक्रिय प्रतिरक्षा (Active Immunity)","निष्क्रिय प्रतिरक्षा","जन्मजात प्रतिरक्षा","ह्यूमरल प्रतिरक्षा"], answer: "सक्रिय प्रतिरक्षा (Active Immunity)", chapter: "मानव कल्याण" },
+            { id: 57, question: "असामान्य कोशिकाओं के अनियंत्रित विभाजन को क्या कहते हैं?", options: ["कैंसर (Cancer)","एड्स","एलर्जी","टाइफाइड"], answer: "कैंसर (Cancer)", chapter: "मानव कल्याण" },
+            { id: 58, question: "एल्कोहल का दुरुपयोग किस अंग को सबसे अधिक प्रभावित करता है?", options: ["यकृत (Liver)","फेफड़े","गुर्दे","मस्तिष्क"], answer: "यकृत (Liver)", chapter: "मानव कल्याण" },
+            { id: 59, question: "BOD (जैव रासायनिक ऑक्सीजन मांग) किसका मापन करता है?", options: ["पानी में कार्बनिक पदार्थ","पानी में ऑक्सीजन का स्तर","वायु प्रदूषण","मिट्टी की उर्वरता"], answer: "पानी में कार्बनिक पदार्थ", chapter: "मानव कल्याण" },
+            { id: 60, question: "एसिड रेन (Acid Rain) में मुख्य रूप से कौन से अम्ल होते हैं?", options: ["सल्फ्यूरिक और नाइट्रिक अम्ल","हाइड्रोक्लोरिक अम्ल","एसिटिक अम्ल","कार्बनिक अम्ल"], answer: "सल्फ्यूरिक और नाइट्रिक अम्ल", chapter: "मानव कल्याण" },
+            { id: 61, question: "बायोफोर्टिफिकेशन (Biofortification) का उद्देश्य क्या है?", options: ["फसल की पोषक गुणवत्ता बढ़ाना","कीटों के लिए प्रतिरोध बढ़ाना","फसल का उत्पादन बढ़ाना","जल उपयोग क्षमता बढ़ाना"], answer: "फसल की पोषक गुणवत्ता बढ़ाना", chapter: "मानव कल्याण" },
+            { id: 62, question: "दूध को दही में बदलने वाला जीवाणु कौन सा है?", options: ["लैक्टोबैसिलस (Lactobacillus)","यीस्ट","स्यूडोमोनास","एजोस्पिरिलम"], answer: "लैक्टोबैसिलस (Lactobacillus)", chapter: "मानव कल्याण" },
+            { id: 63, question: "वे रसायन जो मस्तिष्क और रीढ़ की हड्डी के बीच संदेशों के प्रसारण में बाधा डालते हैं?", options: ["ओपिओइड्स (Opioids)","कैफीन","निकोटीन","एम्फ़ैटेमिन"], answer: "ओपिओइड्स (Opioids)", chapter: "मानव कल्याण" },
+            { id: 64, question: "ह्यूमरल प्रतिरक्षा (Humoral Immunity) में कौन सी कोशिकाएँ शामिल होती हैं?", options: ["B-कोशिकाएँ (B-Cells)","T-कोशिकाएँ","NK कोशिकाएँ","फेगोसाइट्स"], answer: "B-कोशिकाएँ (B-Cells)", chapter: "मानव कल्याण" },
+            { id: 65, question: "पेनिसिलिन की खोज किसने की?", options: ["अलेक्जेंडर फ्लेमिंग","लुई पाश्चर","रॉबर्ट कोच","एडवर्ड जेनर"], answer: "अलेक्जेंडर फ्लेमिंग", chapter: "मानव कल्याण" },
+
+            // इकाई IV: जैव प्रौद्योगिकी (Biotechnology) - (Q66-80)
+            { id: 66, question: "जैव प्रौद्योगिकी (Biotechnology) में 'प्लाज्मिड' का मुख्य कार्य क्या है?", options: ["वेक्टर (Vector) के रूप में कार्य करना","होस्ट डीएनए को काटना","प्रोटीन का संश्लेषण करना","आनुवंशिक सामग्री को नष्ट करना"], answer: "वेक्टर (Vector) के रूप", chapter: "जैव प्रौद्योगिकी" },
+            { id: 67, question: "पुनर्योगज डीएनए (Recombinant DNA) तकनीक में 'आणविक कैंची' (Molecular Scissors) किसे कहा जाता है?", options: ["प्रतिबंध एंडोन्यूक्लिएज (Restriction Endonuclease)","डीएनए लाइगेज","पॉलीमरेज","हेलिकेज"], answer: "प्रतिबंध एंडोन्यूक्लिएज (Restriction Endonuclease)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 68, question: "जीन क्लोनिंग में प्रयुक्त होने वाला सबसे सामान्य प्लाज्मिड कौन सा है?", options: ["pBR322","pUC18","Ti प्लाज्मिड","λ फेज"], answer: "pBR322", chapter: "जैव प्रौद्योगिकी" },
+            { id: 69, question: "PCR (पॉलीमरेज़ चेन रिएक्शन) तकनीक का उपयोग क्या है?", options: ["डीएनए की बहुलता (Amplification)","प्रोटीन संश्लेषण","जीन का पृथक्करण","एंटीबॉडी का उत्पादन"], answer: "डीएनए की बहुलता (Amplification)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 70, question: "मानव इंसुलिन (Insulin) का उत्पादन किस तकनीक से किया जाता है?", options: ["पुनर्योगज डीएनए तकनीक","पारंपरिक प्रजनन","टीकाकरण","कीमोथेरेपी"], answer: "पुनर्योगज डीएनए तकनीक", chapter: "जैव प्रौद्योगिकी" },
+            { id: 71, question: "Bt टॉक्सिन जीन किससे प्राप्त होता है?", options: ["बैसिलस थुरिंजिएंसिस (Bacillus thuringiensis)","एग्रोबैक्टीरियम ट्यूमेफेशियंस","ई. कोलाई","फंगस"], answer: "बैसिलस थुरिंजिएंसिस (Bacillus thuringiensis)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 72, question: "गोल्डन राइस (Golden Rice) में कौन सा विटामिन प्रचुर मात्रा में होता है?", options: ["विटामिन A","विटामिन C","विटामिन D","विटामिन K"], answer: "विटामिन A", chapter: "जैव प्रौद्योगिकी" },
+            { id: 73, question: "जीन चिकित्सा (Gene Therapy) का पहला नैदानिक परीक्षण किस रोग के लिए किया गया था?", options: ["ADA कमी (SCID)","कैंसर","हीमोफीलिया","एड्स"], answer: "ADA कमी (SCID)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 74, question: "Ti प्लाज्मिड का उपयोग किसमें किया जाता है?", options: ["पादप में जीन स्थानांतरण","जंतुओं में जीन स्थानांतरण","जीवाणु क्लोनिंग","वायरल प्रतिकृति"], answer: "पादप में जीन स्थानांतरण", chapter: "जैव प्रौद्योगिकी" },
+            { id: 75, question: "RNAi (RNA इंटरफेरेंस) का उपयोग किसमें किया जाता है?", options: ["कीट प्रतिरोधक पौधे विकसित करने में","प्रोटीन संश्लेषण","डीएनए काटना","सेलुलर श्वसन"], answer: "कीट प्रतिरोधक पौधे विकसित करने में", chapter: "जैव प्रौद्योगिकी" },
+            { id: 76, question: "इलेक्ट्रोफोरेसिस (Electrophoresis) का उपयोग क्या है?", options: ["डीएनए खंडों को आकार के आधार पर अलग करना","डीएनए की बहुलता","जीन क्लोनिंग","प्रोटीन शुद्धिकरण"], answer: "डीएनए खंडों को आकार के आधार पर अलग करना", chapter: "जैव प्रौद्योगिकी" },
+            { id: 77, question: "जैव सुरक्षा (Biopiracy) किससे संबंधित है?", options: ["जैव संसाधनों का अनधिकृत उपयोग","जैव विविधता का संरक्षण","जीन क्लोनिंग","बायोगैस उत्पादन"], answer: "जैव संसाधनों का अनधिकृत उपयोग", chapter: "जैव प्रौद्योगिकी" },
+            { id: 78, question: "डीएनए लाइगेज (DNA Ligase) का कार्य क्या है?", options: ["डीएनए खंडों को जोड़ना","डीएनए खंडों को काटना","डीएनए को अलग करना","आरएनए बनाना"], answer: "डीएनए खंडों को जोड़ना", chapter: "जैव प्रौद्योगिकी" },
+            { id: 79, question: "PCR में उपयोग किया जाने वाला एंजाइम कौन सा है?", options: ["टैक पॉलीमरेज (Taq Polymerase)","लाइगेज","आरएनए पॉलीमरेज","रिस्ट्रिक्शन एंडोन्यूक्लिएज"], answer: "टैक पॉलीमरेज (Taq Polymerase)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 80, question: "ELISA (एंजाइम-लिंक्ड इम्यूनोसॉर्बेंट एसे) का उपयोग क्या है?", options: ["एंटीजन और एंटीबॉडी की पहचान","डीएनए सीक्वेंसिंग","प्रोटीन बहुलता","जीन क्लोनिंग"], answer: "एंटीजन और एंटीबॉडी की पहचान", chapter: "जैव प्रौद्योगिकी" },
+
+            // इकाई V: पारिस्थितिकी और पर्यावरण (Ecology and Environment) - (Q81-100)
+            { id: 81, question: "किसी क्षेत्र में पौधों और जंतुओं की विविधता क्या कहलाती है?", options: ["जैव विविधता (Biodiversity)","इकोलॉजी","जनसंख्या घनत्व","बायोम"], answer: "जैव विविधता (Biodiversity)", chapter: "पारिस्थितिकी" },
+            { id: 82, question: "पारिस्थितिक तंत्र (Ecosystem) में ऊर्जा का प्राथमिक स्रोत क्या है?", options: ["सूर्य का प्रकाश","जीवाश्म ईंधन","रासायनिक ऊर्जा","भूतापीय ऊर्जा"], answer: "सूर्य का प्रकाश", chapter: "पारिस्थितिकी" },
+            { id: 83, question: "ओजोन परत (Ozone Layer) किस विकिरण से पृथ्वी को बचाती है?", options: ["पराबैंगनी (UV) विकिरण","एक्स-रे","इन्फ्रारेड विकिरण","दृश्य प्रकाश"], answer: "पराबैंगनी (UV) विकिरण", chapter: "पारिस्थितिकी" },
+            { id: 84, question: "खाद्य श्रृंखला (Food Chain) में डीकंपोजर (Decomposers) का क्या कार्य है?", options: ["पोषक तत्वों का पुनर्चक्रण","प्रकाश संश्लेषण","द्वितीयक उपभोक्ता का सेवन","प्राथमिक उपभोक्ता"], answer: "पोषक तत्वों का पुनर्चक्रण", chapter: "पारिस्थितिकी" },
+            { id: 85, question: "किसी समुदाय में एक प्रजाति के अन्य प्रजाति से बिना लाभ या हानि के संबंध को क्या कहते हैं?", options: ["कमैंसलिज्म (Commensalism)","म्यूचुअलिज्म","पैरासिटिज्म","एमैंसलिज्म"], answer: "कमैंसलिज्म (Commensalism)", chapter: "पारिस्थितिकी" },
+            { id: 86, question: "वैश्विक तापन (Global Warming) के लिए मुख्य रूप से कौन सी गैस जिम्मेदार है?", options: ["कार्बन डाइऑक्साइड (CO₂)","ऑक्सीजन","नाइट्रोजन","सल्फर डाइऑक्साइड"], answer: "कार्बन डाइऑक्साइड (CO₂)", chapter: "पारिस्थितिकी" },
+            { id: 87, question: "सबसे अधिक प्रजाति विविधता कहाँ पाई जाती है?", options: ["उष्णकटिबंधीय वर्षावन (Tropical Rainforests)","टुंड्रा","शीतोष्ण वन","मरुस्थल"], answer: "उष्णकटिबंधीय वर्षावन (Tropical Rainforests)", chapter: "पारिस्थितिकी" },
+            { id: 88, question: "बायोम (Biome) क्या है?", options: ["विशाल क्षेत्रीय पारिस्थितिक इकाई","एक छोटा तालाब","केवल जंतुओं का संग्रह","केवल पौधों का संग्रह"], answer: "विशाल क्षेत्रीय पारिस्थितिक इकाई", chapter: "पारिस्थितिकी" },
+            { id: 89, question: "घास के मैदान में प्राथमिक उपभोक्ता कौन हैं?", options: ["शाकाहारी (Herbivores)","मांसाहारी","अपघटक","उत्पादक"], answer: "शाकाहारी (Herbivores)", chapter: "पारिस्थितिकी" },
+            { id: 90, question: "जनसंख्या घनत्व (Population Density) को प्रभावित करने वाले कारक क्या हैं?", options: ["प्रजनन और मृत्यु दर","प्रवास और अप्रवास","दोनों 'A' और 'B'","केवल मौसम"], answer: "दोनों 'A' और 'B'", chapter: "पारिस्थितिकी" },
+            { id: 91, question: "वनोन्मूलन (Deforestation) का परिणाम क्या है?", options: ["मिट्टी का कटाव","जलवायु परिवर्तन","जैव विविधता का नुकसान","सभी विकल्प"], answer: "सभी विकल्प", chapter: "पारिस्थितिकी" },
+            { id: 92, question: "रेड डेटा बुक (Red Data Book) क्या प्रदान करती है?", options: ["विलुप्तप्राय प्रजातियों की सूची","सामान्य प्रजातियों की सूची","कृषि पद्धतियों की जानकारी","जैव विविधता के नियम"], answer: "विलुप्तप्राय प्रजातियों की सूची", chapter: "पारिस्थितिकी" },
+            { id: 93, question: "स्व-स्थान संरक्षण (In-situ Conservation) का उदाहरण क्या है?", options: ["राष्ट्रीय उद्यान (National Park)","बीज बैंक","वनस्पति उद्यान","प्राणी संग्रहालय"], answer: "राष्ट्रीय उद्यान (National Park)", chapter: "पारिस्थितिकी" },
+            { id: 94, question: "पोषक तत्वों के पुनर्चक्रण (Nutrient Cycling) में कौन सी गैस शामिल नहीं है?", options: ["हीलियम","कार्बन","नाइट्रोजन","फॉस्फोरस"], answer: "हीलियम", chapter: "पारिस्थितिकी" },
+            { id: 95, question: "उत्पादक (Producers) क्या कहलाते हैं?", options: ["ऑटोट्रॉफ्स (Autotrophs)","हेटेरोट्रॉफ्स","सैप्रोफाइट्स","स्कैवेंजर्स"], answer: "ऑटोट्रॉफ्स (Autotrophs)", chapter: "पारिस्थितिकी" },
+            { id: 96, question: "ग्रीनहाउस प्रभाव (Greenhouse Effect) का कारण क्या है?", options: ["पृथ्वी के वायुमंडल में गर्मी का फँसना","सूर्य के प्रकाश का परावर्तन","ओजोन परत का पतला होना","जल प्रदूषण"], answer: "पृथ्वी के वायुमंडल में गर्मी का फँसना", chapter: "पारिस्थितिकी" },
+            { id: 97, question: "जब एक प्रजाति दूसरी प्रजाति को लाभ पहुँचाती है, लेकिन स्वयं अप्रभावित रहती है?", options: ["कमैंसलिज्म","म्यूचुअलिज्म","पैरासिटिज्म","प्रिडेटिज्म"], answer: "कमैंसलिज्म", chapter: "पारिस्थितिकी" },
+            { id: 98, question: "जनसंख्या वृद्धि दर (Population Growth Rate) कब शून्य होती है?", options: ["जन्म दर = मृत्यु दर","जन्म दर > मृत्यु दर","जन्म दर < मृत्यु दर","प्रवास अधिक"], answer: "जन्म दर = मृत्यु दर", chapter: "पारिस्थितिकी" },
+            { id: 99, question: "भारत में सबसे अधिक जैव विविधता वाला क्षेत्र (Hotspot) क्या है?", options: ["पश्चिमी घाट","गंगा के मैदान","थार रेगिस्तान","हिमालय"], answer: "पश्चिमी घाट", chapter: "पारिस्थितिकी" },
+            { id: 100, question: "प्राथमिक उत्पादकता (Primary Productivity) किससे संबंधित है?", options: ["प्रकाश संश्लेषण द्वारा कार्बनिक पदार्थ का निर्माण","द्वितीयक उपभोक्ताओं का उत्पादन","अपघटन की दर","पानी का वाष्पीकरण"], answer: "प्रकाश संश्लेषण द्वारा कार्बनिक पदार्थ का निर्माण", chapter: "पारिस्थितिकी" }
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            let currentChapter = '';
+
+            testQuestions.forEach((mcq, index) => {
+                // अध्याय के आधार पर हेडिंग जोड़ना (प्रमुख इकाइयों के लिए)
+                if (mcq.chapter !== currentChapter) {
+                    let unitTitle = '';
+                    if (mcq.chapter === 'जनन') unitTitle = 'इकाई I: जनन (Reproduction)';
+                    else if (mcq.chapter === 'आनुवंशिकी और विकास') unitTitle = 'इकाई II: आनुवंशिकी और विकास (Genetics and Evolution)';
+                    else if (mcq.chapter === 'मानव कल्याण') unitTitle = 'इकाई III: मानव कल्याण में जीव विज्ञान (Biology and Human Welfare)';
+                    else if (mcq.chapter === 'जैव प्रौद्योगिकी') unitTitle = 'इकाई IV: जैव प्रौद्योगिकी (Biotechnology)';
+                    else if (mcq.chapter === 'पारिस्थितिकी') unitTitle = 'इकाई V: पारिस्थितिकी और पर्यावरण (Ecology and Environment)';
+                    
+                    htmlContent += `<h3>${unitTitle}</h3>`;
+                    currentChapter = mcq.chapter;
+                }
+
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    const displayOption = option; // No complex math symbols to replace here
+                    
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${displayOption}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+
+                const correctAnswerDisplay = mcq.answer;
+
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! आपने संपूर्ण पाठ्यक्रम को बहुत अच्छे से कवर किया है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। कुछ महत्वपूर्ण इकाइयों पर अधिक ध्यान देने की आवश्यकता है।' : 'सिद्धांतों को फिर से दोहराएं। यह एक संपूर्ण पाठ्यक्रम की तैयारी का समय है।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

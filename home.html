@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="google-site-verification" content="k_GxRun5a0yoPzKtE66sWtl8fyGH2U6xQ32NmNWouuQ" />
+    <title>ज्ञान सारथी - एडमिन डैशबोर्ड</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    <style>
+        /* CSS Styling */
+
+        /* मूलभूत सेटअप और रंग चर */
+        :root {
+            --primary-blue: #1A237E; /* गहरा नीला */
+            --light-blue: #81D4FA;   /* हल्का नीला */
+            --accent-orange: #FFB300; /* म्यूटेड ऑरेंज/गोल्ड */
+            --light-gray: #EEEEEE;   /* हल्का ग्रे */
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            opacity: 0; /* JS लोड होने तक छुपाएं */
+            transition: opacity 0.5s;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+        
+        /* एडमिन मोड के लिए स्टाइल */
+        .admin-mode .editable:hover {
+            border: 2px dashed var(--accent-orange);
+            cursor: pointer;
+            padding: 5px;
+            margin: -5px;
+        }
+        
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px; 
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5em;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .logo-text p {
+            font-size: 0.8em;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: var(--light-blue);
+        }
+
+        .btn-mock-test {
+            background-color: var(--accent-orange);
+            color: var(--primary-blue) !important;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .user-info i {
+            font-size: 1.5em;
+            cursor: pointer; /* एडमिन लॉग इन के लिए */
+        }
+
+        /* मुख्य डैशबोर्ड और लेआउट */
+        .dashboard {
+            padding: 20px 40px;
+        }
+
+        .sub-nav {
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        .sub-nav a {
+            text-decoration: none;
+            color: #666;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .sub-nav a.active, .sub-nav a:hover {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr; 
+            gap: 20px;
+        }
+
+        /* कार्ड स्टाइलिंग */
+        .card {
+            background-color: var(--text-light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* प्रगति ट्रैकर */
+        .progress-tracker {
+            text-align: center;
+        }
+
+        .progress-circle {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 8px solid var(--light-blue);
+            border-radius: 50%;
+            margin: 20px auto 10px;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        /* दैनिक लक्ष्य */
+        .daily-goals {
+            grid-column: 1 / 2;
+        }
+
+        .goals-list {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .goal-item {
+            text-align: center;
+        }
+
+        .goal-item i {
+            font-size: 2em;
+            color: var(--primary-blue);
+            background-color: #f0f4ff;
+            padding: 15px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+        }
+
+        .btn-set-goal {
+            background-color: var(--accent-orange);
+            color: var(--primary-blue);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* पाठ्यक्रम केंद्र */
+        .content-hub {
+            grid-column: 2 / 3;
+        }
+
+        .content-tabs span {
+            padding: 5px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .content-tabs span.active {
+            border-bottom: 2px solid var(--accent-orange);
+            color: var(--primary-blue);
+        }
+
+        .course-list {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .course-list.hidden {
+            display: none;
+        }
+        
+        .course-item {
+            flex: 1;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .course-item h4 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .course-item a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        /* अभ्यास और मूल्यांकन */
+        .practice-section {
+            grid-column: 1 / 3;
+            margin-top: 20px;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .practice-card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .practice-card i {
+            font-size: 2.5em;
+            color: var(--light-blue);
+            margin-bottom: 10px;
+        }
+
+        .important-questions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .important-questions ul li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+            cursor: pointer;
+        }
+
+        .important-questions ul li i.fa-star {
+            color: var(--accent-orange);
+            margin-right: 5px;
+        }
+        /* मीडिया क्वेरी फॉर मोबाइल */
+        @media (max-width: 768px) {
+            header, .dashboard {
+                padding: 10px 15px;
+            }
+            .grid-container, .practice-grid, .course-list {
+                grid-template-columns: 1fr;
+            }
+            .content-hub {
+                grid-column: 1 / 2;
+            }
+            .practice-section {
+                grid-column: 1 / 2;
+            }
+        }
+    </style>
+    <meta name="google-site-verification" content="k_GxRun5a0yoPzKtE66sWtl8fyGH2U6xQ32NmNWouuQ" />
+</head>
+<body class="loaded">
+    <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1 class="editable" data-field="site_title">Gyan Saarathi</h1>
+                <p class="editable" data-field="site_tagline">आपकी परीक्षा तैयारी का डिजिटल साथी</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <nav class="sub-nav">
+            <a href="home.html" class="active">होम</a>
+            <a href="Course.html">कोर्स</a>
+            <a href="exersize.html">अभ्यास</a>
+            <a href="riport.html">रिपोर्ट</a>
+        </nav>
+
+        <section class="main-content">
+            <div class="grid-container">
+                <div class="card progress-tracker">
+                    <h3 class="editable" data-field="progress_title">प्रगति ट्रैकर</h3>
+                    <div class="progress-circle editable" data-field="progress_percent">75%</div>
+                    <p class="editable" data-field="progress_status">पाठ्यक्रम पूरा</p>
+                </div>
+
+                <!-- <div class="card content-hub">
+                    <h3 class="editable" data-field="content_hub_title">पाठ्यक्रम केंद्र</h3>
+                    <div class="content-tabs">
+                        <span class="tab-btn active" onclick="showCourse('board')">बोर्ड परीक्षा</span>
+                        <span class="tab-btn" onclick="showCourse('comp')">प्रतियोगी परीक्षा</span>
+                    </div>
+                     -->
+                    <!-- <div class="course-list" id="board-list">
+                        <div class="course-item">
+                            <h4 class="editable" data-field="board_course1_title">गणित</h4>
+                            <p class="editable" data-field="board_course1_details">त्रिकोणमिति - अध्याय 5</p>
+                            <a href="#">PDF नोट्स डाउनलोड करें</a>
+                        </div>
+                        <div class="course-item">
+                            <h4 class="editable" data-field="board_course2_title">विज्ञान</h4>
+                            <p class="editable" data-field="board_course2_details">विलयन - अध्याय 3</p>
+                            <a href="#">PDF नोट्स डाउनलोड करें</a>
+                        </div>
+                    </div>
+
+                    <div class="course-list hidden" id="comp-list">
+                        <div class="course-item">
+                            <h4 class="editable" data-field="comp_course1_title">रीज़निंग</h4>
+                            <p class="editable" data-field="comp_course1_details">सीटिंग अरेंजमेंट - यूनिट 1</p>
+                            <a href="#">वीडियो लेक्चर</a>
+                        </div>
+                        <div class="course-item">
+                            <h4 class="editable" data-field="comp_course2_title">सामान्य ज्ञान</h4>
+                            <p class="editable" data-field="comp_course2_details">वर्तमान घटनाएँ - 2025</p>
+                            <a href="#">दैनिक क्विज़</a>
+                        </div>
+                    </div>
+
+                </div> -->
+
+                <div class="card daily-goals">
+                    <h3 class="editable" data-field="daily_goal_title">दैनिक लक्ष्य</h3>
+                    <div class="goals-list">
+                        <!-- <div class="goal-item"><i class="fas fa-globe"></i><p class="editable" data-field="goal_item1">गणित अभ्यास</p></div> -->
+                       <a href="class10.html">
+                           <div class="goal-item"><i class="fas fa-cog"></i><p class="editable" data-field="goal_item2">विज्ञान नोट्स CLASS 10</p></div>
+                       </a>
+                       <a href="exersize.html">
+                           <div class="goal-item"><i class="fas fa-book-open"></i><p class="editable" data-field="goal_item3">कौशल अभ्यास CLASS 10</p></div>
+                       </a>
+                    </div>
+                    <button class="btn-set-goal"> लक्ष्य निर्धारित करें</button>
+                </div>
+
+                <div class="card practice-section full-width">
+                    <h3 class="editable" data-field="practice_section_title">अभ्यास & मूल्यांकन</h3>
+                    <div class="practice-grid">
+                        <a href="model paper.html">
+                              <div class="practice-card">
+                            <i class="fas fa-question-circle"></i>
+                            
+                            <h4 class="editable" data-field="practice_card1_title">अनुकूली प्रश्न बैंक</h4>
+                            <p class="editable" data-field="practice_card1_details">भौतिक विज्ञान</p>
+                        </div> 
+                        </a>
+                        <a href="exersize.html">
+                            <div class="practice-card exam-sim-card">
+                            <i class="fas fa-clock"></i>
+                            <h4 class="editable" data-field="practice_card2_title">परीक्षा सिमुलेशन</h4>
+                            <p class="editable" data-field="practice_card2_details">शुरू करें</p>
+                        </div>
+                        </a>
+                        
+                        <div class="practice-card important-questions">
+                            <h4 class="editable" data-field="practice_card3_title">पिछले वर्षों के पेपर</h4>
+                            <ul>
+                                <li class="editable" data-field="imp_q1"><i class="fas fa-star"></i> टॉप 100 महत्वपूर्ण प्रश्न</li>
+                                <li class="editable" data-field="imp_q2"><i class="fas fa-star"></i> निबंध लेखन प्रश्न</li>
+                                <li class="editable" data-field="imp_q3"><i class="fas fa-star"></i> पिछले वर्षों के हल</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript Code
+        
+        // 1. टैब स्विचिंग फंक्शनलिटी (पाठ्यक्रम केंद्र)
+        function showCourse(courseType) {
+            const boardList = document.getElementById('board-list');
+            const compList = document.getElementById('comp-list');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+
+            // सभी को छुपाओ और एक्टिव क्लास हटाओ
+            boardList.classList.add('hidden');
+            compList.classList.add('hidden');
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // सही लिस्ट दिखाओ
+            if (courseType === 'board') {
+                boardList.classList.remove('hidden');
+                tabButtons[0].classList.add('active');
+            } else if (courseType === 'comp') {
+                compList.classList.remove('hidden');
+                tabButtons[1].classList.add('active');
+            }
+        }
+        
+        // 2. एडमिन अपडेट फंक्शनलिटी
+        const ADMIN_PASSWORD = "admin123"; // अपना पासवर्ड यहाँ सेट करें
+
+        document.getElementById('adminLoginBtn').addEventListener('click', function() {
+            const password = prompt("एडमिन मोड में प्रवेश करने के लिए पासवर्ड दर्ज करें:");
+            if (password === ADMIN_PASSWORD) {
+                document.body.classList.add('admin-mode');
+                alert("एडमिन मोड सक्रिय हो गया है! अब आप तत्वों पर क्लिक करके संपादन कर सकते हैं।");
+                enableEditing();
+            } else if (password !== null) {
+                alert("गलत पासवर्ड।");
+            }
+        });
+
+        function enableEditing() {
+            const editableElements = document.querySelectorAll('.editable');
+            editableElements.forEach(element => {
+                // सामग्री संपादन को सक्षम करता है
+                element.contentEditable = true;
+                
+                // क्लिक इवेंट जोड़ना (ऑप्शनल)
+                element.addEventListener('click', function() {
+                    this.focus(); // संपादन के लिए फोकस
+                });
+
+                // सामग्री अपडेट होने पर सहेजें (एक प्रॉम्प्ट के माध्यम से)
+                element.addEventListener('blur', function() {
+                    const newValue = this.textContent;
+                    const fieldName = this.getAttribute('data-field');
+                    
+                    // console.log(`Field "${fieldName}" updated to: "${newValue}"`);
+                    
+                    // नोट: वास्तविक वेबसाइट में, आपको इस डेटा को सर्वर पर भेजना होगा
+                    // ताकि यह अपडेट सेव हो सके। (यह केवल एक फ्रंट-एंड बदलाव है)
+                });
+            });
+        }
+
+        // 3. बटन क्लिक इंटरैक्शन
+        document.querySelector('.btn-mock-test').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('मॉक टेस्ट सेक्शन में जा रहे हैं। अभ्यास शुरू करें! 🚀');
+        });
+
+        document.querySelector('.btn-set-goal').addEventListener('click', function() {
+            alert('लक्ष्य निर्धारित करने की सुविधा जल्द ही आ रही है! 🎯');
+        });
+        
+        document.querySelector('.exam-sim-card').addEventListener('click', function() {
+            alert('परीक्षा सिमुलेशन शुरू करने के लिए तैयार हो जाइए। ⏱️');
+        });
+        // यह 'मॉक टेस्ट' बटन के लिए है
+        document.querySelector('.btn-mock-test').addEventListener('click', function(e) {
+          e.preventDefault();
+    // अलर्ट की जगह, अब यह आपको एक नए पेज पर ले जाएगा
+          window.location.href = "mock_test_start.html"; 
+    // आपको अपने कंप्यूटर पर 'mock_test_start.html' नाम से एक खाली फ़ाइल बनानी होगी ताकि यह एरर न दे।
+        });
+
+// यह 'परीक्षा सिमुलेशन' कार्ड के लिए है
+        document.querySelector('.exam-sim-card').addEventListener('click', function() {
+           // यह भी अब नए पेज पर ले जाएगा
+           window.location.href = "simulation_setup.html"; 
+        });
+
+        // 4. पेज लोड पर डिफ़ॉल्ट सेटिंग्स
+        document.addEventListener('DOMContentLoaded', () => {
+            showCourse('board');
+            document.body.classList.add('loaded'); // बॉडी को दृश्यमान करें
+        });
+    </script>
+</body>
+</html>

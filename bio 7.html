@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>मानव स्वास्थ्य एवं रोग — विस्तृत नोट्स</title>
+  <style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+ header{display:flex;gap:16px;align-items:center}
+    h1{margin:0;font-size:28px;color:var(--accent)}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(14,30,37,0.06)}
+    h2{margin-top:0;color:#0b2a66}
+    ul{padding-left:18px}
+    .svg-wrap{display:flex;flex-direction:column;gap:12px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    code{background:#f3f6ff;padding:2px 6px;border-radius:6px;font-size:13px}
+    .note{background:#fff8e1;padding:10px;border-left:4px solid #ffd54f}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+     <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+  <header>
+    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <circle cx="12" cy="12" r="11" stroke="#0066cc" stroke-width="1.2" fill="#eaf4ff"/>
+      <path d="M8 14c1-2 3-3 4-3s3 1 4 3" stroke="#0066cc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="9.5" cy="10" r="0.9" fill="#0066cc"/>
+      <circle cx="14.5" cy="10" r="0.9" fill="#0066cc"/>
+    </svg>
+    <div>
+      <h1>मानव स्वास्थ्य एवं रोग — विस्तृत नोट्स</h1>
+      <p class="lead">यह दस्तावेज़ UP Board (कक्षा 12) के अनुरूप सरल भाषा में पूर्ण व्याख्या, प्रमुख अवधारणाएँ, और सरल SVG चित्रों के साथ तैयार किया गया है।</p>
+    </div>
+  </header>
+
+  <div class="grid" style="margin-top:18px">
+    <main class="card">
+
+      <h2>1. स्वास्थ्य की परिभाषा</h2>
+      <p>विश्व स्वास्थ्य संगठन (WHO) के अनुसार, <b>स्वास्थ्य सिर्फ बीमारी का अभाव नहीं है</b>, बल्कि शारीरिक, मानसिक और सामाजिक कल्याण की पूर्ण स्थिति है।</p>
+
+      <h2>2. रोग (Disease) — परिचय</h2>
+      <p>रोग वह अवस्था है जब शरीर का सामान्य कार्य प्रभावित हो जाता है। रोगों के कारणों को broadly दो हिस्से में बाँटा जा सकता है:</p>
+      <ul>
+        <li><b>संक्रामक रोग (Infectious / Communicable):</b> रोगजनक सूक्ष्मजीवों (बैक्टीरिया, वायरस, फंगस, प्रोटोजोआ) के कारण होते हैं — जैसे टाइफाइड, मलेरिया, तपेदिक (TB), स्वरद (influenza)।</li>
+        <li><b>गैर‑संक्रामक रोग (Non‑communicable):</b> संक्रामक नहीं होते; इनमें जीवनशैली, आनुवंश, पर्यावरणिक कारण प्रभावी होते हैं — जैसे हृदय रोग, मधुमेह (Diabetes), कैंसर, उच्च रक्तचाप (Hypertension)।</li>
+      </ul>
+
+      <h2>3. रोग के कारण (Etiology)</h2>
+      <ul>
+        <li><b>बायोलॉजिकल कारण:</b> जीवाणु, वायरस, परजीवी आदि।</li>
+        <li><b>आनुवंशिक कारण:</b> वंशानुगत बीमारियाँ (जैसे थैलेसीमिया, सिकल सेल)।</li>
+        <li><b>पोषण संबंधी कारण:</b> कुपोषण, विटामिन की कमी (जैसे विटामिन‑D में कमी)।</li>
+        <li><b>पर्यावरणीय कारण:</b> प्रदूषण, अस्वच्छ पानी, कीट नियंत्रण की कमी।</li>
+        <li><b>जीवनशैली कारण:</b> धूम्रपान, शराब, अनियमित भोजन, शारीरिक निष्क्रियता।</li>
+      </ul>
+
+      <h2>4. रोग संचरण के तरीके (Modes of Transmission)</h2>
+      <p>संक्रामक रोग कई तरीकों से फैलते हैं — कुछ प्रमुख तरीके निम्नलिखित SVG चार्ट में दर्शाए गए हैं।</p>
+
+      <!-- SVG: Disease Transmission Flow -->
+      <div class="svg-wrap card" style="padding:12px">
+        <svg width="100%" height="180" viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="रोग संचरण चार्ट">
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 z" fill="#444" />
+            </marker>
+          </defs>
+          <rect x="8" y="14" width="200" height="60" rx="10" fill="#f1f8ff" stroke="#cfe6ff"/>
+          <text x="20" y="44" font-size="14" fill="#0b2a66">संक्रमित व्यक्ति (Source)</text>
+
+          <rect x="260" y="8" width="200" height="70" rx="10" fill="#fff8f0" stroke="#ffecd1"/>
+          <text x="280" y="42" font-size="14" fill="#7a3b00">संक्रमण का माध्यम (Airborne / Water / Vector)</text>
+
+          <rect x="520" y="14" width="200" height="60" rx="10" fill="#f0fff5" stroke="#d7ffe6"/>
+          <text x="540" y="44" font-size="14" fill="#006633">नवीन संक्रमित (New Host)</text>
+
+          <line x1="208" y1="44" x2="260" y2="44" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+          <line x1="460" y1="44" x2="520" y2="44" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- small icons -->
+          <circle cx="340" cy="120" r="18" fill="#ffeecf" stroke="#ffcf80"/>
+          <text x="332" y="125" font-size="12" fill="#7a3b00">पानी</text>
+          <circle cx="420" cy="120" r="18" fill="#e9f6ff" stroke="#a6d6ff"/>
+          <text x="412" y="125" font-size="12" fill="#0b2a66">हवा</text>
+          <circle cx="500" cy="120" r="18" fill="#f0ffe9" stroke="#bff0b3"/>
+          <text x="490" y="125" font-size="12" fill="#006633">कीट</text>
+        </svg>
+        <small style="color:var(--muted)">चित्र: संक्रमण का स्रोत → माध्यम → नया मेज़बान</small>
+      </div>
+
+      <h2>5. प्रतिरक्षा प्रणाली (Immune System)</h2>
+      <p>प्रतिरक्षा प्रणाली शरीर की रक्षा करती है। इसे दो भागों में बाँटा जाता है:</p>
+      <ul>
+        <li><b>अनिश्चित (Innate) प्रतिरक्षा:</b> त्वचा, श्लैष्मिक झिल्ली, फागोसाइटिक कोशिकाएँ (Macrophages, Neutrophils), सूजन (Inflammation) — तुरंत सक्रिय होती है।</li>
+        <li><b>विशिष्ट (Adaptive) प्रतिरक्षा:</b> लिम्फोसाइट्स (B‑cells और T‑cells) — यह मेमोरी बनाती है और विशेष रोगजनको के खिलाफ लंबे समय तक सुरक्षा देती है।</li>
+      </ul>
+
+      <!-- SVG: Immune Response -->
+      <div class="svg-wrap card" style="padding:12px">
+        <svg width="100%" height="180" viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="प्रतिरक्षा प्रतिक्रिया">
+          <rect x="12" y="20" width="140" height="120" rx="10" fill="#fff0f3" stroke="#ffd7e6"/>
+          <text x="28" y="46" font-size="13" fill="#7a2140">Pathogen</text>
+          <circle cx="80" cy="90" r="24" fill="#ffb3c6"/>
+
+          <rect x="180" y="20" width="160" height="120" rx="10" fill="#eef7ff" stroke="#cfe6ff"/>
+          <text x="210" y="46" font-size="13" fill="#0b2a66">Innate Response</text>
+          <circle cx="230" cy="92" r="12" fill="#a6d6ff"/>
+
+          <rect x="380" y="20" width="160" height="120" rx="10" fill="#f0fff5" stroke="#d7ffe6"/>
+          <text x="405" y="46" font-size="13" fill="#006633">Adaptive Response</text>
+          <circle cx="450" cy="92" r="12" fill="#bff0b3"/>
+
+          <rect x="600" y="20" width="260" height="120" rx="10" fill="#fff8e6" stroke="#ffefc8"/>
+          <text x="640" y="46" font-size="13" fill="#7a4b00">Antibodies / Memory</text>
+          <rect x="670" y="82" width="80" height="12" rx="6" fill="#ffd98b"/>
+
+          <line x1="104" y1="90" x2="180" y2="90" stroke="#444" stroke-width="2" marker-end="url(#arrow)" />
+          <line x1="340" y1="90" x2="380" y2="90" stroke="#444" stroke-width="2" marker-end="url(#arrow)" />
+          <line x1="540" y1="90" x2="600" y2="90" stroke="#444" stroke-width="2" marker-end="url(#arrow)" />
+
+          <defs>
+            <marker id="arrow2" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 z" fill="#444" />
+            </marker>
+          </defs>
+        </svg>
+        <small style="color:var(--muted)">चित्र: रोगजनक पर innate → adaptive प्रतिक्रिया और एंटीबॉडी/मेमोरी का निर्माण</small>
+      </div>
+
+      <h2>6. टीकाकरण (Vaccination) और सक्रिय/निष्क्रिय प्रतिरक्षा</h2>
+      <ul>
+        <li><b>सक्रिय प्रतिरक्षा:</b> किसी रोगजनक या उसके भाग को देकर शरीर को स्वयं एंटीबॉडी बनवाना — उदाहरण: टीके (Polio, DPT, MMR, Hepatitis)।</li>
+        <li><b>निष्क्रिय प्रतिरक्षा:</b> तैयार एंटीबॉडी देना — शोषित रोगियों को तुरंत सुरक्षा देने के लिए (जैसे रैबीज़ इम्युनोग्लोबुलिन)।</li>
+      </ul>
+
+      <h2>7. प्रमुख मानव रोग — संक्षेप में</h2>
+      <h3>संक्रामक:</h3>
+      <ul>
+        <li><b>जुकाम/इन्फ्लुएंजा (Common cold / Influenza):</b> वायरल — लक्षण: बुखार, खांसी, गला ख़राश।</li>
+        <li><b>टाइफाइड:</b> Salmonella Typhi — बुखार, पेट दर्द; स्वच्छता और पानी से बचाव आवश्यक।</li>
+        <li><b>मलेरिया:</b> Plasmodium (मच्छर द्वारा) — बुखार के साथ बुखार‑ज्वर का चक्र।</li>
+        <li><b>टीबी (Tuberculosis):</b> Mycobacterium tuberculosis — दीर्घकालिक खासी और वजन कम होना।</li>
+      </ul>
+      <h3>गैर‑संक्रामक:</h3>
+      <ul>
+        <li><b>हृदय रोग (Cardiovascular diseases):</b> एथेरोस्क्लेरोसिस, दिल का दौरा (Heart attack)।</li>
+        <li><b>मधुमेह (Diabetes mellitus):</b> इंसुलिन की कमी या प्रतिरोध।</li>
+        <li><b>कैंसर:</b> अनियंत्रित कोशिका विभाजन; रोकथाम में जीवनशैली महत्वपूर्ण।</li>
+      </ul>
+
+      <h2>8. रोग नियंत्रण और रोकथाम (Prevention & Control)</h2>
+      <ol>
+        <li><b>निजी स्वच्छता:</b> हाथ धोना, खाँसी/छीकने पर नाक‑मुँह ढकना।</li>
+        <li><b>पानी और खाद्य सुरक्षा:</b> उबाल कर पानी पीना, साफ खाद्य पदार्थ।</li>
+        <li><b>विक्टोर नियंत्रण:</b> मच्छरदानी, कीटनाशक, पानी रोकना।</li>
+        <li><b>टीकाकरण अभियान:</b> सामुदायिक प्रतिरक्षा (Herd immunity) के लिए जनसमूह का टीकाकरण।</li>
+        <li><b>स्वस्थ जीवनशैली:</b> संतुलित आहार, नियमित व्यायाम, धूम्रपान व शराब से परहेज़।</li>
+      </ol>
+
+      <h2>9. स्वास्थ्य सेवाएँ और सार्वजनिक स्वास्थ्य (Public Health)</h2>
+      <p>सरकारी स्वास्थ्य कार्यक्रम — प्राथमिक स्वास्थ्य केंद्र (PHC), टीकाकरण (UIP), मातृ‑शिशु स्वास्थ्य, परिवार नियोजन — समाज में रोग नियंत्रण के मुख्य स्तम्भ हैं।</p>
+
+      <h2>10. रोग प्रतिरोधकता (Antimicrobial Resistance, AMR)</h2>
+      <p>एंटीबायोटिक्स का अनुचित उपयोग और अधूरा सेवन AMR को बढ़ाता है — परिणाम: दवाएँ कम प्रभावी हो जाती हैं। रोकथाम में दवा का पूरा कोर्स लेना और केवल आवश्यक पर ही एंटीबायोटिक देना आवश्यक है।</p>
+
+      <h2>11. मानसिक स्वास्थ्य (Brief)</h2>
+      <p>मानसिक स्वास्थ्य भी WHO के अनुसार स्वास्थ्य का अनिवार्य अंग है। अवसाद (Depression), चिंता (Anxiety), और तनाव (Stress) सामान्य लेकिन संभाल योग्य स्थितियाँ हैं — समय पर सलाह और चिकित्सकीय सहायता आवश्यक है।</p>
+
+      <h2>12. महत्वपूर्ण प्रश्न (Important Questions)</h2>
+      <ol>
+        <li>स्वास्थ्य की WHO परिभाषा क्या है? उदाहरण सहित समझाइए।</li>
+        <li>संक्रामक और गैर‑संक्रामक रोगों के बीच अंतर बताइए।</li>
+        <li>प्रतिरक्षा प्रणाली के मुख्य घटक और उनके कार्य वर्णन कीजिए।</li>
+        <li>टीकाकरण का क्या महत्व है? Herd immunity समझाइए।</li>
+        <li>AMR क्या है और इससे कैसे बचें? पर चर्चा कीजिए।</li>
+      </ol>
+
+      <h2>13. सारांश (Summary)</h2>
+      <p class="note">स्वास्थ्य सिर्फ बीमारी‑रहित अवस्था नहीं, बल्कि शारीरिक, मानसिक व सामाजिक कल्याण है। रोगों की रोकथाम में व्यक्तिगत परहेज़, टीकाकरण, स्वच्छता और सार्वजनिक स्वास्थ्य सेवाएँ महत्वपूर्ण भूमिका निभाती हैं। प्रतिरक्षा प्रणाली के जरिए शरीर को रोगों से बचाया जा सकता है, और AMR जैसे नए जोखिमों से सतर्क रहना ज़रूरी है।</p>
+
+      <footer>
+        © नोट्स — जनरल एजुकेशन • तैयारकर्ता: ChatGPT
+      </footer>
+
+    </main>
+
+    <aside class="card">
+      <h2>त्वरित फ़्लो</h2>
+      <ul>
+        <li><b>स्वास्थ्य</b> → पूर्ण कल्याण</li>
+        <li><b>रोग</b> → संक्रामक / गैर‑संक्रामक</li>
+        <li><b>नियंत्रण</b> → स्वच्छता, टीका, उपचार</li>
+      </ul>
+
+      <h2>SVG: टीकाकरण कैसे काम करता है</h2>
+      <div style="padding:8px;background:#fff;border-radius:8px">
+        <svg viewBox="0 0 360 140" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="टीकाकरण प्रभाव">
+          <rect x="8" y="16" width="100" height="48" rx="8" fill="#eef7ff" stroke="#cfe6ff" />
+          <text x="20" y="44" font-size="12" fill="#0b2a66">Vaccine (Antigen)</text>
+
+          <rect x="132" y="8" width="100" height="64" rx="8" fill="#f0fff5" stroke="#d7ffe6" />
+          <text x="150" y="44" font-size="12" fill="#006633">Body produces Antibodies</text>
+
+          <rect x="260" y="16" width="88" height="48" rx="8" fill="#fff8e6" stroke="#ffefc8" />
+          <text x="270" y="44" font-size="12" fill="#7a4b00">Memory Cells</text>
+
+          <line x1="108" y1="40" x2="132" y2="40" stroke="#444" stroke-width="2" marker-end="url(#m)"/>
+          <line x1="232" y1="40" x2="260" y2="40" stroke="#444" stroke-width="2" marker-end="url(#m)"/>
+          <defs>
+            <marker id="m" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 z" fill="#444" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <h2>Quick Tips</h2>
+      <ul>
+        <li>हाथ नियमित धोएं (20 सेकंड साबुन से)</li>
+        <li>टीकाकरण पूरा कराएँ</li>
+        <li>पर्याप्त नींद और संतुलित आहार रखें</li>
+      </ul>
+
+      <small style="color:var(--muted)">आगे संशोधन या डाया ग्राम जोड़वाना हो तो बताइए।</small>
+    </aside>
+
+  </div>
+
+</body>
+</html>

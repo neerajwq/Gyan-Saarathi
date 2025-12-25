@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>कक्षा 12 भौतिकी — अध्याय 7: परिवर्तनशील धारा (Alternating Current) — विस्तृत नोट्स</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+  /* body{font-family:'Noto Sans Devanagari',system-ui,Arial;line-height:1.65;background:#f7fbff;padding:22px;color:#07203a} */
+  /* .container{max-width:980px;margin:0 auto} */
+  header{text-align:center;margin-bottom:14px}
+  /* h1{color:#0b66a3} */
+  /* h2{color:#0e3b5b} */
+  .card{background:#ffffff;padding:16px;border-radius:10px;margin:14px 0;box-shadow:0 6px 18px rgba(10,30,60,0.06)}
+  .formula{background:#eef6ff;padding:10px;border-left:4px solid #0b66a3;border-radius:6px;font-weight:600;margin:10px 0}
+  pre{background:#f3f7fb;padding:10px;border-radius:6px;overflow:auto}
+  ul{margin-left:18px}
+  table{width:100%;border-collapse:collapse;margin-top:10px}
+  th,td{padding:8px;border:1px solid #e6eef8;text-align:left}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<header>
+  <h1>अध्याय 7 — परिवर्तनशील धारा (Alternating Current)</h1>
+  <p style="color:#4b5966">पूरा अध्याय सरल हिंदी में — परिभाषाएँ, सिद्धांत, फॉर्मूले, उदाहरण और परीक्षा-टिप्स के साथ।</p>
+</header>
+
+<section class="card">
+  <h2>1. परिचय (Introduction)</h2>
+  <p>परिवर्तनशील धारा (AC) वह धारा है जिसकी दिशा और भुजाएँ समय के साथ आवर्ती रूप से बदलती रहती हैं। सबसे सामान्यतः v(t) = V<sub>max</sub> sin(ωt) का उपयोग होता है।</p>
+  <div class="formula">v(t) = V<sub>max</sub> sin(ωt) = V<sub>max</sub> sin(2πft)</div>
+  <p>यहाँ V<sub>max</sub> = अधिकतम आवेग (peak), ω = 2πf (angular frequency), f = आवृत्ति (Hz), T = अवधि = 1/f।</p>
+</section>
+
+<section class="card">
+  <h2>2. RMS (Root Mean Square) और औसत मान (Average)</h2>
+  <p>यदि v(t) = V<sub>max</sub> sin(ωt), तो 
+  <div class="formula">V<sub>rms</sub> = V<sub>max</sub> / √2 ,  I<sub>rms</sub> = I<sub>max</sub> / √2</div>
+  औसत (over full cycle) शून्य होता है पर उपयोगी शक्ति के लिये हम RMS का प्रयोग करते हैं।</p>
+</section>
+
+<section class="card">
+  <h2>3. शक्ति (Power) — instantaneous और average</h2>
+  <p>तत्कालिक शक्ति p(t) = v(t) i(t)।</p>
+  <div class="formula">P<sub>avg</sub> = V<sub>rms</sub> I<sub>rms</sub> cosφ</div>
+  <p>यहाँ φ = वोल्टेज और करंट के बीच चरणांतर (phase difference)।
+  <ul>
+    <li>Power factor = cosφ</li>
+    <li>यदि φ = 0 (pure resistor), cosφ = 1 → अधिकतम शक्ति</li>
+  </ul>
+  </p>
+</section>
+
+<section class="card">
+  <h2>4. आवधिक घटक — R, L, C पर व्यवहार (AC in R, L, C)</h2>
+  <h3>4.1 केवल R (Pure Resistor)</h3>
+  <p>V और I समान चरण में: φ = 0</p>
+  <div class="formula">v(t) = V<sub>max</sub> sin(ωt), i(t) = I<sub>max</sub> sin(ωt), V<sub>rms</sub>=IR</div>
+
+  <h3>4.2 केवल L (Pure Inductor)</h3>
+  <p>करंट विलंबित होता है (current lags voltage by 90°): φ = +90° (या π/2)।</p>
+  <div class="formula">V = L (di/dt),  X<sub>L</sub> = ωL</div>
+  <p>इम्पीडेंस Z = j X<sub>L</sub></p>
+
+  <h3>4.3 केवल C (Pure Capacitor)</h3>
+  <p>करंट V से आगे होता है (current leads voltage by 90°): φ = −90°।</p>
+  <div class="formula">i = C (dv/dt),  X<sub>C</sub> = 1 / (ωC)</div>
+  <p>इम्पीडेंस Z = −j X<sub>C</sub></p>
+</section>
+
+<section class="card">
+  <h2>5. श्रृंखला R‑L‑C परिपथ (Series RLC Circuit)</h2>
+  <p>कुल इम्पीडेंस:</p>
+  <div class="formula">Z = R + j(ωL − 1/ωC)</div>
+  <p>मूल्य (magnitude):</p>
+  <div class="formula">|Z| = √[ R² + (ωL − 1/ωC)² ]</div>
+  <p>धारा (rms): I<sub>rms</sub> = V<sub>rms</sub> / |Z|। चरण कोण φ = tan⁻¹[ (ωL − 1/ωC) / R ]</p>
+</section>
+
+<section class="card">
+  <h2>6. प्रतिबाध्यता (Reactance) और प्रतिरोधक (Impedance)</h2>
+  <div class="formula">X<sub>L</sub> = ωL ,  X<sub>C</sub> = 1/(ωC)</div>
+  <p>Impedance Z (complex) = R + j(X<sub>L</sub> − X<sub>C</sub>)</p>
+</section>
+
+<section class="card">
+  <h2>7. अनुनाद (Resonance)</h2>
+  <p>श्रृंखला RLC में अनुनाद तब होता है जब X<sub>L</sub> = X<sub>C</sub> ⇒ ωL = 1/ωC</p>
+  <div class="formula">ω₀ = 1 / √(LC) ,  f₀ = ω₀ / 2π</div>
+  <p>अनुनाद पर |Z| = R, करंट अधिकतम।</p>
+  <p>Quality factor (Q):</p>
+  <div class="formula">Q = ω₀ L / R = 1 / (R) √(L/C)</div>
+  <p>Bandwidth Δω = ω₀ / Q</p>
+</section>
+
+<section class="card">
+  <h2>8. पार्श्विक (Phasor) प्रस्तुतिकरण</h2>
+  <p>AC विश्लेषण के लिए v और i को फेजर के रूप में लिखते हैं: V̅ = V<sub>max</sub> ∠0°, I̅ = I<sub>max</sub> ∠−φ। फेजर डाइग्राम्स से चरण संबंध सरलता से समझे जा सकते हैं।</p>
+</section>
+
+<section class="card">
+  <h2>9. शक्ति और पावर फैक्टर (Power & Power Factor)</h2>
+  <p>तुरंतिक शक्ति p(t) = v(t)i(t)।
+  पर औसत उपयोगी शक्ति:
+  <div class="formula">P = V<sub>rms</sub> I<sub>rms</sub> cosφ</div>
+  और अपव्यय (reactive power): Q = V<sub>rms</sub> I<sub>rms</sub> sinφ।
+  Apparent power S = V<sub>rms</sub> I<sub>rms</sub> (VA)।
+  </p>
+</section>
+
+<section class="card">
+  <h2>10. ट्रांसफॉर्मर का परिचय (Transformer)</h2>
+  <p>दो कुंडलियों वाला उपकरण जो AC वोल्टेज को बदलता है—primary N₁, secondary N₂।</p>
+  <div class="formula">V₁ / V₂ = N₁ / N₂ ,  I₁ / I₂ = N₂ / N₁</div>
+  <p>इडियल ट्रांसफॉर्मर में शक्ति संरक्षण: V₁ I₁ = V₂ I₂</p>
+</section>
+
+<section class="card">
+  <h2>11. उपयोगी सूत्र सार (Quick Formula Sheet)</h2>
+  <table>
+    <tr><th>विषय</th><th>सूत्र</th></tr>
+    <tr><td>AC वोल्टेज</td><td>v = V<sub>max</sub> sin(ωt)</td></tr>
+    <tr><td>RMS</td><td>V<sub>rms</sub> = V<sub>max</sub>/√2</td></tr>
+    <tr><td>इंडक्टिव रिएक्टेंस</td><td>X<sub>L</sub> = ωL</td></tr>
+    <tr><td>कैपेसिटिव रिएक्टेंस</td><td>X<sub>C</sub> = 1/(ωC)</td></tr>
+    <tr><td>श्रृंखला इम्पीडेंस</td><td>Z = √[R² + (X<sub>L</sub> − X<sub>C</sub>)²]</td></tr>
+    <tr><td>रज़ोनन्स फ्रिक्वेंसी</td><td>ω₀ = 1/√(LC)</td></tr>
+    <tr><td>पावर</td><td>P = V<sub>rms</sub> I<sub>rms</sub> cosφ</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>12. उदाहरण प्रश्न (Solved Examples)</h2>
+  <div class="formula">उदाहरण 1: यदि V<sub>rms</sub> = 230 V और R = 115 Ω (शुद्ध R), तो I<sub>rms</sub> = 230/115 = 2 A, P = V I = 460 W.</div>
+  <div class="formula">उदाहरण 2: Series RLC में R=10 Ω, L=0.1 H, C=100 μF, f=50 Hz. पहले ω = 2π×50, X<sub>L</sub>, X<sub>C</sub> निकाले और Z व I ज्ञात करें।</div>
+</section>
+
+<section class="card">
+  <h2>13. परीक्षा-टिप्स (Exam Tips)</h2>
+  <ul>
+    <li>RMS और पीक मान में भ्रम न हो — हमेशा ध्यान से √2 लगाएं।</li>
+    <li>फेजर डायग्राम बनाकर चरण संबंध स्पष्ट करें।</li>
+    <li>Resonance में करंट अधिकतम और इम्पीडेंस न्यूनतम होता है।</li>
+    <li>ट्रांसफॉर्मर के प्रश्नों में N₁/N₂ अनुपात को सही रखें और इडियल/रियल भेद समझें।</li>
+  </ul>
+</section>
+
+<footer style="text-align:center;color:#4b5966;margin-top:12px">यदि आप चाहें तो मैं इस HTML को PDF में बदल दूँ, डायग्राम जोड़ दूँ, या और उदाहरण व MCQ जोड़ दूँ।</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वंशागति का आण्विक आधार – Full Long Notes + Diagrams</title>
+
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    svg {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<h1>✨ वंशागति का आण्विक आधार (Molecular Basis of Heredity)</h1>
+<p>इस अध्याय में हम यह समझते हैं कि जीवों के गुण एक पीढ़ी से दूसरी पीढ़ी में कैसे जाते हैं।  
+जीवन के मूलभूत अणु – <b>DNA, RNA, Genes, Chromosomes</b> – इन सभी की भूमिका यहाँ समझाई जाती है।</p>
+
+<!-- DNA Structure -->
+<div class="card">
+<h2>1. DNA – मुख्य आनुवांशिक पदार्थ</h2>
+<p>DNA (डीएनए) वह अणु है जिसमें जीव के सभी वंशानुगत गुण संग्रहीत होते हैं। इसकी संरचना द्वि-सूत्री (Double Helix) होती है।</p>
+
+<h3>📌 DNA संरचना का सरल Diagram (SVG)</h3>
+
+<svg height="280">
+    <rect width="100%" height="100%" fill="#f0f3ff"/>
+    <text x="50%" y="20" text-anchor="middle" font-size="18">DNA Double Helix (Simplified)</text>
+
+    <!-- Left Strand -->
+    <line x1="120" y1="40" x2="120" y2="240" stroke="#2a2f8f" stroke-width="4"/>
+    <!-- Right Strand -->
+    <line x1="260" y1="40" x2="260" y2="240" stroke="#2a2f8f" stroke-width="4"/>
+
+    <!-- Base pairs -->
+    <line x1="120" y1="60" x2="260" y2="60" stroke="#ff7676" stroke-width="3"/>
+    <line x1="120" y1="100" x2="260" y2="100" stroke="#77cc77" stroke-width="3"/>
+    <line x1="120" y1="140" x2="260" y2="140" stroke="#ffcc66" stroke-width="3"/>
+    <line x1="120" y1="180" x2="260" y2="180" stroke="#66b3ff" stroke-width="3"/>
+    <line x1="120" y1="220" x2="260" y2="220" stroke="#ff66cc" stroke-width="3"/>
+
+</svg>
+
+<p>
+DNA न्यूक्लियोटाइड से बना होता है। प्रत्येक न्यूक्लियोटाइड में:
+<ul>
+<li>नाइट्रोजन क्षार (A, T, G, C)</li>
+<li>डीऑक्सीराइबोज शर्करा</li>
+<li>फॉस्फेट समूह</li>
+</ul>
+<b>A–T</b> और <b>G–C</b> विशिष्ट जोड़े बनाकर DNA को स्थिर बनाते हैं।
+</p>
+</div>
+
+<!-- Genes -->
+<div class="card">
+<h2>2. जीन (Genes)</h2>
+<p>जीन DNA का वह भाग है जो किसी विशिष्ट गुण को नियंत्रित करता है।  
+उदाहरण: रक्त समूह, आँखों का रंग आदि।</p>
+
+<svg height="180">
+    <rect width="100%" height="100%" fill="#f7f8ff"/>
+    <text x="50%" y="25" text-anchor="middle" font-size="18">Gene on DNA Strand</text>
+
+    <line x1="50" y1="90" x2="350" y2="90" stroke="#2a2f8f" stroke-width="6"/>
+    <rect x="140" y="60" width="150" height="60" fill="#ffc36b" stroke="#cc8a33" stroke-width="2"/>
+    <text x="215" y="95" text-anchor="middle" font-size="16">Gene</text>
+</svg>
+
+<p>जीन की मदद से ही प्रोटीन बनते हैं जिन्हें गुणों की अभिव्यक्ति में उपयोग किया जाता है।</p>
+</div>
+
+<!-- Central Dogma -->
+<div class="card">
+<h2>3. Central Dogma — DNA → RNA → Protein</h2>
+<p>Francis Crick ने बताया कि आनुवांशिक सूचना DNA से RNA और फिर प्रोटीन में जाती है।</p>
+
+<svg height="180">
+    <rect width="100%" height="100%" fill="#eef2ff"/>
+    <text x="50%" y="30" font-size="18" text-anchor="middle">Central Dogma</text>
+
+    <rect x="40" y="80" width="100" height="40" fill="#ffdf7e"/>
+    <text x="90" y="105" text-anchor="middle">DNA</text>
+
+    <rect x="180" y="80" width="100" height="40" fill="#7edfff"/>
+    <text x="230" y="105" text-anchor="middle">RNA</text>
+
+    <rect x="320" y="80" width="100" height="40" fill="#a8ff9a"/>
+    <text x="370" y="105" text-anchor="middle">Protein</text>
+
+    <line x1="140" y1="100" x2="180" y2="100" stroke="#000" stroke-width="3"/>
+    <line x1="280" y1="100" x2="320" y2="100" stroke="#000" stroke-width="3"/>
+</svg>
+
+<p>इस प्रक्रिया के दो महत्वपूर्ण चरण हैं:</p>
+<ul>
+<li><b>Transcription:</b> DNA से mRNA का निर्माण</li>
+<li><b>Translation:</b> mRNA से अमीनो अम्ल जुड़कर प्रोटीन बनाते हैं</li>
+</ul>
+</div>
+
+<!-- Replication -->
+<div class="card">
+<h2>4. DNA प्रतिकृति (Replication)</h2>
+<p>DNA अपनी पूरी प्रतिलिपि बनाता है ताकि कोशिका विभाजन के समय प्रत्येक नई कोशिका को पूरा DNA मिल सके।</p>
+
+<svg height="220">
+    <rect width="100%" height="100%" fill="#eff5ff"/>
+    <text x="50%" y="30" text-anchor="middle" font-size="18">DNA Replication</text>
+
+    <!-- Parent DNA -->
+    <line x1="100" y1="60" x2="100" y2="180" stroke="#2a2f8f" stroke-width="4"/>
+    <line x1="180" y1="60" x2="180" y2="180" stroke="#2a2f8f" stroke-width="4"/>
+    <text x="140" y="200" text-anchor="middle">Parent DNA</text>
+
+    <!-- Arrow -->
+    <line x1="230" y1="120" x2="280" y2="120" stroke="#000" stroke-width="3"/>
+
+    <!-- New DNA -->
+    <line x1="320" y1="60" x2="320" y2="180" stroke="#4caf50" stroke-width="4"/>
+    <line x1="400" y1="60" x2="400" y2="180" stroke="#4caf50" stroke-width="4"/>
+    <text x="360" y="200" text-anchor="middle">New DNA</text>
+</svg>
+
+<p>इसमें <b>DNA Polymerase</b> नामक एंज़ाइम महत्वपूर्ण भूमिका निभाता है।</p>
+</div>
+
+<!-- Chromosomes -->
+<div class="card">
+<h2>5. क्रोमोसोम (Chromosomes)</h2>
+<p>DNA + Protein मिलकर क्रोमोसोम बनाते हैं।  
+मनुष्य में <b>46 क्रोमोसोम</b> (23 जोड़े) होते हैं।</p>
+
+<svg height="200">
+    <rect width="100%" height="100%" fill="#f4f5ff"/>
+    <text x="50%" y="30" text-anchor="middle" font-size="18">Human Chromosomes (Simplified)</text>
+
+    <line x1="120" y1="70" x2="120" y2="160" stroke="#2a2f8f" stroke-width="8"/>
+    <line x1="170" y1="70" x2="170" y2="160" stroke="#2a2f8f" stroke-width="8"/>
+
+    <text x="145" y="185" text-anchor="middle">Chromosome Pair</text>
+</svg>
+
+<p>क्रोमोसोम में ही जीन व्यवस्थित पाए जाते हैं, इसलिए इन्हें <b>वंशागति की इकाई</b> कहा जाता है।</p>
+</div>
+
+<!-- RNA -->
+<div class="card">
+<h2>6. RNA – प्रकार और कार्य</h2>
+<ul>
+<li><b>mRNA:</b> DNA का संदेश लाता है</li>
+<li><b>tRNA:</b> अमीनो अम्ल को राइबोसोम तक पहुँचाता है</li>
+<li><b>rRNA:</b> प्रोटीन निर्माण का स्थल (Ribosome) बनाता है</li>
+</ul>
+</div>
+
+<!-- Types of genes -->
+<div class="card">
+<h2>7. जीन के प्रकार</h2>
+<p>विभिन्न प्रकार के जीन गुण अभिव्यक्ति को प्रभावित करते हैं:</p>
+<ul>
+<li>प्रधान (Dominant)</li>
+<li>दबित (Recessive)</li>
+<li>लिंग-सहलग्न जीन</li>
+<li>मल्टीपल एलील</li>
+<li>कोडोमिनेंट जीन</li>
+</ul>
+</div>
+
+<!-- Conclusion -->
+<div class="card">
+<h2>✔ निष्कर्ष</h2>
+<p>
+वंशागति का वास्तविक आधार है —  
+<b>DNA → Gene → RNA → Protein → गुण</b>  
+इसी क्रम से गुण पीढ़ी दर पीढ़ी चलते हैं।
+</p>
+</div>
+
+</body>
+</html>

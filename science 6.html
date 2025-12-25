@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नियंत्रण एवं समन्वय (Control & Coordination) - Class 10</title>
+
+<style>
+    :root{
+        --primary-blue:#1A237E;
+        --light-blue:#81D4FA;
+        --accent-orange:#FFB300;
+        --light-gray:#F5F7FA;
+        --text-dark:#333;
+        --text-light:#fff;
+        --border-radius:12px;
+        --font-family:'Roboto', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--font-family);background:var(--light-gray);color:var(--text-dark);line-height:1.6;}
+    header{background:var(--primary-blue);color:var(--text-light);display:flex;justify-content:space-between;align-items:center;padding:12px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.12);}
+    .logo-section{display:flex;align-items:center;}
+    .logo-img{height:38px;width:38px;border-radius:50%;margin-right:12px;}
+    .main-nav a{color:var(--text-light);text-decoration:none;margin:0 12px;font-weight:600;}
+    .btn-mock-test{background:var(--accent-orange);color:var(--primary-blue);padding:6px 12px;border-radius:10px;text-decoration:none;font-weight:700;}
+    .box{background:#fff;margin:18px;padding:18px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    h1,h2{color:var(--primary-blue);margin-bottom:8px;}
+    ul,ol{margin-left:18px;margin-top:8px;}
+    .formula{background:#e8f0ff;padding:8px 12px;border-radius:8px;display:inline-block;font-weight:700;margin-top:8px;}
+    svg{display:block;margin:18px auto;max-width:100%;}
+    table{width:100%;border-collapse:collapse;margin-top:10px;}
+    th,td{border:1px solid #e0e0e0;padding:8px;text-align:left;}
+    th{background:#f1f8ff;color:var(--primary-blue);}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" class="logo-img" alt="ज्ञान सारथी">
+        <div>
+            <h3 style="margin:0;color:#fff">Gyan Saarathi</h3>
+            <div style="font-size:12px;color:rgba(255,255,255,0.9)">Class 10 — नियंत्रण एवं समन्वय</div>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIport</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+</header>
+
+<!-- परिचय -->
+<div class="box">
+    <h1>अध्याय — नियंत्रण एवं समन्वय</h1>
+    <p>जीव अपने शरीर की क्रियाओं को नियंत्रित और समन्वयित करने के लिए तंत्रिका तंत्र (Nervous system) और हार्मोनल तंत्र (Endocrine system) का उपयोग करते हैं।</p>
+</div>
+
+<!-- तंत्रिका तंत्र -->
+<div class="box">
+    <h2>1. तंत्रिका तंत्र (Nervous System)</h2>
+    <ul>
+        <li>त्वरित नियंत्रण और संदेश आदान-प्रदान के लिए जिम्मेदार।</li>
+        <li>मुख्य अंग: मस्तिष्क (Brain), रीढ़ की हड्डी (Spinal Cord), तंत्रिकाएँ (Nerves)।</li>
+        <li>संदेश न्यूरॉन्स (Neurons) के माध्यम से पहुँचता है।</li>
+    </ul>
+
+    <h3>न्यूरॉन संरचना</h3>
+    <svg width="360" height="140">
+        <circle cx="50" cy="70" r="18" fill="#ffe0b2" stroke="#fb8c00"/>
+        <text x="35" y="75" font-size="12">Cell Body</text>
+        <line x1="68" y1="70" x2="220" y2="70" stroke="#000" stroke-width="3"/>
+        <text x="120" y="60" font-size="12">Axon</text>
+        <circle cx="230" cy="70" r="10" fill="#90caf9" stroke="#0288d1"/>
+        <text x="220" y="85" font-size="12">Terminal</text>
+    </svg>
+</div>
+
+<!-- रिफ्लेक्स आर्क -->
+<div class="box">
+    <h2>2. रिफ्लेक्स आर्क (Reflex Arc)</h2>
+    <p>अकस्मात् प्रतिक्रिया के लिए तंत्रिकाएँ शॉर्टकट के रूप में काम करती हैं। उदाहरण: हाथ को गर्म चीज़ से हटाना।</p>
+
+    <h3>SVG — Reflex Arc सरल दृश्य</h3>
+    <svg width="340" height="140">
+        <circle cx="50" cy="70" r="15" fill="#ffcc80" stroke="#f57c00"/>
+        <text x="35" y="75" font-size="10">Stimulus</text>
+        <line x1="65" y1="70" x2="150" y2="70" stroke="#000" stroke-width="2"/>
+        <rect x="150" y="50" width="40" height="40" fill="#c8e6c9" stroke="#2e7d32"/>
+        <text x="155" y="75" font-size="10">Spinal Cord</text>
+        <line x1="190" y1="70" x2="250" y2="70" stroke="#000" stroke-width="2"/>
+        <circle cx="270" cy="70" r="15" fill="#ffe0b2" stroke="#fb8c00"/>
+        <text x="260" y="75" font-size="10">Response</text>
+    </svg>
+</div>
+
+<!-- हार्मोनल तंत्र -->
+<div class="box">
+    <h2>3. हार्मोनल तंत्र (Endocrine System)</h2>
+    <p>धीरे और लंबे समय तक शरीर के कार्यों को नियंत्रित करता है।</p>
+
+    <h3>मुख्य ग्रंथियाँ और हार्मोन</h3>
+    <table>
+        <tr><th>ग्रंथि</th><th>हार्मोन</th><th>कार्य</th></tr>
+        <tr><td>पिट्यूटरी (Pituitary)</td><td>Growth hormone (GH)</td><td>विकास और वृद्धि नियंत्रित</td></tr>
+        <tr><td>अधिवृक्क (Adrenal)</td><td>Adrenaline</td><td>तनाव और आपात स्थिति में प्रतिक्रिया</td></tr>
+        <tr><td>अंडाशय/अंडकोष</td><td>Estrogen/Testosterone</td><td>प्रजनन और लैंगिक विशेषताएँ</td></tr>
+        <tr><td>अवस्रावी (Thyroid)</td><td>Thyroxine</td><td>ऊर्जा और मेटाबॉलिज़्म नियंत्रित</td></tr>
+    </table>
+</div>
+
+<!-- तंत्रिका व हार्मोनल अंतर -->
+<div class="box">
+    <h2>4. तंत्रिका और हार्मोनल नियंत्रण में अंतर</h2>
+    <ul>
+        <li>तंत्रिका: तेज, अल्पकालिक, न्यूरॉन्स द्वारा संदेश।</li>
+        <li>हार्मोनल: धीमा, दीर्घकालिक, रक्त प्रवाह द्वारा संदेश।</li>
+    </ul>
+</div>
+
+<!-- महत्वपूर्ण प्रश्न -->
+<div class="box">
+    <h2>5. महत्वपूर्ण प्रश्न (Exam-oriented)</h2>
+    <ol>
+        <li>न्यूरॉन की संरचना और कार्य लिखिए।</li>
+        <li>रिफ्लेक्स आर्क क्या है? सरल उदाहरण दें।</li>
+        <li>तंत्रिका और हार्मोनल नियंत्रण में तीन अंतर बताइए।</li>
+        <li>पिट्यूटरी और थायरॉइड ग्रंथियों के हार्मोन व कार्य लिखिए।</li>
+        <li>हार्मोन किस प्रकार शरीर में संदेश पहुँचाते हैं? वर्णन कीजिए।</li>
+    </ol>
+</div>
+
+</body>
+</html>

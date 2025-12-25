@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 भौतिकी: मॉक टेस्ट 3 (प्रकाशिकी)</title>
+    <style>
+        /* CSS Styling from user's template */
+           :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #a0522d; 
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #ebe8d2;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            background-color: #6a5acd; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #5d4aa0;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #a0522d;
+            border-radius: 8px;
+            background-color: #faf0e6;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 भौतिकी - मॉक टेस्ट 3 💡</h1>
+        <h2>इकाई VI: प्रकाशिकी (किरण और तरंग) (100 MCQs)</h2>
+        <p>समय: 60 मिनट | कुल अंक: 100 (वर्तमान में 30 नमूना प्रश्न)</p>
+    </div>
+    
+
+[Image of ray diagram for total internal reflection]
+
+
+    <form id="quizForm">
+        </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (30 नमूना प्रश्न) ---
+        const testQuestions = [
+            // किरण प्रकाशिकी (Ray Optics)
+            { id: 1, question: "लेंस की शक्ति (Power) की SI इकाई क्या है?", options: ["मीटर","डायोप्टर","कैंडेला","वाट"], answer: "डायोप्टर", chapter: "किरण प्रकाशिकी" },
+            { id: 2, question: "व्यासवाला समतल लेंस को क्या कहते हैं जो दोनों ओर उसी त्रिज्या के होते हैं?", options: ["समकेंद्रीय लेंस","समदृश्य लेंस","समद्विबाहु लेंस","समानत्रिज्य लेंस"], answer: "समानत्रिज्य लेंस", chapter: "किरण प्रकाशिकी" },
+            { id: 3, question: "वृत्तीय दबावक के नियम के अनुसार एक सन्निकट लेंस की पतलापन के लिए कौन सा फॉर्मूला उपयोग होता है?", options: ["लेंस मेकर फ़ॉर्मूला","बर्नोली समीकरण","स्नेल का नियम","रिले सिद्धांत"], answer: "लेंस मेकर फ़ॉर्मूला", chapter: "किरण प्रकाशिकी" },
+{ id: 4, question: "सूतक (focal length) की परिभाषा क्या है?", options: ["लेंस की मोटाई","वो दूरी जहाँ समवर्ति किरणें मिलती हैं","लेंस की शक्ति","लेंस की अपवर्तनांक"], answer: "वो दूरी जहाँ समवर्ति किरणें मिलती हैं", chapter: "किरण प्रकाशिकी" },
+{ id: 5, question: "यदि लेंस की फोकल लंबाई 0.5 m है तो उसकी शक्ति क्या होगी?", options: ["0.5 D","2 D","-2 D","-0.5 D"], answer: "2 D", chapter: "किरण प्रकाशिकी" },
+{ id: 6, question: "पार्श्विक विकृति (aberration) किसे कहते हैं?", options: ["छवि में होने वाली त्रुटियाँ","लेंस का सही फोकस","दीप्ति में वृद्धि","प्रकाश का परावर्तन"], answer: "छवि में होने वाली त्रुटियाँ", chapter: "किरण प्रकाशिकी" },
+{ id: 7, question: "व्यासवाले (convex) लेंस को अंग्रेज़ी में क्या कहते हैं?", options: ["Concave lens","Convex lens","Plano lens","Cylindrical lens"], answer: "Convex lens", chapter: "किरण प्रकाशिकी" },
+{ id: 8, question: "यदि एक समलम्ब लेंस के दोनों ओर के वक्रता की त्रिज्या R और -R है और अपवर्तनांक n = 1.5 है, तो लेंस की शक्ति (thin lens) क्या होगी?", options: ["0 D","(n-1)(2/R)","(n-1)(1/R - 1/(-R))","(n-1)(1/R + 1/R)"], answer: "(n-1)(1/R - 1/(-R))", chapter: "किरण प्रकाशिकी" },
+{ id: 9, question: "संकेंद्रणांक (refractive index) का प्रयोग किसे मापने के लिए होता है?", options: ["प्रकाश की आवृत्ति","किसी माध्यम में प्रकाश की गति का अनुपात","लेंस की मोटाई","वोल्टता"], answer: "किसी माध्यम में प्रकाश की गति का अनुपात", chapter: "किरण प्रकाशिकी" },
+{ id: 10, question: "यदि ऑब्जेक्ट किसी लेंस के बीच में (between focal point and lens) रखा हो तो छवि कैसी बनेगी?", options: ["वर्चुअल और बड़ा","वास्तविक और उल्टा","वर्चुअल और छोटा","वास्तविक और बड़ा"], answer: "वर्चुअल और बड़ा", chapter: "किरण प्रकाशिकी" },
+{ id: 11, question: "दो समवर्ती दीर्घताएँ f1 और f2 वाली लेंसों को साथ जोड़ने पर संयुक्त शक्ति P = ?", options: ["f1 + f2","1/f1 + 1/f2","P1 + P2","(P1*P2)/(P1+P2)"], answer: "P1 + P2", chapter: "किरण प्रकाशिकी" },
+{ id: 12, question: "माइक्रोस्कोप के ऑब्जेक्टिव का फोकल लंबाई सामान्यतः कैसी होती है?", options: ["बहुत लंबी","बहुत छोटी","मध्यम","अनिश्चित"], answer: "बहुत छोटी", chapter: "किरण प्रकाशिकी" },
+{ id: 13, question: "यदि किसी लेंस की शक्ति -4 D है तो यह किस प्रकार का लेंस है?", options: ["व्यासवाला (Convex)","कुंडलाकार (Concave)","समानपट्टी (Plano)","दुबला"], answer: "कुंडलाकार (Concave)", chapter: "किरण प्रकाशिकी" },
+{ id: 14, question: "नज़दीकी बिंदु (near point) सामान्य मानव आंख का औसत लगभग क्या है?", options: ["25 cm","10 cm","1 m","50 cm"], answer: "25 cm", chapter: "किरण प्रकाशिकी" },
+{ id: 15, question: "प्रकाश के परावर्तन (reflection) का नियमानुसार कोण के संबंध कैसे रहते हैं?", options: ["आवागमन कोण = परावर्तन कोण","आवागमन कोण = अपवर्तन कोण","परावर्तन कोण = 90°","आवागमन कोण = 0"], answer: "आवागमन कोण = परावर्तन कोण", chapter: "किरण प्रकाशिकी" },
+{ id: 16, question: "स्नेल का नियम किससे संबंधित है?", options: ["अपवर्तन और अपवर्तनांक","परावर्तन और अपवर्तनांक","दाब और तापमान","वोल्टता और धारा"], answer: "अपवर्तन और अपवर्तनांक", chapter: "किरण प्रकाशिकी" },
+{ id: 17, question: "यदि प्रकाश का अपवर्तनांक n1 से n2 में बदलता है तो कौन-सा गुण समान रहता है?", options: ["प्रकाश की आवृत्ति","प्रकाश की तरंगदैर्ध्य","प्रकाश की गति","ऊर्जा"], answer: "प्रकाश की आवृत्ति", chapter: "किरण प्रकाशिकी" },
+{ id: 18, question: "व्स्तु और छवि के बीच वास्तविक फॉर्मूला ( lens formula ) क्या है?", options: ["1/f = 1/v + 1/u","1/f = 1/u - 1/v","f = u + v","uv = f"], answer: "1/f = 1/v + 1/u", chapter: "किरण प्रकाशिकी" },
+{ id: 19, question: "दूरी अनुपात (magnification) m = ?", options: ["v/u","u/v","f/v","v+u"], answer: "v/u", chapter: "किरण प्रकाशिकी" },
+{ id: 20, question: "यदि एक व्यक्ति इमेजिंग के लिए -2 D के चश्मे पहनता है तो उनका नज़दीकी फोकल किस प्रकार का होगा?", options: ["दूर देखने के लिए निर्दिष्ट","नज़दीकी देखने के लिए सहायक","यह परिभाषित नहीं","चश्मे की पॉवर"], answer: "दूर देखने के लिए निर्दिष्ट", chapter: "किरण प्रकाशिकी" },
+{ id: 21, question: "यदि किसी माध्यम का अपवर्तनांक बड़ा हो तो प्रकाश की गति उस माध्यम में कैसे होगी?", options: ["तेज़","धीमी","उसी तरह","अनिश्चित"], answer: "धीमी", chapter: "किरण प्रकाशिकी" },
+{ id: 22, question: "यदि एक समद्विबाहु लेंस (plano-convex) का एक मुख सपाट हो तो उसे किस उद्देश्य के लिए अधिकतर प्रयोग किया जाता है?", options: ["बेहतर परावर्तन के लिये","न्यूनतम अपवर्तक दोषों के लिये","विस्तार के लिये","दूरबीनों में"], answer: "न्यूनतम अपवर्तक दोषों के लिये", chapter: "किरण प्रकाशिकी" },
+{ id: 23, question: "छवि का आकार और निर्देश क्या दर्शाता है?", options: ["आयाम और दिशा","रंग और चमक","स्थान और समय","विकिरण और तरंग"], answer: "आयाम और दिशा", chapter: "किरण प्रकाशिकी" },
+{ id: 24, question: "यदि ऑब्जेक्ट फोकल लंबाई से बहुत दूर पर है (u → ∞), तो लेंस की छवि किस स्थान पर बनेगी?", options: ["यहि बिंदु पर जहाँ फोकल है","लेंस के पीछे अनिश्चित दूरी पर","वहां नहीं बनेगी","लेंस पर"], answer: "यहि बिंदु पर जहाँ फोकल है", chapter: "किरण प्रकाशिकी" },
+{ id: 25, question: "आइरिस की भूमिका आँख में क्या होती है?", options: ["प्रकाश का परावर्तन","प्रकाश की तीव्रता नियंत्रित करना","दृष्टि शक्ति बढ़ाना","लेंस को समर्थन देना"], answer: "प्रकाश की तीव्रता नियंत्रित करना", chapter: "किरण प्रकाशिकी" },
+{ id: 26, question: "हाइपोसीया (hypermetropia) में आँख की कमजोरी किस वजह से होती है?", options: ["आईबॉल का बहुत लंबा होना","आईबॉल का छोटा होना या लेंस की शक्ति कम होना","लेंस का फूहड़ होना","आँख के भीतरी दबाव"], answer: "आईबॉल का छोटा होना या लेंस की शक्ति कम होना", chapter: "किरण प्रकाशिकी" },
+{ id: 27, question: "माइक्रोस्कोप और दूरबीन में कौन-सी अवधारणा सामान्य है?", options: ["लेंसों का संयोजन","स्नेल का नियम","परावर्तन के नियम","प्रकाश का उत्सर्जन"], answer: "लेंसों का संयोजन", chapter: "किरण प्रकाशिकी" },
+{ id: 28, question: "यदि प्रकाश का तरंगदैर्ध्य बढ़े तो अपवर्तनांक पर इसका क्या प्रभाव होगा (सामान्य पदार्थों में)?", options: ["अपवर्तनांक बढ़ेगा","अपवर्तनांक घटेगा","कोई प्रभाव नहीं","अनिश्चित"], answer: "अपवर्तनांक घटेगा", chapter: "किरण प्रकाशिकी" },
+{ id: 29, question: "आँख में अपवर्तन दोष को ठीक करने के लिए कौन-सा उपकरण प्रयोग होता है?", options: ["दर्पण","चश्मा","माइक्रोस्कोप","प्रिज्म"], answer: "चश्मा", chapter: "किरण प्रकाशिकी" },
+{ id: 30, question: "परावर्तक (mirror) और लेंस में सबसे बड़ा अंतर क्या है?", options: ["परावर्तन बनाम अपवर्तन","दोनों में अंतर नहीं","लेंस अधिक भारी होते हैं","परावर्तक रंग बदलते हैं"], answer: "परावर्तन बनाम अपवर्तन", chapter: "किरण प्रकाशिकी" },
+{ id: 31, question: "वक्र दर्पण (concave mirror) पर वस्तु केंद्र के बाहर रखी हो तो छवि कैसी बनेगी?", options: ["वास्तविक और उल्टी","वर्चुअल और सीधी","वास्तविक और सीधी","वर्चुअल और उल्टी"], answer: "वास्तविक और उल्टी", chapter: "किरण प्रकाशिकी" },
+{ id: 32, question: "किस लेंस का उपयोग दूरदर्शिता (myopia) ठीक करने में होता है?", options: ["व्यासवाला (Convex) लेंस","कुंडलाकार (Concave) लेंस","प्लेनो लेंस","सहायक लेंस"], answer: "कुंडलाकार (Concave) लेंस", chapter: "किरण प्रकाशिकी" },
+{ id: 33, question: "लेंस मेकर फॉर्मूले में यदि n = 1 (वायु के सापेक्ष) तो फॉर्मूला सरल कैसे होगा?", options: ["0","1/f = (n-1)(1/R1 - 1/R2)","1/f = 0","1/f = 1/R1 + 1/R2"], answer: "1/f = (n-1)(1/R1 - 1/R2)", chapter: "किरण प्रकाशिकी" },
+{ id: 34, question: "डाइऑप्टर और मीटर में क्या संबंध है?", options: ["1 D = 1 m","1 D = 1/m","1 D = m","कोई संबंध नहीं"], answer: "1 D = 1/m", chapter: "किरण प्रकाशिकी" },
+{ id: 35, question: "यदि एक लेंस की शक्ति 0.25 D है, तो उसकी फोकल लंबाई क्या होगी?", options: ["4 m","0.25 m","-4 m","1/0.25 m"], answer: "4 m", chapter: "किरण प्रकाशिकी" },
+{ id: 36, question: "चित्रगति (image formation) के सिद्धांत में क्या आवश्यक है?", options: ["किरणों का मिलन","ऊर्जा का संरक्षण","ध्वनि का बहाव","वोल्टता का अनुपात"], answer: "किरणों का मिलन", chapter: "किरण प्रकाशिकी" },
+{ id: 37, question: "यदि दो लेंस क्रम में लगाकर संयोजित किये जाएँ और उनकी मध्यम दूरी बहुत छोटी हो, तो कुल शक्ति क्या होती है?", options: ["P_total = P1 + P2","P_total = 1/(1/P1 + 1/P2)","P_total = P1 * P2","P_total = P1 - P2"], answer: "P_total = P1 + P2", chapter: "किरण प्रकाशिकी" },
+{ id: 38, question: "स्नेल के नियम में sin i / sin r = ?", options: ["n2/n1","n1/n2","f1/f2","v1/v2"], answer: "n2/n1", chapter: "किरण प्रकाशिकी" },
+{ id: 39, question: "किस प्रकार का लेंस छवि को बड़ा दिखाता है जब वस्तु फोकल लंबाई से भीतर रखी हो?", options: ["व्यासवाला लेंस","कुंडलाकार लेंस","दोनों","कोई नहीं"], answer: "व्यासवाला लेंस", chapter: "किरण प्रकाशिकी" },
+{ id: 40, question: "लेंस की मुख्य अक्ष (principal axis) क्या है?", options: ["लेंस के मध्य से गुजरने वाली रेखा","लेंस का किनारा","लेंस की परत","वह रेखा जो परावर्तन करती है"], answer: "लेंस के मध्य से गुजरने वाली रेखा", chapter: "किरण प्रकाशिकी" },
+{ id: 41, question: "रिफ्रैक्शन (refraction) के कारण कौन-सा प्रभाव होता है?", options: ["किरणों का मार्ग बदलना","किरणों का तेज होना","ऊर्जा का खतम होना","कोई प्रभाव नहीं"], answer: "किरणों का मार्ग बदलना", chapter: "किरण प्रकाशिकी" },
+{ id: 42, question: "यदि एक लेंस का फोकल लंबाई f और ऑब्जेक्ट दूरी u है, तो छवि दूरी v किस समीकरण से मिलेगी?", options: ["1/f = 1/u + 1/v","v = u+f","v = fu","v = f - u"], answer: "1/f = 1/u + 1/v", chapter: "किरण प्रकाशिकी" },
+{ id: 43, question: "प्रिज्म में किस घटना से रंगों का पृथक्करण होता है?", options: ["अपवर्तन पर निर्भर तरंगदैर्ध्य","परावर्तन पर निर्भर तरंगदैर्ध्य","विभव प्रक्रिया","दीप्ति"], answer: "अपवर्तन पर निर्भर तरंगदैर्ध्य", chapter: "किरण प्रकाशिकी" },
+{ id: 44, question: "यदि आप किसी लेंस के समीकरण से नकारात्मक फोकल पाते हैं तो वह लेंस किस प्रकार का है?", options: ["व्यासवाला","कुंडलाकार","प्लेनो","टॉरॉयड"], answer: "कुंडलाकार", chapter: "किरण प्रकाशिकी" },
+{ id: 45, question: "यदि एक लेंस की शक्ति बढ़ेगी तो उसकी फोकल लंबाई किस तरह बदलेगी?", options: ["बढ़ेगी","घटेगी","कोई परिवर्तन नहीं","अनिश्चित"], answer: "घटेगी", chapter: "किरण प्रकाशिकी" },
+{ id: 46, question: "दूरबीन (telescope) की eyepiece का कार्य क्या है?", options: ["विस्तृत छवि बनाना","छवि को बड़ा कर दिखाना और आंख को आराम देना","लेंस को साफ करना","प्रकाश को अवरुद्ध करना"], answer: "छवि को बड़ा कर दिखाना और आंख को आराम देना", chapter: "किरण प्रकाशिकी" },
+{ id: 47, question: "हल्का अपवर्तन (total internal reflection) कब होता है?", options: ["जब प्रकाश कम अपवर्तनांक से अधिक अपवर्तनांक की ओर जाता है","जब प्रकाश अधिक अपवर्तनांक से कम अपवर्तनांक की ओर जाता है और कोण क्रिटिकल से बड़ा हो","हमेशा","कभी नहीं"], answer: "जब प्रकाश अधिक अपवर्तनांक से कम अपवर्तनांक की ओर जाता है और कोण क्रिटिकल से बड़ा हो", chapter: "किरण प्रकाशिकी" },
+{ id: 48, question: "किस स्थिति में छवि उल्टी और वास्तविक बनती है?", options: ["जब वस्तु का स्थान 2f से बाहर हो","जब वस्तु लेंस के भीतर हो","जब वस्तु पर लेंस रखा जाए","जब वस्तु अनंत में हो"], answer: "जब वस्तु का स्थान 2f से बाहर हो", chapter: "किरण प्रकाशिकी" },
+{ id: 49, question: "किस प्रकार का दर्पण सोलर कुकर्स में उपयोगी होता है?", options: ["सममित दर्पण","समवक्र/व्यासवाला दर्पण","समद्विबाहु दर्पण","प्लेन दर्पण"], answer: "समवक्र/व्यासवाला दर्पण", chapter: "किरण प्रकाशिकी" },
+{ id: 50, question: "यदि एक लेंस की एक सतह पर R1 = R और दूसरी पर R2 = 2R हो और n ज्ञात हो, तो लेंस मेकर फॉर्मूला किस तरह दिखेगा?", options: ["1/f = (n-1)(1/R - 1/2R)","1/f = (n-1)(1/2R - 1/R)","1/f = (n-1)(1/R + 1/2R)","1/f = (n-1)(2/R)"], answer: "1/f = (n-1)(1/R - 1/2R)", chapter: "किरण प्रकाशिकी" },
+{ id: 51, question: "लेंस की सतहों की त्रिज्या का चिन्हीकरण किस बात पर निर्भर करता है?", options: ["सतह की दिशा पर","लेंस के रंग पर","किरणों की तीव्रता पर","अपवर्तनांक पर"], answer: "सतह की दिशा पर", chapter: "किरण प्रकाशिकी" },
+{ id: 52, question: "रंगीन फ्रिंज (chromatic aberration) किस वजह से होता है?", options: ["अपवर्तनांक का तरंगदैर्ध्य पर निर्भर होना","लेंस की मोटाई के कारण","परावर्तन के कारण","छवि का बड़ा होने के कारण"], answer: "अपवर्तनांक का तरंगदैर्ध्य पर निर्भर होना", chapter: "किरण प्रकाशिकी" },
+{ id: 53, question: "किस प्रकार का लेंस छवि को हमेशा वर्चुअल बनाता है?", options: ["कुंडलाकार (concave)","व्यासवाला (convex)","दोनों","कोई नहीं"], answer: "कुंडलाकार (concave)", chapter: "किरण प्रकाशिकी" },
+{ id: 54, question: "यदि वस्तु लेंस के ठीक फोकल पर रखी हो तो छवि कहाँ बनेगी?", options: ["अनंत पर","लेंस पर","फोकल के अंदर","फोकल के बाहर"], answer: "अनंत पर", chapter: "किरण प्रकाशिकी" },
+{ id: 55, question: "लेंस के लिए पतला लेंस समीकरण कब लागू होता है?", options: ["जब लेंस की मोटाई उसकी त्रिज्या की तुलना में बहुत छोटी हो","जब लेंस बहुत मोटा हो","कभी नहीं","जब लेंस का अपवर्तनांक 1 हो"], answer: "जब लेंस की मोटाई उसकी त्रिज्या की तुलना में बहुत छोटी हो", chapter: "किरण प्रकाशिकी" },
+{ id: 56, question: "लेंस की शक्ति पर कौन-सा कारक प्रभाव डालता है?", options: ["अपवर्तनांक, सतह त्रिज्या","मात्रा, रंग","प्रकाश की तीव्रता","वोल्टता"], answer: "अपवर्तनांक, सतह त्रिज्या", chapter: "किरण प्रकाशिकी" },
+{ id: 57, question: "वर्तमान में ऑप्टिकल फाइबर किस सिद्धांत का उपयोग कर संचरण करती है?", options: ["कुल आंतरिक परावर्तन (total internal reflection)","परावर्तन","अपवर्तन","डाइफ्रैक्शन"], answer: "कुल आंतरिक परावर्तन (total internal reflection)", chapter: "किरण प्रकाशिकी" },
+{ id: 58, question: "यदि किसी लेंस से गुजरने वाली केंद्रीय किरण (principal ray) लेंस को लगभग किस रेखा के समानांतर आती है?", options: ["मुख्य अक्ष के समांतर","लेंस के किनारे के समांतर","अपवर्तन के समांतर","कोई नहीं"], answer: "मुख्य अक्ष के समांतर", chapter: "किरण प्रकाशिकी" },
+{ id: 59, question: "किस प्रकार का दर्पण ऑब्जेक्ट के सामने रखने पर वर्चुअल तथा सीधी छवि बनाता है?", options: ["समतल दर्पण","व्यासवाला दर्पण","कुंडलाकार दर्पण","कोई नहीं"], answer: "समतल दर्पण", chapter: "किरण प्रकाशिकी" },
+{ id: 60, question: "लेंस के फोकल बिंदु के बारे में कौन-सा कथन सत्य है?", options: ["फोकल बिंदु पर आने वाली परावर्ती किरणें समीपवर्ती बन जाती हैं","फोकल बिंदु पर किरणें टल जाती हैं","वहाँ ध्वनि अधिकतम होती है","वहाँ ऊर्जा समाप्त होती है"], answer: "फोकल बिंदु पर आने वाली परावर्ती किरणें समीपवर्ती बन जाती हैं", chapter: "किरण प्रकाशिकी" },
+{ id: 61, question: "यदि दो अपवर्तनांक n1 और n2 वाले माध्यमों के बीच कोण क्रिटिकल θc निकाला जाए, तो sin θc = ?", options: ["n2/n1 (n1>n2)","n1/n2","n1*n2","1/(n1+n2)"], answer: "n2/n1 (n1>n2)", chapter: "किरण प्रकाशिकी" },
+{ id: 62, question: "प्रकाश के लिये डब्ल्यूव (wave) और कण (particle) स्वभाव किस सिद्धांत में बताया गया है?", options: ["द्वैध प्रकृति (wave-particle duality)","स्नेल का नियम","क्वांटम यांत्रिकी नहीं","न्यूटन का नियम"], answer: "द्वैध प्रकृति (wave-particle duality)", chapter: "किरण प्रकाशिकी" },
+{ id: 63, question: "लेंस की पोजिटिव शक्ति किसे दर्शाती है?", options: ["व्यासवाला (convex) लेंस","कुंडलाकार (concave) लेंस","न्यूट्रल लेंस","टूटा हुआ लेंस"], answer: "व्यासवाला (convex) लेंस", chapter: "किरण प्रकाशिकी" },
+{ id: 64, question: "आप्टिकल पाथ लेंथ (optical path length) = ?", options: ["n × geometrical length","geometrical length / n","n + length","length - n"], answer: "n × geometrical length", chapter: "किरण प्रकाशिकी" },
+{ id: 65, question: "यदि आप किसी लेंस के समीकरण से छवि दूरी v = -20 cm पाते हैं, तो इसका अर्थ क्या है?", options: ["छवि वर्चुअल और उसी ओर है जहाँ वस्तु है","छवि वास्तविक और विपरीत दिशा में है","लेंस खराब है","कोई अर्थ नहीं"], answer: "छवि वर्चुअल और उसी ओर है जहाँ वस्तु है", chapter: "किरण प्रकाशिकी" },
+{ id: 66, question: "लेंस के लिए ऊर्ध्वाधर किरण जो मुख्य अक्ष पर पड़ती है, किस बिंदु से गुजरती है?", options: ["मुख्य केंद्र से","फोकल से","किसी भी बिंदु से","किनारे से"], answer: "मुख्य केंद्र से", chapter: "किरण प्रकाशिकी" },
+{ id: 67, question: "किस घटना में प्रकाश की दिशा बदलती है पर आवृत्ति बदलती नहीं?", options: ["अपवर्तन","डप्लर प्रभाव","उत्सर्जन","शोषण"], answer: "अपवर्तन", chapter: "किरण प्रकाशिकी" },
+{ id: 68, question: "लेंस के लिए 'principal focus' और 'secondary focus' के बीच क्या अंतर है?", options: ["किसी भी दृष्टी से भिन्न नहीं","प्रकाश के आवागमन दिशा पर निर्भर","दोनों का मान हमेशा बराबर होता है","फोकल लंबाई पर निर्भर नहीं"], answer: "प्रकाश के आवागमन दिशा पर निर्भर", chapter: "किरण प्रकाशिकी" },
+{ id: 69, question: "किस प्रकार की लेंस जो केवल एक आयाम में फोकस करती है?", options: ["सिलिंड्रिकल लेंस","व्यासवाला लेंस","कुंडलाकार लेंस","प्लेनो लेंस"], answer: "सिलिंड्रिकल लेंस", chapter: "किरण प्रकाशिकी" },
+{ id: 70, question: "यदि लेंस का अपवर्तनांक n बढ़े तो फोकल लंबाई क्या करेगी (अन्य सब समान)?", options: ["बढ़ेगी","घटेगी","कोई परिवर्तन नहीं","अनुकूल होगी"], answer: "घटेगी", chapter: "किरण प्रकाशिकी" },
+{ id: 71, question: "लेंस के लिए 'back focal length' किसे कहते हैं?", options: ["लेंस का पीछे का फोकल बिंदु से लेंस सतह तक दूरी","लेंस का आगे का फोकल बिंदु","लेंस की मोटाई","लेंस की शक्ति"], answer: "लेंस का पीछे का फोकल बिंदु से लेंस सतह तक दूरी", chapter: "किरण प्रकाशिकी" },
+{ id: 72, question: "डायफ्रैक्शन (diffraction) किस स्थिति में प्रमुख होता है?", options: ["जब छेद का आकार तरंगदैर्ध्य के समान हो","हमेशा","कभी नहीं","जब प्रकाश तीव्र हो"], answer: "जब छेद का आकार तरंगदैर्ध्य के समान हो", chapter: "किरण प्रकाशिकी" },
+{ id: 73, question: "लेंस के लिए 'effective focal length' किसे कहते हैं?", options: ["किसी सिस्टम का समतुल्य फोकल लंबाई","एकल सतह की त्रिज्या","लेंस की मोटाई","अपवर्तनांक"], answer: "किसी सिस्टम का समतुल्य फोकल लंबाई", chapter: "किरण प्रकाशिकी" },
+{ id: 74, question: "न्यूनतम दृष्टि (least distance of distinct vision) को किस नाम से जाना जाता है?", options: ["near point","far point","focal point","principal point"], answer: "near point", chapter: "किरण प्रकाशिकी" },
+{ id: 75, question: "यदि एक लेंस पर अतिदीर्घ तरंगदैर्ध्य का प्रकाश पारित करता है, तो रंगीन अपवर्तन कैसे प्रभावित होगा?", options: ["कम अपवर्तन, लंबी तरंगदैर्ध्य को कम मोड़ मिलती है","अधिक अपवर्तन","कोई प्रभाव नहीं","रंग उल्टा हो जाएगा"], answer: "कम अपवर्तन, लंबी तरंगदैर्ध्य को कम मोड़ मिलती है", chapter: "किरण प्रकाशिकी" },
+{ id: 76, question: "चश्मे की शक्ति कैसे जोड़ी जाती है जब उपयोगकर्ता दो लेंस (सिलेंडर + स्लैब) पहनता है?", options: ["साधारण जोड़ से","वेक्टर जोड़/ऑप्टिकल नियमों से","गुणा कर के","कोई जोड़ नहीं"], answer: "वेक्टर जोड़/ऑप्टिकल नियमों से", chapter: "किरण प्रकाशिकी" },
+{ id: 77, question: "लेंस के लिए 'nodal points' किस कार्य के लिये महत्वपूर्ण हैं?", options: ["छवि स्थान निर्धारण में सहायक","लेंस का रंग बदलने में","परावर्तन बढ़ाने में","लेंस साफ करने में"], answer: "छवि स्थान निर्धारण में सहायक", chapter: "किरण प्रकाशिकी" },
+{ id: 78, question: "प्रकाश के परावर्तन में अल्बेडो (albedo) किसे प्रभावित करता है?", options: ["वस्तु की परावर्तक क्षमता","लेंस की शक्ति","अपवर्तनांक","तरंगदैर्ध्य"], answer: "वस्तु की परावर्तक क्षमता", chapter: "किरण प्रकाशिकी" },
+{ id: 79, question: "'Gauss lens formula' किससे संबंधित है?", options: ["पतले लेंस समीकरण से","न्यूटन के नियमों से","क्वांटम सिद्धांत से","ऊर्जा संरक्षण से"], answer: "पतले लेंस समीकरण से", chapter: "किरण प्रकाशिकी" },
+{ id: 80, question: "प्रकाशीय तंतु (optical fiber) के कोर और क्लैडिंग के अपवर्तनांक का सम्बन्ध कैसे होना चाहिए?", options: ["कोर का अपवर्तनांक क्लैडिंग से बड़ा होना चाहिए","छोटा होना चाहिए","बराबर होना चाहिए","कोई आवश्यक नहीं"], answer: "कोर का अपवर्तनांक क्लैडिंग से बड़ा होना चाहिए", chapter: "किरण प्रकाशिकी" },
+{ id: 81, question: "यदि एक वर्डोबल (eyepiece) की पावर बढ़ती है तो छवि पर क्या प्रभाव होगा?", options: ["छवि का विस्तार बढ़ेगा","छवि का विस्तार घटेगा","कोई प्रभाव नहीं","रंग बदलेंगे"], answer: "छवि का विस्तार बढ़ेगा", chapter: "किरण प्रकाशिकी" },
+{ id: 82, question: "प्रकाशन की अवधारणा में 'acceptance angle' किसे दर्शाता है?", options: ["फाइबर में किस कोण के भीतर प्रकाश ग्रहण होगा","लेंस का घुमाव","दर्पण का कोण","कोई नहीं"], answer: "फाइबर में किस कोण के भीतर प्रकाश ग्रहण होगा", chapter: "किरण प्रकाशिकी" },
+{ id: 83, question: "यदि वस्तु लेंस के बहुत पास रखी हो तो magnification क्या होगा (convex lens)?", options: ["बहुत बड़ा",
+"बहुत छोटा",
+"शून्य",
+"एक"] , answer: "बहुत बड़ा", chapter: "किरण प्रकाशिकी" },
+{ id: 84, question: "दरवाज़ा-आँख (pinhole camera) में छवि किस प्रकार बनती है?", options: ["सीधी और छोटी","उल्टी और वास्तविक","सीधी और उल्टी","कोई छवि नहीं"], answer: "उल्टी और वास्तविक", chapter: "किरण प्रकाशिकी" },
+{ id: 85, question: "लेंस में spherical aberration को कम करने का एक तरीका क्या है?", options: ["अपवर्तनांक घटाना","एपरचर या पुटिंग फिट करना","लेंस की मोटाई बढ़ाना","लेंस को रंगना"], answer: "एपरचर या पुटिंग फिट करना", chapter: "किरण प्रकाशिकी" },
+{ id: 86, question: "यदि प्रकाश की आवृत्ति बदले बिना तरंगदैर्ध्य बदलती है तो किस माध्यम के कारण ऐसा होता है?", options: ["अपवर्तन में बदलाव","परावर्तन में बदलाव","आवेश परिवर्तन","ऊर्जा में परिवर्तन"], answer: "अपवर्तन में बदलाव", chapter: "किरण प्रकाशिकी" },
+{ id: 87, question: "लेंस के केंद्र पर गुजरने वाली रेखा को क्या कहते हैं?", options: ["ऑब्जेक्टिव अक्ष","मुख्य केंद्र","नोडल प्वाइंट","प्राइमरी पथ"], answer: "मुख्य केंद्र", chapter: "किरण प्रकाशिकी" },
+{ id: 88, question: "किस नियम के अनुसार परावर्तन होता है?", options: ["हूक का नियम","परावर्तन का नियम","ओम का नियम","स्नेल का नियम"], answer: "परावर्तन का नियम", chapter: "किरण प्रकाशिकी" },
+{ id: 89, question: "लेंस के लिये thin lens approximation कब प्रयोग करना अनावश्यक होता है?", options: ["जब लेंस मोटा हो","जब लेंस पतला हो","जब लेंस का अपवर्तनांक 1 हो","कभी नहीं"], answer: "जब लेंस मोटा हो", chapter: "किरण प्रकाशिकी" },
+{ id: 90, question: "रंगों का मिश्रण additive और subtractive में क्या अंतर है?", options: ["Additive में रंग जोड़कर मिलता है, subtractive में हटाकर","दोनों समान हैं","Additive घटता है, Subtractive बढ़ता है","कोई सम्बन्ध नहीं"], answer: "Additive में रंग जोड़कर मिलता है, subtractive में हटाकर", chapter: "किरण प्रकाशिकी" },
+{ id: 91, question: "यदि किसी लेंस की दोनों सतहें समान वक्रता की और विपरीत संकेतों की हों तो यह किस प्रकार का लेंस कहलाएगा?", options: ["समानवक्र पर विपरीत संकेत (symmetrical) लेंस","प्लेनो लेंस","कुंडलाकार लेंस","व्यासवाला लेंस"], answer: "समानवक्र पर विपरीत संकेत (symmetrical) ल lens", chapter: "किरण प्रकाशिकी" },
+{ id: 92, question: "लेंस की शक्ति का यूनिट डायोप्टर किसे परिभाषित करता है?", options: ["मिटर में फोकल लंबाई का व्युत्क्रमानुपात","मीटर का गुणनफल","किरण की तीव्रता","लेंस का व्यास"], answer: "मिटर में फोकल लंबाई का व्युत्क्रमानुपात", chapter: "किरण प्रकाशिकी" },
+{ id: 93, question: "यदि आप प्रकाश को किसी विशेष दिशा में मोड़ना चाहते हैं तो किस उपकरण का उपयोग करेंगे?", options: ["लेंस या प्रिज्म","दर्पण नहीं","सिर्फ परावर्तन","ध्वनि तरंग"], answer: "लेंस या प्रिज्म", chapter: "किरण प्रकाशिकी" },
+{ id: 94, question: "दृष्टि दोषों (vision defects) का निदान करने वाले उपकरण को क्या कहते हैं?", options: ["स्नेल एग्जामिनर","ऑप्थैल्मोस्कोप","फार्मासिस्ट","माइक्रोस्कोप"], answer: "ऑप्थैल्मोस्कोप", chapter: "किरण प्रकाशिकी" },
+{ id: 95, question: "यदि एक लेंस का अपवर्तनांक n = 1.6 और वायु का n = 1 हो, तो किस तत्व को ध्यान में रखकर शक्ति बढ़ेगी?", options: ["अपवर्तनांक का अंतर","लेंस की मोटाई","लेंस का रंग","कोई नहीं"], answer: "अपवर्तनांक का अंतर", chapter: "किरण प्रकाशिकी" },
+{ id: 96, question: "प्रकाश फ्रिंज (interference fringes) का अध्ययन किस उपकरण से होता है?", options: ["थिन फिल्म सेटअप/यंग का डबल स्लिट","माइक्रोस्कोप","वेव गाइड","दर्पण"], answer: "थिन फिल्म सेटअप/यंग का डबल स्लिट", chapter: "किरण प्रकाशिकी" },
+{ id: 97, question: "यदि एक रंगीन प्रकाश का अपवर्तनांक प्रति तरंगदैर्ध्य भिन्न है तो क्या होता है?", options: ["विभाजन (dispersion) होता है","कोई प्रभाव नहीं","रंग मिल जाते हैं","प्रकाश डब हो जाता है"], answer: "विभाजन (dispersion) होता है", chapter: "किरण प्रकाशिकी" },
+{ id: 98, question: "प्रकाश के परावर्तन में आईना किस कानून का पालन करता है?", options: ["आवागमन कोण = परावर्तन कोण","स्नेल का नियम","फोटोइलेक्ट्रिक इफ़ेक्ट","क्वांटम नियम"], answer: "आवागमन कोण = परावर्तन कोण", chapter: "किरण प्रकाशिकी" },
+{ id: 99, question: "ऑप्टिकल सिस्टम के समतुल्य फोकल लंबाई का प्रयोग किस लिए किया जाता है?", options: ["सिस्टम की कुल मैग्निफिकेशन/फ्रेम निर्धारण के लिये","लेंस को रंगने के लिये","प्रकाश को बंद करने के लिये","दृश्य को मिटाने के लिये"], answer: "सिस्टम की कुल मैग्निफिकेशन/फ्रेम निर्धारण के लिये", chapter: "किरण प्रकाशिकी" },
+{ id: 100, question: "यदि दो लेंसों की शक्तियाँ +3 D और -1.5 D हैं तो संयुक्त शक्ति क्या होगी?", options: ["+1.5 D","+4.5 D","-1.5 D","+3 D"], answer: "+1.5 D", chapter: "किरण प्रकाशिकी" }   
+        // **[यहां प्रश्न 31 से 100 तक जोड़े जाएंगे।]**
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        // (पिछले टेस्ट के समान, उत्तरों को रेंडर करने और जाँचने के लिए)
+
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            testQuestions.forEach((mcq, index) => {
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. [${mcq.chapter}] ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${option}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! प्रकाशिकी पर आपकी पकड़ मजबूत है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। तरंग प्रकाशिकी पर अधिक ध्यान दें।' : 'सिद्धांतों को फिर से दोहराएं।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

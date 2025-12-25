@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ज्ञान सारथी - प्रदर्शन रिपोर्ट</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Styling - (पहले के पेजों से कॉमन स्टाइल) */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+        
+        /* रिपोर्ट लेआउट */
+        .report-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .report-header h1 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+        }
+
+        .report-header p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .report-card {
+            background-color: var(--text-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .report-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        /* की मेट्रिक्स स्टाइल */
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .metric:last-child {
+            border-bottom: none;
+        }
+
+        .metric-value {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+
+        /* चार्ट प्लेसहोल्डर */
+        .chart-area {
+            height: 300px;
+            background-color: #f0f4ff;
+            border: 1px solid var(--light-blue);
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* सुधार क्षेत्र */
+        .improvement-area h3 {
+            border-left: 5px solid red;
+            padding-left: 10px;
+            color: red;
+        }
+
+        .topic-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .topic-list li {
+            padding: 10px;
+            background-color: #fff3f3;
+            border-radius: var(--border-radius);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .topic-score {
+            font-weight: bold;
+            color: red;
+        }
+        
+        /* मोबाइल अनुकूलन */
+        @media (max-width: 768px) {
+            .report-container {
+                padding: 0 10px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="Study in kingworld" class="logo-img">
+            <div class="logo-text">
+                <h1>Study in Kingworld</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <div class="report-header">
+            <h1>📊 प्रदर्शन रिपोर्ट: अंतिम 30 दिन</h1>
+            <p>यह रिपोर्ट आपके सभी अभ्यास सेटों और मॉक टेस्ट के प्रदर्शन का विस्तृत विश्लेषण प्रस्तुत करती है।</p>
+        </div>
+
+        <div class="card-grid">
+            
+            <div class="report-card">
+                <h3>मुख्य स्कोरकार्ड</h3>
+                <div class="metric">
+                    <span>औसत स्कोर:</span>
+                    <span class="metric-value" style="color: green;">78%</span>
+                </div>
+                <div class="metric">
+                    <span>समय प्रबंधन (प्रति प्रश्न):</span>
+                    <span class="metric-value">45 सेकंड</span>
+                </div>
+                <div class="metric">
+                    <span>प्रयास किए गए प्रश्न:</span>
+                    <span class="metric-value">520</span>
+                </div>
+                <div class="metric">
+                    <span>कुल शुद्धता दर (Accuracy):</span>
+                    <span class="metric-value">82.5%</span>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <h3>समय के साथ प्रगति</h3>
+                <div class="chart-area" id="progressChart">
+                    लाइन चार्ट प्लेसहोल्डर (प्रदर्शन वृद्धि)
+                </div>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="report-card">
+                <h3>विषय-वार शुद्धता</h3>
+                <div class="chart-area" id="subjectChart" style="height: 250px;">
+                    बार चार्ट प्लेसहोल्डर (गणित, विज्ञान, रीजनिंग स्कोर)
+                </div>
+                <div class="metric" style="margin-top: 15px;">
+                    <span>सबसे मजबूत विषय:</span>
+                    <span class="metric-value" style="color: green;">रीज़निंग (92%)</span>
+                </div>
+            </div>
+
+            <div class="report-card improvement-area">
+                <h3>सुधार के क्षेत्र</h3>
+                <p style="color: #666; font-size: 0.9em;">इन टॉपिक्स पर फिर से ध्यान दें, क्योंकि आपका स्कोर 60% से कम रहा है।</p>
+                <ul class="topic-list">
+                    <li>रासायनिक समीकरणों का संतुलन <span class="topic-score">55%</span></li>
+                    <li>त्रिकोणमिति के अनुप्रयोग <span class="topic-score">48%</span></li>
+                    <li>आधुनिक आवर्त सारणी के अपवाद <span class="topic-score">59%</span></li>
+                    <li>समय और कार्य (Advanced) <span class="topic-score">40%</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript लॉजिक
+        
+        // नोट: इस पेज में डेटा डायनामिक नहीं है। वास्तविक चार्ट बनाने के लिए,
+        // आपको Chart.js जैसी लाइब्रेरी का उपयोग करना होगा और अपने सर्वर से डेटा लोड करना होगा।
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // यहाँ आप Chart.js या किसी अन्य विज़ुअलाइज़ेशन लाइब्रेरी को इनिशियलाइज़ कर सकते हैं।
+            // उदाहरण के लिए: 
+            // initializeProgressChart();
+            // initializeSubjectAccuracyChart();
+            
+            // केवल एक डेमो अलर्ट
+            document.querySelectorAll('.topic-list li').forEach(item => {
+                item.addEventListener('click', function() {
+                    const topic = this.textContent.split('(')[0].trim();
+                    alert(`सुझाव: ${topic} के वीडियो लेक्चर और नोट्स को फिर से देखें। 🔄`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

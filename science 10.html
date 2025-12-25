@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भौतिकी - अध्याय 2 : मनुष्य का नेत्र एवं रंग दृष्टि - Class 10</title>
+
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:10px 40px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo-section { display:flex; align-items:center; }
+        .logo-img { height:40px; margin-right:15px; border-radius:50%; }
+        .logo-text h1 { font-size:1.5em; margin:0; }
+        .main-nav a { color:var(--text-light); text-decoration:none; margin:0 15px; }
+        .btn-mock-test {
+            background-color:var(--accent-orange);
+            color:var(--primary-blue) !important;
+            padding:8px 15px; border-radius:var(--border-radius); font-weight:bold;
+        }
+        .user-info i { font-size:1.5em; cursor:pointer; }
+
+        .box {
+            background-color:#ffffff;
+            padding:20px;
+            margin:20px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        ul, ol { margin-left:20px; }
+        svg { display:block; margin:20px auto; max-width:100%; height:auto; }
+        b { color:#e74c3c; }
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+        <div class="logo-text"><h1>Gyan Saarathi</h1></div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+
+    <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+    </div>
+</header>
+
+<!-- अध्याय परिचय -->
+<div class="box">
+<h1>अध्याय 2 — मनुष्य का नेत्र एवं रंग दृष्टि</h1>
+<p>
+मनुष्य का नेत्र एक अद्भुत प्राकृतिक कैमरा है जो प्रकाश को ग्रहण कर वस्तुओं की छवि हमारे मस्तिष्क तक पहुँचाता है।<br>
+इस अध्याय में हम नेत्र की संरचना, कार्य, दृष्टि दोष और इंद्रधनुष जैसी प्रकाशीय घटनाओं का अध्ययन करेंगे।
+</p>
+</div>
+
+<!-- नेत्र की संरचना -->
+<div class="box">
+<h2>1. मनुष्य के नेत्र की संरचना</h2>
+
+<ul>
+    <li><b>कॉर्निया</b> – आंख का पारदर्शी बाहरी भाग।</li>
+    <li><b>आईरिस</b> – आंख का रंगीन भाग जो पुतली के आकार को नियंत्रित करता है।</li>
+    <li><b>पुतली (Pupil)</b> – प्रकाश प्रवेश द्वार।</li>
+    <li><b>लेंस</b> – उत्तल लेंस, जो छवि को रेटिना पर बनाता है।</li>
+    <li><b>रेटिना</b> – प्रकाश संवेदनशील स्क्रीन।</li>
+    <li><b>Optic Nerve</b> – संकेत मस्तिष्क तक पहुँचाती है।</li>
+</ul>
+
+<h3>SVG Diagram – Human Eye</h3>
+<svg width="320" height="200">
+  <ellipse cx="160" cy="100" rx="120" ry="70" fill="#81D4FA" stroke="black" stroke-width="2"/>
+  <circle cx="80" cy="100" r="25" fill="black"/>
+  <circle cx="80" cy="100" r="12" fill="white"/>
+  <line x1="160" y1="100" x2="260" y2="100" stroke="red" stroke-width="3"/>
+  <text x="260" y="95">दृष्टि तंत्रिका</text>
+</svg>
+
+</div>
+
+<!-- समायोजन -->
+<div class="box">
+<h2>2. समायोजन (Accommodation)</h2>
+
+<ul>
+    <li>आंख का लेंस अपने आकार को बदलकर विभिन्न दूरियों की वस्तुओं को साफ दिखाता है।</li>
+    <li>लेंस मोटा → निकट वस्तु स्पष्ट</li>
+    <li>लेंस पतला → दूर वस्तु स्पष्ट</li>
+</ul>
+</div>
+
+<!-- दृष्टि दोष -->
+<div class="box">
+<h2>3. दृष्टि दोष एवं सुधार</h2>
+
+<ul>
+    <li><b>मायोपिया (निकट दृष्टि दोष)</b> – दूर की वस्तु धुंधली दिखती है।  
+        <br>सुधार: अवतल लेंस</li>
+
+    <li><b>हायपरोपिया (दूर दृष्टि दोष)</b> – पास की वस्तु धुंधली दिखती है।  
+        <br>सुधार: उत्तल लेंस</li>
+
+    <li><b>प्रेसबायोपिया</b> – उम्र बढ़ने पर लेंस कठोर हो जाता है।  
+        <br>सुधार: द्विफोकसी लेंस</li>
+</ul>
+
+<h3>SVG Diagram – Myopia Correction</h3>
+<svg width="300" height="200">
+  <circle cx="60" cy="100" r="10" fill="black"/>
+  <line x1="10" y1="70" x2="60" y2="100" stroke="blue" stroke-width="3"/>
+  <line x1="60" y1="100" x2="150" y2="100" stroke="red" stroke-width="3"/>
+  <text x="20" y="65" font-size="12">सुधार</text>
+</svg>
+
+</div>
+
+<!-- प्रकाशीय घटनाएँ -->
+<div class="box">
+<h2>4. प्रकाशीय घटनाएँ — इंद्रधनुष, प्रिज्म</h2>
+
+<ul>
+    <li><b>इंद्रधनुष</b> – सूर्य प्रकाश के प्रकीर्णन (Dispersion) से बनता है।</li>
+    <li><b>प्रिज्म</b> – प्रकाश को 7 रंगों में विभाजित करता है।</li>
+    <li><b>विकिरण (Dispersion):</b>  
+        <br>सफेद प्रकाश = 7 रंग (VIBGYOR)</li>
+</ul>
+
+<h3>SVG – Dispersion in Prism</h3>
+
+<svg width="300" height="200">
+  <polygon points="140,20 200,150 80,150" fill="#81D4FA" stroke="black" stroke-width="2"/>
+  <line x1="20" y1="90" x2="80" y2="100" stroke="black" stroke-width="3"/>
+  <line x1="140" y1="100" x2="260" y2="60" stroke="red" stroke-width="3"/>
+  <line x1="140" y1="100" x2="260" y2="100" stroke="orange" stroke-width="3"/>
+  <line x1="140" y1="100" x2="260" y2="140" stroke="blue" stroke-width="3"/>
+  <text x="20" y="80" font-size="12">सफेद प्रकाश</text>
+</svg>
+
+</div>
+
+<!-- प्रश्न -->
+<div class="box">
+<h2>5. महत्वपूर्ण प्रश्न</h2>
+
+<ol>
+    <li>मनुष्य के नेत्र के प्रमुख भाग लिखिए।</li>
+    <li>समायोजन (Accommodation) क्या है?</li>
+    <li>मायोपिया एवं हायपरोपिया में अंतर बताइए।</li>
+    <li>इंद्रधनुष कैसे बनता है?</li>
+    <li>प्रिज्म से प्रकाश का प्रकीर्णन क्यों होता है?</li>
+</ol>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ज्ञान सारथी - क्लास चुनें</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Styling - (पहले के पेजों से कॉमन स्टाइल) */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        /* क्लास सिलेक्शन लेआउट */
+        .selection-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .page-title {
+            color: var(--primary-blue);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid var(--accent-orange);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .page-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        /* क्लास कार्ड ग्रिड */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .class-card {
+            background-color: var(--text-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .class-icon {
+            background-color: var(--light-blue);
+            padding: 25px 0;
+            color: var(--primary-blue);
+            font-size: 3.5em;
+        }
+        
+        .class-info {
+            padding: 20px;
+        }
+
+        .class-info h3 {
+            font-size: 1.8em;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .class-info p {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        /* विशेष कार्ड (Competitive) */
+        .class-card.competitive .class-icon {
+             background-color: var(--accent-orange);
+             color: #A0522D; /* Brownish tone */
+        }
+        .class-card.competitive:hover {
+             border-color: var(--accent-orange);
+        }
+
+        /* मोबाइल अनुकूलन */
+        @media (max-width: 768px) {
+            header { padding: 10px 20px; }
+            .class-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-title { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            
+            <!-- <a href="course.html">कोर्स</a> -->
+            <!-- <a href="mock test.html">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <!-- <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div> -->
+    </header>
+
+    <main class="selection-container">
+        <h2 class="page-title">📚 अपनी कक्षा / लक्ष्य चुनें</h2>
+        <p class="page-subtitle">अपनी पढ़ाई शुरू करने के लिए नीचे दिए गए विकल्पों में से अपनी वर्तमान कक्षा या तैयारी के लक्ष्य का चयन करें।</p>
+
+        <div class="class-grid">
+            
+            <!-- <div class="class-card" onclick="selectClass('9')">
+                <div class="class-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="class-info">
+                    <h3>कक्षा 9 (Class 9th)</h3>
+                    <p>विज्ञान और गणित की नींव मजबूत करें।</p>
+                </div>
+            </div> -->
+            <a href="class10.html">
+                <div class="class-card" onclick="selectClass('10')">
+                <div class="class-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="class-info">
+                    <h3>कक्षा 10 (Class 10th)</h3>
+                    <p>बोर्ड परीक्षा की तैयारी और महत्वपूर्ण अवधारणाएं।</p>
+                </div>
+            </div>
+            </a>
+            
+            <!-- <a href="#"></a>
+            <div class="class-card" onclick="selectClass('11')">
+                <div class="class-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="class-info">
+                    <h3>कक्षा 11 (Class 11th)</h3>
+                    <p>गहन अध्ययन, PCM/PCB विषयों की शुरुआत।</p>
+                </div>
+            </div> -->
+            <a href="class 12.html">
+                    <div class="class-card">
+                <div class="class-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <!-- <a href="chapter1.html"></a> -->
+                <div class="class-info">
+                    <h3>कक्षा 12 (Class 12th)</h3>
+                    <p>बोर्ड और प्रतियोगी परीक्षा (Competitive Exam) के लिए अंतिम तैयारी।</p>
+                </div>
+            </div>
+            </a>
+        
+            
+            <!-- <div class="class-card competitive" onclick="selectClass('JEE/NEET')">
+                <div class="class-icon">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <div class="class-info">
+                    <h3>JEE / NEET (Competitive)</h3>
+                    <p>इंजीनियरिंग और मेडिकल प्रवेश परीक्षा का पूरा कोर्स।</p>
+                </div>
+            </div> -->
+<!--             
+             <div class="class-card competitive" onclick="selectClass('Govt. Job')">
+                <div class="class-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="class-info">
+                    <h3>सरकारी नौकरी परीक्षा</h3>
+                    <p>SSC, Railway, Bank आदि की सामान्य अध्ययन तैयारी।</p>
+                </div>
+            </div> -->
+
+        </div>
+    </main>
+
+    <script>
+        // JavaScript फ़ंक्शन
+        function selectClass(className) {
+            // यहाँ आप छात्र को उस कक्षा के कोर्स पेज पर रीडायरेक्ट करेंगे।
+            // मान लीजिए कि Class 10 का कोर्स पेज 'course_detail.html?class=10' है
+            
+            if (className === 'JEE/NEET') {
+                 alert(`आपने JEE/NEET लक्ष्य चुना है। आपको विशेष प्रतियोगी परीक्षा कोर्स पेज पर ले जाया जाएगा!`);
+                 window.location.href = "competitive_courses.html"; 
+            } else if (className === 'Govt. Job') {
+                 alert(`आपने सरकारी नौकरी लक्ष्य चुना है। आपको सामान्य ज्ञान और योग्यता कोर्स पेज पर ले जाया जाएगा!`);
+                 window.location.href = "govt_job_courses.html"; 
+            } else {
+                 alert(`आपने कक्षा ${className} चुनी है। अब आप कक्षा ${className} के सभी विषय देख सकते हैं।`);
+                 // यहाँ 'course_detail.html' एक उदाहरण है; आप इसे अपने विषय सूची पेज पर बदलें
+                 window.location.href = `course_detail.html?class=${className}`;
+            }
+        }
+    </script>
+</body>
+</html>

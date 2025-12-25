@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODEL PAPER</title>
+
+    <body>
+    <style>
+          /* CSS Styling - (पहले के पेजों से कॉमन स्टाइल) */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        /* मॉक टेस्ट लेआउट */
+        .mock-test-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+    /* मॉडल पेपर विशिष्ट स्टाइलिंग */
+    .paper-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+    .paper-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid var(--accent-orange);
+    }
+    .paper-card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 10px;
+    }
+    .download-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #0f9d58; /* Google Green */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: background-color 0.3s;
+    }
+    .download-btn:hover {
+        background-color: #0b8043;
+    }
+
+</style>
+</head>
+</body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+<main class="course-container">
+    <div class="course-header">
+        <br>
+        <br>
+        <h2>📄 कक्षा 12: मॉडल पेपर 2024</h2>
+        <p>नवीनतम बोर्ड पैटर्न पर आधारित सभी विषयों के मॉडल पेपर।</p>
+    </div>
+
+    <div class="paper-grid">
+        <div class="paper-card">
+            <h3>भौतिकी (Physics) - सेट A</h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 70</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class12/151-Physics.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> physics PDF
+            </a>
+        </div>
+        
+        <div class="paper-card">
+            <h3>रसायन विज्ञान (Chemistry) - सेट A</h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 70</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class12/152-Chemistry.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> chemistry PDF
+            </a>
+        </div>
+        
+        <div class="paper-card">
+            <h3>जीव विज्ञान (Biology) - सेट B</h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 70</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class12/153-Biology.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> Biology PDF
+            </a>
+        </div>
+        
+        <div class="paper-card">
+            <h3>गणित (Maths) - सेट C</h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 100</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class12/131-Math.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> math PDF
+            </a>
+        </div>
+        
+         
+    </div>
+    
+</main>
+<div>
+  <br>
+  <br> 
+  <br> 
+</div>
+<main class="course-container">
+    <div class="course-header">
+        <h2>📄 कक्षा 10: मॉडल पेपर 2025</h2>
+        <p>नवीनतम बोर्ड पैटर्न पर आधारित सभी विषयों के मॉडल पेपर।</p>
+    </div>
+
+    <div class="paper-grid">
+        <div class="paper-card">
+            <h3> विज्ञान- सेट A</h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 70</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class10/931-Science.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> physics PDF
+            </a>
+        </div>
+        
+        <div class="paper-card">
+            <h3>गणित (Maths) - सेट C</h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 100</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class10/928-Math.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> math PDF
+            </a>
+        </div>
+        
+        <div class="paper-card">
+            <h3>HINDI </h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 100</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class10/901-Hindi.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> HINDI PDF
+            </a>
+        </div>
+        
+        <div class="paper-card">
+            <h3>ENGLISH </h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 100</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class10/917-English.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> ENGLISH PDF
+            </a>
+        </div>
+         <div class="paper-card">
+            <h3>Social Science </h3>
+            <p>समय: 3 घंटे 15 मिनट | पूर्णांक: 100</p>
+            <a href="https://upmsp-cdn.s3.ap-south-1.amazonaws.com/modelpaper/class10/932-Social-Science.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> Social Science PDF
+            </a>
+        </div>
+        
+    </div>
+</MAin>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ज्ञान सारथी - मॉक टेस्ट</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Styling - (पहले के पेजों से कॉमन स्टाइल) */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        /* मॉक टेस्ट लेआउट */
+        .mock-test-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* लेफ्ट साइड: प्रश्न क्षेत्र */
+        .question-panel {
+            flex-grow: 1;
+            background-color: var(--text-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+        
+        .question-area h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--light-blue);
+            border-radius: var(--border-radius);
+        }
+
+        .options-list {
+            list-style: none;
+        }
+
+        .option-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-item:hover {
+            background-color: #f0f4ff;
+            border-color: var(--light-blue);
+        }
+
+        .option-item.selected {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 5px rgba(255, 179, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .option-item input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.3);
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .navigation-buttons button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            cursor: pointer;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            transition: background-color 0.3s;
+        }
+        
+        #submitTestBtn {
+            background-color: red;
+        }
+
+        /* राइट साइड: समरी पैनल */
+        .summary-panel {
+            width: 300px;
+            background-color: var(--text-light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            align-self: flex-start;
+            position: sticky;
+            top: 20px; /* स्क्रॉल के साथ चिपका रहे */
+        }
+
+        .timer-box {
+            background-color: var(--accent-orange);
+            color: var(--primary-blue);
+            padding: 15px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        
+        .timer-box h3 {
+            margin: 0;
+        }
+        
+        .timer-box span {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .question-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .q-status {
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .q-status.answered { background-color: #28a745; color: var(--text-light); } /* हरा */
+        .q-status.unanswered { background-color: #ffc107; color: var(--text-dark); } /* पीला */
+        .q-status.current { border: 2px solid var(--primary-blue); background-color: var(--light-blue); } /* नीला */
+
+        /* मोबाइल अनुकूलन */
+        @media (max-width: 768px) {
+            .mock-test-container {
+                flex-direction: column;
+            }
+            .summary-panel {
+                width: 100%;
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="#" class="btn-mock-test">मॉक टेस्ट</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <main class="mock-test-container">
+        <aside class="summary-panel">
+            <div class="timer-box">
+                <h3>शेष समय</h3>
+                <span id="timerDisplay">60:00</span>
+            </div>
+            
+            <p>प्रश्न स्थिति:</p>
+            <div class="question-summary-grid" id="questionSummaryGrid">
+                </div>
+            
+            <button id="submitTestBtn" style="width: 100%; margin-top: 20px;">
+                <i class="fas fa-paper-plane"></i> टेस्ट सबमिट करें
+            </button>
+        </aside>
+
+        <section class="question-panel">
+            <div class="quiz-header">
+                <h1>मॉक टेस्ट - JEE/NEET आधारित</h1>
+                <p id="testStatus">रसायन विज्ञान | 10 प्रश्न | 60 मिनट</p>
+            </div>
+            
+            <div class="question-area">
+                <h3 id="questionText">प्रश्न: कृपया प्रश्न लोड होने की प्रतीक्षा करें...</h3>
+                
+                <ul class="options-list" id="optionsList">
+                    </ul>
+            </div>
+            
+            <div class="navigation-buttons">
+                <button id="prevBtn" style="display: none;"><i class="fas fa-arrow-left"></i> पिछला</button>
+                <button id="markAndNextBtn"><i class="fas fa-bookmark"></i> मार्क करें और अगला</button>
+                <button id="nextBtn">सेव करें और अगला <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript लॉजिक
+        
+        // 1. मॉक टेस्ट डेटा (केवल 3 प्रश्न उदाहरण के लिए)
+        const mockTestData = [
+            { id: 1, subject: "रसायन विज्ञान", question: "निम्नलिखित में से कौन-सा अणु चतुष्फलकीय (tetrahedral) ज्यामिति रखता है?", options: ["NH3", "CH4", "H2O", "CO2"], answer: "CH4" },
+            { id: 2, subject: "भौतिक विज्ञान", question: "विद्युत धारा (Electric Current) की SI इकाई क्या है?", options: ["वोल्ट", "ओम", "एम्पीयर", "वाट"], answer: "एम्पीयर" },
+            { id: 3, subject: "जीव विज्ञान", question: "प्रकाश संश्लेषण (Photosynthesis) के लिए कौन सी गैस आवश्यक है?", options: ["ऑक्सीजन", "नाइट्रोजन", "कार्बन डाइऑक्साइड", "हाइड्रोजन"], answer: "कार्बन डाइऑक्साइड" }
+        ];
+
+        // 2. ग्लोबल वेरिएबल्स
+        let currentQuestionIndex = 0;
+        const TIME_LIMIT_MINUTES = 60; // 60 मिनट का मॉक टेस्ट
+        let timeRemaining = TIME_LIMIT_MINUTES * 60; // सेकंड में
+        let userAnswers = new Array(mockTestData.length).fill(null);
+        let statusMap = new Array(mockTestData.length).fill('unanswered'); // answered, unanswered, marked
+
+        // 3. DOM तत्व
+        const questionTextElement = document.getElementById('questionText');
+        const optionsListElement = document.getElementById('optionsList');
+        const questionSummaryGrid = document.getElementById('questionSummaryGrid');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const prevButton = document.getElementById('prevBtn');
+        const nextButton = document.getElementById('nextBtn');
+        const markAndNextButton = document.getElementById('markAndNextBtn');
+        const submitTestButton = document.getElementById('submitTestBtn');
+
+        // 4. टाइमर फंक्शनलिटी
+        let timerInterval;
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                const minutes = String(Math.floor(timeRemaining / 60)).padStart(2, '0');
+                const seconds = String(timeRemaining % 60).padStart(2, '0');
+                timerDisplay.textContent = `${minutes}:${seconds}`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert("समय समाप्त! आपका टेस्ट स्वचालित रूप से सबमिट किया जा रहा है।");
+                    submitTest();
+                } else if (timeRemaining <= 300) { // अंतिम 5 मिनट के लिए रंग बदलें
+                    timerDisplay.parentElement.style.backgroundColor = 'red';
+                    timerDisplay.parentElement.style.color = 'white';
+                }
+            }, 1000);
+        }
+
+        // 5. प्रश्न लोड करना और UI अपडेट करना
+        function loadQuestion(index) {
+            if (index < 0 || index >= mockTestData.length) return;
+
+            // प्रश्न संख्या और नेविगेशन बटन अपडेट करें
+            currentQuestionIndex = index;
+            prevButton.style.display = index > 0 ? 'block' : 'none';
+            nextButton.textContent = (index === mockTestData.length - 1) ? 'सबमिट करें' : 'सेव करें और अगला';
+            
+            // वर्तमान प्रश्न की स्थिति अपडेट करें
+            updateQuestionStatusUI(index, 'current');
+
+            const currentQuestion = mockTestData[index];
+            questionTextElement.textContent = `प्रश्न ${index + 1}: ${currentQuestion.question}`;
+            optionsListElement.innerHTML = '';
+
+            currentQuestion.options.forEach((option, i) => {
+                const li = document.createElement('li');
+                li.className = 'option-item';
+                li.innerHTML = `
+                    <input type="radio" id="q${index}_option${i}" name="quizOption" value="${option}">
+                    <label for="q${index}_option${i}">${option}</label>
+                `;
+                li.addEventListener('click', () => selectOption(li, option));
+                optionsListElement.appendChild(li);
+
+                // यदि यूज़र ने पहले उत्तर दिया है, तो उसे चेक करें
+                if (userAnswers[index] === option) {
+                    li.classList.add('selected');
+                    li.querySelector('input').checked = true;
+                }
+            });
+        }
+        
+        // 6. उत्तर का चयन और सेव करना
+        function selectOption(selectedLi, optionValue) {
+            // पहले से चयनित विकल्प को डी-सेलेक्ट करें
+            document.querySelectorAll('.option-item').forEach(li => {
+                li.classList.remove('selected');
+                li.querySelector('input').checked = false;
+            });
+            
+            // वर्तमान विकल्प को सेलेक्ट करें
+            selectedLi.classList.add('selected');
+            selectedLi.querySelector('input').checked = true;
+            
+            // उत्तर को सेव करें
+            userAnswers[currentQuestionIndex] = optionValue;
+            
+            // स्थिति अपडेट करें
+            if (statusMap[currentQuestionIndex] !== 'marked') {
+                statusMap[currentQuestionIndex] = 'answered';
+                updateQuestionStatusUI(currentQuestionIndex, 'answered');
+            }
+        }
+        
+        // 7. प्रश्न सारांश ग्रिड (Summary Grid) बनाना
+        function renderSummaryGrid() {
+            questionSummaryGrid.innerHTML = '';
+            mockTestData.forEach((q, index) => {
+                const statusDiv = document.createElement('div');
+                statusDiv.className = 'q-status';
+                statusDiv.textContent = index + 1;
+                statusDiv.setAttribute('data-index', index);
+                
+                // स्थिति के आधार पर क्लास दें
+                statusDiv.classList.add(statusMap[index]);
+                if (index === currentQuestionIndex) statusDiv.classList.add('current');
+                
+                statusDiv.addEventListener('click', () => loadQuestion(index));
+                questionSummaryGrid.appendChild(statusDiv);
+            });
+        }
+        
+        // 8. स्थिति अपडेट करना (answered/marked/current)
+        function updateQuestionStatusUI(index, newStatus) {
+            // पिछली 'current' स्थिति हटाएँ
+            document.querySelectorAll('.q-status.current').forEach(el => {
+                el.classList.remove('current');
+                // पिछली स्थिति को उसकी पिछली अवस्था पर वापस लाएँ
+                if (el.classList.contains('answered')) el.classList.remove('answered');
+                if (el.classList.contains('unanswered')) el.classList.remove('unanswered');
+                el.classList.add(statusMap[index]); 
+            });
+            
+            // नई स्थिति सेट करें
+            const currentStatusDiv = document.querySelector(`.q-status[data-index="${index}"]`);
+            if (currentStatusDiv) {
+                currentStatusDiv.classList.remove('answered', 'unanswered', 'marked');
+                currentStatusDiv.classList.add(newStatus);
+                if (newStatus !== 'current') statusMap[index] = newStatus;
+                currentStatusDiv.classList.add('current');
+            }
+        }
+
+        // 9. नेविगेशन इवेंट्स
+        prevButton.addEventListener('click', () => loadQuestion(currentQuestionIndex - 1));
+        nextButton.addEventListener('click', () => {
+            if (currentQuestionIndex === mockTestData.length - 1) {
+                submitTest();
+            } else {
+                loadQuestion(currentQuestionIndex + 1);
+            }
+        });
+        
+        markAndNextButton.addEventListener('click', () => {
+            statusMap[currentQuestionIndex] = 'marked';
+            updateQuestionStatusUI(currentQuestionIndex, 'marked');
+            if (currentQuestionIndex < mockTestData.length - 1) {
+                loadQuestion(currentQuestionIndex + 1);
+            } else {
+                 alert("सभी प्रश्न मार्क किए गए। अब आप टेस्ट सबमिट कर सकते हैं।");
+            }
+        });
+
+        // 10. टेस्ट सबमिट करना
+        submitTestButton.addEventListener('click', submitTest);
+
+        function submitTest() {
+            clearInterval(timerInterval);
+            let score = 0;
+            let unansweredCount = 0;
+
+            mockTestData.forEach((q, index) => {
+                if (userAnswers[index] === q.answer) {
+                    score++;
+                } else if (userAnswers[index] === null) {
+                    unansweredCount++;
+                }
+            });
+
+            const confirmation = confirm(
+                `आपका स्कोर: ${score} / ${mockTestData.length}\n` +
+                `बिना उत्तर वाले प्रश्न: ${unansweredCount}\n\n` +
+                `क्या आप परिणाम देखना चाहते हैं?`
+            );
+
+            if (confirmation) {
+                // परिणाम पेज पर रीडायरेक्ट करें (या एक मॉडाल दिखाएँ)
+                alert(`परिणाम पेज लोड हो रहा है... आपका अंतिम स्कोर: ${score}`);
+                window.location.href = "index.html"; // वापस डैशबोर्ड पर भेजें
+            }
+        }
+
+        // 11. पेज लोड पर इनिशियलाइज़ेशन
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSummaryGrid();
+            loadQuestion(0);
+            startTimer();
+        });
+    </script>
+</body>
+</html>

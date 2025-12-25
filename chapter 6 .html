@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>भौतिकी - कक्षा 12 | अध्याय 6: विद्युत चुंबकीय प्रेरण (Electromagnetic Induction)</title>
+  <style>
+         :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    /* body {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      line-height: 1.7;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1, h2, h3 {
+      color: #0d47a1;
+    } */
+    section {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #e8eaf6;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+<h1>अध्याय 6: विद्युत चुंबकीय प्रेरण (Electromagnetic Induction)</h1>
+
+<section>
+  <h2>1. विद्युत चुंबकीय प्रेरण क्या है?</h2>
+  <p>जब किसी कुंडली में चुंबकीय फ्लक्स में परिवर्तन होता है, तब उसमें प्रेरित विद्युत वाहक बल (EMF) उत्पन्न होता है। इसे विद्युत चुंबकीय प्रेरण कहते हैं।</p>
+</section>
+
+<section>
+  <h2>2. चुंबकीय फ्लक्स (Magnetic Flux)</h2>
+  <pre>Φ = B A cosθ</pre>
+  <ul>
+    <li>B = चुंबकीय क्षेत्र</li>
+    <li>A = क्षेत्रफल</li>
+    <li>θ = क्षेत्र की दिशा और सतह के लम्बवत के बीच कोण</li>
+    <li>इकाई = Weber (Wb)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>3. फैराडे का नियम (Faraday's Law)</h2>
+  <p>चुंबकीय फ्लक्स में परिवर्तन से EMF उत्पन्न होता है।</p>
+  <pre>ε = - dΦ/dt</pre>
+  <p>ऋण चिह्न लेंज़ के नियम को दर्शाता है।</p>
+</section>
+
+<section>
+  <h2>4. लेंज़ का नियम (Lenz's Law)</h2>
+  <p>प्रेरित धारा हमेशा उसी परिवर्तन का विरोध करती है जिसके कारण वह उत्पन्न हुई है।</p>
+</section>
+
+<section>
+  <h2>5. प्रेरित EMF के प्रकार</h2>
+  <h3>1️⃣ स्थिर EMF</h3>
+  <p>जब चुंबकीय फ्लक्स धीरे-धीरे समय के साथ बदलता है।</p>
+
+  <h3>2️⃣ गतिज EMF (Motional EMF)</h3>
+  <pre>ε = B l v</pre>
+  <p>जब कोई चालक चुंबकीय क्षेत्र में वेग v से चलता है।</p>
+</section>
+
+<section>
+  <h2>6. एडी धारा (Eddy Currents)</h2>
+  <p>धातु की चादरों में घूमने वाली धारा को एडी करंट कहते हैं।</p>
+  <ul>
+    <li>नुकसान: ऊष्मा उत्पादन, ऊर्जा हानि</li>
+    <li>उपयोग: इंडक्शन स्टोव, ब्रेकिंग सिस्टम</li>
+  </ul>
+</section>
+
+<section>
+  <h2>7. स्व-प्रेरण (Self Induction)</h2>
+  <pre>ε = - L (di/dt)</pre>
+  <p>L = स्व-प्रेरकत्व (Self-Inductance)</p>
+  <pre>L = μ₀ n² A l</pre>
+</section>
+
+<section>
+  <h2>8. पारस्परिक प्रेरण (Mutual Induction)</h2>
+  <pre>M = (N₂ Φ₂) / I₁</pre>
+  <p>एक कुंडली में धारा बदलने से दूसरी में EMF उत्पन्न होता है।</p>
+</section>
+
+<section>
+  <h2>9. ऊर्जा संग्रह (Energy Stored in Inductor)</h2>
+  <pre>U = 1/2 L I²</pre>
+</section>
+
+<section>
+  <h2>10. मुख्य Formula Summary</h2>
+  <pre>
+Φ = B A cosθ
+ε = - dΦ/dt
+ε = B l v
+ε = - L di/dt
+U = 1/2 L I²
+  </pre>
+</section>
+
+</body>
+</html>

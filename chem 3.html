@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemical Kinetics - Class 12 Chemistry Notes</title>
+<style>
+   :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+.box {
+    border: 2px solid #27ae60;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #eafaf1;
+}
+ul, ol {
+    margin-left: 25px;
+}
+svg {
+    display: block;
+    margin: 15px auto;
+}
+.formula {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+</style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<h1>Chemical Kinetics - Class 12 Chemistry</h1>
+
+<div class="box">
+<h2>1. परिचय (Introduction)</h2>
+<p>Chemical Kinetics वह शाखा है जो रासायनिक प्रतिक्रियाओं की गति, rate और factors affecting rate का अध्ययन करती है।</p>
+</div>
+
+<div class="box">
+<h2>2. Rate of Reaction (प्रतिक्रिया की दर)</h2>
+<p>Rate = change in concentration of reactant or product per unit time</p>
+<p class="formula">Rate = - (Δ[A]/Δt) = (Δ[B]/Δt)</p>
+<ul>
+<li>A → B</li>
+<li>Δ[A] = Reactant concentration change</li>
+<li>Δt = Time interval</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>3. Factors Affecting Rate of Reaction</h2>
+<ul>
+<li>Concentration of reactants</li>
+<li>Temperature</li>
+<li>Pressure (for gases)</li>
+<li>Nature of reactants</li>
+<li>Catalyst presence</li>
+<li>Surface area (for solids)</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>4. Rate Law & Order of Reaction</h2>
+<p>Rate law: Rate = k [A]^m [B]^n</p>
+<ul>
+<li>k = rate constant</li>
+<li>m,n = order of reaction w.r.t A & B</li>
+<li>Total order = m+n</li>
+</ul>
+<p>Integrated rate laws:</p>
+<ul>
+<li>First order: ln[A] = ln[A]₀ - kt</li>
+<li>Second order: 1/[A] = 1/[A]₀ + kt</li>
+<li>Zero order: [A] = [A]₀ - kt</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>5. Half-life (t½)</h2>
+<ul>
+<li>First order: t½ = 0.693/k</li>
+<li>Second order: t½ = 1/(k[A]₀)</li>
+<li>Zero order: t½ = [A]₀/(2k)</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>6. Arrhenius Equation</h2>
+<p>Temperature effect on rate constant:</p>
+<p class="formula">k = A e^(-Ea/RT)</p>
+<ul>
+<li>k = rate constant</li>
+<li>A = frequency factor</li>
+<li>Ea = activation energy (J/mol)</li>
+<li>R = gas constant (8.314 J/mol·K)</li>
+<li>T = temperature in K</li>
+</ul>
+<p>Logarithmic form: log k = log A - Ea/(2.303RT)</p>
+</div>
+
+<div class="box">
+<h2>7. Reaction Mechanism & Molecularity</h2>
+<ul>
+<li>Molecularity: Number of reactant molecules in an elementary step (unimolecular, bimolecular, termolecular)</li>
+<li>Mechanism: Sequence of elementary steps leading to overall reaction</li>
+<li>Rate-determining step controls overall rate</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>8. Energy Profile Diagram (SVG)</h2>
+<svg width="500" height="250">
+  <polyline points="50,200 120,120 200,150 280,80 400,120" stroke="red" stroke-width="3" fill="none"/>
+  <text x="40" y="210">Reactants</text>
+  <text x="420" y="210">Products</text>
+  <text x="150" y="100">Transition State</text>
+  <line x1="150" y1="120" x2="150" y2="200" stroke="blue" stroke-dasharray="5,5"/>
+  <text x="155" y="160" fill="blue">Ea</text>
+</svg>
+<p>Activation energy (Ea) represents the energy barrier that reactants must overcome to form products.</p>
+</div>
+
+<div class="box">
+<h2>9. Graphs in Kinetics (SVG)</h2>
+<p>Concentration vs Time for first-order reaction:</p>
+<svg width="400" height="200">
+  <line x1="50" y1="50" x2="50" y2="150" stroke="black"/>
+  <line x1="50" y1="150" x2="350" y2="150" stroke="black"/>
+  <polyline points="50,150 100,120 150,100 200,85 250,70 300,60 350,55" stroke="green" stroke-width="2" fill="none"/>
+  <text x="20" y="45">[A]</text>
+  <text x="360" y="155">Time</text>
+</svg>
+<p>Slope = -k for first order reaction</p>
+</div>
+
+<div class="box">
+<h2>10. Important Formulas Summary</h2>
+<ul>
+<li>Rate = k[A]^n</li>
+<li>First order: ln[A] = ln[A]₀ - kt</li>
+<li>Second order: 1/[A] = 1/[A]₀ + kt</li>
+<li>Zero order: [A] = [A]₀ - kt</li>
+<li>Half-life: t½ (First order) = 0.693/k</li>
+<li>Arrhenius Equation: k = A e^(-Ea/RT)</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>11. Important Questions</h2>
+<ol>
+<li>Rate law और Order of Reaction को स्पष्ट कीजिए।</li>
+<li>First order और Second order reactions के लिए integrated rate law लिखिए।</li>
+<li>Arrhenius equation और Activation energy का महत्व बताइए।</li>
+<li>Reaction Mechanism और Rate Determining Step समझाइए।</li>
+<li>Energy Profile Diagram को label करके समझाइए।</li>
+<li>Graphs: Concentration vs Time first order reaction के लिए।</li>
+</ol>
+</div>
+
+</div>
+</body>
+</html>

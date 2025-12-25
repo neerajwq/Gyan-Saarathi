@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>रासायनिक अभिक्रियाएँ एवं समीकरण - Class 10</title>
+
+<style>
+    :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    .box {
+        background:#fff;
+        margin:20px;
+        padding:20px;
+        border-radius:12px;
+        box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1,h2 { color:#1A237E; }
+    .formula {
+        background:#e3f2fd;
+        padding:8px 12px;
+        display:inline-block;
+        border-radius:8px;
+        font-weight:bold;
+        margin:8px 0;
+    }
+    svg { display:block; margin:20px auto; max-width:100%; }
+    li { margin-bottom:6px; }
+</style>
+</head>
+   <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1 class="editable" data-field="site_title">Gyan Saarathi</h1>
+                <p class="editable" data-field="site_tagline">आपकी परीक्षा तैयारी का डिजिटल साथी</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+    </header>
+<body>
+
+<div class="box">
+<h1>अध्याय – रासायनिक अभिक्रियाएँ एवं समीकरण</h1>
+<p>
+इस अध्याय में आप सीखेंगे कि रासायनिक अभिक्रियाएँ कैसे होती हैं, उन्हें संतुलित कैसे किया जाता है,
+अभिक्रियाओं के प्रकार कौन-कौन से होते हैं और इनके वास्तविक जीवन में क्या उपयोग हैं।
+</p>
+</div>
+
+<!-- रासायनिक अभिक्रियाएँ क्या हैं -->
+<div class="box">
+<h2>1. रासायनिक अभिक्रियाएँ क्या हैं?</h2>
+<p>
+जब एक या अधिक पदार्थ (Reactants) आपस में मिलकर नए पदार्थ (Products) बनाते हैं, तो यह प्रक्रिया
+<strong>रासायनिक अभिक्रिया (Chemical Reaction)</strong> कहलाती है।
+</p>
+
+<h3>उदाहरण (Magnesium Burning):</h3>
+<div class="formula">Mg + O₂ → MgO</div>
+
+<h3>SVG चित्र — मैग्नीशियम रिबन का दहन</h3>
+
+<svg width="350" height="200">
+  <rect x="40" y="130" width="260" height="20" fill="#555"/>
+  <rect x="160" y="60" width="30" height="70" fill="#b0bec5"/>
+  <line x1="175" y1="60" x2="175" y2="20" stroke="orange" stroke-width="3"/>
+  <circle cx="175" cy="20" r="10" fill="orange"/>
+  <text x="135" y="160" font-size="12">स्टैंड</text>
+  <text x="150" y="55" font-size="12">Mg Ribbon</text>
+  <text x="180" y="25" font-size="12">Flame</text>
+</svg>
+</div>
+
+<!-- अभिक्रिया के संकेत -->
+<div class="box">
+<h2>2. रासायनिक अभिक्रिया होने के संकेत</h2>
+<ul>
+    <li>गैस उत्पन्न होना</li>
+    <li>ताप का अवशोषण या उत्सर्जन</li>
+    <li>रंग परिवर्तन</li>
+    <li>अवक्षेप (Precipitate) बनना</li>
+    <li>गंध में परिवर्तन</li>
+</ul>
+</div>
+
+<!-- रासायनिक समीकरण -->
+<div class="box">
+<h2>3. रासायनिक समीकरण</h2>
+
+<p><b>रासायनिक समीकरण</b> किसी अभिक्रिया का प्रतीकात्मक रूप होता है।</p>
+
+<h3>असंतुलित समीकरण:</h3>
+<div class="formula">Fe + H₂O → Fe₃O₄ + H₂</div>
+
+<h3>संतुलित समीकरण:</h3>
+<div class="formula">3Fe + 4H₂O → Fe₃O₄ + 4H₂</div>
+
+<h3>SVG — समीकरण संतुलन</h3>
+<svg width="350" height="160">
+  <text x="10" y="40" font-size="18">Reactants</text>
+  <text x="260" y="40" font-size="18">Products</text>
+
+  <circle cx="60" cy="80" r="20" fill="#90caf9"/>
+  <text x="52" y="85" font-size="12">Fe</text>
+
+  <circle cx="130" cy="80" r="20" fill="#a5d6a7"/>
+  <text x="118" y="85" font-size="12">H₂O</text>
+
+  <line x1="160" y1="80" x2="210" y2="80" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <circle cx="260" cy="80" r="20" fill="#ffcc80"/>
+  <text x="245" y="85" font-size="12">Fe₃O₄</text>
+
+  <circle cx="320" cy="80" r="20" fill="#ef9a9a"/>
+  <text x="310" y="85" font-size="12">H₂</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+      <path d="M2,2 L2,11 L10,6 z" fill="#000"/>
+    </marker>
+  </defs>
+</svg>
+</div>
+
+<!-- समीकरण संतुलन विधि -->
+<div class="box">
+<h2>4. समीकरण संतुलन की विधि (Hit & Trial)</h2>
+
+<h3>स्टेप 1:</h3>
+<p>Reactants और Products में प्रत्येक तत्व की कुल संख्या गिनें।</p>
+
+<h3>स्टेप 2:</h3>
+<p>सबसे जटिल यौगिक को पहले संतुलित करें।</p>
+
+<h3>स्टेप 3:</h3>
+<p>धातुओं → अधातुओं → ऑक्सीजन → हाइड्रोजन क्रम में संतुलन करें।</p>
+
+<h3>स्टेप 4:</h3>
+<p>अंत में दोनों ओर कुल परमाणु गिनकर जांच लें।</p>
+</div>
+
+<!-- रासायनिक अभिक्रियाओं के प्रकार -->
+<div class="box">
+<h2>5. रासायनिक अभिक्रियाओं के प्रकार</h2>
+
+<h3>1. संयोजन अभिक्रिया (Combination Reaction)</h3>
+<div class="formula">A + B → AB</div>
+<div class="formula">2Mg + O₂ → 2MgO</div>
+
+<h3>2. अपघटन अभिक्रिया (Decomposition Reaction)</h3>
+<div class="formula">AB → A + B</div>
+<div class="formula">2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂</div>
+
+<h3>3. विस्थापन अभिक्रिया (Displacement)</h3>
+<div class="formula">A + BC → AC + B</div>
+
+<h3>4. द्वि-विस्थापन अभिक्रिया (Double Displacement)</h3>
+<div class="formula">AB + CD → AD + CB</div>
+
+<h3>5. उष्माक्षेपी एवं उष्माशोषी अभिक्रियाएँ</h3>
+<p>ताप निकलने पर → उष्माक्षेपी (Exothermic)  
+ताप अवशोषित होने पर → उष्माशोषी (Endothermic)</p>
+</div>
+
+<!-- अपचयन और ऑक्सीकरण -->
+<div class="box">
+<h2>6. ऑक्सीकरण एवं अपचयन</h2>
+
+<ul>
+<li><b>ऑक्सीकरण</b> = O₂ का जुड़ना / H का हटना / इलेक्ट्रॉन खोना</li>
+<li><b>अपचयन</b> = O₂ का हटना / H का जुड़ना / इलेक्ट्रॉन पाना</li>
+</ul>
+
+<div class="formula">CuO + H₂ → Cu + H₂O</div>
+<p>यहाँ CuO ऑक्सीजन खो रहा है → अपचयन  
+H₂ ऑक्सीजन पा रहा है → ऑक्सीकरण</p>
+</div>
+
+<!-- भूमंडलीय अभिक्रिया -->
+<div class="box">
+<h2>7. वास्तविक जीवन के अनुप्रयोग</h2>
+
+<ul>
+    <li>जंग लगना (Rusting)</li>
+    <li>खाद्य पदार्थों का खराब होना (Rancidity)</li>
+    <li>श्वसन क्रिया (Oxidation)</li>
+    <li>फोटोसिंथेसिस</li>
+</ul>
+
+<div class="formula">6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</div>
+</div>
+
+<!-- महत्वपूर्ण प्रश्न -->
+<div class="box">
+<h2>8. महत्वपूर्ण प्रश्न</h2>
+<ol>
+    <li>रासायनिक समीकरण क्या है? उदाहरण सहित लिखिए।</li>
+    <li>समीकरण को संतुलित करने की Hit & Trial विधि समझाएँ।</li>
+    <li>संयोजन, अपघटन और विस्थापन अभिक्रियाओं में अंतर बताइए।</li>
+    <li>ऑक्सीकरण और अपचयन को उदाहरण सहित समझाएँ।</li>
+    <li>द्वि-विस्थापन अभिक्रिया को उदाहरण सहित समझाएँ।</li>
+</ol>
+</div>
+
+</body>
+</html>

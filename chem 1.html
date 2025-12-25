@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 12 Chemistry - Solutions</title>
+  <style>
+     :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    .box {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1e90ff;
+    }
+    h3 {
+      color: #333;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    svg {
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="box">
+<h2>1. घोल (Solutions) - परिचय</h2>
+<p>
+रासायनिक घोल दो या दो से अधिक पदार्थों का सम्यक मिश्रण होता है जिसमें <b>एक पदार्थ विलायक (Solvent)</b> और अन्य <b>विलेय (Solute)</b> के रूप में उपस्थित होते हैं। 
+घोल पारदर्शी होते हैं और इनके कण सूक्ष्म होते हैं। 
+</p>
+</div>
+
+<div class="box">
+<h2>2. प्रकार (Types of Solutions)</h2>
+<ul>
+  <li><b>सघन (Concentrated) और पतला (Dilute) घोल</b></li>
+  <li><b>अंश द्वारा मोलरता (Molarity, M)</b> - moles of solute per liter of solution</li>
+  <li><b>मोलालिटी (Molality, m)</b> - moles of solute per kg of solvent</li>
+  <li><b>मोल अंश (Mole Fraction, X)</b></li>
+  <li><b>प्रतिशत (Weight/Volume%)</b></li>
+</ul>
+</div>
+
+<div class="box">
+<h2>3. समाधान की सांद्रता (Concentration)</h2>
+<h3>Formulas:</h3>
+<ul>
+  <li><b>Molarity (M):</b> <code>M = n / V</code> (n = moles solute, V = liters solution)</li>
+  <li><b>Molality (m):</b> <code>m = n / kg solvent</code></li>
+  <li><b>Mole Fraction (X):</b> <code>X_A = n_A / (n_A + n_B)</code></li>
+  <li><b>Mass Percentage (% w/w):</b> <code>% = (mass of solute / mass of solution) × 100</code></li>
+</ul>
+</div>
+
+<div class="box">
+<h2>4. Raoult का नियम (Vapor Pressure Lowering)</h2>
+<p>
+किसी घोल का वाष्पदाब (Vapor Pressure) उसके शुद्ध विलायक की तुलना में कम होता है।  
+यदि X_solute = विलेय का मोल अंश, P°_solvent = शुद्ध विलायक का वाष्पदाब, तो
+</p>
+<pre>P_solution = X_solvent × P°_solvent</pre>
+</div>
+
+<div class="box">
+<h2>5. अवरोधक गुण (Colligative Properties)</h2>
+<ul>
+  <li>ओस्मोटिक दाब (Osmotic Pressure)</li>
+  <li>बूंदबिंदु का अवरोध (Freezing Point Depression)</li>
+  <li>उबल बिंदु का आरोहण (Boiling Point Elevation)</li>
+  <li>वाष्पदाब का अवरोध (Vapor Pressure Lowering)</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>6. क्रियाएँ (Calculations)</h2>
+<p>उबल बिंदु आरोहण:</p>
+<pre>ΔT_b = K_b × m</pre>
+<p>जमने का बिंदु अवरोध:</p>
+<pre>ΔT_f = K_f × m</pre>
+<p>ओस्मोटिक दाब:</p>
+<pre>π = MRT</pre>
+</div>
+
+<div class="box">
+<h2>7. SVG Diagram Example</h2>
+<p>NaCl का पानी में घुलना:</p>
+<svg width="300" height="150">
+  <circle cx="50" cy="75" r="15" fill="blue"/>
+  <text x="35" y="75" fill="white">Na⁺</text>
+  <circle cx="120" cy="75" r="15" fill="red"/>
+  <text x="110" y="75" fill="white">Cl⁻</text>
+  <circle cx="200" cy="50" r="10" fill="lightblue"/>
+  <text x="190" y="55" fill="black">H₂O</text>
+  <circle cx="220" cy="100" r="10" fill="lightblue"/>
+  <text x="210" y="105" fill="black">H₂O</text>
+</svg>
+<p>यह दिखाता है कि Na⁺ और Cl⁻ जल अणुओं से घिरते हैं और घुल जाते हैं।</p>
+</div>
+
+<div class="box">
+<h2>8. महत्वपूर्ण प्रश्न (Long Answer)</h2>
+<ol>
+  <li>घोल क्या हैं? विभिन्न प्रकार के घोल लिखिए।</li>
+  <li>मोलरता, मोलालिटी, मोल अंश और प्रतिशत सांद्रता के बीच अंतर स्पष्ट कीजिए।</li>
+  <li>Raoult के नियम का सिद्धांत और गणना उदाहरण लिखिए।</li>
+  <li>ओस्मोटिक दाब, बिंदु आरोहण और अवरोध पर सूत्र के साथ उदाहरण दीजिए।</li>
+  <li>NaCl के पानी में घुलने की प्रक्रिया SVG diagram से समझाइए।</li>
+</ol>
+</div>
+
+</body>
+</html>

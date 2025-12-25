@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भौतिकी - अध्याय 3 : विद्युत धारा - Class 10</title>
+
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:10px 40px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo-section { display:flex; align-items:center; }
+        .logo-img { height:40px; margin-right:15px; border-radius:50%; }
+        .logo-text h1 { font-size:1.5em; margin:0; }
+        .main-nav a { color:var(--text-light); text-decoration:none; margin:0 15px; }
+        .btn-mock-test {
+            background-color:var(--accent-orange);
+            color:var(--primary-blue) !important;
+            padding:8px 15px; border-radius:var(--border-radius); font-weight:bold;
+        }
+        .user-info i { font-size:1.5em; cursor:pointer; }
+
+        .box {
+            background-color:#ffffff;
+            padding:20px;
+            margin:20px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        ul, ol { margin-left:20px; }
+        svg { display:block; margin:20px auto; max-width:100%; height:auto; }
+        b { color:#e74c3c; }
+        .formula { background:#f7f9ff; padding:10px; border-radius:8px; margin-top:10px; display:inline-block; font-weight:bold; }
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+        <div class="logo-text"><h1>Gyan Saarathi</h1></div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+
+    <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+    </div>
+</header>
+
+<!-- अध्याय परिचय -->
+<div class="box">
+<h1>अध्याय 3 — विद्युत धारा (Current Electricity)</h1>
+<p>
+विद्युत धारा वह प्रवाह है जिसमें विद्युत आवेश (जैसे इलेक्ट्रॉन) किसी चालक के भीतर एक दिशा में गतिशील होते हैं। इस अध्याय में धारा, वोल्टेज, प्रतिरोध, ओम का नियम, श्रृंखला व समांतर संयोजन और विद्युत शक्ति जैसे महत्वपूर्ण विषय शामिल हैं।
+</p>
+</div>
+
+<!-- मौलिक परिभाषाएँ -->
+<div class="box">
+<h2>1. मूलभूत परिभाषाएँ</h2>
+
+<ul>
+    <li><b>विद्युत धारा (I):</b> एक नियत स्थान से प्रति समय होकर गुजरने वाले आवेश की मात्र। एकक: ऐम्पियर (A).  
+    <div class="formula">I = Q / t</div></li>
+
+    <li><b>वोल्टेज (V) / विभवांतर:</b> विद्युत दाब जो आवेश को स्थानांतरित करती है। एकक: वोल्ट (V).</li>
+
+    <li><b>प्रतिरोध (R):</b> किसी पदार्थ का वह गुण जो धारा के प्रवाह का विरोध करता है। एकक: ओह्म (Ω).</li>
+</ul>
+</div>
+
+<!-- ओम का नियम -->
+<div class="box">
+<h2>2. ओम का नियम (Ohm's Law)</h2>
+
+<p>ओम का नियम कहता है कि किसी चालक में प्रवाहित धारा समानुपाती होती है उस पर लगाए गए विभवांतर के (यदि तापमान स्थिर हो):</p>
+<div class="formula">V = I × R</div>
+
+<p>यहाँ V = विभवांतर (वोल्ट), I = धारा (ऐम्पियर), R = प्रतिरोध (ओह्म)</p>
+
+<h3>SVG — सरल सर्किट और वोल्टमीटर/एमीमीटर</h3>
+<svg width="360" height="180">
+  <!-- Battery -->
+  <rect x="20" y="40" width="30" height="100" fill="#fff" stroke="#000"/>
+  <line x1="35" y1="50" x2="35" y2="60" stroke="#000" stroke-width="3"/>
+  <line x1="35" y1="120" x2="35" y2="130" stroke="#000" stroke-width="2"/>
+  <!-- Wires -->
+  <line x1="50" y1="70" x2="150" y2="70" stroke="#000" stroke-width="3"/>
+  <line x1="210" y1="70" x2="320" y2="70" stroke="#000" stroke-width="3"/>
+  <line x1="150" y1="70" x2="150" y2="120" stroke="#000" stroke-width="3"/>
+  <line x1="210" y1="70" x2="210" y2="120" stroke="#000" stroke-width="3"/>
+  <!-- Resistor -->
+  <rect x="150" y="120" width="60" height="20" fill="#fff" stroke="#000"/>
+  <text x="155" y="135" font-size="12">R</text>
+  <line x1="210" y1="120" x2="260" y2="120" stroke="#000" stroke-width="3"/>
+  <!-- Ammeter -->
+  <circle cx="260" cy="100" r="12" fill="#fff" stroke="#000"/>
+  <text x="256" y="103" font-size="12">A</text>
+</svg>
+
+</div>
+
+<!-- प्रतिरोध -->
+<div class="box">
+<h2>3. प्रतिरोध और चालक की विशेषताएँ</h2>
+
+<ul>
+    <li><b>प्रतिरोध निर्भर करता है:</b> पदार्थ की प्रकृति, लंबाई (l), कर्तनक्षेत्र (A) और तापमान पर।</li>
+    <li><b>विशेष सूत्र (Resistivity):</b> <br>
+    <div class="formula">R = ρ × (l / A)</div>
+    जहाँ ρ = प्रतिरोधकत्व (Ohm·m)</li>
+</ul>
+</div>
+
+<!-- श्रृंखला और समांतर -->
+<div class="box">
+<h2>4. श्रृंखला (Series) व समांतर (Parallel) संयोजन</h2>
+
+<ul>
+    <li><b>श्रृंखला संयोजन:</b> प्रतिरोध एक के बाद एक जुड़े हों। कुल प्रतिरोध:  
+    <div class="formula">R_total = R₁ + R₂ + R₃ + ...</div></li>
+
+    <li><b>समांतर संयोजन:</b> दोनों छोरों पर प्रतिरोध मिलते हों। कुल प्रतिरोध:  
+    <div class="formula">1/R_total = 1/R₁ + 1/R₂ + 1/R₃ + ...</div></li>
+</ul>
+
+<h3>SVG — Series vs Parallel (सरल दृश्य)</h3>
+<svg width="640" height="180">
+  <!-- Series -->
+  <text x="30" y="25" font-size="14">श्रृंखला:</text>
+  <line x1="20" y1="40" x2="120" y2="40" stroke="#000" stroke-width="3"/>
+  <rect x="120" y="30" width="40" height="20" fill="#fff" stroke="#000"/>
+  <rect x="180" y="30" width="40" height="20" fill="#fff" stroke="#000"/>
+  <rect x="240" y="30" width="40" height="20" fill="#fff" stroke="#000"/>
+  <line x1="280" y1="40" x2="380" y2="40" stroke="#000" stroke-width="3"/>
+
+  <!-- Parallel -->
+  <text x="420" y="25" font-size="14">समांतर:</text>
+  <line x1="420" y1="40" x2="460" y2="40" stroke="#000" stroke-width="3"/>
+  <line x1="460" y1="40" x2="460" y2="80" stroke="#000" stroke-width="3"/>
+  <rect x="460" y="80" width="40" height="20" fill="#fff" stroke="#000"/>
+  <line x1="510" y1="80" x2="560" y2="80" stroke="#000" stroke-width="3"/>
+  <line x1="460" y1="60" x2="560" y2="60" stroke="#000" stroke-width="0"/>
+  <line x1="560" y1="40" x2="600" y2="40" stroke="#000" stroke-width="3"/>
+</svg>
+
+</div>
+
+<!-- विद्युत शक्ति -->
+<div class="box">
+<h2>5. विद्युत शक्ति (Electric Power)</h2>
+
+<ul>
+    <li><b>परिभाषा:</b> प्रति समय की जाने वाली ऊर्जा को शक्ति कहते हैं।</li>
+    <li><b>सूत्र:</b>
+    <div class="formula">P = V × I</div>
+    और ओम के नियम से P = I²R = V² / R</li>
+
+    <li><b>एकक:</b> वाट (W). 1 किलोवाट = 1000 W</li>
+</ul>
+</div>
+
+<!-- प्रयोगात्मक -->
+<div class="box">
+<h2>6. प्रयोग (Circuit Practical Tips)</h2>
+
+<ul>
+    <li>एमीमीटर सर्किट में श्रृंखला में लगाया जाता है (low internal resistance)।</li>
+    <li>वोल्टमीटर को स्त्रोत या घटक के समानांतर जोड़ा जाता है (high internal resistance)।</li>
+    <li>सर्किट में खराब कनेक्शन से वोल्टेज ड्रॉप और गर्मी पैदा हो सकती है — सावधानी रखें।</li>
+</ul>
+</div>
+
+<!-- महत्वपूर्ण प्रश्न -->
+<div class="box">
+<h2>7. महत्वपूर्ण प्रश्न</h2>
+
+<ol>
+    <li>ओम का नियम लिखिए और एक सरल उदाहरण दीजिए।</li>
+    <li>श्रृंखला और समांतर संयोजन में कुल प्रतिरोध का सूत्र लिखिए।</li>
+    <li>R = ρl/A का अर्थ समझाइए।</li>
+    <li>विद्युत शक्ति के तीन समान्य रूप दर्शाइए।</li>
+    <li>एमीमीटर व वोल्टमीटर को सर्किट में कैसे जोड़ा जाता है — स्पष्ट कीजिए।</li>
+</ol>
+
+</div>
+
+</body>
+</html>

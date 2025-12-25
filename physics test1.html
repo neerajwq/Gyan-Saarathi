@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 भौतिकी: मॉक टेस्ट 3 (प्रकाशिकी)</title>
+    <style>
+              :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #a0522d; 
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #ebe8d2;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            background-color: #6a5acd; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #5d4aa0;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #a0522d;
+            border-radius: 8px;
+            background-color: #faf0e6;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 भौतिकी - मॉक टेस्ट 3 💡</h1>
+        <h2>इकाई VI: प्रकाशिकी (किरण और तरंग) (100 MCQs)</h2>
+        <p>समय: 60 मिनट | कुल अंक: 100 (वर्तमान में 30 नमूना प्रश्न)</p>
+    </div>
+    
+
+[Image of ray diagram for total internal reflection]
+
+
+    <form id="quizForm">
+        </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (30 नमूना प्रश्न) ---
+        const testQuestions = [
+          // 1–30 (already added earlier)
+{ id: 1, question: "विद्युत आवेश की SI इकाई क्या है?", options: ["कूलॉम", "एम्पियर", "वोल्ट", "ओम"], answer: "कूलॉम", chapter: "Electrostatics" },
+{ id: 2, question: "कूलॉम का नियम किस पर निर्भर करता है?", options: ["दूरी", "आवेश", "दोनों", "किसी पर नहीं"], answer: "दोनों", chapter: "Electrostatics" },
+{ id: 3, question: "विद्युत क्षेत्र रेखाएँ किस दिशा में होती हैं?", options: ["ऋण से धन", "धन से ऋण", "उत्तर से दक्षिण", "कोई नहीं"], answer: "धन से ऋण", chapter: "Electric Field" },
+{ id: 4, question: "गाउस का नियम किससे सम्बन्धित है?", options: ["विद्युत फ्लक्स", "चुम्बकत्व", "ध्वनि", "ऊष्मा"], answer: "विद्युत फ्लक्स", chapter: "Gauss Law" },
+{ id: 5, question: "धारा की SI इकाई क्या है?", options: ["एम्पियर", "वाट", "वेबर", "फैराड"], answer: "एम्पियर", chapter: "Current Electricity" },
+{ id: 6, question: "ओम का नियम किसका संबंध बताता है?", options: ["V-I", "P-V", "Q-t", "W-F"], answer: "V-I", chapter: "Current Electricity" },
+{ id: 7, question: "प्रतिरोध किन पर निर्भर करता है?", options: ["लंबाई", "क्षेत्रफल", "सामग्री", "सभी"], answer: "सभी", chapter: "Resistance" },
+{ id: 8, question: "EMF का पूर्ण रूप क्या है?", options: ["Electro Magnetic Force", "Electro Motive Force", "Electric Motion Field", "Energy Magnetic Flux"], answer: "Electro Motive Force", chapter: "EMF" },
+{ id: 9, question: "चुम्बकीय क्षेत्र की SI इकाई क्या है?", options: ["टेस्ला", "वेबर", "हेनरी", "एम्पियर"], answer: "टेस्ला", chapter: "Magnetism" },
+{ id: 10, question: "बायोट-सावर्ट नियम किसका वर्णन करता है?", options: ["चुम्बकीय क्षेत्र", "धारा", "प्रतिरोध", "प्रेरण"], answer: "चुम्बकीय क्षेत्र", chapter: "Magnetism" },
+{ id: 11, question: "फैराडे का नियम किससे सम्बन्धित है?", options: ["EMI", "धारा", "ऊष्मा", "ध्वनि"], answer: "EMI", chapter: "EMI" },
+{ id: 12, question: "लेन्ज़ का नियम किस दिशा को बताता है?", options: ["धारा", "बल", "प्रेरण", "ऊर्जा"], answer: "प्रेरण", chapter: "EMI" },
+{ id: 13, question: "AC का पूर्ण रूप क्या है?", options: ["Alternative Current", "Alternating Current", "Active Current", "Average Current"], answer: "Alternating Current", chapter: "AC" },
+{ id: 14, question: "रिएक्टेंस कितने प्रकार का होता है?", options: ["1", "2", "3", "4"], answer: "2", chapter: "AC" },
+{ id: 15, question: "कैपेसिटर की SI इकाई?", options: ["फैराड", "टेस्ला", "ओम", "हेनरी"], answer: "फैराड", chapter: "Capacitor" },
+{ id: 16, question: "लेंस की शक्ति की इकाई?", options: ["मीटर", "डायोप्टर", "वाट", "जूल"], answer: "डायोप्टर", chapter: "Optics" },
+{ id: 17, question: "दर्पण सूत्र?", options: ["1/f = 1/v + 1/u", "F = ma", "V = IR", "P = VI"], answer: "1/f = 1/v + 1/u", chapter: "Ray Optics" },
+{ id: 18, question: "पूर्ण आंतरिक परावर्तन कब होता है?", options: ["i > c", "i < c", "i = c", "कभी नहीं"], answer: "i > c", chapter: "Optics" },
+{ id: 19, question: "डबल स्लिट प्रयोग?", options: ["यंग", "न्यूटन", "फैराडे", "ओम"], answer: "यंग", chapter: "Wave Optics" },
+{ id: 20, question: "फ्रिंज चौड़ाई किसके समानुपाती है?", options: ["λ", "1/λ", "d", "कोई नहीं"], answer: "λ", chapter: "Wave Optics" },
+{ id: 21, question: "फोटोइलेक्ट्रिक प्रभाव किसने दिया?", options: ["आइंस्टाइन", "न्यूटन", "थॉमसन", "फैराडे"], answer: "आइंस्टाइन", chapter: "Dual Nature" },
+{ id: 22, question: "इलेक्ट्रॉन का आवेश किसने मापा?", options: ["मिलिकन", "थॉमसन", "रदरफोर्ड", "बॉहर"], answer: "मिलिकन", chapter: "Dual Nature" },
+{ id: 23, question: "नाभिकीय अभिक्रिया में क्या संरक्षित रहता है?", options: ["ऊर्जा", "द्रव्यमान", "दोनों", "कोई नहीं"], answer: "दोनों", chapter: "Nuclear Physics" },
+{ id: 24, question: "अर्ध-आयु किसका मापक है?", options: ["क्षय दर", "ऊर्जा", "त्वरण", "आवेश"], answer: "क्षय दर", chapter: "Radioactivity" },
+{ id: 25, question: "सेमीकंडक्टर में चालकता किससे बढ़ती है?", options: ["ताप", "डोपिंग", "दोनों", "किसी से नहीं"], answer: "दोनों", chapter: "Semiconductor" },
+{ id: 26, question: "ट्रांजिस्टर में कितने टर्मिनल होते हैं?", options: ["2", "3", "4", "5"], answer: "3", chapter: "Semiconductor" },
+{ id: 27, question: "डायोड किस पर आधारित है?", options: ["P-N जंक्शन", "N-P-N", "P-P-P", "N-N-P"], answer: "P-N जंक्शन", chapter: "Semiconductor" },
+{ id: 28, question: "मॉड्यूलेशन क्यों किया जाता है?", options: ["लंबी दूरी संचार", "शोर कम", "सिग्नल स्थिर", "सभी"], answer: "सभी", chapter: "Communication" },
+{ id: 29, question: "AM का पूर्ण रूप?", options: ["Amplitude Modulation", "Active Modulation", "Analog Mode", "Alternate Mod"], answer: "Amplitude Modulation", chapter: "Communication" },
+{ id: 30, question: "FM का पूर्ण रूप?", options: ["Frequency Modulation", "Fast Modulation", "Field Modulation", "Fixed Modulation"], answer: "Frequency Modulation", chapter: "Communication" },
+
+
+// Added 31–100
+{ id: 31, question: "विद्युत फ्लक्स की SI इकाई क्या है?", options: ["वेबर", "टेस्ला", "वोल्ट", "जूल"], answer: "वेबर", chapter: "Gauss Law" },
+{ id: 32, question: "किसमें प्रतिरोध न्यूनतम होता है?", options: ["तांबा", "लोहा", "लकड़ी", "प्लास्टिक"], answer: "तांबा", chapter: "Resistance" },
+{ id: 33, question: "रेजिस्टिविटी की SI इकाई?", options: ["ओम-मीटर", "वोल्ट", "एम्पियर", "जूल"], answer: "ओम-मीटर", chapter: "Current Electricity" },
+{ id: 34, question: "चुम्बकीय फ्लक्स की SI इकाई?", options: ["वेबर", "टेस्ला", "हेनरी", "कूलॉम"], answer: "वेबर", chapter: "Magnetism" },
+{ id: 35, question: "कौन-सी किरण अपवर्तन से नहीं गुजरती?", options: ["समतल", "लाल", "नीली", "गामा"], answer: "गामा", chapter: "Optics" },
+{ id: 36, question: "डिफ्रेक्शन किसका गुण है?", options: ["तरंग", "कण", "दोनों", "कोई नहीं"], answer: "तरंग", chapter: "Wave Optics" },
+{ id: 37, question: "नाभिक किससे बना होता है?", options: ["प्रोटॉन+न्यूट्रॉन", "प्रोटॉन", "न्यूट्रॉन", "इलेक्ट्रॉन"], answer: "प्रोटॉन+न्यूट्रॉन", chapter: "Nucleus" },
+{ id: 38, question: "β-कण क्या है?", options: ["इलेक्ट्रॉन", "प्रोटॉन", "न्यूट्रॉन", "गामा"], answer: "इलेक्ट्रॉन", chapter: "Radioactivity" },
+{ id: 39, question: "लॉजिक गेट AND का आउटपुट कब 1 होता है?", options: ["दोनों 1", "एक 1", "दोनों 0", "कभी नहीं"], answer: "दोनों 1", chapter: "Digital" },
+{ id: 40, question: "LED किस सिद्धांत पर काम करती है?", options: ["P-N जंक्शन", "फोटो प्रभाव", "विसरण", "EMI"], answer: "P-N जंक्शन", chapter: "Semiconductor" },
+
+
+{ id: 41, question: "विद्युत शक्ति का सूत्र?", options: ["P=VI", "P=IR", "P=F/A", "P=mv"], answer: "P=VI", chapter: "Current Electricity" },
+{ id: 42, question: "तरंगदैर्घ्य की SI इकाई?", options: ["मीटर", "सेकंड", "कूलॉम", "टेस्ला"], answer: "मीटर", chapter: "Wave Optics" },
+{ id: 43, question: "न्यूटन की रिंग किसका उदाहरण है?", options: ["इंटरफेरेंस", "डिफ्रेक्शन", "प्रतिबिंब", "रेफ्रेक्शन"], answer: "इंटरफेरेंस", chapter: "Wave Optics" },
+{ id: 44, question: "बॉहर मॉडल किसका वर्णन करता है?", options: ["हाइड्रोजन परमाणु", "हीलियम", "नाभिक", "इलेक्ट्रॉन"], answer: "हाइड्रोजन परमाणु", chapter: "Atom" },
+{ id: 45, question: "आवर्धन कब धनात्मक होता है?", options: ["आभासी प्रतिबिंब", "वास्तविक", "दोनों", "कभी नहीं"], answer: "आभासी प्रतिबिंब", chapter: "Optics" },
+
+
+{ id: 46, question: "RLC सर्किट में अनुनाद कब होता है?", options: ["XL = XC", "XL > XC", "XL < XC", "कभी नहीं"], answer: "XL = XC", chapter: "AC" },
+{ id: 47, question: "चालक में इलेक्ट्रॉनों का प्रवाह क्या कहलाता है?", options: ["धारा", "वोल्टेज", "प्रतिरोध", "शक्ति"], answer: "धारा", chapter: "Current Electricity" },
+{ id: 48, question: "हीटिंग इफेक्ट किस नियम पर?", options: ["Joule Law", "Ohm", "Faraday", "Biot"], answer: "Joule Law", chapter: "Heating" },
+{ id: 49, question: "ट्रांसफार्मर किस पर चलता है?", options: ["AC", "DC", "दोनों", "कोई नहीं"], answer: "AC", chapter: "Transformer" },
+{ id: 50, question: "फोटॉन की ऊर्जा?", options: ["E = hf", "E = mv", "E = IR", "E = 1/2 mv²"], answer: "E = hf", chapter: "Dual Nature" },
+
+
+// 51–100 compact
+{ id: 51, question: "ध्वनि किस प्रकार की तरंग है?", options: ["अनुदैर्ध्य", "अनुप्रस्थ", "दोनों", "कोई नहीं"], answer: "अनुदैर्ध्य", chapter: "Waves" },
+{ id: 52, question: "प्रकाश का वेग?", options: ["3×10^8 m/s", "3×10^6", "3×10^5", "3×10^3"], answer: "3×10^8 m/s", chapter: "Optics" },
+{ id: 53, question: "गामा किरणें कैसी होती हैं?", options: ["विद्युत चुंबकीय", "ध्वनि", "यांत्रिक", "कोई नहीं"], answer: "विद्युत चुंबकीय", chapter: "Nuclear" },
+{ id: 54, question: "फील्ड लाइनें कभी?", options: ["कटती नहीं", "कटती हैं", "मुड़ती नहीं", "स्थिर"], answer: "कटती नहीं", chapter: "Electric Field" },
+{ id: 55, question: "ओम की SI इकाई?", options: ["Ω", "V", "A", "F"], answer: "Ω", chapter: "Current" },
+{ id: 56, question: "रेडियो तरंगें?", options: ["EM Waves", "ध्वनि", "कण", "यांत्रिक"], answer: "EM Waves", chapter: "Communication" },
+{ id: 57, question: "इंटेंसिटी ∝?", options: ["A²", "A", "1/A", "0"], answer: "A²", chapter: "Waves" },
+{ id: 58, question: "फोटो-कैथोड किस पर आधारित है?", options: ["Photoelectric", "Thermal", "EMI", "Diffraction"], answer: "Photoelectric", chapter: "Dual Nature" },
+{ id: 59, question: "रदरफोर्ड ने क्या खोजा?", options: ["नाभिक", "इलेक्ट्रॉन", "प्रोटॉन", "क्वार्क"], answer: "नाभिक", chapter: "Atom" },
+{ id: 60, question: "कौन-सा आवेश मुक्त होता है?", options: ["इलेक्ट्रॉन", "प्रोटॉन", "न्यूट्रॉन", "गामा"], answer: "इलेक्ट्रॉन", chapter: "Electricity" },
+
+
+{ id: 61, question: "हाइजेनबर्ग सिद्धांत किसका?", options: ["अनिश्चितता", "ऊर्जा", "चुम्बकत्व", "बल"], answer: "अनिश्चितता", chapter: "Modern Physics" },
+{ id: 62, question: "NA का मान?", options: ["6.022×10²³", "9.8", "3×10^8", "1.6×10^-19"], answer: "6.022×10²³", chapter: "Chem-Phys" },
+{ id: 63, question: "इंडक्टेंस की इकाई?", options: ["हेनरी", "फैराड", "टेस्ला", "वेबर"], answer: "हेनरी", chapter: "AC" },
+{ id: 64, question: "किसमें अपवर्तन अधिक?", options: ["कांच", "पानी", "हवा", "बर्फ"], answer: "कांच", chapter: "Optics" },
+{ id: 65, question: "डिजिटल सिग्नल?", options: ["0/1", "सतत", "ध्वनि", "कण"], answer: "0/1", chapter: "Digital" },
+{ id: 66, question: "तत्व का परमाणु क्रमांक?", options: ["प्रोटॉन संख्या", "न्यूट्रॉन", "द्रव्यमान", "इलेक्ट्रॉन"], answer: "प्रोटॉन संख्या", chapter: "Atom" },// **[यहां प्रश्न 31 से 100 तक जोड़े जाएंगे।]**
+{ id: 67, question: "दोलन का समय?", options: ["T", "f", "λ", "v"], answer: "T", chapter: "Waves" },
+{ id: 68, question: "तरंग गति?", options: ["v=fλ", "v=Tλ", "v=f/T", "v=λ²"], answer: "v=fλ", chapter: "Waves" },
+{ id: 69, question: "X-ray किससे बनती है?", options: ["तेज़ इलेक्ट्रॉन", "गामा", "प्रोटॉन", "ध्वनि"], answer: "तेज़ इलेक्ट्रॉन", chapter: "Modern" },
+{ id: 70, question: "माइक्रोवेव का उपयोग?", options: ["रडार", "CMOS", "पंखा", "इंजन"], answer: "रडार", chapter: "Communication" },
+
+
+{ id: 71, question: "रेजिस्टेंस तापमान से?", options: ["बढ़ता", "घटता", "स्थिर", "कुछ नहीं"], answer: "बढ़ता", chapter: "Resistance" },
+{ id: 72, question: "डायोड कार्य करता है?", options: ["एक दिशा", "दो दिशा", "तीन", "कोई नहीं"], answer: "एक दिशा", chapter: "Semiconductor" },
+{ id: 73, question: "PNP में कौन majority है?", options: ["होल", "इलेक्ट्रॉन", "दोनों", "कोई नहीं"], answer: "होल", chapter: "Semiconductor" },
+{ id: 74, question: "EM Wave गति?", options: ["c", "2c", "c/2", "0"], answer: "c", chapter: "EM Waves" },
+{ id: 75, question: "लॉगिक गेट NOT?", options: ["इनवर्टर", "जोड़", "गुणा", "OR"], answer: "इनवर्टर", chapter: "Digital" },
+{ id: 76, question: "उत्सर्जन स्पेक्ट्रा किससे?", options: ["गर्म गैस", "ठंडी", "ठोस", "द्रव"], answer: "गर्म गैस", chapter: "Spectra" },
+{ id: 77, question: "लेज़र का सिद्धांत?", options: ["उत्तेजित उत्सर्जन", "EMI", "डिफ्रेक्शन", "फोटो"], answer: "उत्तेजित उत्सर्जन", chapter: "Laser" },
+{ id: 78, question: "कॉस्मिक किरणें?", options: ["उच्च ऊर्जा कण", "ध्वनि", "X-ray", "इन्फ्रा"], answer: "उच्च ऊर्जा कण", chapter: "Nuclear" },
+{ id: 79, question: "न्यूट्रॉन किसने खोजा?", options: ["चैडविक", "रदरफोर्ड", "बोहर", "थॉमसन"], answer: "चैडविक", chapter: "Atom" },
+{ id: 80, question: "प्रतिरोध =?", options: ["ρl/A", "lA/ρ", "A/l", "ρ/A"], answer: "ρl/A", chapter: "Current" },
+
+
+{ id: 81, question: "शक्ति =?", options: ["VI", "IR", "R/V", "I/R"], answer: "VI", chapter: "Electricity" },
+{ id: 82, question: "नाभिकीय ऊर्जा किससे?", options: ["द्रव्यमान दोष", "इलेक्ट्रॉन", "ध्वनि", "घर्षण"], answer: "द्रव्यमान दोष", chapter: "Nuclear" },
+{ id: 83, question: "AM रेडियो किस आवृत्ति पर?", options: ["kHz", "MHz", "GHz", "Hz"], answer: "kHz", chapter: "Communication" },
+{ id: 84, question: "FM रेडियो?", options: ["MHz", "kHz", "GHz", "Hz"], answer: "MHz", chapter: "Communication" },
+{ id: 85, question: "फोटोइलेक्ट्रॉन ऊर्जा निर्भर?", options: ["आवृत्ति", " तीव्रता", "दोनों", "कोई नहीं"], answer: "आवृत्ति", chapter: "Dual Nature" },
+{ id: 86, question: "इलेक्ट्रॉन आवेश?", options: ["1.6×10^-19 C", "9.1×10^-31", "6.02×10^23", "3×10^8"], answer: "1.6×10^-19 C", chapter: "Atom" },
+{ id: 87, question: "इलेक्ट्रॉन द्रव्यमान?", options: ["9.1×10^-31 kg", "10", "1", "0"], answer: "9.1×10^-31 kg", chapter: "Atom" },
+{ id: 88, question: "संचालन का कार्य?", options: ["धारा बहाना", "दबाव", "ऊष्मा", "गति"], answer: "धारा बहाना", chapter: "Electricity" },
+{ id: 89, question: "वोल्टमीटर कैसे जोड़ा जाता है?", options: ["समानांतर", "श्रृंखला", "दोनों", "कभी नहीं"], answer: "समानांतर", chapter: "Current" },
+{ id: 90, question: "एम्पीयरमीटर?", options: ["श्रृंखला", "समानांतर", "दोनों", "कभी नहीं"], answer: "श्रृंखला", chapter: "Current" },
+
+
+{ id: 91, question: "रेडियोधर्मी क्षय कैसा है?", options: ["स्वतः", "बलपूर्वक", "ध्वनिक", "विद्युत"], answer: "स्वतः", chapter: "Radioactivity" },
+{ id: 92, question: "संचार में कैरियर वेव क्यों?", options: ["लंबी दूरी", "आवृत्ति", "शोर कम", "कोई नहीं"], answer: "लंबी दूरी", chapter: "Communication" },
+{ id: 93, question: "धारा का सूत्र?", options: ["I = Q/t", "I = Vt", "I = Rt", "I = V/Q"], answer: "I = Q/t", chapter: "Electricity" },
+{ id: 94, question: "इंटरफेरेंस कब?", options: ["सह-हस्तक्षेप", "असह", "दोनों", "कभी नहीं"], answer: "सह-हस्तक्षेप", chapter: "Waves" },
+{ id: 95, question: "लाल प्रकाश का अपवर्तन?", options: ["कम", "ज्यादा", "समान", "0"], answer: "कम", chapter: "Optics" },
+{ id: 96, question: "नीला प्रकाश?", options: ["अधिक विचलित", "कम", "0", "समान"], answer: "अधिक विचलित", chapter: "Optics" },
+{ id: 97, question: "mV किसका है?", options: ["वोल्टेज", "करंट", "प्रतिरोध", "ऊर्जा"], answer: "वोल्टेज", chapter: "Electricity" },
+{ id: 98, question: "GHz उपयोग?", options: ["सैटेलाइट", "FM", "AM", "X-ray"], answer: "सैٹेलाइट", chapter: "Communication" },
+{ id: 99, question: "होल क्या है?", options: ["धनात्मक चार्ज", "ऋणात्मक", "न्यूट्रल", "कोई नहीं"], answer: "धनात्मक चार्ज", chapter: "Semiconductor" },
+{ id: 100, question: "किसमें धारा नहीं बहती?", options: ["इंसुलेटर", "कंडक्टर", "सेमिकंडक्टर", "डायोड"], answer: "इंसुलेटर", chapter: "Electricity" }
+]; 
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        // (पिछले टेस्ट के समान, उत्तरों को रेंडर करने और जाँचने के लिए)
+
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            testQuestions.forEach((mcq, index) => {
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. [${mcq.chapter}] ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${option}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! प्रकाशिकी पर आपकी पकड़ मजबूत है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। तरंग प्रकाशिकी पर अधिक ध्यान दें।' : 'सिद्धांतों को फिर से दोहराएं।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

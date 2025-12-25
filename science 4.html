@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कार्बन एवं उसके यौगिक - Class 10</title>
+
+<style>
+    :root {
+        --primary-blue: #1A237E;
+        --light-blue: #81D4FA;
+        --accent-orange: #FFB300;
+        --light-gray: #F5F7FA;
+        --text-dark: #333;
+        --text-light: #fff;
+        --border-radius: 12px;
+        --font-family: 'Roboto', sans-serif;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:var(--font-family); background:var(--light-gray); color:var(--text-dark); line-height:1.6; }
+    header {
+        background:var(--primary-blue); color:var(--text-light);
+        padding:12px 28px; display:flex; justify-content:space-between; align-items:center;
+        box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    }
+    .logo-section { display:flex; align-items:center; }
+    .logo-img { height:38px; width:38px; border-radius:50%; margin-right:12px; }
+    .main-nav a { color:#fff; text-decoration:none; margin:0 12px; font-weight:600; }
+    .btn-mock-test {
+        background:var(--accent-orange); color:var(--primary-blue);
+        padding:6px 12px; border-radius:10px; text-decoration:none; font-weight:700;
+    }
+    .box {
+        background:#fff; margin:18px; padding:18px;
+        border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    h1,h2 { color:var(--primary-blue); margin-bottom:8px; }
+    ul,ol { margin-left:18px; margin-top:8px; }
+    .formula { background:#e8f0ff; padding:8px 12px; border-radius:8px; display:inline-block; font-weight:700; margin-top:8px; }
+    svg { display:block; margin:18px auto; max-width:100%; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; }
+    th,td { border:1px solid #ccc; padding:8px; }
+    th { background:#e6f2ff; color:var(--primary-blue); }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" class="logo-img">
+        <div>
+            <h3 style="margin:0;color:#fff">Gyan Saarathi</h3>
+            <div style="font-size:12px;color:#f5f5f5">Class 10 — Carbon & Compounds</div>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+</header>
+
+<!-- परिचय -->
+<div class="box">
+    <h1>अध्याय — कार्बन एवं उसके यौगिक</h1>
+    <p>कार्बन पृथ्वी पर जीवन का आधार है। इस अध्याय में हम कार्बन की संयोजकता, संरचना, समावयवता, बंध, प्रमुख यौगिक, क्रियाएँ तथा साबुन और डिटर्जेंट पढ़ेंगे।</p>
+</div>
+
+<!-- 1. कार्बन का परिचय -->
+<div class="box">
+    <h2>1. कार्बन के गुण</h2>
+    <ul>
+        <li>परमाणु संख्या = 6</li>
+        <li>इलेक्ट्रॉन विन्यास = 2, 4</li>
+        <li>संयोजकता = 4 (Tetravalent)</li>
+        <li>C–C बंध मजबूत होता है → इसलिए कार्बन लम्बी शृंखलाएँ बनाता है।</li>
+    </ul>
+
+    <h3>SVG — कार्बन की संयोजकता</h3>
+    <svg width="220" height="150">
+        <circle cx="110" cy="70" r="30" fill="#e3f2fd" stroke="#1A237E" stroke-width="2"/>
+        <text x="100" y="75" font-size="16">C</text>
+        <text x="70" y="30" font-size="14">H</text>
+        <line x1="100" y1="50" x2="80" y2="30" stroke="black" stroke-width="2"/>
+        <text x="150" y="110" font-size="14">H</text>
+        <line x1="120" y1="90" x2="150" y2="110" stroke="black" stroke-width="2"/>
+        <text x="150" y="30" font-size="14">H</text>
+        <line x1="120" y1="50" x2="150" y2="30" stroke="black" stroke-width="2"/>
+        <text x="70" y="120" font-size="14">H</text>
+        <line x1="100" y1="90" x2="80" y2="120" stroke="black" stroke-width="2"/>
+    </svg>
+</div>
+
+<!-- 2. कार्बनिक यौगिक -->
+<div class="box">
+    <h2>2. कार्बनिक यौगिकों के प्रकार</h2>
+
+    <table>
+        <tr><th>यौगिक</th><th>सामान्य सूत्र</th><th>उदाहरण</th></tr>
+        <tr><td>ऐल्केन (Alkane)</td><td>C<sub>n</sub>H<sub>2n+2</sub></td><td>CH₄, C₂H₆</td></tr>
+        <tr><td>ऐल्कीन (Alkene)</td><td>C<sub>n</sub>H<sub>2n</sub></td><td>C₂H₄</td></tr>
+        <tr><td>ऐल्काइन (Alkyne)</td><td>C<sub>n</sub>H<sub>2n-2</sub></td><td>C₂H₂</td></tr>
+        <tr><td>ऐल्कोहॉल</td><td>R–OH</td><td>इथेनॉल</td></tr>
+        <tr><td>कार्बोक्ज़िलिक अम्ल</td><td>R–COOH</td><td>एसिटिक अम्ल</td></tr>
+    </table>
+</div>
+
+<!-- 3. समावयवता -->
+<div class="box">
+    <h2>3. समावयवता (Isomerism)</h2>
+    <p>एक ही सूत्र के दो या अधिक यौगिक जिनकी संरचना अलग हो।</p>
+
+    <h3>SVG — C₄H₁₀ के समावयव</h3>
+    <svg width="350" height="150">
+        <text x="20" y="40">CH₃ — CH₂ — CH₂ — CH₃</text>
+        <text x="20" y="70">n-Butane</text>
+        <text x="20" y="120">  CH₃</text>
+        <text x="20" y="140">   │</text>
+        <text x="20" y="160">CH₃ — CH — CH₃</text>
+        <text x="20" y="185">iso-Butane</text>
+    </svg>
+</div>
+
+<!-- 4. इथेनॉल और इथेनोइक अम्ल -->
+<div class="box">
+    <h2>4. इथेनॉल (C₂H₅OH) और इथेनोइक अम्ल (CH₃COOH)</h2>
+
+    <h3>इथेनॉल के गुण</h3>
+    <ul>
+        <li>रंगहीन, ज्वलनशील तरल</li>
+        <li>अम्ल के साथ प्रतिक्रिया → एस्टर</li>
+        <li>पानी में घुलनशील</li>
+    </ul>
+
+    <h3>इथेनोइक अम्ल</h3>
+    <ul>
+        <li>तीव्र गंध वाला तरल</li>
+        <li>सिरका में 5–8% CH₃COOH होता है</li>
+    </ul>
+
+    <h3>एस्टरीकरण अभिक्रिया</h3>
+    <div class="formula">C₂H₅OH + CH₃COOH → CH₃COOC₂H₅ + H₂O</div>
+</div>
+
+<!-- 5. साबुन और डिटर्जेंट -->
+<div class="box">
+    <h2>5. साबुन और डिटर्जेंट</h2>
+
+    <h3>साबुन</h3>
+    <ul>
+        <li>लंबी फैटी एसिड + NaOH → साबुन + ग्लिसरीन</li>
+        <li>कठोर जल में कम झाग बनाता है</li>
+    </ul>
+
+    <h3>डिटर्जेंट</h3>
+    <ul>
+        <li>सिंथेटिक</li>
+        <li>कठोर जल में भी अच्छी तरह काम करता है</li>
+    </ul>
+
+    <h3>SVG — साबुन का माइसेल</h3>
+    <svg width="290" height="180">
+        <circle cx="145" cy="90" r="45" fill="#bbdefb" stroke="#1A237E" stroke-width="2"/>
+        <text x="120" y="95" font-size="14">Micelle</text>
+        <line x1="145" y1="90" x2="220" y2="50" stroke="black" stroke-width="2"/>
+        <text x="225" y="55" font-size="12">Hydrophobic Tail</text>
+        <line x1="145" y1="90" x2="70" y2="50" stroke="black" stroke-width="2"/>
+        <text x="20" y="55" font-size="12">Hydrophilic Head</text>
+    </svg>
+</div>
+
+<!-- IMPORTANT QUESTIONS -->
+<div class="box">
+    <h2>6. महत्वपूर्ण प्रश्न (Exam-oriented)</h2>
+    <ol>
+        <li>कार्बन की संयोजकता 4 होने के क्या कारण है?</li>
+        <li>ऐल्केन, ऐल्कीन तथा ऐल्काइन में अंतर लिखें।</li>
+        <li>समावयवता क्या है? उदाहरण सहित समझाएँ।</li>
+        <li>इथेनॉल और इथेनोइक अम्ल में दो अंतर लिखें।</li>
+        <li>एस्टरीकरण अभिक्रिया लिखिए एवं समझाइए।</li>
+        <li>साबुन कठोर जल में कम क्यों काम करता है?</li>
+    </ol>
+</div>
+
+</body>
+</html>

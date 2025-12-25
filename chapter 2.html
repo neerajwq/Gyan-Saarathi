@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कक्षा 12 भौतिकी – अध्याय 2: विद्युत विभव एवं धारिता (Full Notes)</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    /* body { font-family: 'Noto Sans Devanagari', sans-serif; line-height: 1.6; padding: 20px; background: #f8f9fa; } */
+    h1, h2, h3 { color: #2c3e50; }
+    .box { background: #ffffff; padding: 15px; margin: 15px 0; border-left: 5px solid #2980b9; border-radius: 6px; }
+    .formula { background: #eef7ff; padding: 10px; border-radius: 5px; font-weight: bold; }
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<h1>अध्याय 2 — विद्युत विभव एवं धारिता (Electrostatic Potential & Capacitance)</h1>
+
+<div class="box">
+<h2>1. विद्युत विभव (Electric Potential)</h2>
+<p>किसी बिंदु पर विद्युत विभव वह कार्य है जो एक इकाई धन आवेश को अनन्त से उस बिंदु तक लाने में किया जाता है।</p>
+<div class="formula">V = W/q</div>
+<p><b>इकाई:</b> वोल्ट (V)</p>
+<p><b>स्केलर राशि</b></p>
+</div>
+
+<div class="box">
+<h2>2. बिन्दु आवेश के कारण विभव</h2>
+<p>किसी बिंदु आवेश Q से दूरी r पर विभव—</p>
+<div class="formula">V = (1 / 4πϵ₀) × (Q / r)</div>
+<p>यदि Q धन है → विभव धन होगा<br>यदि Q ऋण है → विभव ऋण होगा</p>
+</div>
+
+<div class="box">
+<h2>3. दो बिंदुओं के बीच विभवांतर</h2>
+<div class="formula">ΔV = V₂ – V₁ = W / q</div>
+</div>
+
+<div class="box">
+<h2>4. विद्युत क्षेत्र एवं विभव का संबंध</h2>
+<div class="formula">E = – dV/dr</div>
+<p>यदि विभव दूरी के अनुसार घटता है तो क्षेत्र धन दिशा में होगा।</p>
+</div>
+
+<div class="box">
+<h2>5. विद्युत द्विध्रुव (Electric Dipole)</h2>
+<p>दो समान परिमाण के विपरीत आवेश +q और –q, जिनके बीच की दूरी 2a होती है।</p>
+<div class="formula">Dipole Moment (p) = q × 2a</div>
+<p>इकाई: C·m</p>
+</div>
+
+<div class="box">
+<h2>6. विद्युत द्विध्रुव के कारण विभव</h2>
+<p>दूरी r पर, θ कोण पर—</p>
+<div class="formula">V = (1 / 4πϵ₀) × (p cosθ / r²)</div>
+</div>
+
+<div class="box">
+<h2>7. समविभव पृष्ठ (Equipotential Surface)</h2>
+<ul>
+<li>जहाँ विभव समान हो।</li>
+<li>इन पर चलने में कार्य = 0</li>
+<li>ये सतहें सदैव विद्युत क्षेत्र रेखाओं के लम्बवत होती हैं।</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>8. विद्युत विभव ऊर्जा (Electric Potential Energy)</h2>
+<div class="formula">U = (1 / 4πϵ₀) × (q₁ q₂ / r)</div>
+</div>
+
+<div class="box">
+<h2>9. धारिता (Capacitance)</h2>
+<p>धारिता किसी चालक की वह क्षमता है जिसमें वह आवेश को संग्रहित कर सके।</p>
+<div class="formula">C = q / V</div>
+<p>इकाई: फैरड (F)</p>
+</div>
+
+<div class="box">
+<h2>10. समानांतर पत्तिका संधारित्र (Parallel Plate Capacitor)</h2>
+<div class="formula">C = ϵ₀ A / d</div>
+<p>यदि डाइइलेक्ट्रिक रखा हो (K):</p>
+<div class="formula">C = K ϵ₀ A / d</div>
+</div>
+
+<div class="box">
+<h2>11. संधारित्र में संचित ऊर्जा</h2>
+<div class="formula">U = ½ C V²</div>
+<div class="formula">U = ½ q V</div>
+</div>
+
+<div class="box">
+<h2>12. संधारित्रों का संयोजन (Combination of Capacitors)</h2>
+<h3>(A) श्रेणी क्रम (Series)</h3>
+<div class="formula">1/Ceq = 1/C₁ + 1/C₂ + ...</div>
+
+<h3>(B) समांतर क्रम (Parallel)</h3>
+<div class="formula">Ceq = C₁ + C₂ + ...</div>
+</div>
+
+<div class="box">
+<h2>13. गौस प्रमेय (Gauss Theorem)</h2>
+<div class="formula">Φ = ∮ E · dA = q(enclosed) / ϵ₀</div>
+</div>
+
+<!-- <h2>✔ यह HTML अब पूरी तरह साफ, फॉर्मूले सही और प्रोफेशनल है।</h2> -->
+
+  <!-- Notes Section Added -->
+  <section>
+    <h2>अध्याय 2: विद्युत विभव एवं धारिता — विस्तृत नोट्स</h2>
+
+    <h3>1. विद्युत विभव (Electric Potential)</h3>
+    <p>किसी बिंदु पर विद्युत विभव वह कार्य है जो एक धनात्मक इकाई आवेश को अनंत से उस बिंदु तक लाने में किया जाता है। यह स्केलर राशि है।</p>
+    <ul>
+      <li>SI इकाई: वोल्ट (Volt)</li>
+      <li>प्रतीक: V</li>
+      <li>प्रकृति: स्केलर राशि</li>
+    </ul>
+
+    <h3>2. विभवांतर (Potential Difference)</h3>
+    <p>दो बिंदुओं के बीच विभवांतर वह कार्य है जो एक इकाई आवेश को एक बिंदु से दूसरे बिंदु तक ले जाने पर किया जाता है।</p>
+
+    <h3>3. विद्युत क्षेत्र एवं विभव का संबंध</h3>
+    <p>विद्युत क्षेत्र, विभव का ऋणात्मक ग्रेडिएंट होता है:</p>
+    <pre>E = - dV/dx</pre>
+
+    <h3>4. बिंदु आवेश का विभव</h3>
+    <p>किसी बिंदु आवेश <b>Q</b> से दूरी <b>r</b> पर विभव:</p>
+    <pre>V = kQ/r</pre>
+
+    <h3>5. धारिता (Capacitance)</h3>
+    <p>धारिता किसी संवाहक की वह क्षमता है जिसमें वह आवेश संग्रहित कर सकता है:</p>
+    <pre>C = Q/V</pre>
+
+    <ul>
+      <li>SI इकाई: फ़ैराड (Farad)</li>
+      <li>यह स्केलर राशि है</li>
+    </ul>
+
+    <h3>6. समांतर-पट्टिका संधारित्र (Parallel Plate Capacitor)</h3>
+    <p>जब दो प्लेटें क्षेत्रफल A की हों और दूरी d पर हों, उनका धारिता:</p>
+    <pre>C = ε₀ A / d</pre>
+
+    <p>अगर डायइलेक्ट्रिक लगाया जाए, तो:</p>
+    <pre>C = k ε₀ A / d</pre>
+
+    <h3>7. संधारित्र में ऊर्जा संग्रह (Energy Stored in Capacitor)</h3>
+    <pre>U = (1/2) C V²</pre>
+
+    <h3>8. श्रृंखला एवं समानांतर संयोजन</h3>
+    <h4>श्रृंखला (Series):</h4>
+    <pre>1/Ceq = 1/C1 + 1/C2 + ...</pre>
+
+    <h4>समानांतर (Parallel):</h4>
+    <pre>Ceq = C1 + C2 + C3 + ...</pre>
+
+  </section>
+</body>
+</html>

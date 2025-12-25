@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भौतिकी - अध्याय 1 : प्रकाश (परावर्तन एवं अपवर्तन) - Class 10</title>
+
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .box {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        ul, ol { margin-left: 20px; }
+        svg { display: block; margin: 20px auto; max-width: 100%; height: auto; }
+        b { color: #e74c3c; }
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+        <div class="logo-text"><h1>Gyan Saarathi</h1></div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+
+    <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+    </div>
+</header>
+
+<!-- अध्याय परिचय -->
+<div class="box">
+<h1>अध्याय 1 — प्रकाश : परावर्तन एवं अपवर्तन</h1>
+<p>
+प्रकाश एक प्रकार की ऊर्जा है जो तरंग के रूप में चलती है। यह सीधी रेखा में चलता है और विभिन्न सतहों से टकराने पर परावर्तित (Reflect) या अपवर्तित (Refract) हो सकता है।
+</p>
+</div>
+
+<!-- परावर्तन -->
+<div class="box">
+<h2>1. प्रकाश का परावर्तन (Reflection of Light)</h2>
+
+<ul>
+    <li>प्रकाश किसी सतह से टकराकर वापस लौटता है — इसे <b>परावर्तन</b> कहते हैं।</li>
+    <li>परावर्तन के नियम:
+        <ul>
+            <li>आवर्तित किरण, आपतित किरण तथा अभिलंब एक ही समतल में होते हैं।</li>
+            <li>आवर्तन कोण <b>=</b> आपतन कोण</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>SVG Diagram – Plane Mirror Reflection</h3>
+<svg width="300" height="200">
+  <line x1="150" y1="20" x2="150" y2="180" stroke="black" stroke-width="3"/>
+  <line x1="20" y1="60" x2="150" y2="100" stroke="red" stroke-width="3"/>
+  <line x1="150" y1="100" x2="280" y2="140" stroke="blue" stroke-width="3"/>
+  <text x="30" y="55" font-size="14">आपतित किरण</text>
+  <text x="200" y="135" font-size="14">परावर्तित किरण</text>
+  <text x="155" y="100" font-size="14">P</text>
+</svg>
+
+</div>
+
+<!-- दर्पण -->
+<div class="box">
+<h2>2. दर्पण (Mirrors)</h2>
+
+<ul>
+    <li><b>समतल दर्पण</b> – आभासी, सीधा तथा सम आकार का प्रतिबिंब देता है।</li>
+    <li><b>अवतल दर्पण</b> – वास्तविक/आभासी दोनों प्रकार का प्रतिबिंब।</li>
+    <li><b>उत्तल दर्पण</b> – सदैव छोटा और आभासी प्रतिबिंब।</li>
+</ul>
+
+<h3>SVG Diagram – Concave Mirror Ray Diagram</h3>
+<svg width="300" height="200">
+  <path d="M150 20 Q190 100 150 180" stroke="black" fill="none" stroke-width="3"/>
+  <line x1="20" y1="80" x2="150" y2="80" stroke="red" stroke-width="3"/>
+  <line x1="150" y1="80" x2="250" y2="110" stroke="blue" stroke-width="3"/>
+  <text x="155" y="80" font-size="12">P</text>
+  <text x="100" y="75" font-size="12">आपतित किरण</text>
+</svg>
+
+</div>
+
+<!-- अपवर्तन -->
+<div class="box">
+<h2>3. प्रकाश का अपवर्तन (Refraction of Light)</h2>
+
+<ul>
+    <li>जब प्रकाश एक माध्यम से दूसरे माध्यम में प्रवेश करता है तो मुड़ जाता है — इसे <b>अपवर्तन</b> कहते हैं।</li>
+    <li><b>स्नेल का नियम (Snell's Law):</b><br>
+    <b>n₁ sin i = n₂ sin r</b></li>
+
+    <li>घनत्व ज्यादा → प्रकाश धीमा चलता है।</li>
+</ul>
+
+<h3>SVG Diagram — Refraction at Glass Slab</h3>
+<svg width="300" height="180">
+  <rect x="100" y="40" width="120" height="80" fill="#81D4FA" stroke="black"/>
+  <line x1="20" y1="60" x2="100" y2="70" stroke="red" stroke-width="3"/>
+  <line x1="100" y1="70" x2="220" y2="90" stroke="green" stroke-width="3"/>
+  <line x1="220" y1="90" x2="280" y2="110" stroke="blue" stroke-width="3"/>
+  <text x="20" y="55">आवर्तित</text>
+  <text x="240" y="110">उदगम</text>
+</svg>
+
+</div>
+
+<!-- सूत्र -->
+<div class="box">
+<h2>4. दर्पण सूत्र एवं आवर्धन (Mirror Formula & Magnification)</h2>
+
+<ul>
+    <li><b>दर्पण सूत्र:</b>  
+    <br><b>1/f = 1/v + 1/u</b></li>
+
+    <li><b>आवर्धन (Magnification):</b>  
+    <br><b>m = h₂ / h₁ = -v / u</b></li>
+</ul>
+</div>
+
+<!-- निष्कर्ष -->
+<div class="box">
+<h2>5. निष्कर्ष</h2>
+<ul>
+    <li>परावर्तन से प्रकाश वापस लौटता है, अपवर्तन में मुड़ता है।</li>
+    <li>दर्पण आकार बदलते हुए छवि बना सकते हैं।</li>
+    <li>स्नेल का नियम अपवर्तन का आधार है।</li>
+</ul>
+</div>
+
+<!-- महत्वपूर्ण प्रश्न -->
+<div class="box">
+<h2>महत्वपूर्ण प्रश्न (Important Questions)</h2>
+<ol>
+    <li>परावर्तन के नियम लिखिए।</li>
+    <li>अवतल एवं उत्तल दर्पण में अंतर बताइए।</li>
+    <li>अपवर्तन क्या है? स्नेल का नियम लिखिए।</li>
+    <li>दर्पण सूत्र समझाइए।</li>
+    <li>समतल दर्पण की विशेषताएँ लिखिए।</li>
+</ol>
+</div>
+
+</body>
+</html>

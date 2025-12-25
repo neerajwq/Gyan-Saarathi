@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ज्ञान सारथी - कक्षा 12 (PCB) कोर्स</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Styling - (पहले के पेजों से कॉमन स्टाइल) */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        /* मुख्य कोर्स लेआउट */
+        .course-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .course-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .course-header h2 {
+            color: var(--primary-blue);
+            font-size: 2.2em;
+            margin-bottom: 5px;
+        }
+        .course-header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* विषय टैब (Subject Tabs) */
+        .subject-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ccc;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tab-button.active {
+            background-color: var(--text-light);
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--accent-orange);
+        }
+
+        /* विषय सामग्री (Chapter List) */
+        .tab-content {
+            display: none; /* डिफ़ॉल्ट रूप से छिपा हुआ */
+            padding: 20px;
+            background-color: var(--text-light);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        .chapter-list {
+            list-style: none;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px dashed #ddd;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .chapter-title {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .chapter-actions button {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-actions button:hover {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+        }
+
+        .chapter-actions i {
+            margin-left: 5px;
+        }
+        
+        /* विशेष रंग: जीव विज्ञान */
+        #biology .chapter-actions button {
+            background-color: #d1e7dd; /* Light Green */
+            color: #0f5132; /* Dark Green */
+        }
+        #biology .chapter-actions button:hover {
+            background-color: #0f5132;
+            color: var(--text-light);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <!-- <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div> -->
+    </header>
+
+    <main class="course-container">
+        <div class="course-header">
+            <h2>⚛️ कक्षा 12: विषय और अध्याय</h2>
+            <p>बोर्ड परीक्षा और प्रतियोगी परीक्षाओं के लिए सबसे महत्वपूर्ण प्रश्नोत्तर (Q&A) तैयार करें।</p>
+        </div>
+
+        <div class="subject-tabs">
+            <button class="tab-button active" onclick="openSubject(event, 'physics')"><i class="fas fa-bolt"></i> भौतिकी (Physics)</button>
+            <button class="tab-button" onclick="openSubject(event, 'chemistry')"><i class="fas fa-flask"></i> रसायन विज्ञान (Chemistry)</button>
+            <button class="tab-button" onclick="openSubject(event, 'biology')"><i class="fas fa-dna"></i> जीव विज्ञान (Biology)</button>
+            <!-- <button class="tab-button" onclick="openSubject(event, 'maths')"><i class="fas fa-calculator"></i> गणित (Maths)</button> -->
+            <a href="model paper.html">
+                  <button class="tab-button"><i class="fas fa-calculator"></i> MODEL PAPER</button>
+            </a>
+          
+        </div>
+
+        <div id="physics" class="tab-content active">
+            <ul class="chapter-list">
+                <a href="chapter 1.html">
+                    <li class="chapter-item" onclick="goToQA('physics', 1)">
+                    <span class="chapter-title">अध्याय 1: विद्युत आवेश तथा क्षेत्र</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 2.html">
+                    <li class="chapter-item" onclick="goToQA('physics', 2)">
+                    <span class="chapter-title">अध्याय 2: स्थिरवैद्युत विभव तथा धारिता</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 3.html">
+                    <li class="chapter-item" onclick="goToQA('physics', 3)">
+                    <span class="chapter-title">अध्याय 3: विद्युत धारा</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 4.html">
+                    <li class="chapter-item" onclick="goToQA('physics', 4)">
+                    <span class="chapter-title">अध्याय 4: गतिमान आवेश और चुंबकत्व</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                 <a href="chapter 5.html">
+                    <li class="chapter-item" onclick="goToQA('physics', 5)">
+                    <span class="chapter-title">अध्याय 5: चुम्बकत्व तथा द्रव्य</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                 </a>
+                <a href="chapter 6 .html">
+                     <li class="chapter-item" onclick="goToQA('physics', 6)">
+                    <span class="chapter-title">अध्याय 6: वैद्युतचुंबकीय प्रेरण</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 7.html">
+                      <li class="chapter-item" onclick="goToQA('physics', 7)">
+                    <span class="chapter-title">अध्याय 7: प्रत्यावर्ती धारा (AC)</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               <a href="chapter 8.html">
+                  <li class="chapter-item" onclick="goToQA('physics', 8)">
+                    <span class="chapter-title">अध्याय 8: विद्युतचुम्बकीय तरंगें</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+               </a>
+                <a href="chapter 9.html">
+                       <li class="chapter-item" onclick="goToQA('physics', 9)">
+                    <span class="chapter-title">अध्याय 9: किरण प्रकाशिकी एवं प्रकाशिक यंत्र</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 10.html">
+                     <li class="chapter-item" onclick="goToQA('physics', 10)">
+                    <span class="chapter-title">अध्याय 10: तरंग प्रकाशिकी</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 11.html">
+                      <li class="chapter-item" onclick="goToQA('physics', 11)">
+                    <span class="chapter-title">अध्याय 11: द्रव्य और विकिरण की द्वैत प्रकृति</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 12.html">
+                      <li class="chapter-item" onclick="goToQA('physics', 12)">
+                    <span class="chapter-title">अध्याय 12: परमाणु</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 13.html">
+                      <li class="chapter-item" onclick="goToQA('physics', 13)">
+                    <span class="chapter-title">अध्याय 13: नाभिक</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                <a href="chapter 14.html">
+                    <li class="chapter-item" onclick="goToQA('physics', 14)">
+                    <span class="chapter-title">अध्याय 14: अर्धचालक इलेक्ट्रॉनिकी : यंत्र</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+            </ul>
+        </div>
+
+        <div id="chemistry" class="tab-content">
+            <ul class="chapter-list">
+                <a href="chem 1.html">
+                     <li class="chapter-item" onclick="goToQA('chemistry', 1)">
+                    <span class="chapter-title">अध्याय 1: विलयन (Solutions)</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+                <a href="chem 2.html">
+                     <li class="chapter-item" onclick="goToQA('chemistry', 2)">
+                    <span class="chapter-title">अध्याय 2: वैद्युत रसायन</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                <a href="chem 3.html">
+                      <li class="chapter-item" onclick="goToQA('chemistry', 3)">
+                    <span class="chapter-title">अध्याय 3: रासायनिक बलगतिकी</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+              
+                <a href="chem 4.html">
+                      <li class="chapter-item" onclick="goToQA('chemistry', 4)">
+                    <span class="chapter-title">अध्याय 4: d- और f-ब्लॉक तत्व</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+              
+                <a href="chem 5.html">
+                    <li class="chapter-item" onclick="goToQA('chemistry', 5)">
+                    <span class="chapter-title">अध्याय 5: उपसहसंयोजन यौगिक</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+                <a href="chem 6.html">
+                     <li class="chapter-item" onclick="goToQA('chemistry', 6)">
+                    <span class="chapter-title">अध्याय 6: हेलोऐल्केन एवं हेलोएरीन</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                <a href="chem 7.html">
+                       <li class="chapter-item" onclick="goToQA('chemistry', 7)">
+                    <span class="chapter-title">अध्याय 7: ऐल्कोहॉल, फिनॉल और ईथर</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+             
+                <a href="chem 8.html">
+                     <li class="chapter-item" onclick="goToQA('chemistry', 8)">
+                    <span class="chapter-title">अध्याय 8: एल्डिहाइड, कीटोन और कार्बोक्सिलिक अम्ल</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                <a href="chem 9.html">
+                      <li class="chapter-item" onclick="goToQA('chemistry', 9)">
+                    <span class="chapter-title">अध्याय 9: नाइट्रोजन युक्त कार्बनिक यौगिक(Amines)</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+              
+                <a href="chem 10.html">
+                     <li class="chapter-item" onclick="goToQA('chemistry', 10)">
+                    <span class="chapter-title">अध्याय 10: जीवअणु (Biomolecules)</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                
+        </div>
+
+        <div id="biology" class="tab-content">
+            <ul class="chapter-list">
+                <a href="bio 1.html">
+                    <li class="chapter-item" onclick="goToQA('biology', 1)">
+                    <span class="chapter-title">अध्याय 1: पुष्पी पादपों में लैंगिक प्रजनन</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                 
+                <a href="bio 2.html">
+                    <li class="chapter-item" onclick="goToQA('biology', 2)">
+                    <span class="chapter-title">अध्याय 2: मानव प्रजनन</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+                <a href="bio 3.html">
+                     <li class="chapter-item" onclick="goToQA('biology', 3)">
+                    <span class="chapter-title">अध्याय 3: प्रजनन स्वास्थ्य</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                <a href="bio 4.html">
+                    <li class="chapter-item" onclick="goToQA('biology', 4)">
+                    <span class="chapter-title">अध्याय 4: वंशागति और विविधता के सिद्धांत</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+                <a href="bio 5.html">
+                      <li class="chapter-item" onclick="goToQA('biology', 5)">
+                    <span class="chapter-title">अध्याय 5: वंशागति का आणविक आधार</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+              
+                <a href="bio 6.html">
+                     <li class="chapter-item" onclick="goToQA('biology', 6)">
+                    <span class="chapter-title">अध्याय 6: उत्क्रांति (Evolution)</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                <a href="bio 7.html">
+                       <li class="chapter-item" onclick="goToQA('biology', 7)">
+                    <span class="chapter-title">अध्याय 7: मानव स्वास्थ्य एवं रोग</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+             
+                <a href="bio 8.html">
+                      <li class="chapter-item" onclick="goToQA('biology', 8)">
+                    <span class="chapter-title">अध्याय 8: मानव कल्याण में सूक्ष्मजीव</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+              
+                <a href="bio 9.html">
+                     <li class="chapter-item" onclick="goToQA('biology', 9)">
+                    <span class="chapter-title">अध्याय 9: जैव प्रौद्योगिकी के सिद्धांत एवं प्रक्रियाएँ</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+               
+                <a href="bio 10.html">
+                      <li class="chapter-item" onclick="goToQA('biology', 10)">
+                    <span class="chapter-title">अध्याय 10: जैव प्रौद्योगिकी और उसके अनुप्रयोग</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+              
+                <a href="bio 11.html">
+                      <li class="chapter-item" onclick="goToQA('biology', 11)">
+                    <span class="chapter-title">अध्याय 11: जीव और समष्टियाँ</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+                
+              
+                <a href="bio 12.html">
+                       <li class="chapter-item" onclick="goToQA('biology', 12)">
+                    <span class="chapter-title">अध्याय 12: पारिस्थितिकी तंत्र</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+             
+                <a href="bio 13.html">
+                        <li class="chapter-item" onclick="goToQA('biology', 13)">
+                    <span class="chapter-title">अध्याय 13: जैव विविधता एवं संरक्षण</span>
+                    <span class="chapter-actions"><button>Q&A देखें <i class="fas fa-arrow-right"></i></button></span>
+                </li>
+                </a>
+            
+                
+
+            </ul>
+        </div>
+       
+
+    </main>
+
+    <script>
+        // --- Tab Switching Logic ---
+        function openSubject(evt, subjectName) {
+            // सभी सामग्री और बटन को छिपाएं
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove('active');
+            }
+
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // चयनित सामग्री दिखाएं और बटन को सक्रिय करें
+            document.getElementById(subjectName).style.display = "block";
+            document.getElementById(subjectName).classList.add('active');
+            evt.currentTarget.classList.add("active");
+        }
+
+        // डिफ़ॉल्ट रूप से भौतिकी टैब खोलें
+        document.addEventListener('DOMContentLoaded', () => {
+             // सुनिश्चित करें कि डिफ़ॉल्ट रूप से सक्रिय टैब सेट हो
+             if(document.getElementById('physics')) {
+                 document.getElementById('physics').style.display = "block";
+                 document.querySelector('.tab-button').classList.add('active');
+             }
+        });
+        
+        // --- Navigation Logic ---
+        function goToQA(subject, chapter) {
+            // यह फ़ंक्शन छात्र को Q&A पेज पर रीडायरेक्ट करेगा।
+            // आपको इस तरह की फ़ाइलें बनानी होंगी: 'qa_physics_ch_1.html', 'qa_chemistry_ch_2.html', आदि।
+            
+            const targetFile = `qa_${subject}_ch_${chapter}.html`;
+            
+            // चेतावनी: चूँकि Q&A पेज अभी बना नहीं है, मैं एक अलर्ट दे रहा हूँ।
+            // जब आप Q&A पेज बना लें, तो `window.location.href = targetFile;` का उपयोग करें।
+            alert(`आप ${subject.toUpperCase()} के अध्याय ${chapter} के महत्वपूर्ण Q&A पेज पर जा रहे हैं। कृपया '${targetFile}' फाइल बनाएं और उसमें कंटेंट जोड़ें।`);
+            
+            // असली वेबसाइट के लिए:
+            // window.location.href = targetFile;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 4 — गतिमान आवेश एवं चुम्बकत्व (Moving Charges & Magnetism)</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+  /* body{font-family:'Noto Sans Devanagari',Arial;line-height:1.65;padding:22px;background:#f6fbff;color:#0b1220} */
+  /* h1{color:#0b66a3;text-align:center;margin-bottom:16px} */
+  /* h2{color:#0e3b5b;margin-top:20px} */
+  .card{background:#ffffff;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 6px 18px rgba(10,30,60,0.07)}
+  .formula{background:#eef6ff;padding:10px;border-left:4px solid #0b66a3;border-radius:6px;font-weight:600;margin:10px 0;font-size:1.05rem}
+  ul{margin-left:20px}
+  pre{background:#eef4f8;padding:10px;border-radius:6px;overflow:auto}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<h1>अध्याय 4 — गतिमान आवेश एवं चुम्बकत्व (Moving Charges & Magnetism)</h1>
+<p style="text-align:center;color:#4b5966">Class 12 Physics के NCERT आधारित सर्वश्रेष्ठ नोट्स — आसान भाषा में, सभी महत्वपूर्ण फॉर्मूलों के साथ।</p>
+
+<!-- SECTION 1 -->
+<section class="card">
+<h2>1. चुम्बकीय बल (Magnetic Force on Moving Charge)</h2>
+<p>किसी आवेशित कण (q) पर, यदि वह वेग v से चुम्बकीय क्षेत्र B में जा रहा है, तो लगने वाला चुम्बकीय बल:</p>
+<div class="formula">F = q v B sinθ</div>
+<ul>
+  <li>θ = v और B के बीच कोण</li>
+  <li>बल की दिशा: Right-Hand Rule</li>
+  <li>बल हमेशा गति की दिशा के लम्बवत होता है</li>
+</ul>
+</section>
+
+<!-- SECTION 2 -->
+<section class="card">
+<h2>2. गतिमान आवेश की वृत्ताकार गति (Radius of Circular Path)</h2>
+<p>यदि आवेशित कण चुम्बकीय क्षेत्र में प्रवेश करता है और उस पर केवल चुम्बकीय बल लगता है, तो वह वृत्ताकार पथ में घूमता है।</p>
+<div class="formula">r = m v / (q B)</div>
+<div class="formula">Time \\( T = 2πm / (qB) \\")</div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="card">
+<h2>3. चुम्बकीय बल धारा वहन करने वाले चालक पर</h2>
+<p>यदि लंबाई L का कोई संचालक I धारा वहन कर रहा हो और B चुम्बकीय क्षेत्र में रखा हो:</p>
+<div class="formula">F = B I L sinθ</div>
+<p>दिशा पता करने हेतु Fleming's Left Hand Rule का उपयोग होता है।</p>
+</section>
+
+<!-- SECTION 4 -->
+<section class="card">
+<h2>4. चुम्बकीय क्षेत्र की परिभाषा</h2>
+<p>चुम्बकीय क्षेत्र उस बल की क्षमता का माप है जो वह किसी गतिमान आवेश या करंट पर लगाता है।</p>
+</section>
+
+<!-- SECTION 5 -->
+<section class="card">
+<h2>5. बायोट-सवार्ट नियम (Biot-Savart Law)</h2>
+<p>यह नियम किसी धारा के छोटे से अवयव द्वारा उत्पन्न चुम्बकीय क्षेत्र बताता है।</p>
+<div class="formula">dB = (μ₀ / 4π) · (I dl sinθ) / r²</div>
+</section>
+
+<!-- SECTION 6 -->
+<section class="card">
+<h2>6. एक सीधी लंबी तार का चुम्बकीय क्षेत्र</h2>
+<div class="formula">B = (μ₀ I) / (2πr)</div>
+<p>दिशा — Right Hand Thumb Rule</p>
+</section>
+
+<!-- SECTION 7 -->
+<section class="card">
+<h2>7. गोलाकार लूप का चुम्बकीय क्षेत्र</h2>
+<div class="formula">B = (μ₀ I) / (2R)</div>
+<p>लूप के केंद्र पर चुम्बकीय क्षेत्र।</p>
+</section>
+
+<!-- SECTION 8 -->
+<section class="card">
+<h2>8. सोलोनॉयड का चुम्बकीय क्षेत्र (Inside Solenoid)</h2>
+<div class="formula">B = μ₀ n I</div>
+<p>n = प्रति मीटर कुंडलियों की संख्या</p>
+<p>Solenoid के अंदर क्षेत्र समान (Uniform) होता है।</p>
+</section>
+
+<!-- SECTION 9 -->
+<section class="card">
+<h2>9. एम्पीयर का परिपथ नियम (Ampere’s Circuital Law)</h2>
+<div class="formula">∮ B · dl = μ₀ I(enclosed)</div>
+</section>
+
+<!-- SECTION 10 -->
+<section class="card">
+<h2>10. दो समानांतर धाराओं के बीच बल</h2>
+<div class="formula">F/L = (μ₀ I₁ I₂) / (2π d)</div>
+<p>धाराएँ समान दिशा में → आकर्षण</p>
+<p>विपरीत दिशा में → विकर्षण</p>
+</section>
+
+<!-- SECTION 11 -->
+<section class="card">
+<h2>11. चुम्बकीय आघूर्ण (Magnetic Moment)</h2>
+<div class="formula">M = I A</div>
+<p>जहाँ A = लूप का क्षेत्रफल</p>
+</section>
+
+<!-- SECTION 12 -->
+<section class="card">
+<h2>12. साइक्लोट्रॉन</h2>
+<p>साइक्लोट्रॉन आवेशित कणों को उच्च ऊर्जा देने के लिए प्रयोग किया जाता है।</p>
+<div class="formula">Cyclotron Frequency: f = qB / (2πm)</div>
+</section>
+
+<!-- SECTION 13 -->
+<section class="card">
+<h2>13. Quick Formula Sheet (सभी महत्वपूर्ण सूत्र)</h2>
+<div class="formula">F = q v B sinθ</div>
+<div class="formula">F = B I L sinθ</div>
+<div class="formula">r = m v / (q B)</div>
+<div class="formula">B = μ₀ I / 2πr</div>
+<div class="formula">B(center of loop) = μ₀ I / 2R</div>
+<div class="formula">B(solenoid) = μ₀ n I</div>
+<div class="formula">F/L = μ₀ I₁ I₂ / 2π d</div>
+<div class="formula">Cyclotron f = qB / 2πm</div>
+</section>
+
+<footer style="text-align:center;color:#4b5966;margin-top:20px">अध्याय 4 के सभी सूत्र एवं सिद्धांत विस्तृत रूप में दिए गए हैं। यदि चाहें तो MCQ, Numericals या PDF भी बना सकता/सकती हूँ।</footer>
+
+</body>
+</html>

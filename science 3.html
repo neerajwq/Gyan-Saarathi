@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>धातु एवं अधातु - Class 10</title>
+
+<style>
+    :root {
+        --primary-blue: #1A237E;
+        --light-blue: #81D4FA;
+        --accent-orange: #FFB300;
+        --light-gray: #F5F7FA;
+        --text-dark: #333;
+        --text-light: #fff;
+        --border-radius: 12px;
+        --font-family: 'Roboto', sans-serif;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:var(--font-family); background:var(--light-gray); color:var(--text-dark); line-height:1.6; }
+    header {
+        background-color:var(--primary-blue); color:var(--text-light);
+        display:flex; justify-content:space-between; align-items:center;
+        padding:12px 28px; box-shadow:0 2px 6px rgba(0,0,0,0.12);
+    }
+    .logo-section { display:flex; align-items:center; }
+    .logo-img { height:36px; width:36px; border-radius:50%; margin-right:12px; object-fit:cover; }
+    .main-nav a { color:var(--text-light); text-decoration:none; margin:0 12px; font-weight:600; }
+    .btn-mock-test { background:var(--accent-orange); color:var(--primary-blue); padding:6px 12px; border-radius:10px; text-decoration:none; font-weight:700; }
+    .box { background:#fff; margin:18px; padding:18px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+    h1,h2 { color:var(--primary-blue); margin-bottom:8px; }
+    ul, ol { margin-left:18px; margin-top:8px; }
+    .formula { background:#e8f0ff; padding:8px 12px; border-radius:8px; display:inline-block; font-weight:700; margin-top:8px; }
+    svg { display:block; margin:16px auto; max-width:100%; height:auto; }
+    .note { font-size:0.95rem; color:#444; margin-top:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; }
+    th, td { border:1px solid #e0e0e0; padding:8px; text-align:left; }
+    th { background:#f1f8ff; color:var(--primary-blue); }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" alt="ज्ञान सारथी" class="logo-img">
+        <div>
+            <h3 style="margin:0;color:var(--text-light)">Gyan Saarathi</h3>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85)">Class 10 — धातु एवं अधातु</div>
+        </div>
+    </div>
+
+    <nav class="main-nav" aria-label="main navigation">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+</header>
+
+<!-- परिचय -->
+<div class="box">
+    <h1>अध्याय — धातु एवं अधातु</h1>
+    <p class="note">इस अध्याय में हम धातुओं और अधातुओं के भौतिक व रासायनिक गुण, उनके उपयोग, खनिजों व अयस्क (ore) से धातु निकालने की सामान्य विधियाँ, जंग तथा उसके रोकथाम को पढ़ेंगे।</p>
+</div>
+
+<!-- परिभाषा और भौतिक गुण -->
+<div class="box">
+    <h2>1. धातु व अधातु — परिभाषा</h2>
+    <ul>
+        <li><b>धातु (Metals):</b> वे पदार्थ जो विद्युत व ऊष्मा के अच्छे चालक होते हैं, कठोर, चमकीले और मोड़ने योग्य (malleable) व लम्बाई में खींचने योग्य (ductile) होते हैं। उदाहरण: लोहा (Fe), तांबा (Cu), सोना (Au), चाँदी (Ag)।</li>
+        <li><b>अधातु (Non-metals):</b> सामान्यतः नॉन-कंडक्टर, भंगुर, घनत्व कम या मध्यम और लोचहीन होते हैं। उदाहरण: सल्फर (S), कार्बन (C), क्लोरीन (Cl₂), ऑक्सीजन (O₂)।</li>
+    </ul>
+
+    <h3>भौतिक गुणों का सारांश</h3>
+    <table>
+        <tr><th>गुण</th><th>धातु</th><th>अधातु</th></tr>
+        <tr><td>रंग व चमक</td><td>चमकीली सतह</td><td>अक्सर फिक्का/रोमान्चक नहीं</td></tr>
+        <tr><td>चालकता</td><td>विद्युत व ऊष्मा के अच्छे चालक</td><td>न्यून या अ-अच्छे चालक</td></tr>
+        <tr><td>स्थैतिक गुण</td><td>मलेटाइल, डक्टाइल</td><td>भंगुर (brittle)</td></tr>
+        <tr><td>स्थिति (प्राकृतिक)</td><td>अक्सर ठोस (Hg अपवाद)</td><td>ठोस/गैस</td></tr>
+    </table>
+</div>
+
+<!-- रासायनिक गुण -->
+<div class="box">
+    <h2>2. रासायनिक गुण</h2>
+    <ul>
+        <li><b>धातुओं की आम प्रतिक्रियाएँ</b>
+            <ul>
+                <li>अम्ल के साथ प्रतिक्रिया: Metal + Acid → Salt + H₂  
+                    <div class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</div>
+                </li>
+                <li>ऑक्सिजन के साथ ज्वलन (oxidation): 2Mg + O₂ → 2MgO</li>
+                <li>लवणों के साथ विस्थापन (Displacement): A + BC → AC + B — जहाँ A अधिक सक्रिय धातु हो।  
+                    उदाहरण: Fe + CuSO₄ → FeSO₄ + Cu
+                </li>
+            </ul>
+        </li>
+
+        <li><b>अधातुओं (Non-metals) की प्रतिक्रियाएँ</b>
+            <ul>
+                <li>अक्सर ऑक्सिडाइज़ होकर अम्ल या अन्य यौगिक बनाते हैं — C + O₂ → CO₂</li>
+                <li>कुछ अधातु अम्लों से प्रतिक्रिया नहीं करते (जैसे, क्लोरीन गैस भिन्न प्रकार की प्रतिक्रियाएँ देती है)।</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- उपक्रम: ओरे से धातु निकालना -->
+<div class="box">
+    <h2>3. अयस्क (Ore) से धातु निकालने के सामान्य तरीके</h2>
+    <p class="note">नीचे सरल रूप में क्रम दिया गया है — बोर्ड परीक्षा में सामान्य प्रश्न इसी प्रकार पूछे जाते हैं।</p>
+
+    <ol>
+        <li><b>खनिज/अयस्क की परिभाषा:</b> प्रकृति में पाए जाने वाले खनिजों से धातुओं के यौगिक — जैसे Fe₂O₃ (hematite), Al₂O₃ (bauxite), Cu₂S (chalcopyrite)।</li>
+        <li><b>खनिज को धुंध/परिशोधित करना (Concentration or Dressing):</b> कठिन पत्थर हटाना — हाथ से चुड़ाई, फ्लोटेशन आदि।</li>
+        <li><b>अयस्क का परिष्कार (Calcination / Roasting):</b> कार्बोनेट/हाइड्रेट वाले अयस्कों का ताप देकर CO₂ या जल हटाना; सल्फाइड अयस्कों का रोस्ट करके ऑक्साइड बनाना।</li>
+        <li><b>अपशोधन (Reduction):</b> ऑक्साइड को बाहरी एजेंट (CO, C) या विद्युत रिडक्शन से धातु में बदलना।  
+            <div class="formula">Fe₂O₃ + 3C → 2Fe + 3CO</div>
+        </li>
+        <li><b>विद्युत अपशोधन (Electrolytic reduction):</b> अधिक सक्रिय धातुओं (जैसे Al) को पाइग्रिक/इलेक्ट्रोलाइटिक विधि से निकाला जाता है।</li>
+    </ol>
+</div>
+
+<!-- सक्रियता श्रेणी -->
+<div class="box">
+    <h2>4. धातुओं की सक्रियता श्रेणी (Activity Series)</h2>
+    <p class="note">यह श्रेणी बताती है कि कौन-सी धातु किसी दूसरे धातु के लवण को विस्थापित कर सकती है। ऊपर की धातु नीचे वाली धातु को विस्थापित कर सकती है।</p>
+
+    <p><b>उदाहरण सूची (सामान्य):</b> K &gt; Na &gt; Ca &gt; Mg &gt; Al &gt; Zn &gt; Fe &gt; Sn &gt; Pb &gt; H &gt; Cu &gt; Ag &gt; Au</p>
+
+    <p class="note">यदि कोई प्रश्न दे कि "कौन-सा धातु CuSO₄ से Cu को विस्थापित कर सकता है?" — उत्तर होगा वो धातु जो Cu से अधिक सक्रिय हो (जैसे Zn, Fe)।</p>
+</div>
+
+<!-- जंग और रोकथाम -->
+<div class="box">
+    <h2>5. जंग (Corrosion) और उसका रोकथाम</h2>
+    <p>लौह पदार्थ (Fe) का ऑक्सीकृत होकर Fe₂O₃·xH₂O (rust) बनना जंग कहलाता है।</p>
+
+    <ul>
+        <li><b>जंग की शर्तें:</b> लोहे का होना, ऑक्सीजन और जल — ये तीनों साथ होने पर जंग होता है।</li>
+        <li><b>रोकथाम के तरीके:</b>
+            <ul>
+                <li>पेंटिंग/ऑयलिंग/गैल्वेनाइज़ेशन (Zn-coating)।</li>
+                <li>बेद्रवण (Cathodic protection) — अधिक सक्रिय धातु (sacrificial anode जैसे Zn) जोड़ना।</li>
+                <li>एल्युमिनाइजेशन या क्रोमेटिंग आदि सतह उपचार।</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>SVG — लोहे की जंग का सरल दृश्य</h3>
+    <svg width="340" height="160">
+      <rect x="40" y="40" width="260" height="60" fill="#ffe0b2" stroke="#bdbdbd"/>
+      <text x="60" y="70" font-size="12">Fe — धातु सतह</text>
+      <circle cx="120" cy="100" r="12" fill="#ff7043"/><text x="110" y="120" font-size="12">Fe₂O₃</text>
+      <text x="60" y="130" font-size="12">ऑक्सीजन + जल → जंग</text>
+    </svg>
+</div>
+
+<!-- प्रयोग और उपयोग -->
+<div class="box">
+    <h2>6. धातुओं के प्रमुख उपयोग</h2>
+    <ul>
+        <li><b>लोहा (Fe):</b> निर्माण, पुल, इंफ्रास्ट्रक्चर</li>
+        <li><b>तांबा (Cu):</b> बिजली के तार, ऊष्मा संवाहक</li>
+        <li><b>एल्युमिनियम (Al):</b> हवाई जहाज, रसोई बर्तन, हल्का ढांचा</li>
+        <li><b>सोना/चाँदी (Au/Ag):</b> आभूषण, इलेक्ट्रॉनिक्स (सॉफ्ट-कॉन्टैक्ट)</li>
+    </ul>
+
+    <h3>SVG — विद्युत चालकता का संकेत</h3>
+    <svg width="380" height="120">
+      <line x1="20" y1="60" x2="340" y2="60" stroke="#000" stroke-width="3"/>
+      <circle cx="80" cy="60" r="10" fill="#ffcc80"/><text x="65" y="85" font-size="12">Cu (उत्कृष्ट चालक)</text>
+      <circle cx="200" cy="60" r="10" fill="#c5e1a5"/><text x="185" y="85" font-size="12">Al (अच्छा चालक)</text>
+      <circle cx="300" cy="60" r="10" fill="#ef9a9a"/><text x="285" y="85" font-size="12">S (अधातु)</text>
+    </svg>
+</div>
+
+<!-- महत्वपूर्ण प्रश्न -->
+<div class="box">
+    <h2>7. महत्वपूर्ण प्रश्न (Exam-oriented)</h2>
+    <ol>
+        <li>धातु और अधातु में चार प्रमुख भिन्नताएँ लिखिए।</li>
+        <li>Zn + H₂SO₄ → ZnSO₄ + H₂ समीकरण द्वारा बताइए यह किस प्रकार की अभिक्रिया है।</li>
+        <li>एल्युमिनियम को अयस्क से निकालने के लिए कौन-सी विधि प्रयोग की जाती है? संक्षेप में समझाइए।</li>
+        <li>लौह वस्तु पर जंग क्यों लगती है? जंग रोकने के दो तरीके बताइए।</li>
+        <li>किसी दिया गया प्रश्न: "Fe + CuSO₄" — यह किस प्रकार से प्रतिक्रिया करेगा? (उत्तर लिखें और संतुलित समीकरण दीजिए)।</li>
+    </ol>
+</div>
+
+</body>
+</html>

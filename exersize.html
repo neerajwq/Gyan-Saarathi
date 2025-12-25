@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 कक्षा 10 और 12 के महत्वपूर्ण ऑनलाइन टेस्ट - Interactive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS Styling */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--bg-color);
+            border-radius: 15px;
+            /* Subtle Neumorphism effect for the container */
+            box-shadow: 10px 10px 20px var(--shadow-dark), 
+                         -10px -10px 20px var(--shadow-light);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        p.tagline {
+            text-align: center;
+            color: #89b8bb;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #bd0909;
+            padding-bottom: 20px;
+        }
+
+        /* --- Tabs Styling --- */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 5px;
+            background: #2171ad;
+            border-radius: 10px;
+            box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
+        }
+
+        .tab-button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            background-color: transparent;
+            color: var(--primary-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .tab-button:hover {
+            color: var(--secondary-color);
+        }
+
+        .tab-button.active {
+            color: rgb(58, 16, 155);
+            /* Stronger Neumorphism/Press effect for active tab */
+            background-color: var(--secondary-color);
+            box-shadow: 4px 4px 8px #b38787, -4px -4px 8px var(--shadow-light);
+            transform: translateY(-2px);
+        }
+        
+        .tab-content {
+            /* Fade-in effect for smooth transition */
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* --- Grid & Card Styling --- */
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .test-card {
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                         -5px -5px 10px var(--shadow-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .test-card:hover {
+            box-shadow: inset 5px 5px 10px var(--shadow-dark), 
+                         inset -5px -5px 10px var(--shadow-light);
+            transform: translateY(2px);
+        }
+        
+        .test-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+        
+        .test-card p {
+            color: #61adb3;
+            font-size: 0.9em;
+        }
+
+        .start-button {
+            display: inline-block;
+            background-color: #afda5f;
+            color: rgb(113, 54, 190);
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 3px 3px 6px #6810ce;
+        }
+
+        .start-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }
+    </style>
+</head> 
+<body>
+     <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            
+            <a href="course.html">कोर्स</a>
+            <!-- <a href="mock test.html">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+<div class="container">
+    <h1>📚 ऑनलाइन परीक्षा केंद्र</h1>
+    <p class="tagline">कक्षा चुनें और अपनी तैयारी शुरू करें।</p>
+    
+    <div class="tabs">
+        <button class="tab-button active" onclick="openClass(event, 'Class10')">🔟 कक्षा 10</button>
+        <button class="tab-button" onclick="openClass(event, 'Class12')">🎓 कक्षा 12</button>
+    </div>
+    
+    <div id="Class10" class="tab-content">
+        <h2>कक्षा 10 (Class 10) टेस्ट सीरीज</h2>
+        <DIV>
+                <H1>विज्ञान (Science)</H1>
+            </DIV>
+        <div class="test-grid">
+            
+            <div class="test-card">
+                <h3>विज्ञान (Science) - टेस्ट 1</h3>
+                <p> विज्ञान के इस अध्याय को 100 बहुविकल्पीय प्रश्नों के साथ कवर करें।</p>
+                <a href="science test1.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+            <div class="test-card">
+                <h3>विज्ञान (Science) - टेस्ट 2</h3>
+                <p> विज्ञान के इस अध्याय को 100 बहुविकल्पीय प्रश्नों के साथ कवर करें।</p>
+                <a href="science test2.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+            <div class="test-card">
+                <h3>विज्ञान (Science) - टेस्ट 3</h3>
+                <p> विज्ञान के इस अध्याय को 100 बहुविकल्पीय प्रश्नों के साथ कवर करें।</p>
+                <a href="science test3.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+            <div class="test-card">
+                <h3>विज्ञान (Science) - टेस्ट 4</h3>
+                <p> विज्ञान के इस अध्याय को 100 बहुविकल्पीय प्रश्नों के साथ कवर करें।</p>
+                <a href="science test4.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+            <div class="test-card">
+                <h3>विज्ञान (Science) - टेस्ट 5</h3>
+                <p> विज्ञान के इस अध्याय को 100 बहुविकल्पीय प्रश्नों के साथ कवर करें।</p>
+                <a href="science test5.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+        </DIv>
+         <DIv>
+                <H1>सामाजिक विज्ञान (SST)</H1>
+            </DIv>
+        <div class="test-grid">
+           
+            <div class="test-card">
+                <h3>सामाजिक विज्ञान (SST) - टेस्ट 1</h3>
+                <p>इतिहास के सबसे महत्वपूर्ण अध्याय पर आधारित विस्तृत टेस्ट।</p>
+                <a href="sst 1.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>सामाजिक विज्ञान (SST) - टेस्ट 2</h3>
+                <p>इतिहास के सबसे महत्वपूर्ण अध्याय पर आधारित विस्तृत टेस्ट।</p>
+                <a href="sst 2.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>सामाजिक विज्ञान (SST) - टेस्ट 3</h3>
+                <p>इतिहास के सबसे महत्वपूर्ण अध्याय पर आधारित विस्तृत टेस्ट।</p>
+                <a href="sst 3.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>सामाजिक विज्ञान (SST) - टेस्ट 4</h3>
+                <p>इतिहास के सबसे महत्वपूर्ण अध्याय पर आधारित विस्तृत टेस्ट।</p>
+                <a href="sst 4.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>सामाजिक विज्ञान (SST) - टेस्ट 5</h3>
+                <p>इतिहास के सबसे महत्वपूर्ण अध्याय पर आधारित विस्तृत टेस्ट।</p>
+                <a href="sst 5.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div id="Class12" class="tab-content" style="display:none;">
+        <h2>कक्षा 12 (Class 12) टेस्ट सीरीज</h2>
+        <DIV>
+            <H1>भौतिकी (Physics)</H1>
+        </DIV>
+        <div class="test-grid">
+            
+            <div class="test-card">
+                <h3>भौतिकी (Physics) - टेस्ट 1</h3>
+                <p>कक्षा 12 भौतिकी के आधारभूत सिद्धांतों पर केंद्रित गहन टेस्ट।</p>
+                <a href="physics test1.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>भौतिकी (Physics) - टेस्ट 2</h3>
+                <p>कक्षा 12 भौतिकी के आधारभूत सिद्धांतों पर केंद्रित गहन टेस्ट।</p>
+                <a href="physics test2.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>भौतिकी (Physics) - टेस्ट 3</h3>
+                <p>कक्षा 12 भौतिकी के आधारभूत सिद्धांतों पर केंद्रित गहन टेस्ट।</p>
+                <a href="physics test3.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>भौतिकी (Physics) - टेस्ट 4</h3>
+                <p>कक्षा 12 भौतिकी के आधारभूत सिद्धांतों पर केंद्रित गहन टेस्ट।</p>
+                <a href="physics test4.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>भौतिकी (Physics) - टेस्ट 5</h3>
+                <p>कक्षा 12 भौतिकी के आधारभूत सिद्धांतों पर केंद्रित गहन टेस्ट।</p>
+                <a href="physics test5.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+        </DIv>
+         <DIv>
+                <H1>रसायन विज्ञान (Chemistry)</H1>
+            </DIv>
+        <div class="test-grid">
+            <div class="test-card">
+                <h3>रसायन विज्ञान (Chemistry) - टेस्ट 1</h3>
+                <p>NCERT सिलेबस के अनुसार संरचना और गुणों पर आधारित प्रश्न।</p>
+                <a href="chem test1.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>रसायन विज्ञान (Chemistry) - टेस्ट 2</h3>
+                <p>NCERT सिलेबस के अनुसार संरचना और गुणों पर आधारित प्रश्न।</p>
+                <a href="chem test2.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>रसायन विज्ञान (Chemistry) - टेस्ट 3</h3>
+                <p>NCERT सिलेबस के अनुसार संरचना और गुणों पर आधारित प्रश्न।</p>
+                <a href="chem test3.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>रसायन विज्ञान (Chemistry) - टेस्ट 4</h3>
+                <p>NCERT सिलेबस के अनुसार संरचना और गुणों पर आधारित प्रश्न।</p>
+                <a href="chem test4.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>रसायन विज्ञान (Chemistry) - टेस्ट 5</h3>
+                <p>NCERT सिलेबस के अनुसार संरचना और गुणों पर आधारित प्रश्न।</p>
+                <a href="chem test5.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+
+        </div>    
+        <DIv>
+            <H1>जीव विज्ञान (Biology)</H1>
+        </DIv>
+        <div class="test-grid">
+             <div class="test-card">
+                <h3>जीव विज्ञान (Biology) - टेस्ट 1</h3>
+                <p>अपने स्ट्रीम जीव विज्ञान के अनुसार टेस्ट दें।</p>
+                <a href="bio test1.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>जीव विज्ञान (Biology) - टेस्ट 2</h3>
+                <p>अपने स्ट्रीम जीव विज्ञान के अनुसार टेस्ट दें।</p>
+                <a href="bio test2.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>जीव विज्ञान (Biology) - टेस्ट 3</h3>
+                <p>अपने स्ट्रीम जीव विज्ञान के अनुसार टेस्ट दें।</p>
+                <a href="bio test3.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>जीव विज्ञान (Biology) - टेस्ट 4</h3>
+                <p>अपने स्ट्रीम जीव विज्ञान के अनुसार टेस्ट दें।</p>
+                <a href="bio test4.html" class="start-button">टेस्ट शुरू करें »</a>
+            </div>
+             <div class="test-card">
+                <h3>जीव विज्ञान (Biology) - टेस्ट 5</h3>
+                <p>अपने स्ट्रीम जीव विज्ञान के अनुसार टेस्ट दें।</p>
+                <a href="bio test5.html" class="start-button">टेस्ट शुरू करें »</a>
+           
+        
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    // यह फ़ंक्शन यह सुनिश्चित करता है कि जब पेज लोड हो जाए,
+    // तो डिफ़ॉल्ट रूप से क्लास 10 का टैब ही खुला हो और उसके बटन पर 'active' क्लास हो।
+    window.onload = function() {
+        // सुनिश्चित करें कि केवल Class10 ही दिख रहा हो
+        document.getElementById("Class10").style.display = "block";
+        // सुनिश्चित करें कि Class12 छिपा हुआ हो
+        document.getElementById("Class12").style.display = "none";
+        // 'active' क्लास को केवल Class10 बटन पर रखें
+        var tablinks = document.getElementsByClassName("tab-button");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        tablinks[0].className += " active";
+    };
+
+    function openClass(evt, className) {
+        var i, tabcontent, tablinks;
+
+        // Hide all elements with class="tab-content"
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the "active" class from all tab buttons
+        tablinks = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab content, and add an "active" class to the button that opened the tab
+        document.getElementById(className).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>

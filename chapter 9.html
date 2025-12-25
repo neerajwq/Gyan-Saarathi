@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कक्षा 12 भौतिकी — अध्याय 9: किरणिकी (Ray Optics)</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+/* body{font-family:'Noto Sans Devanagari',Arial,sans-serif;background:#f7fbff;padding:20px;color:#07203a;line-height:1.7} */
+/* .container{max-width:1000px;margin:0 auto} */
+header{text-align:center;margin-bottom:15px}
+/* h1{color:#0b66a3} */
+/* h2{color:#0e3b5b} */
+.card{background:#ffffff;padding:18px;border-radius:12px;margin:16px 0;box-shadow:0 6px 20px rgba(10,30,60,0.08)}
+.formula{background:#eef6ff;padding:12px;border-left:5px solid #0b66a3;border-radius:6px;font-weight:600;margin:12px 0}
+pre{background:#f3f7fb;padding:12px;border-radius:6px;overflow:auto}
+ul{margin-left:20px}
+svg{display:block;margin:10px auto;max-width:100%;border:1px solid #cce0ff;border-radius:8px}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<header>
+<h1>अध्याय 9 — किरणिकी (Ray Optics)</h1>
+<p style="color:#4b5966">Class 12 Physics — विस्तृत नोट्स, फॉर्मूला और उच्च गुणवत्ता वाले डायग्राम्स सहित।</p>
+</header>
+
+<section class="card">
+<h2>1. प्रकाश का स्वभाव (Nature of Light)</h2>
+<p>प्रकाश तरंग और कण दोनों की तरह व्यवहार करता है। यह विभिन्न माध्यमों में अलग गति से चलता है और परावर्तन, अपवर्तन, विवर्तन एवं ध्रुवन जैसी घटनाएँ करता है।</p>
+</section>
+
+<section class="card">
+<h2>2. परावर्तन (Reflection)</h2>
+<p>प्रकाश किरण का दिशा बदलना जब वह किसी सतह से टकराता है।</p>
+<ul>
+<li>Incident ray: आपतन किरण</li>
+<li>Reflected ray: परावर्तित किरण</li>
+<li>Normal: सतह के लंबवत</li>
+<li>Law: कोण आपतन = कोण परावर्तन</li>
+</ul>
+<div class="formula">θi = θr</div>
+
+<svg width="400" height="250" viewBox="0 0 400 250">
+  <line x1="50" y1="200" x2="350" y2="200" stroke="black" stroke-width="2" />
+  <line x1="200" y1="50" x2="200" y2="200" stroke="gray" stroke-width="2" />
+  <line x1="150" y1="100" x2="250" y2="100" stroke="red" stroke-width="2" />
+  <polygon points="245,95 250,100 245,105" fill="red" />
+  <text x="180" y="45" fill="black">Mirror</text>
+  <text x="100" y="95" fill="red">Incident Ray</text>
+  <text x="260" y="95" fill="red">Reflected Ray</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>3. अपवर्तन (Refraction)</h2>
+<p>प्रकाश की दिशा बदलना जब वह एक माध्यम से दूसरे माध्यम में जाता है।</p>
+<ul>
+<li>Law: n1 sinθ1 = n2 sinθ2</li>
+<li>v = c/n</li>
+<li>Refractive index: n = c/v</li>
+</ul>
+<div class="formula">n1 sinθ1 = n2 sinθ2</div>
+
+<svg width="400" height="250" viewBox="0 0 400 250">
+  <rect x="50" y="150" width="300" height="50" fill="#d0e7ff" />
+  <line x1="200" y1="50" x2="200" y2="150" stroke="black" stroke-width="2" />
+  <line x1="150" y1="50" x2="250" y2="200" stroke="orange" stroke-width="2" />
+  <polygon points="248,195 250,200 252,195" fill="orange" />
+  <text x="210" y="45" fill="black">Normal</text>
+  <text x="260" y="220" fill="orange">Refracted Ray</text>
+  <text x="140" y="40" fill="orange">Incident Ray</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>4. लेंस (Lenses)</h2>
+<p>Light focusing devices: Convex (संकेंद्र), Concave (विकेंद्र)</p>
+<ul>
+<li>Lens formula: 1/f = 1/v - 1/u</li>
+<li>Magnification: m = v/u = h'/h</li>
+</ul>
+<div class="formula">1/f = 1/v - 1/u</div>
+
+<svg width="500" height="300" viewBox="0 0 500 300">
+  <line x1="50" y1="150" x2="450" y2="150" stroke="black" stroke-width="2" />
+  <ellipse cx="250" cy="150" rx="40" ry="100" fill="none" stroke="blue" stroke-width="3" />
+  <line x1="100" y1="100" x2="250" y2="150" stroke="red" stroke-width="2" />
+  <line x1="100" y1="200" x2="250" y2="150" stroke="red" stroke-width="2" />
+  <line x1="250" y1="150" x2="400" y2="130" stroke="green" stroke-width="2" />
+  <line x1="250" y1="150" x2="400" y2="170" stroke="green" stroke-width="2" />
+  <text x="180" y="50" fill="black">Convex Lens</text>
+  <text x="90" y="90" fill="red">Incident Rays</text>
+  <text x="410" y="130" fill="green">Refracted Rays</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>5. आईने (Mirrors)</h2>
+<ul>
+<li>Concave: Focused real or virtual image</li>
+<li>Convex: Always virtual, upright, reduced</li>
+<li>Mirror formula: 1/f = 1/v + 1/u</li>
+</ul>
+<div class="formula">1/f = 1/v + 1/u</div>
+
+<svg width="500" height="250" viewBox="0 0 500 250">
+  <line x1="50" y1="150" x2="450" y2="150" stroke="black" stroke-width="2" />
+  <path d="M250 50 Q250 150 250 250" stroke="blue" stroke-width="3" fill="none" />
+  <line x1="100" y1="100" x2="250" y2="150" stroke="red" stroke-width="2" />
+  <line x1="250" y1="150" x2="400" y2="100" stroke="green" stroke-width="2" />
+  <text x="260" y="40" fill="black">Concave Mirror</text>
+  <text x="90" y="90" fill="red">Incident Ray</text>
+  <text x="410" y="90" fill="green">Reflected Ray</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>6. प्रिज़्म (Prism)</h2>
+<p>Prism: प्रकाश का अपवर्तन और विवर्तन</p>
+<ul>
+<li>Deviation angle δ = (i1 + i2) - A</li>
+<li>Snell’s Law at interfaces</li>
+</ul>
+<svg width="500" height="300" viewBox="0 0 500 300">
+  <polygon points="200,50 300,50 250,200" fill="#d0e7ff" stroke="blue" stroke-width="2" />
+  <line x1="150" y1="150" x2="225" y2="120" stroke="red" stroke-width="2" />
+  <line x1="225" y1="120" x2="275" y2="160" stroke="green" stroke-width="2" />
+  <line x1="275" y1="160" x2="400" y2="160" stroke="purple" stroke-width="2" />
+  <text x="240" y="40" fill="black">Prism</text>
+  <text x="140" y="140" fill="red">Incident Ray</text>
+  <text x="280" y="150" fill="green">Refracted Ray</text>
+  <text x="410" y="160" fill="purple">Emergent Ray</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>7. महत्वपूर्ण टिप्स</h2>
+<ul>
+<!-- <li>Concave/Convex lens or mirror के लिए ray diagram हमेशा साफ बनाएं।</li> -->
+<li>Principal axis, focus और object position को ध्यान में रखें।</li>
+<li>Prism में deviation और dispersion स्पष्ट करें।</li>
+<li>फॉर्मूले और Snell’s law को याद रखें।</li>
+</ul>
+</section>
+
+<!-- <footer style="text-align:center;color:#4b5966;margin-top:12px"> -->
+<!-- HTML में Chapter 9 के विस्तृत नोट्स, फॉर्मूले और उच्च गुणवत्ता वाले SVG diagrams (लेंस, mirrors, prism) शामिल हैं। MCQ और solved examples आगे जोड़े जा सकते हैं। -->
+<!-- </footer> -->
+</div>
+</body>
+</html>

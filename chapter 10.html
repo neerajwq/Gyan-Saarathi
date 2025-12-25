@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कक्षा 12 भौतिकी — अध्याय 10: तरंगिकी (Wave Optics)</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+/* body{font-family:'Noto Sans Devanagari',Arial,sans-serif;background:#f7fbff;padding:20px;color:#07203a;line-height:1.7} */
+/* .container{max-width:1000px;margin:0 auto} */
+header{text-align:center;margin-bottom:15px}
+/* h1{color:#0b66a3} */
+/* h2{color:#0e3b5b} */
+.card{background:#ffffff;padding:18px;border-radius:12px;margin:16px 0;box-shadow:0 6px 20px rgba(10,30,60,0.08)}
+.formula{background:#eef6ff;padding:12px;border-left:5px solid #0b66a3;border-radius:6px;font-weight:600;margin:12px 0}
+pre{background:#f3f7fb;padding:12px;border-radius:6px;overflow:auto}
+ul{margin-left:20px}
+svg{display:block;margin:10px auto;max-width:100%;border:1px solid #cce0ff;border-radius:8px}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<header>
+<h1>अध्याय 10 — तरंगिकी (Wave Optics)</h1>
+<p style="color:#4b5966">Class 12 Physics — विस्तृत नोट्स, फॉर्मूला और उच्च गुणवत्ता वाले SVG diagrams सहित।</p>
+</header>
+
+<section class="card">
+<h2>1. तरंगिकी का परिचय (Introduction)</h2>
+<p>तरंगिकी प्रकाश की वह शाखा है जो प्रकाश की तरंग-स्वरूप विशेषताओं जैसे <b>परस्परविक्षेप (Interference)</b>, <b>विक्षेप (Diffraction)</b>, और <b>ध्रुवन (Polarization)</b> का अध्ययन करती है।</p>
+</section>
+
+<section class="card">
+<h2>2. परस्परविक्षेप (Interference)</h2>
+<p>दो या दो से अधिक लहरों के संयोजन से उत्पन्न होने वाली प्रकाश और अंधकार की पट्टियाँ।</p>
+<ul>
+<li>Young’s Double Slit Experiment</li>
+<li>Path difference Δ = nλ (Constructive), Δ = (n+1/2)λ (Destructive)</li>
+</ul>
+<div class="formula">Δ = d sinθ</div>
+<div class="formula">y = L Δ / d</div>
+
+<svg width="500" height="250" viewBox="0 0 500 250">
+  <line x1="50" y1="50" x2="50" y2="100" stroke="black" stroke-width="2" />
+  <line x1="100" y1="50" x2="100" y2="100" stroke="black" stroke-width="2" />
+  <line x1="50" y1="75" x2="500" y2="75" stroke="red" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="100" y1="75" x2="500" y2="125" stroke="red" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="40" y="40" fill="black">Slit 1</text>
+  <text x="90" y="40" fill="black">Slit 2</text>
+  <text x="510" y="75" fill="red">Interference Pattern</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>3. विवर्तन (Diffraction)</h2>
+<p>प्रकाश की तरंगें किसी बाधा या विवर्तन गेट से गुजरते समय फैलती हैं।</p>
+<ul>
+<li>Single slit diffraction</li>
+<li>Angular width θ = λ / a</li>
+</ul>
+<div class="formula">θ = λ / a</div>
+
+<svg width="500" height="250" viewBox="0 0 500 250">
+  <rect x="240" y="50" width="20" height="150" fill="#d0e7ff" />
+  <line x1="250" y1="50" x2="150" y2="0" stroke="red" stroke-width="2" />
+  <line x1="250" y1="50" x2="250" y2="0" stroke="red" stroke-width="2" />
+  <line x1="250" y1="50" x2="350" y2="0" stroke="red" stroke-width="2" />
+  <text x="260" y="30" fill="black">Slit</text>
+  <text x="150" y="-10" fill="red">Diffracted Rays</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>4. ध्रुवन (Polarization)</h2>
+<p>प्रकाश तरंग की दिशा को नियंत्रित करना ताकि वह केवल एक विमा में कंपन करे।</p>
+<ul>
+<li>Polarizer & Analyzer</li>
+<li>Malus’ Law: I = I₀ cos²θ</li>
+</ul>
+<div class="formula">I = I₀ cos²θ</div>
+<svg width="500" height="250" viewBox="0 0 500 250">
+  <line x1="50" y1="125" x2="450" y2="125" stroke="gray" stroke-width="2" />
+  <rect x="200" y="100" width="20" height="50" fill="#a0c4ff" />
+  <line x1="220" y1="100" x2="300" y2="50" stroke="red" stroke-width="2" />
+  <text x="210" y="90" fill="black">Polarizer</text>
+  <text x="310" y="40" fill="red">Polarized Ray</text>
+</svg>
+</section>
+
+<section class="card">
+<h2>5. महत्वपूर्ण सूत्र</h2>
+<ul>
+<li>Path difference (Constructive): Δ = nλ</li>
+<li>Path difference (Destructive): Δ = (n+1/2)λ</li>
+<li>Fringe width: β = λ L / d</li>
+<li>Diffraction angular width: θ = λ / a</li>
+<li>Polarization intensity: I = I₀ cos²θ</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>6. टिप्स और प्रयोग</h2>
+<ul>
+<li>Young’s double slit experiment सबसे महत्वपूर्ण है।</li>
+<li>Fringe width की गणना में दूरी और स्लिट से दूरी पर ध्यान दें।</li>
+<li>Diffraction में स्लिट चौड़ाई और wavelength के अनुपात से angular spread ज्ञात करें।</li>
+<li>Polarization में analyzer के कोण से transmitted intensity बदलती है।</li>
+</ul>
+</section>
+
+<footer style="text-align:center;color:#4b5966;margin-top:12px">
+अध्याय 10 के विस्तृत नोट्स, सभी फॉर्मूले और उच्च गुणवत्ता वाले SVG diagrams शामिल हैं। MCQ और solved examples को अगले वर्शन में जोड़ा जा सकता है।
+</footer>
+</div>
+</body>
+</html>

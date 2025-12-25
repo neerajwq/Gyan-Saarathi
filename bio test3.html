@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 जीव विज्ञान: मॉक टेस्ट (मानव स्वास्थ्य और रोग)</title>
+    <style>
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #3cb371; /* Medium Sea Green Header */
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #d8f5d8; /* Lighter Green on hover */
+        }
+        .submit-btn {
+            display: block;
+            width: 250px;
+            padding: 12px;
+            margin: 30px auto;
+            background-color: #ff8c00; /* Dark Orange Button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #e67e22;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #3cb371;
+            border-radius: 8px;
+            background-color: #f5f5dc;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+        h3 {
+            border-bottom: 2px solid #3cb371;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 जीव विज्ञान - मॉक टेस्ट (100 प्रश्न) 🦠</h1>
+        <h2>इकाई IX: मानव स्वास्थ्य और रोग</h2>
+        <p>निर्देश: सभी 100 प्रश्नों के उत्तर दें।</p>
+    </div>
+    
+    <form id="quizForm">
+    </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी ---
+        const testQuestions = [
+            // रोग और रोगज़नक़ (Diseases and Pathogens)
+            { id: 1, question: "मलेरिया रोग का कारक जीव (Pathogen) क्या है?", options: ["प्लाज्मोडियम","एंटअमीबा","साल्मोनेला","माइक्रोस्पोरम"], answer: "प्लाज्मोडियम", chapter: "रोग" },
+            { id: 2, question: "टाइफाइड ज्वर का कारण बनने वाला जीवाणु (Bacteria) कौन सा है?", options: ["साल्मोनेला टाइफी","विब्रियो कोलेरी","स्ट्रेप्टोकोकस","माइकोबैक्टीरियम"], answer: "साल्मोनेला टाइफी", chapter: "रोग" },
+            { id: 3, question: "सामान्य जुकाम (Common Cold) किस वायरस के कारण होता है?", options: ["राइनोवायरस","पोलियोवायरस","हर्पीस वायरस","रेट्रोवायरस"], answer: "राइनोवायरस", chapter: "रोग" },
+            { id: 4, question: "एस्केरियासिस (Ascariasis) का संचारण कैसे होता है?", options: ["दूषित पानी और भोजन","मच्छर का काटना","यौन संपर्क","सीधे संपर्क से"], answer: "दूषित पानी और भोजन", chapter: "रोग" },
+            { id: 5, question: "फाइलेरिया (Filariasis) रोग किस कृमि (Worm) के कारण होता है?", options: ["वुचेरेरिया बैनक्रॉफ्टी","एस्केरिस","टीनिया सोलियम","गोलकृमि"], answer: "वुचेरेरिया बैनक्रॉफ्टी", chapter: "रोग" },
+            { id: 6, question: "दाद (Ringworm) एक सामान्य रोग है जिसका कारण है:", options: ["कवक (Fungi)","जीवाणु","विषाणु","प्रोटोजोआ"], answer: "कवक (Fungi)", chapter: "रोग" },
+            { id: 7, question: "निमोनिया (Pneumonia) में कौन सा अंग प्रभावित होता है?", options: ["फेफड़े (एल्विओली)","यकृत","छोटी आंत","प्लीहा"], answer: "फेफड़े (एल्विओली)", chapter: "रोग" },
+            { id: 8, question: "मलेरिया के रोगवाहक (Vector) का नाम क्या है?", options: ["मादा एनाफिलीज मच्छर","एडीज मच्छर","क्यूलेक्स मच्छर","घरेलू मक्खी"], answer: "मादा एनाफिलीज मच्छर", chapter: "रोग" },
+            { id: 9, question: "एड्स (AIDS) किस प्रकार का वायरस जनित रोग है?", options: ["रेट्रोवायरस","एडेनोवायरस","राइनोवायरस","हर्पीस वायरस"], answer: "रेट्रोवायरस", chapter: "रोग" },
+            { id: 10, question: "अमीबीय पेचिश (Amoebic Dysentery) का कारक प्रोटोजोआ कौन सा है?", options: ["एंटअमीबा हिस्टोलिटिका","प्लाज्मोडियम","ट्रिपैनोसोमा","गिआर्डिया"], answer: "एंटअमीबा हिस्टोलिटिका", chapter: "रोग" },
+
+            // प्रतिरक्षा (Immunity)
+            { id: 11, question: "जन्म के समय से मौजूद प्रतिरक्षा को क्या कहते हैं?", options: ["सहज प्रतिरक्षा (Innate Immunity)","उपार्जित प्रतिरक्षा (Acquired Immunity)","सक्रिय प्रतिरक्षा","निष्क्रिय प्रतिरक्षा"], answer: "सहज प्रतिरक्षा (Innate Immunity)", chapter: "प्रतिरक्षा" },
+            { id: 12, question: "टीकाकरण (Vaccination) किस प्रकार की प्रतिरक्षा प्रदान करता है?", options: ["सक्रिय प्रतिरक्षा","निष्क्रिय प्रतिरक्षा","सहज प्रतिरक्षा","प्राकृतिक निष्क्रिय प्रतिरक्षा"], answer: "सक्रिय प्रतिरक्षा", chapter: "प्रतिरक्षा" },
+            { id: 13, question: "स्तनपान के माध्यम से शिशु को माँ से प्राप्त होने वाली एंटीबॉडी कौन सी है?", options: ["IgA","IgG","IgM","IgE"], answer: "IgA", chapter: "प्रतिरक्षा" },
+            { id: 14, question: "एंटीबॉडी (Antibody) किस प्रकार के प्रोटीन होते हैं?", options: ["इम्युनोग्लोबुलिन (Immunoglobulin)","केराटिन","एल्ब्यूमिन","फाइब्रिनोजेन"], answer: "इम्युनोग्लोबुलिन (Immunoglobulin)", chapter: "प्रतिरक्षा" },
+            { id: 15, question: "प्राथमिक और द्वितीयक लिम्फोइड अंग कौन से हैं?", options: ["अस्थि मज्जा और थाइमस","प्लीहा और लिम्फ नोड्स","दोनों 'A' और 'B'","केवल अस्थि मज्जा"], answer: "दोनों 'A' और 'B'", chapter: "प्रतिरक्षा" },
+            { id: 16, question: "B-लिम्फोसाइट्स का मुख्य कार्य क्या है?", options: ["एंटीबॉडी का उत्पादन","कोशिका-मध्यस्थ प्रतिरक्षा","भक्षण (Phagocytosis)","विषाणुओं को नष्ट करना"], answer: "एंटीबॉडी का उत्पादन", chapter: "प्रतिरक्षा" },
+            { id: 17, question: "T-लिम्फोसाइट्स किस प्रतिरक्षा के लिए जिम्मेदार होते हैं?", options: ["कोशिका-मध्यस्थ प्रतिरक्षा (Cell-mediated immunity)","एंटीबॉडी-मध्यस्थ प्रतिरक्षा","सहज प्रतिरक्षा","निष्क्रिय प्रतिरक्षा"], answer: "कोशिका-मध्यस्थ प्रतिरक्षा (Cell-mediated immunity)", chapter: "प्रतिरक्षा" },
+            { id: 18, question: "सूजन (Inflammation) किस प्रकार की प्रतिरक्षा प्रतिक्रिया है?", options: ["सहज प्रतिरक्षा","उपार्जित प्रतिरक्षा","सक्रिय प्रतिरक्षा","विशिष्ट प्रतिक्रिया"], answer: "सहज प्रतिरक्षा", chapter: "प्रतिरक्षा" },
+            { id: 19, question: " एलर्जी (Allergy) में कौन सी एंटीबॉडी शामिल होती है?", options: ["IgE","IgG","IgM","IgA"], answer: "IgE", chapter: "प्रतिरक्षा" },
+            { id: 20, question: "स्व-प्रतिरक्षा रोग (Autoimmune Disease) का एक उदाहरण क्या है?", options: ["संधिशोथ (Rheumatoid Arthritis)","एड्स","मलेरिया","टाइफाइड"], answer: "संधिशोथ (Rheumatoid Arthritis)", chapter: "प्रतिरक्षा" },
+
+            // एड्स (AIDS)
+            { id: 21, question: "एड्स का पूर्ण रूप क्या है?", options: ["एक्वायर्ड इम्यूनो डेफिसिएंसी सिंड्रोम","एक्वायर्ड इम्यून डिजीज सिंड्रोम","एंटीबॉडी इम्यून डेफिसिएंसी सिंड्रोम","एक्टिवेटेड इम्यून डिजीज सिंड्रोम"], answer: "एक्वायर्ड इम्यूनो डेफिसिएंसी सिंड्रोम", chapter: "एड्स" },
+            { id: 22, question: "एड्स का कारक वायरस (Virus) क्या है?", options: ["एचआईवी (HIV)","राइनोवायरस","पोलियोवायरस","हेपेटाइटिस वायरस"], answer: "एचआईवी (HIV)", chapter: "एड्स" },
+            { id: 23, question: "एचआईवी किस कोशिका पर हमला करता है?", options: ["सहायक T-लिम्फोसाइट्स","B-लिम्फोसाइट्स","लाल रक्त कोशिकाएं","न्यूट्रोफिल्स"], answer: "सहायक T-लिम्फोसाइट्स", chapter: "एड्स" },
+            { id: 24, question: "एचआईवी में किस एंजाइम का उपयोग करके वायरल आरएनए को डीएनए में बदला जाता है?", options: ["रिवर्स ट्रांसक्रिप्टेज","डीएनए लाइगेज","आरएनए पोलीमरेज़","एमिनोएसिल सिंथेटेज"], answer: "रिवर्स ट्रांसक्रिप्टेज", chapter: "एड्स" },
+            { id: 25, question: "एड्स का पता लगाने के लिए सामान्यतः कौन सा परीक्षण किया जाता है?", options: ["एलिसा (ELISA)","विडाल टेस्ट","पीसीआर","ब्लड काउंट"], answer: "एलिसा (ELISA)", chapter: "एड्स" },
+            { id: 26, question: "एचआईवी का संचारण कैसे होता है?", options: ["यौन संपर्क और संक्रमित रक्त","छींकने और खांसने से","मच्छर के काटने से","पानी पीने से"], answer: "यौन संपर्क और संक्रमित रक्त", chapter: "एड्स" },
+            { id: 27, question: "एड्स के रोगी में किसका स्तर कम हो जाता है?", options: ["T4 लिम्फोसाइट्स","B-लिम्फोसाइट्स","एंटीबॉडी","लाल रक्त कोशिकाएं"], answer: "T4 लिम्फोसाइट्स", chapter: "एड्स" },
+            { id: 28, question: "एचआईवी एक रेट्रोवायरस क्यों है?", options: ["इसमें आरएनए जीनोम होता है","इसमें डीएनए जीनोम होता है","यह केवल पुरुषों को प्रभावित करता है","इसका कोई जेनेटिक मटेरियल नहीं है"], answer: "इसमें आरएनए जीनोम होता है", chapter: "एड्स" },
+            { id: 29, question: "भारत में AIDS नियंत्रण के लिए कौन सी संस्था है?", options: ["NACO (नाको)","WHO","ICMR","AIIMS"], answer: "NACO (नाको)", chapter: "एड्स" },
+            { id: 30, question: "एड्स का उपचार किस प्रकार की दवाओं से किया जाता है?", options: ["एंटीरेट्रोवायरल ड्रग्स (ART)","एंटीबायोटिक्स","एनाल्जेसिक","एंटीफंगल"], answer: "एंटीरेट्रोवायरल ड्रग्स (ART)", chapter: "एड्स" },
+
+            // कैंसर (Cancer)
+            { id: 31, question: "सामान्य कोशिकाओं का अनियंत्रित विभाजन क्या कहलाता है?", options: ["कैंसर","ट्यूमर","मेटास्टेसिस","प्रोलिफरेशन"], answer: "कैंसर", chapter: "कैंसर" },
+            { id: 32, question: "कैंसर के अध्ययन को क्या कहते हैं?", options: ["ऑन्कोलॉजी","बायोलॉजी","हिस्टोलॉजी","साइटोलॉजी"], answer: "ऑन्कोलॉजी", chapter: "कैंसर" },
+            { id: 33, question: "सौम्य ट्यूमर (Benign Tumor) की विशेषता क्या है?", options: ["एक ही स्थान पर सीमित रहना","पूरे शरीर में फैलना","तेजी से बढ़ना","अन्य ऊतकों पर आक्रमण करना"], answer: "एक ही स्थान पर सीमित रहना", chapter: "कैंसर" },
+            { id: 34, question: "घातक ट्यूमर (Malignant Tumor) का अन्य नाम क्या है?", options: ["नियोप्लाज्म","सिस्ट","एडिमा","अल्सर"], answer: "नियोप्लाज्म", chapter: "कैंसर" },
+            { id: 35, question: "कैंसर कोशिकाओं का रक्त के माध्यम से दूर के स्थानों तक फैलना क्या कहलाता है?", options: ["मेटास्टेसिस","इंफ्लेमेशन","जेनेसिस","बायोप्सी"], answer: "मेटास्टेसिस", chapter: "कैंसर" },
+            { id: 36, question: "कैंसर पैदा करने वाले कारक (Agents) क्या कहलाते हैं?", options: ["कार्सिनोजेन","पैथोजन","जीन","एलर्जेन"], answer: "कार्सिनोजेन", chapter: "कैंसर" },
+            { id: 37, question: "कैंसर के उपचार में उपयोग की जाने वाली विधि क्या है?", options: ["कीमोथेरेपी और रेडियोथेरेपी","एंटीबायोटिक्स","वैक्सीन","एंटीफंगल"], answer: "कीमोथेरेपी और रेडियोथेरेपी", chapter: "कैंसर" },
+            { id: 38, question: "कैंसर का कारण बनने वाले जीन क्या कहलाते हैं?", options: ["ऑन्कोजीन (Oncogenes)","सप्रेसर जीन","प्रोटीन जीन","इंसुलिन जीन"], answer: "ऑन्कोजीन (Oncogenes)", chapter: "कैंसर" },
+            { id: 39, question: "ट्यूमर का एक टुकड़ा निकालकर उसकी जांच करना क्या कहलाता है?", options: ["बायोप्सी","ऑटोप्सी","एलिसा","एमआरआई"], answer: "बायोप्सी", chapter: "कैंसर" },
+            { id: 40, question: "कैंसर के निदान में किस तकनीक का उपयोग किया जाता है?", options: ["एमआरआई (MRI)","विडाल टेस्ट","ब्लड प्रेशर मापन","तापमान मापन"], answer: "एमआरआई (MRI)", chapter: "कैंसर" },
+
+            // ड्रग और अल्कोहल का दुरुपयोग (Drug and Alcohol Abuse)
+            { id: 41, question: "मॉर्फिन (Morphine) किस वर्ग की औषधि है?", options: ["ओपियोइड्स","कैनबिनोइड्स","कोका एल्कलॉइड्स","बार्बिट्यूरेट्स"], answer: "ओपियोइड्स", chapter: "दुरुपयोग" },
+            { id: 42, question: "कैनबिनोइड्स (Cannabinoids) के रिसेप्टर्स कहाँ पाए जाते हैं?", options: ["मस्तिष्क","यकृत","फेफड़े","गुर्दे"], answer: "मस्तिष्क", chapter: "दुरुपयोग" },
+            { id: 43, question: "हेरोइन (Heroin) का रासायनिक नाम क्या है?", options: ["डायएसिटाइलमॉर्फिन","कोकीन","एट्रोपीन","कैनबिस"], answer: "डायएसिटाइलमॉर्फिन", chapter: "दुरुपयोग" },
+            { id: 44, question: "स्मैक (Smack) को किस पौधे से प्राप्त किया जाता है?", options: ["पोस्ता (Papaver somniferum)","कैनबिस सैटिवा","एरिथ्रोजाइलम कोका","धतूरा"], answer: "पोस्ता (Papaver somniferum)", chapter: "दुरुपयोग" },
+            { id: 45, question: "ड्रग्स का इंजेक्शन लगाने से किस रोग का खतरा बढ़ जाता है?", options: ["एड्स और हेपेटाइटिस बी","निमोनिया","जुकाम","मलेरिया"], answer: "एड्स और हेपेटाइटिस बी", chapter: "दुरुपयोग" },
+            { id: 46, question: "एल्कोहल का अत्यधिक सेवन किस अंग को क्षति पहुँचाता है?", options: ["यकृत (Liver Cirrhosis)","फेफड़े","हृदय","गुर्दे"], answer: "यकृत (Liver Cirrhosis)", chapter: "दुरुपयोग" },
+            { id: 47, question: "कोकीन (Cocaine) का पौधा कौन सा है?", options: ["एरिथ्रोजाइलम कोका","पपावर सोमनिफेरम","एट्रोपा बेलाडोना","कैनबिस"], answer: "एरिथ्रोजाइलम कोका", chapter: "दुरुपयोग" },
+            { id: 48, question: "हैमरेज (Hemorrhage) का खतरा किस ड्रग के सेवन से बढ़ जाता है?", options: ["कोकीन","मॉर्फिन","चरस","गांजा"], answer: "कोकीन", chapter: "दुरुपयोग" },
+            { id: 49, question: "निकोटीन किस पौधे से प्राप्त होता है?", options: ["तंबाकू (Nicotiana tabacum)","पोस्ता","कोका","धतूरा"], answer: "तंबाकू (Nicotiana tabacum)", chapter: "दुरुपयोग" },
+            { id: 50, question: "शराब की लत से पीड़ित व्यक्ति में किस विटामिन की कमी हो सकती है?", options: ["विटामिन बी1 (थायमिन)","विटामिन ए","विटामिन डी","विटामिन के"], answer: "विटामिन बी1 (थायमिन)", chapter: "दुरुपयोग" },
+
+            // प्रतिरक्षा के प्रकार और एलर्जी (Types of Immunity and Allergy)
+            { id: 51, question: "जब किसी रोगज़नक़ के प्रति एंटीबॉडी शरीर के बाहर बनती है और फिर शरीर में डाली जाती है, तो वह कहलाती है:", options: ["निष्क्रिय प्रतिरक्षा","सक्रिय प्रतिरक्षा","सहज प्रतिरक्षा","प्राकृतिक प्रतिरक्षा"], answer: "निष्क्रिय प्रतिरक्षा", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 52, question: "एंटीबॉडी का निर्माण होने में समय लगने वाली प्रतिरक्षा है:", options: ["सक्रिय प्रतिरक्षा","निष्क्रिय प्रतिरक्षा","प्राकृतिक सहज प्रतिरक्षा","तीव्र प्रतिरक्षा"], answer: "सक्रिय प्रतिरक्षा", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 53, question: "कोलोस्ट्रम (Colostrum) में कौन सी एंटीबॉडी पाई जाती है?", options: ["IgA","IgG","IgM","IgE"], answer: "IgA", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 54, question: "शरीर में एलर्जी किसके स्राव के कारण होती है?", options: ["हिस्टामाइन और सेरोटोनिन","इंसुलिन","थायरोक्सिन","एड्रेनालिन"], answer: "हिस्टामाइन और सेरोटोनिन", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 55, question: "मास्ट कोशिकाएं (Mast Cells) एलर्जी में क्या स्रावित करती हैं?", options: ["हिस्टामाइन","एंटीबॉडी","इंटरफेरॉन","हार्मोन"], answer: "हिस्टामाइन", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 56, question: "एलर्जी के उपचार के लिए कौन सी दवा का उपयोग किया जाता है?", options: ["एंटीहिस्टामाइन","एंटीबायोटिक्स","ओपियोइड्स","वैक्सीन"], answer: "एंटीहिस्टामाइन", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 57, question: "वह पदार्थ जिसके प्रति प्रतिरक्षा प्रतिक्रिया होती है, क्या कहलाता है?", options: ["एंटीजन","एंटीबॉडी","हार्मोन","कोकीन"], answer: "एंटीजन", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 58, question: "शरीर में रोगज़नक़ों के प्रवेश के समय सबसे पहले बनने वाली एंटीबॉडी कौन सी है?", options: ["IgM","IgG","IgA","IgD"], answer: "IgM", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 59, question: "प्रतिरक्षी अणु का मूल ढांचा (Basic structure) क्या होता है?", options: ["दो भारी और दो हल्की श्रृंखलाएं","चार भारी श्रृंखलाएं","दो हल्की श्रृंखलाएं","केवल एक श्रृंखला"], answer: "दो भारी और दो हल्की श्रृंखलाएं", chapter: "प्रतिरक्षा प्रकार" },
+            { id: 60, question: "गर्भनाल (Placenta) को पार करके शिशु को सुरक्षा प्रदान करने वाली एंटीबॉडी कौन सी है?", options: ["IgG","IgM","IgA","IgD"], answer: "IgG", chapter: "प्रतिरक्षा प्रकार" },
+
+            // विविध और उन्नत विषय (Miscellaneous and Advanced Topics)
+            { id: 61, question: "किस रोग में रोगी की WBC की संख्या बढ़ जाती है?", options: ["ल्यूकेमिया (रक्त कैंसर)","एड्स","निमोनिया","टाइफाइड"], answer: "ल्यूकेमिया (रक्त कैंसर)", chapter: "विविध" },
+            { id: 62, question: "ट्यूबरक्लोसिस (Tuberculosis) के लिए कौन सा टीका दिया जाता है?", options: ["बीसीजी (BCG)","ओपीवी (OPV)","डीपीटी (DPT)","एमएमआर (MMR)"], answer: "बीसीजी (BCG)", chapter: "विविध" },
+            { id: 63, question: "अंग प्रत्यारोपण (Organ Transplantation) के दौरान शरीर अंगों को क्यों अस्वीकार कर देता है?", options: ["कोशिका-मध्यस्थ प्रतिरक्षा के कारण","एंटीबॉडी-मध्यस्थ प्रतिरक्षा के कारण","सहज प्रतिरक्षा के कारण","एलर्जी के कारण"], answer: "कोशिका-मध्यस्थ प्रतिरक्षा के कारण", chapter: "विविध" },
+            { id: 64, question: "पोलियो रोग किसके द्वारा फैलता है?", options: ["वायरस","जीवाणु","कवक","कृमि"], answer: "वायरस", chapter: "विविध" },
+            { id: 65, question: "किस रोग में 'एलीफैंटियासिस' (Elephantiasis) की स्थिति बनती है?", options: ["फाइलेरिया","मलेरिया","टाइफाइड","अमीबीय पेचिश"], answer: "फाइलेरिया", chapter: "विविध" },
+            { id: 66, question: "शरीर के किस अंग में प्लाज्मोडियम अपना लैंगिक प्रजनन (Sexual Reproduction) चक्र पूरा करता है?", options: ["मच्छर की आंत","मानव यकृत","मानव आरबीसी","मच्छर की लार ग्रंथि"], answer: "मच्छर की आंत", chapter: "विविध" },
+            { id: 67, question: "आयोडीन युक्त नमक का उपयोग किस रोग की रोकथाम के लिए आवश्यक है?", options: ["गण्डमाला (Goiter)","टाइफाइड","मलेरिया","एड्स"], answer: "गण्डमाला (Goiter)", chapter: "विविध" },
+            { id: 68, question: "कॉलरा (Cholera) रोग का संचरण कैसे होता है?", options: ["दूषित पानी और भोजन","मच्छर","यौन संपर्क","सीधे संपर्क"], answer: "दूषित पानी और भोजन", chapter: "विविध" },
+            { id: 69, question: "इंटरफेरॉन (Interferon) क्या हैं?", options: ["एंटीवायरल प्रोटीन","एंटीबॉडी","हार्मोन","एंजाइम"], answer: "एंटीवायरल प्रोटीन", chapter: "विविध" },
+            { id: 70, question: "मादक पदार्थ (Drugs) आमतौर पर किस पर कार्य करते हैं?", options: ["केंद्रीय तंत्रिका तंत्र (CNS)","पाचन तंत्र","श्वसन तंत्र","रक्त परिसंचरण तंत्र"], answer: "केंद्रीय तंत्रिका तंत्र (CNS)", chapter: "विविध" },
+            { id: 71, question: "क्रॉसिंग ओवर (Crossing Over) वंशागति में किस रोग का कारक है?", options: ["कोई नहीं, यह सामान्य है","सिर्फ कैंसर","सिर्फ एड्स","हीमोफीलिया"], answer: "कोई नहीं, यह सामान्य है", chapter: "विविध" },
+            { id: 72, question: "टीबी (T.B.) का टीका किस प्रकार का टीका है?", options: ["जीवित क्षीणित (Live Attenuated)","मृत टीका","टॉक्सोइड","निष्क्रिय टीका"], answer: "जीवित क्षीणित (Live Attenuated)", chapter: "विविध" },
+            { id: 73, question: "मलेरिया का परजीवी (Parasite) अपनी अलैंगिक प्रजनन (Asexual Reproduction) कहाँ पूरा करता है?", options: ["मानव यकृत कोशिकाएं और आरबीसी","मच्छर की आंत","मच्छर की लार ग्रंथि","मानव मस्तिष्क"], answer: "मानव यकृत कोशिकाएं और आरबीसी", chapter: "विविध" },
+            { id: 74, question: "एंटी-स्नेक वेनम (Anti-snake venom) किस प्रकार की प्रतिरक्षा का उदाहरण है?", options: ["कृत्रिम निष्क्रिय प्रतिरक्षा","प्राकृतिक निष्क्रिय प्रतिरक्षा","कृत्रिम सक्रिय प्रतिरक्षा","प्राकृतिक सक्रिय प्रतिरक्षा"], answer: "कृत्रिम निष्क्रिय प्रतिरक्षा", chapter: "विविध" },
+            { id: 75, question: "एक स्वस्थ व्यक्ति का सामान्य रक्तचाप (Blood Pressure) कितना होता है?", options: ["120/80 mmHg","140/90 mmHg","100/70 mmHg","130/85 mmHg"], answer: "120/80 mmHg", chapter: "विविध" },
+            { id: 76, question: "तम्बाकू चबाने से किस रोग का खतरा बढ़ जाता है?", options: ["मुंह का कैंसर","फेफड़ों का कैंसर","टाइफाइड","मलेरिया"], answer: "मुंह का कैंसर", chapter: "विविध" },
+            { id: 77, question: "मेमोरी कोशिकाएं (Memory Cells) किस प्रकार की प्रतिरक्षा में बनती हैं?", options: ["उपार्जित प्रतिरक्षा","सहज प्रतिरक्षा","निष्क्रिय प्रतिरक्षा","प्राकृतिक प्रतिरक्षा"], answer: "उपार्जित प्रतिरक्षा", chapter: "विविध" },
+            { id: 78, question: "कौन सा ड्रग एथलीटों द्वारा गलत तरीके से उपयोग किया जाता है?", options: ["एनाबॉलिक स्टेरॉयड","पेनिसिलिन","एंटीहिस्टामाइन","विटामिन"], answer: "एनाबॉलिक स्टेरॉयड", chapter: "विविध" },
+            { id: 79, question: "वह स्थिति जिसमें शरीर अपनी ही कोशिकाओं पर हमला करता है:", options: ["स्व-प्रतिरक्षा (Autoimmunity)","हाइपरसेंसिटिविटी","एलर्जी","इम्यूनोसप्रेशन"], answer: "स्व-प्रतिरक्षा (Autoimmunity)", chapter: "विविध" },
+            { id: 80, question: "रक्त में पाए जाने वाले मुख्य ल्यूकोसाइट्स (Leukocytes) कौन से हैं?", options: ["न्यूट्रोफिल्स, लिंफोसाइट्स, मोनोसाइट्स","प्लेटलेट्स, आरबीसी","एरिथ्रोसाइट्स, प्लेटलेट्स","केवल लिंफोसाइट्स"], answer: "न्यूट्रोफिल्स, लिंफोसाइट्स, मोनोसाइट्स", chapter: "विविध" },
+            { id: 81, question: "रोगज़नक़ों को नष्ट करने के लिए टी-लिम्फोसाइट्स द्वारा उपयोग की जाने वाली विधि:", options: ["साइटोटॉक्सिसिटी (कोशिका को मारना)","एंटीबॉडी बनाना","भक्षण","हिस्टामाइन स्राव"], answer: "साइटोटॉक्सिसिटी (कोशिका को मारना)", chapter: "विविध" },
+            { id: 82, question: "कोकीन के अत्यधिक सेवन का परिणाम क्या हो सकता है?", options: ["भ्रम (Hallucination) और परमानंद","शांति और नींद","वजन बढ़ना","मांसपेशियों का निर्माण"], answer: "भ्रम (Hallucination) और परमानंद", chapter: "विविध" },
+            { id: 83, question: "सिगरेट के धुएँ में मौजूद कौन सा रसायन फेफड़ों के कैंसर का मुख्य कारण है?", options: ["बेंजोपायरीन","निकोटीन","कार्बन मोनोऑक्साइड","टार"], answer: "बेंजोपायरीन", chapter: "विविध" },
+            { id: 84, question: "प्लाज्मोडियम के जीवन चक्र में, मानव में प्रवेश करने वाला रूप क्या है?", options: ["स्पोरोजोइट (Sporozoite)","मेरोजोइट","गैमेटोसाइट","ट्रोफोजोइट"], answer: "स्पोरोजोइट (Sporozoite)", chapter: "विविध" },
+            { id: 85, question: "हेपेटाइटिस बी का संचारण कैसे होता है?", options: ["संक्रमित रक्त और यौन संपर्क","दूषित पानी","मच्छर काटना","वायु"], answer: "संक्रमित रक्त और यौन संपर्क", chapter: "विविध" },
+            { id: 86, question: "ट्यूमर कोशिकाओं की असामान्य वृद्धि को रोकने के लिए किसका उपयोग किया जाता है?", options: ["बायोलॉजिकल रेस्पॉन्स मोडिफायर्स (जैसे अल्फा-इंटरफेरॉन)","एंटीबायोटिक्स","एनाल्जेसिक","पेनिसिलिन"], answer: "बायोलॉजिकल रेस्पॉन्स मोडिफायर्स (जैसे अल्फा-इंटरफेरॉन)", chapter: "विविध" },
+            { id: 87, question: "मानव शरीर में कौन सा ड्रग उत्तेजक (Stimulant) के रूप में कार्य करता है?", options: ["कोकीन","मॉर्फिन","चरस","गांजा"], answer: "कोकीन", chapter: "विविध" },
+            { id: 88, question: "एक स्वस्थ व्यक्ति को 'स्वस्थ' कब माना जाता है?", options: ["शारीरिक, मानसिक और सामाजिक रूप से ठीक","केवल शारीरिक रूप से ठीक","केवल मानसिक रूप से ठीक","केवल रोग-मुक्त"], answer: "शारीरिक, मानसिक और सामाजिक रूप से ठीक", chapter: "विविध" },
+            { id: 89, question: "एंटीबॉडी किस अंग द्वारा स्रावित होती हैं?", options: ["प्लाज्मा कोशिकाएं (B-कोशिकाओं से व्युत्पन्न)","T-कोशिकाएं","आरबीसी","फेफड़े"], answer: "प्लाज्मा कोशिकाएं (B-कोशिकाओं से व्युत्पन्न)", chapter: "विविध" },
+            { id: 90, question: "लिम्फ नोड्स (Lymph Nodes) का मुख्य कार्य क्या है?", options: ["लिम्फ को फिल्टर करना और रोगज़नक़ों को फंसाना","रक्त बनाना","हार्मोन बनाना","पाचन में मदद करना"], answer: "लिम्फ को फिल्टर करना और रोगज़नक़ों को फंसाना", chapter: "विविध" },
+            { id: 91, question: "मलेरिया के ठंडे चरण (Chills) का कारण कौन सा विषैला पदार्थ है?", options: ["हीमोज़ोइन","प्लाज्मोडियम","टॉक्सिन","एंटरोटॉक्सिन"], answer: "हीमोज़ोइन", chapter: "विविध" },
+            { id: 92, question: "टीकाकरण में शरीर में क्या प्रवेश कराया जाता है?", options: ["मृत या कमजोर रोगज़नक़","सक्रिय रोगज़नक़","एंटीबायोटिक्स","एंटीबॉडी"], answer: "मृत या कमजोर रोगज़नक़", chapter: "विविध" },
+            { id: 93, question: "शरीर की पहली रक्षा पंक्ति (First line of defense) क्या है?", options: ["त्वचा और श्लेष्मा झिल्ली","T-कोशिकाएं","एंटीबॉडी","लिम्फ नोड्स"], answer: "त्वचा और श्लेष्मा झिल्ली", chapter: "विविध" },
+            { id: 94, question: "ओपियोइड रिसेप्टर्स कहाँ पाए जाते हैं?", options: ["CNS और जठरांत्र संबंधी मार्ग (GIT)","केवल मस्तिष्क","केवल यकृत","केवल फेफड़े"], answer: ["CNS और जठरांत्र संबंधी मार्ग (GIT)"], chapter: "विविध" },
+            { id: 95, question: "शरीर में कौन सा अंग 'रक्त का कब्रिस्तान' कहलाता है?", options: ["प्लीहा (Spleen)","यकृत","थाइमस","अस्थि मज्जा"], answer: "प्लीहा (Spleen)", chapter: "विविध" },
+            { id: 96, question: "कौन सा कैंसर रक्त और अस्थि मज्जा से जुड़ा है?", options: ["ल्यूकेमिया","कार्सिनोमा","सारकोमा","लिम्फोमा"], answer: "ल्यूकेमिया", chapter: "विविध" },
+            { id: 97, question: "कोकीन किस रसायन को स्रावित करने में हस्तक्षेप करता है?", options: ["डोपामाइन","एसीटाइलकोलीन","सेरोटोनिन","गैबा"], answer: "डोपामाइन", chapter: "विविध" },
+            { id: 98, question: "कौन सा रोग केवल संक्रमित मादा एनाफिलीज मच्छर के काटने से फैलता है?", options: ["मलेरिया","टाइफाइड","एड्स","निमोनिया"], answer: "मलेरिया", chapter: "विविध" },
+            { id: 99, question: "एंटीबॉडी का वह हिस्सा जो एंटीजन से जुड़ता है:", options: ["पैराटॉप (Paratope)","एपीटोप","वेरिएबल क्षेत्र","स्थिर क्षेत्र"], answer: "पैराटॉप (Paratope)", chapter: "विविध" },
+            { id: 100, question: "WHO का पूर्ण रूप क्या है?", options: ["विश्व स्वास्थ्य संगठन","विश्व हृदय संगठन","विश्व स्वास्थ्य व्यवस्थापन","विश्व मानव संगठन"], answer: "विश्व स्वास्थ्य संगठन", chapter: "विविध" }
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            let currentChapter = '';
+
+            testQuestions.forEach((mcq, index) => {
+                // अध्याय के आधार पर हेडिंग जोड़ना
+                if (mcq.chapter !== currentChapter) {
+                    htmlContent += `<h3>${mcq.chapter.toUpperCase()}</h3>`;
+                    currentChapter = mcq.chapter;
+                }
+
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    const displayOption = option; 
+
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${displayOption}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+
+                const correctAnswerDisplay = mcq.answer;
+
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! स्वास्थ्य और रोग पर आपकी पकड़ मजबूत है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। मुख्य अवधारणाओं पर अधिक ध्यान दें।' : 'सिद्धांतों को फिर से दोहराएं।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

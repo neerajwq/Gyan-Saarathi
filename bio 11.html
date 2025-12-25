@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जीव और समष्टियाँ - कक्षा 12 जीवविज्ञान (UP Board)</title>
+    <style>
+           :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        h1 {
+            text-align: center;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .box {
+            border-left: 5px solid #3498db;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+        }
+        svg {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+    <h1>जीव और समष्टियाँ (Organisms and Populations)</h1>
+
+    <div class="box">
+        <h2>1. जीव और पर्यावरण</h2>
+        <p>
+            जीव (Organism) किसी भी स्वतंत्र जीवन इकाई को कहते हैं।  
+            पर्यावरण (Environment) वह बाहरी वातावरण है जिसमें जीव रहते हैं।  
+            पर्यावरण में शामिल हैं: **जैविक घटक (Biotic Factors)** और **अजैविक घटक (Abiotic Factors)**।
+        </p>
+        <ul>
+            <li><b>जैविक घटक:</b> जीवों से जुड़े, जैसे शिकार, शिकारी, सहजीवी, रोगजनक आदि।</li>
+            <li><b>अजैविक घटक:</b> भूमि, जल, तापमान, प्रकाश, आर्द्रता आदि।</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>2. Population (जनसंख्या)</h2>
+        <p>
+            जनसंख्या (Population) एक ही प्रजाति के सभी जीवों का किसी विशेष क्षेत्र में समूह।  
+            जनसंख्या के प्रमुख लक्षण हैं:
+        </p>
+        <ul>
+            <li>घनत्व (Density)</li>
+            <li>वितरण (Dispersion)</li>
+            <li>आयु संरचना (Age Structure)</li>
+            <li>लिंग अनुपात (Sex Ratio)</li>
+            <li>प्रजनन दर (Natality) और मृत्यु दर (Mortality)</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>3. Population Growth (जनसंख्या वृद्धि)</h2>
+        <p>जनसंख्या वृद्धि के प्रकार:</p>
+        <ul>
+            <li><b>ज्यामितीय वृद्धि (Geometric / Exponential Growth):</b> पर्याप्त संसाधन होने पर।</li>
+            <li><b>लघुगणकीय वृद्धि (Logistic Growth):</b> संसाधनों की कमी के कारण बढ़त धीमी।</li>
+        </ul>
+
+        <h3>Logistic Growth Curve (S-shaped)</h3>
+        <svg width="400" height="300">
+            <!-- Axes -->
+            <line x1="50" y1="250" x2="350" y2="250" stroke="black" stroke-width="2"/>
+            <line x1="50" y1="250" x2="50" y2="50" stroke="black" stroke-width="2"/>
+            <!-- Logistic Curve -->
+            <path d="M50 250 C100 200, 200 100, 350 60" stroke="#27ae60" stroke-width="3" fill="transparent"/>
+            <!-- Labels -->
+            <text x="355" y="255" font-size="12">Time</text>
+            <text x="20" y="50" font-size="12" transform="rotate(-90 20,50)">Population</text>
+            <text x="200" y="40" font-size="12" fill="#27ae60">S-shaped Curve</text>
+        </svg>
+    </div>
+
+    <div class="box">
+        <h2>4. Population Interactions (जनसंख्या परस्पर क्रिया)</h2>
+        <ul>
+            <li><b>Competition (स्पर्धा):</b> संसाधन के लिए प्रतिद्वंद्विता।</li>
+            <li><b>Predation (शिकार):</b> शिकारी और शिकार संबंध।</li>
+            <li><b>Mutualism (परस्पर सहजीवन):</b> दोनों प्रजातियों को लाभ।</li>
+            <li><b>Commensalism (एकपक्षीय लाभ):</b> एक को लाभ, दूसरे को हानि नहीं।</li>
+            <li><b>Parasitism (परजीवी संबंध):</b> एक को लाभ, दूसरे को हानि।</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>5. Community (समुदाय)</h2>
+        <p>
+            समुदाय (Community) एक ही क्षेत्र में रहने वाली सभी विभिन्न प्रजातियों की जनसंख्या।  
+            विशेषताएँ:
+        </p>
+        <ul>
+            <li>Species diversity (प्रजाति विविधता)</li>
+            <li>Dominance (प्रमुख प्रजातियाँ)</li>
+            <li>Keystone species (महत्वपूर्ण प्रजाति)</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>6. Ecosystem (पारितंत्र)</h2>
+        <p>
+            पारितंत्र एक जीव समुदाय और उसका अजैविक पर्यावरण है।  
+            इसमें ऊर्जा प्रवाह और पोषक चक्र शामिल हैं।
+        </p>
+        <ul>
+            <li><b>Producers (उत्पादक):</b> पौधे, जो सौर ऊर्जा को रासायनिक ऊर्जा में बदलते हैं।</li>
+            <li><b>Consumers (उपभोक्ता):</b> जानवर जो पौधे या अन्य जानवर खाते हैं।</li>
+            <li><b>Decomposers (अपघटक):</b> बैक्टीरिया और कवक, जो मृत जैविक पदार्थ को विघटित करते हैं।</li>
+        </ul>
+
+        <h3>Energy Flow Diagram</h3>
+        <svg width="400" height="200">
+            <rect x="50" y="150" width="60" height="30" fill="#2ecc71"/>
+            <text x="55" y="170" font-size="12" fill="white">Producer</text>
+            <rect x="150" y="120" width="60" height="30" fill="#3498db"/>
+            <text x="155" y="140" font-size="12" fill="white">Primary Consumer</text>
+            <rect x="250" y="90" width="60" height="30" fill="#e74c3c"/>
+            <text x="255" y="110" font-size="12" fill="white">Secondary Consumer</text>
+            <line x1="80" y1="150" x2="180" y2="120" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="180" y1="120" x2="280" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                    <path d="M0,0 L0,10 L10,5 z" fill="#000"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="box">
+        <h2>7. Summary</h2>
+        <p>
+            जीव और समष्टियाँ अध्याय में हमने जाना कि:
+        </p>
+        <ul>
+            <li>Population क्या है और उसके मुख्य लक्षण।</li>
+            <li>Population Growth के प्रकार और logistic curve।</li>
+            <li>Population Interactions जैसे competition, predation, parasitism।</li>
+            <li>Community और Ecosystem के घटक और ऊर्जा प्रवाह।</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

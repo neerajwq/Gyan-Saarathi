@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हैलोएल्केन्स और हैलोएरिन्स - रसायन विज्ञान (Class 12 Chemistry)</title>
+  <style>
+      :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    .box {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    svg {
+      border: 1px solid #ccc;
+      margin: 10px 0;
+      max-width: 100%;
+    }
+    .reaction {
+      background-color: #eef;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="box">
+  <h1>हैलोएल्केन्स और हैलोएरिन्स</h1>
+  <p>हैलोएल्केन्स और हैलोएरिन्स कार्बनिक यौगिक हैं जिनमें कार्बन और हाइड्रोजन के अलावा हॅलोजन (Cl, Br, I, F) का एक या अधिक परमाणु जुड़े होते हैं। ये यौगिक रासायनिक दृष्टि से महत्वपूर्ण हैं और कई औद्योगिक एवं प्रयोगशाला प्रतिक्रियाओं में उपयोगी हैं।</p>
+</div>
+
+<div class="box">
+  <h2>1. हैलोएल्केन्स (Haloalkanes)</h2>
+  <p>हैलोएल्केन्स, जिन्हें <b>अल्किल हैलाइड्स</b> भी कहते हैं, ऐसे यौगिक हैं जिनमें एक या अधिक हॅलोजन परमाणु सीधे <b>sp³ हाइब्रिड कार्बन</b> से जुड़े होते हैं।</p>
+  
+  <h3>सामान्य सूत्र</h3>
+  <p>R–X (जहाँ R = alkyl group, X = F, Cl, Br, I)</p>
+  
+  <h3>श्रेणियाँ</h3>
+  <ul>
+    <li>Primary (1°): RX में C केवल एक अन्य C से जुड़ा है</li>
+    <li>Secondary (2°): C दो अन्य C से जुड़ा</li>
+    <li>Tertiary (3°): C तीन अन्य C से जुड़ा</li>
+  </ul>
+
+  <h3>प्रमुख प्रतिक्रियाएँ</h3>
+  <div class="reaction">
+    1. <b>Substitution (प्रतिस्थापन)</b> – RX + NaOH → ROH + NaX<br>
+    2. <b>Elimination (उत्सर्जन)</b> – RX + alcoholic KOH → Alkene + HX<br>
+    3. <b>Grignard Formation</b> – RX + Mg → RMgX
+  </div>
+
+  <h3>संरचनात्मक उदाहरण (SVG)</h3>
+  <svg width="300" height="100">
+    <!-- CH3-CH2-Cl का संरचना -->
+    <line x1="50" y1="50" x2="100" y2="50" stroke="black" stroke-width="2"/>
+    <line x1="50" y1="50" x2="50" y2="30" stroke="black" stroke-width="2"/>
+    <text x="40" y="25" font-size="14">H</text>
+    <line x1="50" y1="50" x2="30" y2="50" stroke="black" stroke-width="2"/>
+    <text x="20" y="55" font-size="14">H</text>
+    <text x="100" y="45" font-size="14">Cl</text>
+    <text x="45" y="70" font-size="14">CH3</text>
+  </svg>
+</div>
+
+<div class="box">
+  <h2>2. हैलोएरिन्स (Haloarenes)</h2>
+  <p>हैलोएरिन्स, जिन्हें <b>अरोमेटिक हैलाइड्स</b> भी कहते हैं, ऐसे यौगिक हैं जिनमें हॅलोजन परमाणु सीधे <b>बेंज़ीन रिंग</b> से जुड़े होते हैं।</p>
+
+  <h3>सामान्य सूत्र</h3>
+  <p>C6H5–X (X = Cl, Br, I)</p>
+
+  <h3>मुख्य प्रतिक्रियाएँ</h3>
+  <div class="reaction">
+    1. <b>Nucleophilic Substitution:</b> Ar–X + NaOH → Ar–OH + NaX<br>
+    2. <b>Electrophilic Substitution:</b> Ar–X + HNO3 → Nitroarene + HX (Catalyst: H2SO4)
+  </div>
+
+  <h3>संरचनात्मक उदाहरण (SVG)</h3>
+  <svg width="300" height="150">
+    <!-- C6H5-Cl (Chlorobenzene) -->
+    <polygon points="150,20 180,50 165,90 135,90 120,50" fill="none" stroke="black" stroke-width="2"/>
+    <text x="155" y="15" font-size="14">Cl</text>
+  </svg>
+</div>
+
+<div class="box">
+  <h2>3. महत्वपूर्ण बातें</h2>
+  <ul>
+    <li>Haloalkanes अधिक प्रतिक्रियाशील होते हैं।</li>
+    <li>Haloarenes स्थिर होते हैं और केवल विशेष परिस्थितियों में प्रतिक्रियाशील।</li>
+    <li>Grignard reagents बनाने के लिए Haloalkanes का प्रयोग होता है।</li>
+    <li>Nucleophilic substitution प्रतिक्रियाएँ SN1 और SN2 मैकेनिज़्म से होती हैं।</li>
+    <li>Haloarenes electrophilic substitution में meta / ortho / para चयन दिखाते हैं।</li>
+  </ul>
+</div>
+
+<div class="box">
+  <h2>4. प्रयोगशाला टिप्स और याद रखने योग्य बातें</h2>
+  <ol>
+    <li>Primary haloalkane SN2, tertiary SN1 प्रतिक्रियाओं में जल्दी प्रतिक्रिया करते हैं।</li>
+    <li>Haloarenes electrophilic substitution के लिए बेंज़ीन रिंग को electron-withdrawing/deactivating groups प्रभावित करते हैं।</li>
+    <li>Grignard reagent का उपयोग alcohols, acids और ketones बनाने में होता है।</li>
+  </ol>
+</div>
+
+<div class="box">
+  <h2>5. महत्वपूर्ण प्रश्न (Exam Tips)</h2>
+  <ol>
+    <li>Haloalkanes और Haloarenes की संरचना और गुण बताइए।</li>
+    <li>SN1 और SN2 मैकेनिज़्म के उदाहरण लिखिए।</li>
+    <li>Electrophilic substitution प्रतिक्रिया का वर्णन कीजिए।</li>
+    <li>Haloalkanes से Grignard reagent बनाने की प्रक्रिया समझाइए।</li>
+  </ol>
+</div>
+
+</body>
+</html>

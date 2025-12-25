@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 3 — धारा एवं विद्युत प्रतिरोध (Current Electricity) — Class 12 Physics</title>
+<style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+  body{font-family:'Noto Sans Devanagari',system-ui,Arial;line-height:1.6;padding:20px;background:#f7fbff;color:#0b1220}
+  .container{max-width:980px;margin:0 auto}
+  header{text-align:center;margin-bottom:18px}
+  /* h1{color:#0b66a3} */
+  /* h2{color:#0e3b5b} */
+  .card{background:#ffffff;padding:14px;border-radius:8px;margin:12px 0;box-shadow:0 6px 18px rgba(10,30,60,0.06)}
+  .formula{background:#eef6ff;padding:10px;border-left:4px solid #0b66a3;border-radius:6px;font-weight:600;margin:10px 0}
+  table{width:100%;border-collapse:collapse;margin-top:10px}
+  th,td{padding:8px;border:1px solid #e6eef8;text-align:left}
+  .notes{color:#4b5966}
+  pre{background:#f3f7fb;padding:10px;border-radius:6px;overflow:auto}
+</style>
+</head>
+<body>
+  <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+<div class="container">
+<header>
+  <h1>अध्याय 3 — धारा एवं विद्युत प्रतिरोध (Current Electricity)</h1>
+  <p class="notes">कक्षा 12 के NCERT अनुरूप सरल एवं संपूर्ण नोट्स — सभी महत्वपूर्ण सूत्रों के साथ।</p>
+</header>
+
+<section class="card">
+  <h2>1. विद्युत धारा (Electric Current)</h2>
+  <p>धारा वह दर है जिस पर चार्ज किसी कंडक्टर के किसी क्रॉस-सेक्शन से समय के साथ गुजरता है।</p>
+  <div class="formula">I = dq / dt</div>
+  <p>इकाई: ऐम्पियर (A) = C/s</p>
+</section>
+
+<section class="card">
+  <h2>2. प्रवाह वेग (Drift Velocity) और धारिता घनत्व</h2>
+  <p>यदि n = प्रति आयतन मुक्त इलेक्ट्रॉनों की संख्या, A = क्षेत्रफल, v_d = drift velocity, q = आवेश प्रति इलेक्ट्रॉन (−e):</p>
+  <div class="formula">I = n A q v_d</div>
+  <p>धारिता घनत्व:</p>
+  <div class="formula">J = I / A = n q v_d</div>
+</section>
+
+<section class="card">
+  <h2>3. प्रतिरोध (Resistance) और ओम का नियम (Ohm's Law)</h2>
+  <p>ओम का नियम: किसी चालक में बह रही धारा उसके सिरों पर लगने वाले विभवांतर के समानुपाती होती है:</p>
+  <div class="formula">V = I R</div>
+  <p>प्रतिरोध का मान पदार्थ, आकार और तापमान पर निर्भर करता है।</p>
+  <div class="formula">R = ρ (L / A)</div>
+  <p>जहाँ ρ = resistivity, L = लंबाई, A = क्रॉस-सेक्शनल क्षेत्र।</p>
+</section>
+
+<section class="card">
+  <h2>4. विशिष्ट प्रतिरोध (Resistivity) तथा ताप पर प्रभाव</h2>
+  <div class="formula">ρ = R A / L</div>
+  <p>ताप पर परिवर्तन (लगभग रेखीय):</p>
+  <div class="formula">ρ_T = ρ_0 [1 + α (T - T_0)]</div>
+  <p>यहाँ α = ताप गुणांक (temperature coefficient) of resistivity.</p>
+</section>
+
+<section class="card">
+  <h2>5. ऊर्जा और शक्ति (Power & Energy)</h2>
+  <div class="formula">P = VI = I²R = V² / R</div>
+  <p>ऊर्जा (t समय में):</p>
+  <div class="formula">W = P t = V I t</div>
+</section>
+
+<section class="card">
+  <h2>6. श्रृंखला एवं समान्तर प्रतिरोध (Series & Parallel Resistors)</h2>
+  <h3>श्रृंखला (Series)</h3>
+  <div class="formula">R_eq = R₁ + R₂ + R₃ + ...</div>
+  <h3>समान्तर (Parallel)</h3>
+  <div class="formula">1 / R_eq = 1 / R₁ + 1 / R₂ + ...</div>
+</section>
+
+<section class="card">
+  <h2>7. कर्चहॉफ के नियम (Kirchhoff's Laws)</h2>
+  <p><b>कर्चहॉफ का प्रथम नियम (Junction Rule):</b> junction पर आनी वाली धाराएँ बराबर होती हैं जाने वाली धाराओं के योग के।</p>
+  <p><b>कर्चहॉफ का द्वितीय नियम (Loop Rule):</b> किसी बंद लूप में सभी विभवांतर का कुल शून्य होता है।</p>
+</section>
+
+<section class="card">
+  <h2>8. स्रोत (EMF) और आभ्यंतर प्रतिरोध (Internal Resistance)</h2>
+  <p>यदि किसी स्रोत की EMF = 𝓔 और आभ्यंतर प्रतिरोध r हो, तथा बाह्य प्रतिरोध R जुड़ा हो तो:</p>
+  <div class="formula">I = 𝓔 / (R + r)</div>
+  <p>विभव गिरावट बाह्य प्रतिरोध पर: V = I R = 𝓔 (R / (R + r))</p>
+</section>
+
+<section class="card">
+  <h2>9. वोल्टमीटर, एम्पीमीटर और शक्ति मापन</h2>
+  <ul>
+    <li>वोल्टमीटर: उच्च प्रतिरोध का, मापन के लिए सर्किट में समान्तर जोड़ा जाता है।</li>
+    <li>एम्पीमीटर: निम्न प्रतिरोध का, सिरीज़ में जोड़ा जाता है।</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>10. तापीय प्रभाव तथा जूल का नियम (Heating Effect, Joule's Law)</h2>
+  <p>किसी चालक में I धारा बहने पर t समय में निकलने वाली ऊष्मा:</p>
+  <div class="formula">H = I² R t</div>
+</section>
+
+<section class="card">
+  <h2>11. उपयोगी फॉर्मूलास (Quick Formula Sheet)</h2>
+  <table>
+    <tr><th>विषय</th><th>सूत्र</th></tr>
+    <tr><td>धारा</td><td>I = dq/dt</td></tr>
+    <tr><td>ड्रिफ्ट वेग</td><td>I = n A q v_d</td></tr>
+    <tr><td>धारिता घनत्व</td><td>J = I / A</td></tr>
+    <tr><td>ओम का नियम</td><td>V = IR</td></tr>
+    <tr><td>प्रतिरोध</td><td>R = ρ L / A</td></tr>
+    <tr><td>शक्ती</td><td>P = VI = I²R = V²/R</td></tr>
+    <tr><td>ऊष्मा (जूल)</td><td>H = I² R t</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>12. उदाहरण प्रश्न (Solved Examples)</h2>
+  <div class="formula">उदाहरण 1: अगर R = 5 Ω और V = 10 V, तो I = ? → I = V / R = 2 A</div>
+  <div class="formula">उदाहरण 2: 2 Ω और 3 Ω श्रृंखला में हैं और 6 V स्रोत से जुड़े हैं, I = 6 / (2+3) = 6/5 A</div>
+</section>
+
+<footer class="notes">
+  आपने कहा था कि Chapter 3 चाहिए — यह HTML फाइल उसी फॉर्मैट में तैयार है जैसा आप Chapter 1 और 2 के लिए लिया करते थे।
+  मैं इसे PDF में बदल सकता/सकती हूँ या आगे MCQ/न्यूमेरिकल जोड़ सकता/सकती हूँ।
+</footer>
+</div>
+</body>
+</html>

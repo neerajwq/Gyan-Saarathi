@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 भौतिकी: मॉक टेस्ट 3 (प्रकाशिकी)</title>
+    <style>
+        /* CSS Styling from user's template */
+            :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग (पहले जैसा) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+          header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #a0522d; 
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #ebe8d2;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            background-color: #6a5acd; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #5d4aa0;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #a0522d;
+            border-radius: 8px;
+            background-color: #faf0e6;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 भौतिकी - मॉक टेस्ट 3 💡</h1>
+        <h2>इकाई VI: प्रकाशिकी (किरण और तरंग) (100 MCQs)</h2>
+        <p>समय: 60 मिनट | कुल अंक: 100 (वर्तमान में 30 नमूना प्रश्न)</p>
+    </div>
+    
+
+[Image of ray diagram for total internal reflection]
+
+
+    <form id="quizForm">
+        </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (30 नमूना प्रश्न) ---
+        const testQuestions = [
+            // किरण प्रकाशिकी (Ray Optics)
+//  { id: 1, question: "एक समतल दर्पण द्वारा उत्पन्न आवर्धन (Magnification) $m$ का मान क्या होता है?", options: ["$m > 1$", "$m < 1$", "$m = 1$", "$m = 0$"], answer: "$m = 1$", chapter: "किरण प्रकाशिकी" },
+{ id:1, question:"किसे आयन कहा जाता है?", options:["चार्जयुक्त कण","न्यूट्रल कण","प्रकाश कण","तरंग"], ans:"चार्जयुक्त कण", chapter:"Atoms"},
+{ id:202, question:"फ्री क्वार्क अस्तित्व किसने सुझाया?", options:["मरे","हिग्स","क्यूक","ग्लूऑन"], ans:"क्वार्क", chapter:"Particle"},
+{ id:3, question:"नाभिकीय विखंडन में क्या निकलता है?", options:["ऊर्जा","ध्वनि","प्रकाश","किसी नहीं"], ans:"ऊर्जा", chapter:"Nuclear"},
+{ id:204, question:"यूनिफॉर्म वेग का अर्थ?", options:["स्थिति नहीं बदलती","वेग समान होता है","रोधी त्वरण","तेज़ी"], ans:"वेग समान होता है", chapter:"Kinematics"},
+{ id:205, question:"एक स्थिर परिपथ में संधारित्र का कार्य क्या है?", options:["ऊर्जा संग्रहण","ऊर्जा उत्पादन","करंट बढ़ाना","उष्मा देना"], ans:"ऊर्जा संग्रहण", chapter:"Circuit"},
+{ id:206, question:"श्रव्य रेंज मानव का क्या है?", options:["20Hz-20kHz","1Hz-100Hz","20kHz-200kHz","0.1Hz-1Hz"], ans:"20Hz-20kHz", chapter:"Waves"},
+{ id:207, question:"इलेक्ट्रॉन की परिभाषा?", options:["ऋणात्मक चार्ज कण","धनात्मक","न्यूट्रॉन","प्रोटॉन"], ans:"ऋणात्मक चार्ज कण", chapter:"Particles"},
+{ id:208, question:"किसे पायथागोरस का नियम लागू होता है?", options:["त्रिभुज पर","द्रव प्रवाह पर","तरंग पर","विलक्षण"], ans:"त्रिभुज पर", chapter:"Math"},
+{ id:209, question:"लेंस के समतल का नाम?", options:["पृष्ठीय सतह","गोल सतह","त्रिभुज","कोण"], ans:"पृष्ठीय सतह", chapter:"Optics"},
+{ id:210, question:"फोटॉन का द्रव्यमान?", options:["0","प्रोटोन जितना","इलेक्ट्रॉन जितना","असीम"], ans:"0", chapter:"Quantum"},
+{ id:211, question:"ऊष्मागतिकी का पहला नियम क्या है?", options:["ऊर्जा संरक्षण","ऊर्जा नष्ट","ऊर्जा बनाई","ऊर्जा बढ़ती"], ans:"ऊर्जा संरक्षण", chapter:"Thermo"},
+{ id:212, question:"स्पेस में गुरुत्वाकर्षण प्रभाव किसकी वजह से होता है?", options:["द्रव्यमान","ऊर्जा","दाब","वोल्टेज"], ans:"द्रव्यमान", chapter:"Gravitation"},
+{ id:213, question:"किस वस्तु में ध्वनि की गति सबसे कम?", options:["वायु","पानी","स्टील","वैक्यूम"], ans:"वैक्यूम", chapter:"Waves"},
+{ id:214, question:"किसे बिना इंटरफेरेंस कहा जाता है?", options:["कोहेरेंट स्रोत","असंबद्ध स्रोत","एकल स्रोत","कोई नहीं"], ans:"असंबद्ध स्रोत", chapter:"Waves"},
+{ id:215, question:"रेनॉल्ड्स संख्या किस क्षेत्र में प्रयुक्त होती है?", options:["द्रव गतिशीलता","विद्युत परिपथ","ऊष्मा संचार","विकिरण"], ans:"द्रव गतिशीलता", chapter:"Fluid"},
+{ id:216, question:"इलेक्ट्रॉन विद्युतीय परिपथ में किस दिशा में चलते हैं?", options:["नकारात्मक से धनात्मक","धनात्मक से नकारात्मक","दोनों","स्टेशनरी"], ans:"नकारात्मक से धनात्मक", chapter:"Electricity"},
+{ id:217, question:"किसे हाइड्रोस्टेटिक्स कहते हैं?", options:["स्थिर द्रव विज्ञानी","तरल प्रवाह","गैस गतिशीलता","रेडियो"], ans:"स्थिर द्रव विज्ञानी", chapter:"Fluid"},
+{ id:218, question:"एक सरल पेंडुलम का आवर्तन क्या प्रभावित नहीं करता?", options:["द्रव्यमान","लंबाई","गुरुत्व त्वरण","शुरुआती कोण (छोटे)"], ans:"द्रव्यमान", chapter:"Oscillation"},
+{ id:219, question:"किसे शून्य ताप कहा जाता है?", options:["0K","0°C","0°F","0R"], ans:"0K", chapter:"Thermo"},
+{ id:220, question:"IC (इंटीग्रेटेड सर्किट) किसके लिए प्रयुक्त है?", options:["कम्पैक्ट सर्किट्स","विशाल मशीन","ताप उत्पादन","तात्कालिक प्रकाश"], ans:"कम्पैक्ट सर्किट्स", chapter:"Electronics"},
+{ id:221, question:"समान्तर प्लेटों वाले कैपेसिटर की धारिता किस पर निर्भर करती है?", options:["प्लेट क्षेत्र और दूरी","प्लेट रंग","वोल्टेज","आवृत्ति"], ans:"प्लेट क्षेत्र और दूरी", chapter:"Circuit"},
+{ id:222, question:"रेखीय गति का समाकलन किसे देता है?", options:["दूरी","वेग","त्वरण","ऊर्जा"], ans:"दूरी", chapter:"Kinematics"},
+{ id:223, question:"दूरबीन किस सिद्धांत से काम करती है?", options:["दूरस्थ छवि का निर्माण","ध्वनि संकेंद्रण","ताप फैलाव","चुंबकत्व"], ans:"दूरस्थ छवि का निर्माण", chapter:"Optics"},
+{ id:224, question:"वैक्यूम में प्रकाश की तरंगदैर्ध्य क्या प्रभावित करती है?", options:["कहीं नहीं","माध्यम से पहले","द्रव्यमान से","वोल्टेज से"], ans:"कहीं नहीं", chapter:"Optics"},
+{ id:225, question:"किसे बैक EMF कहते हैं?", options:["इंड्यूस EMF जो मोटर में उत्पन्न होता है","वोल्टेज बढ़ाना","धारा बढ़ाना","ऊष्मा"], ans:"इंड्यूस EMF जो मोटर में उत्पन्न होता है", chapter:"EM"},
+{ id:226, question:"इलेक्ट्रोमोटिव फोर्स का अर्थ?", options:["EMF = वोल्टेज स्रोत","प्रतिरोध","करंट","ऊर्जा"], ans:"EMF = वोल्टेज स्रोत", chapter:"Electricity"},
+{ id:227, question:"क्वांटम टनलिंग किसका उदाहरण है?", options:["कण का बाधा पार करना","वोल्टेज उत्पन्न","शोर घटाना","द्रव्यमान बढ़ना"], ans:"कण का बाधा पार करना", chapter:"Quantum"},
+{ id:228, question:"एक परिपथ में शक्ति का SI यूनिट क्या है?", options:["वाट","वोल्ट","ओम","जूल"], ans:"वाट", chapter:"Electricity"},
+{ id:229, question:"लेज़र प्रकाश का क्या गुण है?", options:["कोहेरेंट और एक रंग","कोहेरेंट नहीं","बहु-रंग","तेज़ विलयन"], ans:"कोहेरेंट और एक रंग", chapter:"Optics"},
+{ id:230, question:"किसे फिजिक्स में प्रयोगात्मक त्रुटि कहते हैं?", options:["माप में अंतरतम गलतियाँ","प्रयोग का असफल होना","प्रयोगशाला का नुकसान","कोई नहीं"], ans:"माप में अंतरतम गलतियाँ", chapter:"Experiment"},
+{ id:231, question:"रेडियो तरंगें किस माध्यम में फैलती हैं?", options:["वायु और वैक्यूम","केवल पानी","केवल स्टील","केवल कांच"], ans:"वायु और वैक्यूम", chapter:"EM"},
+{ id:232, question:"किसे पेटेंट रूप में उपयोगी उपकरण कहा जा सकता है?", options:["नवोन्मेष और उपयोगी यंत्र","विशुद्ध सिद्धांत","कोई नहीं","शैक्षिक"], ans:"नवोन्मेष और उपयोगी यंत्र", chapter:"General"},
+{ id:233, question:"किसे डाइरेक्टेड पावर कहा जाता है?", options:["DC","AC","RF","LF"], ans:"DC", chapter:"Electricity"},
+{ id:234, question:"इलेक्ट्रॉनिक सिग्नल में शोर क्या करता है?", options:["सिग्नल खराब करता है","सिग्नल बढ़ाता है","ऊर्जा बनता है","कुछ नहीं"], ans:"सिग्नल खराब करता है", chapter:"Electronics"},
+{ id:235, question:"किसे मापने के लिए मल्टीमीटर उपयोगी है?", options:["वोल्ट, करंट, प्रतिरोध","केवल ताप","केवल दाब","कोई नहीं"], ans:"वोल्ट, करंट, प्रतिरोध", chapter:"Instruments"},
+{ id:236, question:"स्रोत से श्रोता की ओर आवाज़ आने पर आवृत्ति क्या होती है?", options:["बढ़ी/घटी (डॉप्लर) ","समान","न्यूनतम","0"], ans:"बढ़ी/घटी (डॉप्लर) ", chapter:"Waves"},
+{ id:237, question:"स्मार्टफोन में GPS किसका उपयोग करता है?", options:["सैटेलाइट सिग्नल","ब्लूटूथ","वायरलेस चार्जिंग","RFID"], ans:"सैटेलाइट सिग्नल", chapter:"Communication"},
+{ id:238, question:"हाई वोल्टेज ट्रांसमिशन में क्या लाभ रहता है?", options:["कम करंट और कम हानि","ज़्यादा करंट","कम वोल्टेज","कोई नहीं"], ans:"कम करंट और कम हानि", chapter:"Power"},
+{ id:239, question:"किसे टर्मिनल वोल्टेज कहते हैं?", options:["लोड के साथ बैटरी का वोल्टेज","खाली वोल्टेज","आपात वोल्टेज","कोई नहीं"], ans:"लोड के साथ बैटरी का वोल्टेज", chapter:"Electricity"},
+{ id:240, question:"किसे समस्थिर (equilibrium) कहा जाता है?", options:["बलों का संतुलन","वेग बढ़ना","उष्मा बढ़ना","वोल्टेज घटाना"], ans:"बलों का संतुलन", chapter:"Dynamics"},
+{ id:241, question:"किसे शून्य प्रतिरोध कहा जाता है?", options:["सुपरकंडक्टर","इंसुलेटर","कंडक्टर","टर्मोस्टैट"], ans:"सुपरकंडक्टर", chapter:"Condensed"},
+{ id:242, question:"ड्रॉप का मतलब रिसिस्टिविटी में क्या होता है?", options:["वोल्टेज ड्रॉप","करंट ड्रॉप","प्रतिरोध ड्रॉप","दबाव ड्रॉप"], ans:"वोल्टेज ड्रॉप", chapter:"Circuit"},
+{ id:243, question:"किसे फोटो-इलेक्ट्रिक प्रभाव दिखाता है?", options:["फोटॉन इलेक्ट्रॉन निकालते हैं","प्रोटॉन बनाते हैं","न्यूट्रॉन हटाते हैं","कोई नहीं"], ans:"फोटॉन इलेक्ट्रॉन निकालते हैं", chapter:"Quantum"},
+{ id:244, question:"किसे मेकैनिकल वर्क कहा जाता है?", options:["बल × दूरी","वोल्ट × करंट","ऊष्मा × ताप","समय × आवृत्ति"], ans:"बल × दूरी", chapter:"Work"},
+{ id:245, question:"इलेक्ट्रिक फील्ड रेखाएँ किसे नहीं काटतीं?", options:["एक-दूसरे को","किसी चार्ज को","माध्यम को","कोई नहीं"], ans:"एक-दूसरे को", chapter:"EM"},
+{ id:246, question:"किसे फ्री-फॉल कहा जाता है?", options:["केवल गुरुत्व से गिरना","फ्रिक्शन से गिरना","वायु प्रतिरोध के साथ","बंदगृह में गिरना"], ans:"केवल गुरुत्व से गिरना", chapter:"Gravitation"},
+{ id:247, question:"सिक्वेंस में आवर्तता किसे बताती है?", options:["फ्रीक्वेंसी","दूरी","समय","ऊर्जा"], ans:"फ्रीक्वेंसी", chapter:"Waves"},
+{ id:248, question:"अपवर्तनांक किसे बताता है?", options:["माध्यम में प्रकाश की गति का अनुपात","ऊर्जा का अनुपात","वोल्टेज विभाजन","दाब"], ans:"माध्यम में प्रकाश की गति का अनुपात", chapter:"Optics"},
+{ id:249, question:"किसे ऑप्टिकल फाइबर का लाभ है?", options:["लंबी दूरी पर कम हानि डेटा ट्रांसमिशन","ऊष्मा संचरण","ध्वनि प्रसार","ऊर्जा उत्पादन"], ans:"लंबी दूरी पर कम हानि डेटा ट्रांसमिशन", chapter:"Communication"},
+{ id:250, question:"किसे इनफ्रारेड उपयोग होता है?", options:["ताप संकेत","दृश्य प्रकाश","रेडियो","एक्स-रे"], ans:"ताप संकेत", chapter:"EM"},
+{ id:251, question:"किसे अपवर्तक सूचक कहा जाता है?", options:["रेफ्रैक्सन इंडेक्स","रिफ्लेक्शन कोफ","वोल्टेज स्तर","वजन"], ans:"रेफ्रैक्सन इंडेक्स", chapter:"Optics"},
+{ id:252, question:"किसका प्रयोग स्पेक्ट्रोस्कोपी में होता है?", options:["प्रकाश का विश्लेषण","करंट मापन","दाब मापन","ताप मापन"], ans:"प्रकाश का विश्लेषण", chapter:"Optics"},
+{ id:253, question:"किसे न्यूटन के तीसरे नियम कहता है?", options:["प्रतिक्रिया का बराबर और विपरीत बल","गुरुत्व का नियम","ऊर्जा संरक्षण","वेग संरक्षण"], ans:"प्रतिक्रिया का बराबर और विपरीत बल", chapter:"Newton"},
+{ id:254, question:"किसे चिंतनशील (reflective) सतह कहलाती है?", options:["जो प्रकाश को परावर्तित करे","जो प्रकाश को अवशोषित करे","जो प्रकाश को उत्सर्जित करे","जो कब्जा करे"], ans:"जो प्रकाश को परावर्तित करे", chapter:"Optics"},
+{ id:255, question:"इलेक्ट्रॉनिक में MOSFET किसका प्रकार है?", options:["ट्रांजिस्टर","रेसिस्टर","कैपेसिटर","इंडक्टर"], ans:"ट्रांजिस्टर", chapter:"Electronics"},
+{ id:256, question:"किसे विद्युत आवेश संरक्षण का नियम बताता है?", options:["कुल आवेश स्थिर रहता है","आवेश बनता है","नष्ट होता है","अनियमित रहता है"], ans:"कुल आवेश स्थिर रहता है", chapter:"EM"},
+{ id:257, question:"किसे हॉल के नियम में जानकार होता है?", options:["चालक में वोल्टेज उत्पन्न","दाब घटाना","वायु गति","ताप बढ़ना"], ans:"चालक में वोल्टेज उत्पन्न", chapter:"EM"},
+{ id:258, question:"किसे कम्पास सुई का सिद्धांत बताता है?", options:["चुंबकीय क्षेत्र दिशानिर्देश","गुरुत्वाकर्षण","तापमान","दाब"], ans:"चुंबकीय क्षेत्र दिशानिर्देश", chapter:"Magnetism"},
+{ id:259, question:"किसे समताप प्रक्रिया कहते हैं?", options:["तापमान की एक समानता बनाए रखने वाली प्रक्रिया","गति बढ़ाने वाली","वोल्टेज घटाने वाली","दाब बढ़ाने वाली"], ans:"तापमान की एक समानता बनाए रखने वाली प्रक्रिया", chapter:"Thermo"},
+{ id:260, question:"वोल्ट-ऐम्पियर गुणांक किसे दर्शाता है?", options:["पावर","ऊर्जा","दाब","दूरी"], ans:"पावर", chapter:"Electricity"},
+{ id:261, question:"किसे इसेंट्रोपिक प्रक्रिया कहा जाता है?", options:["समान एंट्रोपी वाली प्रक्रिया","ऊर्जा-बर्बाद","वोल्टेज-घटती","दाब-घटती"], ans:"समान एंट्रोपी वाली प्रक्रिया", chapter:"Thermo"},
+{ id:262, question:"किसे सुपरपोजिशन सिद्धांत बताता है?", options:["लहरों के जोड़ने का नियम","ऊर्जा संरक्षण","दबाव नियम","न्यूटन का नियम"], ans:"लहरों के जोड़ने का नियम", chapter:"Waves"},
+{ id:263, question:"किसे प्राथमिक कोशिका कहा जाता है?", options:["एक बार इस्तेमाल करने वाली बैटरी","रीचार्जेबल बैटरी","AC स्रोत","ट्रांसफॉर्मर"], ans:"एक बार इस्तेमाल करने वाली बैटरी", chapter:"Electronics"},
+{ id:264, question:"किसे टर्बुलेंस कहा जाता है?", options:["अनियमित द्रव प्रवाह","समतल प्रवाह","स्थिर प्रवाह","न्यूनतम प्रवाह"], ans:"अनियमित द्रव प्रवाह", chapter:"Fluid"},
+{ id:265, question:"किसे वेग का परिमाण कहते हैं?", options:["केवल परिमाण","परिमाण और दिशा","सिर्‍फ दिशा","कोई नहीं"], ans:"केवल परिमाण", chapter:"Kinematics"},
+{ id:266, question:"किसे न्यूटन का प्रथम नियम कहता है?", options:["इंर्शिया (जड़त्व)" ,"बल और त्वरण","कूलॉम्ब प्रभाव","ऊर्जा संरक्षण"], ans:"इंर्शिया (जड़त्व)", chapter:"Newton"},
+{ id:267, question:"किसे प्रति-वाष्पन कहा जाता है?", options:["वाष्प से तरल में परिवर्तन","तरल से गैस","गैस से प्लाज़्मा","कोई नहीं"], ans:"वाष्प से तरल में परिवर्तन", chapter:"Thermo"},
+  { "id": 268, "question": "किसे परमाणु की ऊर्जा स्तर (energy level) कहा जाता है?", "options": ["स्थिर कक्ष", "अस्थिर कक्ष", "चुंबकीय क्षेत्र", "विकिरण"], "ans": "स्थिर कक्ष", "chapter": "Atomic" },
+  { "id": 269, "question": "प्रकाश की गति किसमें सबसे अधिक होती है?", "options": ["वैक्यूम", "पानी", "कांच", "हीरा"], "ans": "वैक्यूम", "chapter": "Optics" },
+  { "id": 270, "question": "किसे ऊष्मा का संचरण कहते हैं?", "options": ["ऊर्जा का उच्च से निम्न तापमान की ओर बहना", "दाब का बढ़ना", "वेग का घटना", "आवृत्ति का बढ़ना"], "ans": "ऊर्जा का उच्च से निम्न तापमान की ओर बहना", "chapter": "Thermo" },
+  { "id": 271, "question": "गतिज ऊर्जा (Kinetic Energy) का सूत्र क्या है?", "options": ["$E_k = \\frac{1}{2}mv^2$", "$E_k = mgh$", "$E_k = P \\times t$", "$E_k = F \\times d$"], "ans": "$E_k = \\frac{1}{2}mv^2$", "chapter": "Mechanics" },
+  { "id": 272, "question": "किसे रेज़िस्टेंस (Resistance) का SI यूनिट कहा जाता है?", "options": ["ओम", "वोल्ट", "एम्पीयर", "वाट"], "ans": "ओम", "chapter": "Electricity" },
+  { "id": 273, "question": "प्रोटॉन पर किस प्रकार का चार्ज होता है?", "options": ["धनात्मक", "ऋणात्मक", "शून्य", "दोनों"], "ans": "धनात्मक", "chapter": "Particles" },
+  { "id": 274, "question": "किसे प्रत्यावर्ती धारा (AC) की विशेषता कहा जाता है?", "options": ["समय के साथ दिशा और मान बदलना", "स्थिर दिशा", "शून्य आवृत्ति", "बहुत कम वोल्टेज"], "ans": "समय के साथ दिशा और मान बदलना", "chapter": "Electricity" },
+  { "id": 275, "question": "किसे न्यूटन का दूसरा नियम परिभाषित करता है?", "options": ["बल = द्रव्यमान × त्वरण", "क्रिया-प्रतिक्रिया", "जड़त्व", "ऊर्जा संरक्षण"], "ans": "बल = द्रव्यमान × त्वरण", "chapter": "Newton" },
+  { "id": 276, "question": "संवहन (Convection) द्वारा ऊष्मा संचरण कहाँ होता है?", "options": ["द्रव और गैसों में", "ठोसों में", "वैक्यूम में", "केवल धातुओं में"], "ans": "द्रव और गैसों में", "chapter": "Thermo" },
+  { "id": 277, "question": "अपवर्तन (Refraction) किसे कहते हैं?", "options": ["प्रकाश का एक माध्यम से दूसरे में जाने पर मुड़ना", "प्रकाश का परावर्तन", "प्रकाश का अवशोषण", "प्रकाश का फैलाव"], "ans": "प्रकाश का एक माध्यम से दूसरे में जाने पर मुल्डना", "chapter": "Optics" },
+  { "id": 278, "question": "किसे ध्वनि की तीव्रता का SI यूनिट कहा जाता है?", "options": ["डेसिबल", "हर्ट्ज़", "मीटर", "सेकंड"], "ans": "डेसिबल", "chapter": "Waves" },
+  { "id": 279, "question": "सूर्य से पृथ्वी तक ऊष्मा किस विधि से आती है?", "options": ["विकिरण (Radiation)", "चालन (Conduction)", "संवहन (Convection)", "सभी"], "ans": "विकिरण (Radiation)", "chapter": "Thermo" },
+  { "id": 280, "question": "किसे गैलीलियो का जड़त्व का नियम कहा जाता है?", "options": ["न्यूटन का प्रथम नियम", "न्यूटन का द्वितीय नियम", "गुरुत्वाकर्षण का नियम", "प्रकाश की गति"], "ans": "न्यूटन का प्रथम नियम", "chapter": "Mechanics" },
+  { "id": 281, "question": "ट्रांसफॉर्मर किस सिद्धांत पर काम करता है?", "options": ["म्युचुअल इंडक्शन", "विद्युत आवेश", "ओम का नियम", "केप्लर का नियम"], "ans": "म्युचुअल इंडक्शन", "chapter": "EM" },
+  { "id": 282, "question": "किसे बल का SI यूनिट कहा जाता है?", "options": ["न्यूटन", "जूल", "पास्कल", "वाट"], "ans": "न्यूटन", "chapter": "Mechanics" },
+  { "id": 283, "question": "एक तरंग की आवृत्ति किसे बताती है?", "options": ["प्रति सेकंड दोलनों की संख्या", "तरंग की लंबाई", "तरंग का आयाम", "तरंग की गति"], "ans": "प्रति सेकंड दोलनों की संख्या", "chapter": "Waves" },
+  { "id": 284, "question": "लेन्ज का नियम किससे संबंधित है?", "options": ["ऊर्जा संरक्षण", "द्रव्यमान संरक्षण", "संवेग संरक्षण", "आवेश संरक्षण"], "ans": "ऊर्जा संरक्षण", "chapter": "EM" },
+  { "id": 285, "question": "किसे कार्य का SI यूनिट कहा जाता है?", "options": ["जूल", "न्यूटन", "वाट", "पास्कल"], "ans": "जूल", "chapter": "Work" },
+  { "id": 286, "question": "अल्ट्रासाउंड तरंगों की आवृत्ति क्या होती है?", "options": ["20 kHz से अधिक", "20 Hz से कम", "20 Hz - 20 kHz के बीच", "कोई नहीं"], "ans": "20 kHz से अधिक", "chapter": "Waves" },
+  { "id": 287, "question": "किसे डायोड का मुख्य कार्य कहा जाता है?", "options": ["करंट को एक दिशा में बहने देना", "प्रतिरोध बढ़ाना", "वोल्टेज स्थिर करना", "आवृत्ति बदलना"], "ans": "करंट को एक दिशा में बहने देना", "chapter": "Electronics" },
+  { "id": 288, "question": "गुरुत्वाकर्षण स्थिरांक ($G$) का मान किसने निर्धारित किया?", "options": ["कैवेंडिश", "न्यूटन", "आइंस्टीन", "गैलीलियो"], "ans": "कैवेंडिश", "chapter": "Gravitation" },
+  { "id": 289, "question": "किसे संवेग (Momentum) का सूत्र कहा जाता है?", "options": ["$p = m \\times v$", "$p = F \\times t$", "$p = \\frac{1}{2}mv^2$", "$p = mgh$"], "ans": "$p = m \\times v$", "chapter": "Mechanics" },
+  { "id": 290, "question": "तरंगदैर्ध्य (Wavelength) किसे प्रभावित करता है?", "options": ["रंग/पिच", "तीव्रता", "आयाम", "गति"], "ans": "रंग/पिच", "chapter": "Optics/Waves" },
+  { "id": 291, "question": "किसे परमाणु बम का सिद्धांत कहा जाता है?", "options": ["नाभिकीय विखंडन", "नाभिकीय संलयन", "रासायनिक प्रतिक्रिया", "इलेक्ट्रोमैग्नेटिक प्रेरण"], "ans": "नाभिकीय विखंडन", "chapter": "Nuclear" },
+  { "id": 292, "question": "किसे कैपेसिटेंस (Capacitance) का SI यूनिट कहा जाता है?", "options": ["फैराड", "हेनरी", "सीमेंस", "वेबर"], "ans": "फैराड", "chapter": "Electricity" },
+  { "id": 293, "question": "हाइड्रोजन स्पेक्ट्रम में दृश्य क्षेत्र की श्रेणी क्या है?", "options": ["बाल्मर श्रेणी", "लाइमन श्रेणी", "पाश्चन श्रेणी", "ब्रैकेट श्रेणी"], "ans": "बाल्मर श्रेणी", "chapter": "Atomic" },
+  { "id": 294, "question": "सरल आवर्त गति (SHM) में त्वरण किसके अनुक्रमानुपाती होता है?", "options": ["विस्थापन", "वेग", "समय", "आयाम"], "ans": "विस्थापन", "chapter": "Oscillation" },
+  { "id": 295, "question": "किसे विद्युत धारा का SI यूनिट कहा जाता है?", "options": ["एम्पीयर", "वोल्ट", "ओम", "वाट"], "ans": "एम्पीयर", "chapter": "Electricity" },
+  { "id": 296, "question": "प्रिज्म द्वारा प्रकाश का फैलाव (Dispersion) क्या दिखाता है?", "options": ["प्रकाश का विभिन्न रंगों में बँटना", "परावर्तन", "अपवर्तन", "ध्रुवीकरण"], "ans": "प्रकाश का विभिन्न रंगों में बँटना", "chapter": "Optics" },
+  { "id": 297, "question": "आयाम (Amplitude) किसे बताता है?", "options": ["तरंग की अधिकतम विस्थापन", "तरंग की गति", "तरंगदैर्ध्य", "आवृत्ति"], "ans": "तरंग की अधिकतम विस्थापन", "chapter": "Waves" },
+  { "id": 298, "question": "किसे तरल दाब (Fluid Pressure) का SI यूनिट कहा जाता है?", "options": ["पास्कल", "न्यूटन", "जूल", "मोल"], "ans": "पास्कल", "chapter": "Fluid" },
+  { "id": 299, "question": "किसे आवेश (Charge) का SI यूनिट कहा जाता है?", "options": ["कूलॉम्ब", "वोल्ट", "फैराड", "एम्पीयर"], "ans": "कूलॉम्ब", "chapter": "Electricity" },
+  { "id": 300, "question": "एक आदर्श गैस की आंतरिक ऊर्जा किस पर निर्भर करती है?", "options": ["तापमान", "दाब", "आयतन", "दोनों (दाब और आयतन)"], "ans": "तापमान", "chapter": "Thermo" }
+   
+// **[यहां प्रश्न 31 से 100 तक जोड़े जाएंगे।]**
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        // (पिछले टेस्ट के समान, उत्तरों को रेंडर करने और जाँचने के लिए)
+
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            testQuestions.forEach((mcq, index) => {
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. [${mcq.chapter}] ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${option}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! प्रकाशिकी पर आपकी पकड़ मजबूत है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। तरंग प्रकाशिकी पर अधिक ध्यान दें।' : 'सिद्धांतों को फिर से दोहराएं।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

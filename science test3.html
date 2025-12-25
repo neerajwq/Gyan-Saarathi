@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 10 विज्ञान: संपूर्ण पाठ्यक्रम टेस्ट 3 (100 MCQs)</title>
+    <style>
+       :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:10px 40px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo-section { display:flex; align-items:center; }
+        .logo-img { height:40px; margin-right:15px; border-radius:50%; }
+        .logo-text h1 { font-size:1.5em; margin:0; }
+        .main-nav a { color:var(--text-light); text-decoration:none; margin:0 15px; }
+        .btn-mock-test {
+            background-color:var(--accent-orange);
+            color:var(--primary-blue) !important;
+            padding:8px 15px; border-radius:var(--border-radius); font-weight:bold;
+        }
+        .user-info i { font-size:1.5em; cursor:pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #4169e1; /* Royal Blue */
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #e0f0ff;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            background-color: #da70d6; /* Orchid */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #c060c0;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #4169e1;
+            border-radius: 8px;
+            background-color: #e6f7ff;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .explanation {
+            font-style: italic;
+            color: #6c757d;
+            margin-top: 5px;
+            padding: 5px 0;
+            border-top: 1px dashed #ccc;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo-section">
+        <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+        <div class="logo-text"><h1>Gyan Saarathi</h1></div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="home.html">HOME</a>
+        <a href="course.html">COURSE</a>
+        <a href="exersize.html">EXERSIZE</a>
+        <!-- <a href="riport.html">RIPORT</a> -->
+        <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+    </nav>
+
+    <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+    </div>
+</header>
+
+    <div class="header">
+        <h1>कक्षा 10 विज्ञान टेस्ट 3 💡</h1>
+        <p>100 बहुविकल्पीय प्रश्न (रसायन विज्ञान, जीव विज्ञान, भौतिक विज्ञान)</p>
+    </div>
+
+    <form id="quizForm">
+        </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी ---
+        const testQuestions = [
+            // रसायन विज्ञान (Chemistry)
+            { id: 1, question: "किस अभिक्रिया में दो या दो से अधिक अभिकर्मक मिलकर एकल उत्पाद बनाते हैं?", options: ["अपघटन", "संयोजन", "विस्थापन", "द्वि-विस्थापन"], answer: "संयोजन", chapter: "रासायनिक अभिक्रियाएँ" },
+            { id: 2, question: "चींटी के डंक में कौन-सा अम्ल मौजूद होता है?", options: ["लैक्टिक अम्ल", "फॉर्मिक अम्ल (मेथेनोइक अम्ल)", "सिट्रिक अम्ल", "एसिटिक अम्ल"], answer: "फॉर्मिक अम्ल (मेथेनोइक अम्ल)", chapter: "अम्ल, क्षारक और लवण" },
+            { id: 3, question: "गैलरी (Galvanization) में लोहे पर किस धातु की परत चढ़ाई जाती है?", options: ["तांबा", "चाँदी", "जिंक (जस्ता)", "टिन"], answer: "जिंक (जस्ता)", chapter: "धातु और अधातु" },
+            { id: 4, question: "वह हाइड्रोकार्बन जो त्रि बंध (Triple bond) धारण करता है, क्या कहलाता है?", options: ["एल्केन", "एल्कीन", "एल्काइन", "एल्केनेल"], answer: "एल्काइन", chapter: "कार्बन और उसके यौगिक" },
+            { id: 5, question: "आवर्त सारणी में सबसे अधिक विद्युत ऋणात्मक (Electronegative) तत्व कौन-सा है?", options: ["क्लोरीन", "ऑक्सीजन", "फ्लोरीन", "नाइट्रोजन"], answer: "फ्लोरीन", chapter: "तत्वों का आवर्त वर्गीकरण" },
+            { id: 6, question: "जिप्सम का रासायनिक सूत्र क्या है?", options: ["$CaSO_4$", "$CaSO_4.H_2O$", "$CaSO_4.2H_2O$", "$CaCO_3$"], answer: "$CaSO_4.2H_2O$", chapter: "अम्ल, क्षारक और लवण" },
+            { id: 7, question: "ईथाइन (Ethyne) का सामान्य नाम क्या है?", options: ["मीथेन", "एसिटिलीन", "प्रोपेन", "बेंजीन"], answer: "एसिटिलीन", chapter: "कार्बन और उसके यौगिक" },
+            { id: 8, question: "सफेद और काले फोटोग्राफी में किस अभिक्रिया का उपयोग किया जाता है?", options: ["संयोजन", "अपघटन (Decomposition)", "विस्थापन", "उदासीनीकरण"], answer: "अपघटन (Decomposition)", chapter: "रासायनिक अभिक्रियाएँ" },
+            { id: 9, question: "वह धातु जिसे चाकू से आसानी से काटा जा सकता है?", options: ["एल्युमीनियम", "सोडियम", "आयरन", "कॉपर"], answer: "सोडियम", chapter: "धातु और अधातु" },
+            { id: 10, question: "आवर्त सारणी में समूह में नीचे जाने पर धात्विक गुण (Metallic character) पर क्या प्रभाव पड़ता है?", options: ["बढ़ता है", "घटता है", "वही रहता है", "पहले घटता है फिर बढ़ता है"], answer: "बढ़ता है", chapter: "तत्वों का आवर्त वर्गीकरण" },
+            { id: 11, question: "विरंजक चूर्ण (Bleaching Powder) को बनाने के लिए किस गैस का उपयोग किया जाता है?", options: ["ऑक्सीजन", "हाइड्रोजन", "नाइट्रोजन", "क्लोरीन"], answer: "क्लोरीन", chapter: "अम्ल, क्षारक और लवण" },
+            { id: 12, question: "सिल्वर क्लोराइड ($AgCl$) का रंग क्या होता है?", options: ["हरा", "नीला", "सफेद", "पीला"], answer: "सफेद", chapter: "रासायनिक अभिक्रियाएँ" },
+            { id: 13, question: "हाइड्रोकार्बन के दहन का उत्पाद क्या है?", options: ["ऑक्सीजन और जल", "कार्बन डाइऑक्साइड और जल", "कार्बन डाइऑक्साइड और ऑक्सीजन", "केवल जल"], answer: "कार्बन डाइऑक्साइड और जल", chapter: "कार्बन और उसके यौगिक" },
+            { id: 14, question: "धातुएँ कैसी ऑक्साइड बनाती हैं?", options: ["अम्लीय", "क्षारीय", "उदासीन", "उभयधर्मी"], answer: "क्षारीय", chapter: "धातु और अधातु" },
+            { id: 15, question: "अपच (Indigestion) के उपचार के लिए किस प्रकार की दवा का उपयोग होता है?", options: ["एंटीबायोटिक", "एनाल्जेसिक", "एंटासिड (Antacid)", "एंटीसेप्टिक"], answer: "एंटासिड (Antacid)", chapter: "अम्ल, क्षारक और लवण" },
+            { id: 16, question: "मेंडलीफ की आवर्त सारणी में कितने आवर्त थे?", options: ["6", "7", "8", "9"], answer: "6", chapter: "तत्वों का आवर्त वर्गीकरण" },
+            { id: 17, question: "लोहे को संक्षारण से बचाने के लिए किस विधि का उपयोग किया जाता है?", options: ["पेंटिंग", "गैलरी", "तेल लगाना", "उपरोक्त सभी"], answer: "उपरोक्त सभी", chapter: "रासायनिक अभिक्रियाएँ" },
+            { id: 18, question: "कीटोन का कार्यात्मक समूह क्या है?", options: ["-CHO", "-COOH", "-CO-", "-OH"], answer: "-CO-", chapter: "कार्बन और उसके यौगिक" },
+            { id: 19, question: "वह धातु जो उभयधर्मी ऑक्साइड (Amphoteric Oxide) बनाती है?", options: ["सोडियम", "मैग्नीशियम", "एल्युमीनियम", "कॉपर"], answer: "एल्युमीनियम", chapter: "धातु और अधातु" },
+            { id: 20, question: "आवर्त सारणी में किस आवर्त में तत्वों की संख्या सबसे कम है?", options: ["पहला", "दूसरा", "तीसरा", "चौथा"], answer: "पहला", chapter: "तत्वों का आवर्त वर्गीकरण" },
+
+            // जीव विज्ञान (Biology)
+            { id: 21, question: "पौधों में कौन-सी प्रक्रिया उनके जीवित रहने के लिए आवश्यक नहीं है?", options: ["प्रकाश संश्लेषण", "श्वसन", "उत्सर्जन", "परिसंचरण"], answer: "परिसंचरण", chapter: "जैव प्रक्रम" },
+            { id: 22, question: "अंडाणु (Egg) और शुक्राणु (Sperm) के संलयन के बाद क्या बनता है?", options: ["भ्रूण", "युग्मनज (Zygote)", "डिंबवाहिनी नली", "प्लेसेंटा"], answer: "युग्मनज (Zygote)", chapter: "जनन" },
+            { id: 23, question: "इंसुलिन हार्मोन का कार्य क्या है?", options: ["विकास को नियंत्रित करना", "रक्त में शर्करा स्तर को नियंत्रित करना", "रक्तचाप बढ़ाना", "यौन विकास को नियंत्रित करना"], answer: "रक्त में शर्करा स्तर को नियंत्रित करना", chapter: "नियंत्रण एवं समन्वय" },
+            { id: 24, question: "पाचन के दौरान वसा (Fats) का पायसीकरण (Emulsification) कौन करता है?", options: ["पेप्सिन", "लाइपेज", "पित्त रस (Bile juice)", "लार"], answer: "पित्त रस (Bile juice)", chapter: "जैव प्रक्रम" },
+            { id: 25, question: "किस वैज्ञानिक ने 'प्राकृतिक चयन' (Natural Selection) का सिद्धांत दिया?", options: ["मेंडल", "लैमार्क", "चार्ल्स डार्विन", "मेण्डल"], answer: "चार्ल्स डार्विन", chapter: "आनुवंशिकता एवं जैव विकास" },
+            { id: 26, question: "मनुष्य में डायलिसिस (Dialysis) की आवश्यकता कब होती है?", options: ["हृदय की समस्या", "फेफड़ों की समस्या", "वृक्क (Kidney) की विफलता", "यकृत की विफलता"], answer: "वृक्क (Kidney) की विफलता", chapter: "जैव प्रक्रम" },
+            { id: 27, question: "अलैंगिक जनन से उत्पन्न संतान कैसी होती है?", options: ["आनुवंशिक रूप से भिन्न", "आनुवंशिक रूप से समान (क्लोन)", "आधे गुण माता के", "आधे गुण पिता के"], answer: "आनुवंशिक रूप से समान (क्लोन)", chapter: "जनन" },
+            { id: 28, question: "पौधों में प्रकाशानुवर्तन (Phototropism) का क्या अर्थ है?", options: ["जल की ओर वृद्धि", "प्रकाश की ओर वृद्धि", "गुरुत्वाकर्षण की ओर वृद्धि", "रासायनिक पदार्थ की ओर वृद्धि"], answer: "प्रकाश की ओर वृद्धि", chapter: "नियंत्रण एवं समन्वय" },
+            { id: 29, question: "पेट में प्रोटीन का पाचन किस एंजाइम द्वारा शुरू होता है?", options: ["एमाइलेज", "लाइपेज", "ट्रिप्सिन", "पेप्सिन"], answer: "पेप्सिन", chapter: "जैव प्रक्रम" },
+            { id: 30, question: "समरूप अंग (Analogous Organs) क्या दर्शाते हैं?", options: ["समान उत्पत्ति, समान कार्य", "समान उत्पत्ति, भिन्न कार्य", "भिन्न उत्पत्ति, समान कार्य", "भिन्न उत्पत्ति, भिन्न कार्य"], answer: "भिन्न उत्पत्ति, समान कार्य", chapter: "आनुवंशिकता एवं जैव विकास" },
+            { id: 31, question: "स्वपोषी पोषण के लिए आवश्यक कच्चा माल क्या है?", options: ["कार्बन डाइऑक्साइड और जल", "क्लोरोफिल", "सूर्य का प्रकाश", "उपरोक्त सभी"], answer: "उपरोक्त सभी", chapter: "जैव प्रक्रम" },
+            { id: 32, question: "मानव में एक अंडाणु के उत्पादन का स्थान क्या है?", options: ["डिंबवाहिनी नली", "गर्भाशय", "अंडाशय (Ovary)", "वृषण"], answer: "अंडाशय (Ovary)", chapter: "जनन" },
+            { id: 33, question: "तंत्रिका तंत्र की कार्यात्मक इकाई क्या है?", options: ["नेफ्रॉन", "एल्वेओली", "न्यूरॉन (Neuron)", "माइटोकॉन्ड्रिया"], answer: "न्यूरॉन (Neuron)", chapter: "नियंत्रण एवं समन्वय" },
+            { id: 34, question: "वह हार्मोन जो पौधों में कोशिका विभाजन को बढ़ावा देता है?", options: ["ऑक्सिन", "जिबरेलिन", "साइटोकिनिन", "एब्सिसिक अम्ल"], answer: "साइटोकिनिन", chapter: "नियंत्रण एवं समन्वय" },
+            { id: 35, question: "विकास का वह प्रमाण जो बताता है कि डायनासोर के साथ पक्षी जुड़े हुए हैं?", options: ["जीवाश्म", "समरूप अंग", "डीएनए", "कृत्रिम चयन"], answer: "जीवाश्म", chapter: "आनुवंशिकता एवं जैव विकास" },
+            { id: 36, question: "मनुष्य में हृदय का कौनसा भाग अशुद्ध (डीऑक्सीजनित) रक्त प्राप्त करता है?", options: ["बायाँ आलिंद", "दायाँ आलिंद", "बायाँ निलय", "दायाँ निलय"], answer: "दायाँ आलिंद", chapter: "जैव प्रक्रम" },
+            { id: 37, question: "पुनर्जनन (Regeneration) किस जीव में होता है?", options: ["अमीबा", "प्लैनेरिया", "ईस्ट", "राइजोपस"], answer: "प्लैनेरिया", chapter: "जनन" },
+            { id: 38, question: "खाद्य श्रृंखला में 'द्वितीयक उपभोक्ता' (Secondary Consumer) कौन हैं?", options: ["हरे पौधे", "शाकाहारी", "मांसाहारी", "अपघटक"], answer: "मांसाहारी", chapter: "हमारा पर्यावरण" },
+            { id: 39, question: "'चिपको आंदोलन' किससे संबंधित है?", options: ["जल संरक्षण", "जैव विविधता संरक्षण", "वन संरक्षण", "पवन ऊर्जा"], answer: "वन संरक्षण", chapter: "प्राकृतिक संसाधनों का प्रबंधन" },
+            { id: 40, question: "कचरे का वह प्रकार जो जैव निम्नीकरणीय (Biodegradable) है?", options: ["प्लास्टिक", "कांच", "सब्जियों के छिलके", "धातु के डिब्बे"], answer: "सब्जियों के छिलके", chapter: "हमारा पर्यावरण" },
+
+            // भौतिक विज्ञान (Physics)
+            { id: 41, question: "प्रकाश का अपवर्तनांक (Refractive Index) किस पर निर्भर करता है?", options: ["प्रकाश के रंग पर", "माध्यम की प्रकृति पर", "तापमान पर", "उपरोक्त सभी"], answer: "माध्यम की प्रकृति पर", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 42, question: "विद्युत परिपथ में 'विभवमापी' (Voltmeter) को किसमें जोड़ा जाता है?", options: ["श्रृंखला में", "समांतर में", "किसी भी तरह से", "केवल फ्यूज के बाद"], answer: "समांतर में", chapter: "विद्युत" },
+            { id: 43, question: "जब वस्तु को वक्रता केंद्र (C) पर रखा जाता है, तो अवतल दर्पण द्वारा बना प्रतिबिंब कहाँ बनता है?", options: ["फोकस पर", "फोकस और वक्रता केंद्र के बीच", "वक्रता केंद्र पर", "अनंत पर"], answer: "वक्रता केंद्र पर", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 44, question: "विद्युत आवेश (Electric Charge) का SI मात्रक क्या है?", options: ["एम्पीयर", "वोल्ट", "ओम", "कूलॉम"], answer: "कूलॉम", chapter: "विद्युत" },
+            { id: 45, question: "मानव नेत्र का वह भाग जो प्रकाश की मात्रा को नियंत्रित करता है?", options: ["रेटिना", "नेत्र लेंस", "परितारिका (Iris)", "कॉर्निया"], answer: "परितारिका (Iris)", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 46, question: "विद्युत मोटर में किस युक्ति का उपयोग धारा की दिशा को उलटने के लिए किया जाता है?", options: ["फ्यूज", "स्विच", "स्प्लिट रिंग (विभक्त वलय)", "बैटरी"], answer: "स्प्लिट रिंग (विभक्त वलय)", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 47, question: "बायोगैस का सबसे बड़ा घटक क्या है?", options: ["कार्बन डाइऑक्साइड", "मीथेन", "हाइड्रोजन", "नाइट्रोजन"], answer: "मीथेन", chapter: "ऊर्जा के स्रोत" },
+            { id: 48, question: "इंद्रधनुष बनने का कारण क्या है?", options: ["परावर्तन और प्रकीर्णन", "अपवर्तन और प्रकीर्णन", "परावर्तन, अपवर्तन और वर्ण विक्षेपण", "केवल परावर्तन"], answer: "परावर्तन, अपवर्तन और वर्ण विक्षेपण", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 49, question: "प्रतिरोधों को समांतर (Parallel) में जोड़ने पर कौन-सी राशि समान रहती है?", options: ["प्रतिरोध", "विद्युत धारा", "विद्युत विभव", "शक्ति"], answer: "विद्युत विभव", chapter: "विद्युत" },
+            { id: 50, question: "चुम्बकीय क्षेत्र रेखाएँ कहाँ से शुरू और कहाँ समाप्त होती हैं?", options: ["उत्तर से उत्तर", "दक्षिण से दक्षिण", "उत्तर से दक्षिण", "दक्षिण से उत्तर"], answer: "उत्तर से दक्षिण", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 51, question: "कौन-सा लेंस हमेशा आभासी और छोटा प्रतिबिंब बनाता है?", options: ["उत्तल लेंस", "अवतल लेंस", "समतल लेंस", "द्विफोकसी लेंस"], answer: "अवतल लेंस", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 52, question: "नेत्र में दूर बिंदु (Far point) कहाँ होता है?", options: ["रेटिना पर", "नेत्र लेंस पर", "25 cm पर", "अनंत पर"], answer: "अनंत पर", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 53, question: "किसी चालक में प्रतिरोध (R) और लंबाई (L) के बीच क्या संबंध है?", options: ["$R \\propto L$", "$R \\propto 1/L$", "$R \\propto L^2$", "$R \\propto \\sqrt{L}$"], answer: "$R \\propto L$", chapter: "विद्युत" },
+            { id: 54, question: "किसी विद्युत धारावाही तार के चारों ओर चुम्बकीय क्षेत्र कैसा होता है?", options: ["सीधी रेखाएँ", "गोलाकार लूप", "अण्डाकार लूप", "परवलयिक"], answer: "गोलाकार लूप", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 55, question: "प्रकाश का अपवर्तन किस कारण होता है?", options: ["प्रकाश के वेग में परिवर्तन", "प्रकाश की दिशा में परिवर्तन", "माध्यम में परिवर्तन", "उपरोक्त सभी"], answer: "उपरोक्त सभी", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 56, question: "वायुमंडलीय अपवर्तन का उदाहरण कौन-सा है?", options: ["टिंडल प्रभाव", "तारे टिमटिमाना", "इंद्रधनुष", "लाल रंग का प्रकीर्णन"], answer: "तारे टिमटिमाना", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 57, question: "विद्युत धारा को जूल के तापन नियम के अनुसार, उत्पन्न ऊष्मा (H) किसके समानुपाती होती है?", options: ["धारा के वर्ग के", "प्रतिरोध", "समय", "उपरोक्त सभी"], answer: "उपरोक्त सभी", chapter: "विद्युत" },
+            { id: 58, question: "परमाणु ऊर्जा (Nuclear Energy) का स्रोत क्या है?", options: ["नाभिकीय संलयन", "नाभिकीय विखंडन", "रासायनिक अभिक्रिया", "गुरुत्वाकर्षण"], answer: "नाभिकीय विखंडन", chapter: "ऊर्जा के स्रोत" },
+            { id: 59, question: "घरेलू विद्युत परिपथ में 'लाइव वायर' (Live Wire) का रंग कैसा होता है?", options: ["हरा", "काला", "लाल", "नीला"], answer: "लाल", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 60, question: "लेंस का सूत्र (Lens Formula) क्या है?", options: ["$1/v + 1/u = 1/f$", "$1/v - 1/u = 1/f$", "$1/u - 1/v = 1/f$", "$1/u + 1/v = 2/R$"], answer: "$1/v - 1/u = 1/f$", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+
+            // मिश्रित (Mix of all Chapters)
+            { id: 61, question: "पेट की अम्लता को कम करने के लिए किस क्षारीय पदार्थ का उपयोग होता है?", options: ["सोडियम क्लोराइड", "मैग्नीशियम हाइड्रोक्साइड (मिल्क ऑफ मैग्नेशिया)", "कैल्शियम कार्बोनेट", "सोडियम बाइकार्बोनेट"], answer: "मैग्नीशियम हाइड्रोक्साइड (मिल्क ऑफ मैग्नेशिया)", chapter: "अम्ल, क्षारक और लवण" },
+            { id: 62, question: "पौधों में गुरुत्वानुवर्तन (Geotropism) का क्या अर्थ है?", options: ["प्रकाश की ओर मुड़ना", "जल की ओर मुड़ना", "गुरुत्वाकर्षण की ओर मुड़ना", "रासायनिक पदार्थ की ओर मुड़ना"], answer: "गुरुत्वाकर्षण की ओर मुड़ना", chapter: "नियंत्रण एवं समन्वय" },
+            { id: 63, question: "जीवाश्म ईंधन का मुख्य दोष क्या है?", options: ["सस्ते हैं", "नवीकरणीय हैं", "प्रदूषण उत्पन्न करते हैं", "आसानी से उपलब्ध नहीं हैं"], answer: "प्रदूषण उत्पन्न करते हैं", chapter: "ऊर्जा के स्रोत" },
+            { id: 64, question: "कार्बन की संयोजकता (Valency) कितनी है?", options: ["2", "3", "4", "5"], answer: "4", chapter: "कार्बन और उसके यौगिक" },
+            { id: 65, question: "विद्युत शक्ति का दूसरा सूत्र कौन-सा है?", options: ["$P=IR$", "$P=V^2/R$", "$P=V/R$", "$P=I/V$"], answer: "$P=V^2/R$", chapter: "विद्युत" },
+            { id: 66, question: "मानव पाचन तंत्र में 'विलाय' (Villi) कहाँ पाए जाते हैं?", options: ["पेट", "छोटी आँत", "बड़ी आँत", "यकृत"], answer: "छोटी आँत", chapter: "जैव प्रक्रम" },
+            { id: 67, question: "समूह 1 (क्षार धातु) की संयोजकता कितनी होती है?", options: ["0", "1", "2", "3"], answer: "1", chapter: "तत्वों का आवर्त वर्गीकरण" },
+            { id: 68, question: "किस माध्यम में प्रकाश का वेग न्यूनतम होता है?", options: ["जल", "कांच", "निर्वात", "वायु"], answer: "कांच", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 69, question: "पुष्पी पौधों (Flowering plants) में निषेचन कहाँ होता है?", options: ["परागकोष", "अंडाशय", "वर्तिकाग्र", "बीजांड के अंदर"], answer: "बीजांड के अंदर", chapter: "जनन" },
+            { id: 70, question: "निकट दृष्टि दोष (Myopia) का कारण क्या है?", options: ["नेत्रगोलक का बहुत छोटा होना", "नेत्र लेंस की फोकस दूरी बहुत कम होना", "नेत्र लेंस की फोकस दूरी बहुत अधिक होना", "नेत्र लेंस का धुंधला होना"], answer: "नेत्र लेंस की फोकस दूरी बहुत कम होना", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 71, question: "चुम्बकीय क्षेत्र की शक्ति कहाँ सबसे अधिक होती है?", options: ["चुम्बक के केंद्र में", "चुम्बक के ध्रुवों पर", "चुम्बक के बीच में", "हर जगह समान"], answer: "चुम्बक के ध्रुवों पर", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 72, question: "जैव आवर्धन (Biomagnification) का कारण कौन-सा पदार्थ है?", options: ["CO2", "प्लास्टिक", "DDT", "पानी"], answer: "DDT", chapter: "हमारा पर्यावरण" },
+            { id: 73, question: "जीवाश्म (Fossils) की आयु निर्धारण की विधि क्या है?", options: ["जीवाश्मों की गहराई मापना", "DNA विश्लेषण", "रेडियोकार्बन डेटिंग", "जीवाश्मों का आकार मापना"], answer: "रेडियोकार्बन डेटिंग", chapter: "आनुवंशिकता एवं जैव विकास" },
+            { id: 74, question: "एक्वा regia (अम्लराज) किसका मिश्रण है?", options: ["सांद्र $\\text{HCl}$ और सांद्र $\\text{H}_2\\text{SO}_4$", "सांद्र $\\text{HNO}_3$ और सांद्र $\\text{H}_2\\text{SO}_4$", "सांद्र $\\text{HCl}$ और सांद्र $\\text{HNO}_3$ (3:1)", "सांद्र $\\text{HNO}_3$ और सांद्र $\\text{HCl}$ (3:1)"], answer: "सांद्र $\\text{HCl}$ और सांद्र $\\text{HNO}_3$ (3:1)", chapter: "धातु और अधातु" },
+            { id: 75, question: "विद्युत धारा के प्रवाह की पारंपरिक दिशा क्या है?", options: ["इलेक्ट्रॉन के प्रवाह की दिशा", "धनात्मक आवेश के प्रवाह की दिशा", "विभवमापी की दिशा", "प्रतिरोध की दिशा"], answer: "धनात्मक आवेश के प्रवाह की दिशा", chapter: "विद्युत" },
+            { id: 76, question: "टिंडल प्रभाव (Tyndall effect) क्यों होता है?", options: ["बड़ी तरंगदैर्ध्य के कारण", "छोटे कणों द्वारा प्रकाश के प्रकीर्णन के कारण", "प्रकाश के परावर्तन के कारण", "प्रकाश के अपवर्तन के कारण"], answer: "छोटे कणों द्वारा प्रकाश के प्रकीर्णन के कारण", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 77, question: "बायोगैस का उत्पादन किस प्रक्रिया द्वारा होता है?", options: ["वायवीय श्वसन", "अवायवीय श्वसन", "किण्वन", "उत्सर्जन"], answer: "अवायवीय श्वसन", chapter: "प्राकृतिक संसाधनों का प्रबंधन" },
+            { id: 78, question: "ओजोन ($O_3$) किस प्रकार की गैस है?", options: ["विषैली", "लाभदायक", "निष्क्रिय", "दहनशील"], answer: "विषैली", chapter: "हमारा पर्यावरण" },
+            { id: 79, question: "विद्युत चुम्बकीय प्रेरण की घटना का उपयोग किसमें नहीं होता है?", options: ["विद्युत जनित्र", "ट्रांसफार्मर", "विद्युत मोटर", "माइक्रोफोन"], answer: "विद्युत मोटर", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 80, question: "एथेनोइक अम्ल (Ethanoic acid) का उपयोग किस रूप में होता है?", options: ["कीटनाशक", "इत्र", "सिरका", "साबुन"], answer: "सिरका", chapter: "कार्बन और उसके यौगिक" },
+            { id: 81, question: "जैव निम्नीकरणीय (Biodegradable) अपशिष्ट को निपटाने का सबसे अच्छा तरीका क्या है?", options: ["खुले में फेंकना", "जलाना", "भराव क्षेत्र (Landfills)", "कम्पोस्टिंग"], answer: "कम्पोस्टिंग", chapter: "हमारा पर्यावरण" },
+            { id: 82, question: "परागण (Pollination) क्या है?", options: ["अंडाणु का निर्माण", "पराग कणों का वर्तिकाग्र तक स्थानांतरण", "युग्मनज का निर्माण", "भ्रूण का विकास"], answer: "पराग कणों का वर्तिकाग्र तक स्थानांतरण", chapter: "जनन" },
+            { id: 83, question: "मनुष्य में लार में मौजूद एंजाइम जो स्टार्च को पचाता है?", options: ["लाइपेज", "पेप्सिन", "एमाइलेज", "ट्रिप्सिन"], answer: "एमाइलेज", chapter: "जैव प्रक्रम" },
+            { id: 84, question: "सबसे कम गलनांक (Melting Point) वाली धातु कौन-सी है?", options: ["सोना", "चाँदी", "गैलियम", "आयरन"], answer: "गैलियम", chapter: "धातु और अधातु" },
+            { id: 85, question: "ओम का नियम क्या दर्शाता है?", options: ["विद्युत धारा और प्रतिरोध के बीच संबंध", "विद्युत विभव और प्रतिरोध के बीच संबंध", "विद्युत विभव और विद्युत धारा के बीच संबंध", "शक्ति और समय के बीच संबंध"], answer: "विद्युत विभव और विद्युत धारा के बीच संबंध", chapter: "विद्युत" },
+            { id: 86, question: "एकल जीन द्वारा नियंत्रित लक्षण का उदाहरण क्या है?", options: ["मानव त्वचा का रंग", "कान की पालियों का मुक्त/संलग्न होना", "मानव कद", "आँख का रंग"], answer: "कान की पालियों का मुक्त/संलग्न होना", chapter: "आनुवंशिकता एवं जैव विकास" },
+            { id: 87, question: "पवन ऊर्जा (Wind Energy) का उपयोग करने के लिए न्यूनतम हवा की गति कितनी होनी चाहिए?", options: ["5 किमी/घंटा", "10 किमी/घंटा", "15 किमी/घंटा", "25 किमी/घंटा"], answer: "15 किमी/घंटा", chapter: "ऊर्जा के स्रोत" },
+            { id: 88, question: "श्वसन के दौरान ऊर्जा किस रूप में मुक्त होती है?", options: ["ATP", "ADP", "AMP", "ATP और ADP"], answer: "ATP", chapter: "जैव प्रक्रम" },
+            { id: 89, question: "जब प्रकाश सघन माध्यम से विरल माध्यम में जाता है, तो वह कहाँ मुड़ता है?", options: ["अभिलम्ब की ओर", "अभिलम्ब से दूर", "वही रहता है", "परावर्तित होता है"], answer: "अभिलम्ब से दूर", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 90, question: "विद्युत धारा के प्रवाह की उपस्थिति को कौन-सा उपकरण पता लगाता है?", options: ["वोल्टमीटर", "एमीटर", "गैल्वेनोमीटर", "फ्यूज"], answer: "गैल्वेनोमीटर", chapter: "विद्युत" },
+            { id: 91, question: "पिट्यूटरी ग्रंथि (Pituitary gland) कहाँ स्थित होती है?", options: ["गर्दन", "पेट", "मस्तिष्क के आधार पर", "अग्न्याशय"], answer: "मस्तिष्क के आधार पर", chapter: "नियंत्रण एवं समन्वय" },
+            { id: 92, question: "बेंजीन ($C_6H_6$) किस प्रकार का हाइड्रोकार्बन है?", options: ["संतृप्त", "असंतृप्त और चक्रीय", "केवल चक्रीय", "एल्केन"], answer: "असंतृप्त और चक्रीय", chapter: "कार्बन और उसके यौगिक" },
+            { id: 93, question: "मेंडलीफ ने अपनी आवर्त सारणी में किस तत्व के लिए 'एका-एल्युमीनियम' नाम का उपयोग किया?", options: ["जर्मेनियम", "गैलियम", "सिलिकॉन", "बोरोन"], answer: "गैलियम", chapter: "तत्वों का आवर्त वर्गीकरण" },
+            { id: 94, question: "चुम्बक के दो ध्रुवों को अलग करना क्यों असंभव है?", options: ["चुम्बक कमजोर हो जाता है", "वे हमेशा जोड़े में मौजूद होते हैं", "यह महंगा है", "वे अदृश्य हो जाते हैं"], answer: "वे हमेशा जोड़े में मौजूद होते हैं", chapter: "विद्युत धारा के चुम्बकीय प्रभाव" },
+            { id: 95, question: "गोलीय दर्पण के लिए आवर्धन (Magnification) का सूत्र क्या है?", options: ["$m = h'/h$", "$m = -v/u$", "$m = v/u$", "दोनों A और B"], answer: "दोनों A और B", chapter: "प्रकाश - परावर्तन तथा अपवर्तन" },
+            { id: 96, question: "सल्फ्यूरिक अम्ल ($H_2SO_4$) को क्या कहा जाता है?", options: ["विरंजक", "दवाओं का राजा", "रसायनों का राजा", "खाने का सोडा"], answer: "रसायनों का राजा", chapter: "अम्ल, क्षारक और लवण" },
+            { id: 97, question: "आनुवंशिक रूप से संशोधित जीवों (GMOs) के उत्पादन का क्या उद्देश्य है?", options: ["जैव विविधता कम करना", "अधिक उपज और बेहतर पोषण प्राप्त करना", "केवल नए रंग बनाना", "कीटों को मारना"], answer: "अधिक उपज और बेहतर पोषण प्राप्त करना", chapter: "प्राकृतिक संसाधनों का प्रबंधन" },
+            { id: 98, question: "आँख में लेंस की फोकस दूरी को समायोजित करने की क्षमता क्या कहलाती है?", options: ["दूरदर्शिता", "निकट दृष्टि दोष", "समंजन क्षमता", "टिमटिमाना"], answer: "समंजन क्षमता", chapter: "मानव नेत्र तथा रंगबिरंगा संसार" },
+            { id: 99, question: "किस अंग में भ्रूण का विकास होता है?", options: ["अंडाशय", "गर्भाशय", "शुक्रवाहिका", "वृषण"], answer: "गर्भाशय", chapter: "जनन" },
+            { id: 100, question: "अपचयन-उपचयन (Redox) अभिक्रिया का एक उदाहरण क्या है?", options: ["$H_2+Cl_2 \rightarrow 2HCl$", "उदासीनीकरण", "अपघटन", "संयोजन"], answer: "$H_2+Cl_2 \rightarrow 2HCl$", chapter: "रासायनिक अभिक्रियाएँ" }
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+
+        // प्रश्नों को HTML में रेंडर करें
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+
+            testQuestions.forEach((mcq, index) => {
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. [${mcq.chapter}] ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                
+                // Shuffle options to make the test dynamic (optional but good practice)
+                const optionsCopy = [...mcq.options];
+                // In a real implementation, you'd shuffle the optionsCopy here
+
+                optionsCopy.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    htmlContent += `<label>`;
+                    htmlContent += `<input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${option}`;
+                    htmlContent += `</label>`;
+                });
+                
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+
+            form.innerHTML = htmlContent;
+        }
+
+        // उत्तरों की जाँच करें और स्कोर प्रदर्शित करें
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+                
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                }
+            });
+
+            // परिणाम प्रदर्शित करें
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score >= 80 ? 'green' : (score >= 50 ? 'orange' : 'red')}; font-size: 1.5em;">
+                    ${score >= 80 ? 'अद्भुत! आपने लगातार तीसरी बार उच्च स्कोर किया है! 💯' : (score >= 50 ? 'आगे बढ़ते रहें! अब मुश्किल सवालों पर ध्यान केंद्रित करने का समय है।' : 'हिम्मत न हारें। अपनी कमजोरियों को पहचानें और उन अध्यायों पर अधिक ध्यान दें।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+
+            window.scrollTo(0, 0);
+        }
+
+        // पेज लोड होने पर टेस्ट प्रदर्शित करें
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

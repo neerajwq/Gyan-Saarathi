@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 भौतिकी: मॉक टेस्ट (पदार्थ और विकिरण की द्वैत प्रकृति)</title>
+    <style>
+          :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 8px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+          header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #a0522d; 
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #ebe8d2;
+        }
+        .submit-btn {
+            display: block;
+            width: 250px;
+            padding: 12px;
+            margin: 30px auto;
+            background-color: #6a5acd; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #5d4aa0;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #a0522d;
+            border-radius: 8px;
+            background-color: #faf0e6;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+        h3 {
+            border-bottom: 2px solid #a0522d;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <div class="header">
+        <h1>कक्षा 12 भौतिकी - मॉक टेस्ट (100 प्रश्न) ⚛️</h1>
+        <h2>इकाई VII: पदार्थ और विकिरण की द्वैत प्रकृति (सरलीकृत पाठ)</h2>
+        <p>निर्देश: सभी 100 प्रश्नों के उत्तर दें।</p>
+    </div>
+    
+    <form id="quizForm">
+    </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (सरलीकृत गणितीय चिह्नों के साथ) ---
+        const testQuestions = [
+            // मूल सिद्धांत (Basic Concepts)
+            { id: 1, question: "फोटॉन की ऊर्जा का सूत्र क्या है?", options: ["E = hν","E = mc²","E = p/m","E = kT"], answer: "E = hν", chapter: "द्वैत प्रकृति" },
+            { id: 2, question: "प्रकाश-विद्युत प्रभाव (Photoelectric effect) की व्याख्या किसने की थी?", options: ["अल्बर्ट आइंस्टीन","मैक्स प्लैंक","नील्स बोर","जे.जे. थॉमसन"], answer: "अल्बर्ट आइंस्टीन", chapter: "द्वैत प्रकृति" },
+            { id: 3, question: "किसी धातु की सतह से इलेक्ट्रॉन उत्सर्जित करने के लिए आवश्यक न्यूनतम ऊर्जा क्या कहलाती है?", options: ["कार्य फलन (Work Function)","गतिज ऊर्जा","प्लैंक नियतांक","थ्रेशोल्ड ऊर्जा"], answer: "कार्य फलन (Work Function)", chapter: "द्वैत प्रकृति" },
+            { id: 4, question: "पदार्थ तरंगों (Matter Waves) की अवधारणा किसने प्रस्तावित की थी?", options: ["डी ब्रोगली","हाइजेनबर्ग","शोलेडिंगर","डेविसन"], answer: "डी ब्रोगली", chapter: "द्वैत प्रकृति" },
+            { id: 5, question: "डी ब्रोगली तरंगदैर्ध्य (λ) का सूत्र क्या है?", options: ["λ = h/p","λ = p/h","λ = E/h","λ = c/v"], answer: "λ = h/p", chapter: "द्वैत प्रकृति" },
+            { id: 6, question: "फोटॉन का विराम द्रव्यमान (Rest Mass) कितना होता है?", options: ["शून्य","हाइड्रोजन परमाणु के बराबर","इलेक्ट्रॉन के बराबर","अनिश्चित"], answer: "शून्य", chapter: "द्वैत प्रकृति" },
+            { id: 7, question: "इलेक्ट्रॉन वोल्ट (eV) किसकी इकाई है?", options: ["ऊर्जा","आवेश","विभवांतर","शक्ति"], answer: "ऊर्जा", chapter: "द्वैत प्रकृति" },
+            { id: 8, question: "प्लैंक नियतांक (h) का SI मात्रक क्या है?", options: ["जूल-सेकंड (J·s)","जूल प्रति सेकंड","न्यूटन मीटर","वाट प्रति सेकंड"], answer: "जूल-सेकंड (J·s)", chapter: "द्वैत प्रकृति" },
+            { id: 9, question: "फोटॉन का संवेग (p) किस सूत्र से दिया जाता है?", options: ["p = h/λ","p = mc","p = E/c","सभी 'A', 'B' और 'C'"], answer: "सभी 'A', 'B' और 'C'", chapter: "द्वैत प्रकृति" },
+            { id: 10, question: "आधुनिक भौतिकी में, प्रकाश को क्या माना जाता है?", options: ["कण और तरंग दोनों की द्वैत प्रकृति","केवल कण","केवल तरंग","एक प्रकार का द्रव"], answer: "कण और तरंग दोनों की द्वैत प्रकृति", chapter: "द्वैत प्रकृति" },
+            
+            // प्रकाश-विद्युत प्रभाव (Photoelectric Effect)
+            { id: 11, question: "प्रकाश-विद्युत प्रभाव में, निरोधी विभव (Stopping Potential) किसका मापन करता है?", options: ["उत्सर्जित इलेक्ट्रॉनों की अधिकतम गतिज ऊर्जा","कार्य फलन","विकिरण की तीव्रता","थ्रेशोल्ड आवृत्ति"], answer: "उत्सर्जित इलेक्ट्रॉनों की अधिकतम गतिज ऊर्जा", chapter: "प्रकाश-विद्युत" },
+            { id: 12, question: "यदि विकिरण की तीव्रता (intensity) दोगुनी कर दी जाए, तो फोटोकरंट पर क्या प्रभाव पड़ेगा (आवृत्ति स्थिर है)?", options: ["दोगुना हो जाएगा","आधा हो जाएगा","चार गुना हो जाएगा","कोई परिवर्तन नहीं"], answer: "दोगुना हो जाएगा", chapter: "प्रकाश-विद्युत" },
+            { id: 13, question: "थ्रेशोल्ड आवृत्ति (ν₀) से कम आवृत्ति वाले विकिरण का क्या प्रभाव होता है?", options: ["कोई इलेक्ट्रॉन उत्सर्जित नहीं होता","इलेक्ट्रॉन उत्सर्जित होते हैं पर गतिज ऊर्जा कम होती है","फोटोकरंट बढ़ जाता है","निरोधी विभव बढ़ जाता है"], answer: "कोई इलेक्ट्रॉन उत्सर्जित नहीं होता", chapter: "प्रकाश-विद्युत" },
+            { id: 14, question: "आइंस्टीन का प्रकाश-विद्युत समीकरण क्या है?", options: ["E = hν - ϕ₀","E = hν + ϕ₀","Kmax = hν - ϕ₀","Kmax = ϕ₀ - hν"], answer: "Kmax = hν - ϕ₀", chapter: "प्रकाश-विद्युत" },
+            { id: 15, question: "प्रकाश-विद्युत प्रभाव में, समय-विलंब (time lag) क्यों नहीं होता है?", options: ["फोटॉन-कण अंतःक्रिया के कारण","तरंग सिद्धांत के कारण","धातु के छोटे आकार के कारण","निर्वात के कारण"], answer: "फोटॉन-कण अंतःक्रिया के कारण", chapter: "प्रकाश-विद्युत" },
+            { id: 16, question: "यदि धातु का कार्य फलन अधिक है, तो थ्रेशोल्ड आवृत्ति पर क्या प्रभाव पड़ेगा?", options: ["बढ़ेगी","घटेगी","कोई परिवर्तन नहीं","शून्य हो जाएगी"], answer: "बढ़ेगी", chapter: "प्रकाश-विद्युत" },
+            { id: 17, question: "प्रकाश-विद्युत प्रभाव में, ν बनाम Kmax ग्राफ का ढलान (slope) क्या दर्शाता है?", options: ["प्लैंक नियतांक (h)","कार्य फलन","निरोधी विभव","थ्रेशोल्ड आवृत्ति"], answer: "प्लैंक नियतांक (h)", chapter: "प्रकाश-विद्युत" },
+            { id: 18, question: "थ्रेशोल्ड तरंगदैर्ध्य (λ₀) का सूत्र क्या है?", options: ["λ₀ = hc/ϕ₀","λ₀ = h/cϕ₀","λ₀ = cν₀","λ₀ = hν₀"], answer: "λ₀ = hc/ϕ₀", chapter: "प्रकाश-विद्युत" },
+            { id: 19, question: "निरोधी विभव किस पर निर्भर नहीं करता है?", options: ["प्रकाश की तीव्रता","विकिरण की आवृत्ति","धातु का प्रकार","कार्य फलन"], answer: "प्रकाश की तीव्रता", chapter: "प्रकाश-विद्युत" },
+            { id: 20, question: "प्रकाश-विद्युत सेल (Photo cell) किस पर आधारित है?", options: ["प्रकाश-विद्युत प्रभाव","कॉम्पटन प्रभाव","प्रकाश का परावर्तन","फोटॉन का उत्पादन"], answer: "प्रकाश-विद्युत प्रभाव", chapter: "प्रकाश-विद्युत" },
+
+            // डी ब्रोगली तरंगें और प्रयोग (De Broglie Waves & Experiments)
+            { id: 21, question: "एक कण जिसका संवेग (p) है, उससे जुड़ी डी ब्रोगली तरंगदैर्ध्य क्या होगी?", options: ["h/p","E/c","m/p","E/p"], answer: "h/p", chapter: "डी ब्रोगली" },
+            { id: 22, question: "डेविसन और जर्मर प्रयोग (Davisson and Germer Experiment) किसका प्रमाण देता है?", options: ["इलेक्ट्रॉन की तरंग प्रकृति","इलेक्ट्रॉन की कण प्रकृति","फोटॉन की कण प्रकृति","प्रकाश की अनुप्रस्थ प्रकृति"], answer: "इलेक्ट्रॉन की तरंग प्रकृति", chapter: "डी ब्रोगली" },
+            { id: 23, question: "जब एक इलेक्ट्रॉन को विभवांतर (V) द्वारा त्वरित किया जाता है, तो उससे जुड़ी डी ब्रोगली तरंगदैर्ध्य (λe) किसके अनुक्रमानुपाती होती है?", options: ["1/vV","V","1/V","vV"], answer: "1/vV", chapter: "डी ब्रोगली" },
+            { id: 24, question: "पदार्थ तरंगें (matter waves) किस पर निर्भर करती हैं?", options: ["कण के द्रव्यमान और वेग पर","केवल आवेश पर","केवल ऊर्जा पर","केवल प्रकाश की गति पर"], answer: "कण के द्रव्यमान और वेग पर", chapter: "डी ब्रोगली" },
+            { id: 25, question: "एक प्रोटॉन और एक इलेक्ट्रॉन को समान गतिज ऊर्जा (K) से त्वरित किया जाता है। किसकी डी ब्रोगली तरंगदैर्ध्य अधिक होगी?", options: ["इलेक्ट्रॉन","प्रोटॉन","दोनों की समान होगी","निर्धारित नहीं किया जा सकता"], answer: "इलेक्ट्रॉन", chapter: "डी ब्रोगली" },
+            { id: 26, question: "पदार्थ तरंगों का दूसरा नाम क्या है?", options: ["डी ब्रोगली तरंगें","इलेक्ट्रोमैग्नेटिक तरंगें","ध्वनि तरंगें","शॉक तरंगें"], answer: "डी ब्रोगली तरंगें", chapter: "डी ब्रोगली" },
+            { id: 27, question: "यदि कण का वेग शून्य हो जाए तो उसकी डी ब्रोगली तरंगदैर्ध्य क्या होगी?", options: ["अनंत","शून्य","h/m","निर्धारित नहीं"], answer: "अनंत", chapter: "डी ब्रोगली" },
+            { id: 28, question: "डी ब्रोगली ने अपनी अवधारणा में किस सिद्धांत का उपयोग किया?", options: ["आइंस्टीन का ऊर्जा-द्रव्यमान संबंध","न्यूटन के नियम","ऊर्जा संरक्षण का नियम","केवल प्लैंक का क्वांटम सिद्धांत"], answer: "आइंस्टीन का ऊर्जा-द्रव्यमान संबंध", chapter: "डी ब्रोगली" },
+            { id: 29, question: "किस कण के लिए डी ब्रोगली तरंगदैर्ध्य का मापन सबसे आसान है?", options: ["इलेक्ट्रॉन","क्रिकेट बॉल","प्रोटॉन","अल्फा कण"], answer: "इलेक्ट्रॉन", chapter: "डी ब्रोगली" },
+            { id: 30, question: "डी ब्रोगली तरंगों की प्रकृति क्या है?", options: ["विद्युत चुम्बकीय नहीं","केवल अनुदैर्ध्य","केवल अनुप्रस्थ","हमेशा स्थिर"], answer: "विद्युत चुम्बकीय नहीं", chapter: "डी ब्रोगली" },
+
+            // फोटॉन गुण और प्लांक सिद्धांत (Photon Properties & Planck Theory)
+            { id: 31, question: "फोटॉन की गति किसके बराबर होती है?", options: ["प्रकाश की गति (c)","ध्वनि की गति","इलेक्ट्रॉन की गति","वेग शून्य"], answer: "प्रकाश की गति (c)", chapter: "फोटॉन गुण" },
+            { id: 32, question: "फोटॉन का आवेश कितना होता है?", options: ["शून्य","सकारात्मक (+e)","नकारात्मक (-e)","अनिश्चित"], answer: "शून्य", chapter: "फोटॉन गुण" },
+            { id: 33, question: "फोटॉन का ऊर्जा और संवेग के बीच क्या संबंध है?", options: ["E = pc","E = p/c","E = p²c","E = c/p"], answer: "E = pc", chapter: "फोटॉन गुण" },
+            { id: 34, question: "फोटॉन सिद्धांत को किसने प्रस्तावित किया?", options: ["मैक्स प्लैंक","नील्स बोर","अर्नेस्ट रदरफोर्ड","आइजैक न्यूटन"], answer: "मैक्स प्लैंक", chapter: "फोटॉन गुण" },
+            { id: 35, question: "फोटॉन किस बल के वाहक कण हैं?", options: ["विद्युत चुम्बकीय बल","गुरुत्वाकर्षण बल","मजबूत परमाणु बल","कमजोर परमाणु बल"], answer: "विद्युत चुम्बकीय बल", chapter: "फोटॉन गुण" },
+            { id: 36, question: "कॉम्पटन प्रभाव (Compton Effect) में, बिखराव के बाद फोटॉन की तरंगदैर्ध्य क्या होती है?", options: ["बढ़ जाती है","घट जाती है","समान रहती है","शून्य हो जाती है"], answer: "बढ़ जाती है", chapter: "फोटॉन गुण" },
+            { id: 37, question: "विकिरण के क्वांटम (Quantum) को क्या कहते हैं?", options: ["फोटॉन","इलेक्ट्रॉन","प्रोटॉन","न्यूट्रॉन"], answer: "फोटॉन", chapter: "फोटॉन गुण" },
+            { id: 38, question: "फोटॉन की ऊर्जा किसके अनुक्रमानुपाती होती है?", options: ["आवृत्ति","तरंगदैर्ध्य","तीव्रता","आयाम"], answer: "आवृत्ति", chapter: "फोटॉन गुण" },
+            { id: 39, question: "जब एक फोटॉन किसी कण के साथ टकराता है तो क्या संरक्षित रहता है?", options: ["ऊर्जा और संवेग","केवल ऊर्जा","केवल संवेग","कुछ नहीं"], answer: "ऊर्जा और संवेग", chapter: "फोटॉन गुण" },
+            { id: 40, question: "प्लैंक नियतांक का मान क्या है?", options: ["6.626 x 10⁻³⁴ J·s","9.1 x 10⁻³¹ kg","3 x 10⁸ m/s","1.6 x 10⁻¹⁹ C"], answer: "6.626 x 10⁻³⁴ J·s", chapter: "फोटॉन गुण" },
+
+            // इलेक्ट्रॉन उत्सर्जन (Electron Emission)
+            { id: 41, question: "वह न्यूनतम तापमान जिस पर इलेक्ट्रॉन उत्सर्जित होते हैं, क्या कहलाता है?", options: ["तापायनिक उत्सर्जन","प्रकाश-विद्युत उत्सर्जन","क्षेत्रीय उत्सर्जन","द्वितीयक उत्सर्जन"], answer: "तापायनिक उत्सर्जन", chapter: "उत्सर्जन" },
+            { id: 42, question: "क्षेत्रीय उत्सर्जन (Field Emission) में इलेक्ट्रॉन का उत्सर्जन किसके कारण होता है?", options: ["प्रबल विद्युत क्षेत्र","उच्च तापमान","उच्च प्रकाश तीव्रता","रासायनिक प्रतिक्रिया"], answer: "प्रबल विद्युत क्षेत्र", chapter: "उत्सर्जन" },
+            { id: 43, question: "द्वितीयक उत्सर्जन (Secondary Emission) में इलेक्ट्रॉन किससे टकराकर उत्सर्जित होते हैं?", options: ["तेज गति वाले इलेक्ट्रॉन","फोटॉन","प्रोटॉन","न्यूट्रॉन"], answer: "तेज गति वाले इलेक्ट्रॉन", chapter: "उत्सर्जन" },
+            { id: 44, question: "सीज़ियम जैसी क्षारीय धातुएँ क्यों प्रकाश-विद्युत उत्सर्जन के लिए उपयुक्त हैं?", options: ["कम कार्य फलन","उच्च गलनांक","अधिक घनत्व","कम विद्युत चालकता"], answer: "कम कार्य फलन", chapter: "उत्सर्जन" },
+            { id: 45, question: "ऑक्सीजन की उपस्थिति में इलेक्ट्रॉन उत्सर्जन क्यों कम हो जाता है?", options: ["ऑक्साइड परत बनने के कारण","धातु का पिघलना","तापमान में वृद्धि","फोटॉन का अवशोषण"], answer: "ऑक्साइड परत बनने के कारण", chapter: "उत्सर्जन" },
+            { id: 46, question: "कैथोड रे ट्यूब (CRT) में किस प्रकार के उत्सर्जन का उपयोग किया जाता था?", options: ["तापायनिक उत्सर्जन","प्रकाश-विद्युत उत्सर्जन","द्वितीयक उत्सर्जन","क्षेत्रीय उत्सर्जन"], answer: "तापायनिक उत्सर्जन", chapter: "उत्सर्जन" },
+            { id: 47, question: "कार्य फलन किसका एक गुण है?", options: ["उत्सर्जक सामग्री","आने वाले प्रकाश की आवृत्ति","तापमान","तीव्रता"], answer: "उत्सर्जक सामग्री", chapter: "उत्सर्जन" },
+            { id: 48, question: "एक कण जिसकी गतिज ऊर्जा K है, उसकी डी ब्रोगली तरंगदैर्ध्य का सूत्र क्या है?", options: ["λ = h/v2mK","λ = hv2mK","λ = v2mK/h","λ = K/h"], answer: "λ = h/v2mK", chapter: "उत्सर्जन" },
+            { id: 49, question: "इलेक्ट्रॉन माइक्रोस्कोप किस सिद्धांत पर कार्य करता है?", options: ["इलेक्ट्रॉन की तरंग प्रकृति","इलेक्ट्रॉन की कण प्रकृति","फोटॉन सिद्धांत","परावर्तन"], answer: "इलेक्ट्रॉन की तरंग प्रकृति", chapter: "उत्सर्जन" },
+            { id: 50, question: "आवेशित कणों से जुड़ी तरंगें कब 'वास्तविक' मानी जाती हैं?", options: ["जब वे बहुत छोटे होते हैं","जब वे बहुत तेज होते हैं","हमेशा","कभी नहीं"], answer: "जब वे बहुत छोटे होते हैं", chapter: "उत्सर्जन" },
+
+            // अनुप्रयोग (Applications)
+            { id: 51, question: "प्रकाश-विद्युत सेल (Photo cell) का उपयोग किसमें होता है?", options: ["बर्गर अलार्म","टेलीफोन","वैक्यूम क्लीनर","टेलीविजन"], answer: "बर्गर अलार्म", chapter: "अनुप्रयोग" },
+            { id: 52, question: "इलेक्ट्रॉन गन (Electron gun) किस प्रकार के उत्सर्जन का उपयोग करती है?", options: ["तापायनिक उत्सर्जन","प्रकाश-विद्युत उत्सर्जन","द्वितीयक उत्सर्जन","क्षेत्रीय उत्सर्जन"], answer: "तापायनिक उत्सर्जन", chapter: "अनुप्रयोग" },
+            { id: 53, question: "कॉम्पटन प्रभाव किस प्रकार के विकिरण में सबसे अधिक स्पष्ट होता है?", options: ["एक्स-रे और गामा किरणें","दृश्य प्रकाश","रेडियो तरंगें","माइक्रोवेव"], answer: "एक्स-रे और गामा किरणें", chapter: "अनुप्रयोग" },
+            { id: 54, question: "सौर सेल (Solar cell) किस सिद्धांत पर कार्य करता है?", options: ["फोटोवोल्टेइक प्रभाव","प्रकाश-विद्युत प्रभाव","कॉम्पटन प्रभाव","इलेक्ट्रॉन उत्सर्जन"], answer: "फोटोवोल्टेइक प्रभाव", chapter: "अनुप्रयोग" },
+            { id: 55, question: "इलेक्ट्रॉन माइक्रोस्कोप का उपयोग क्या है?", options: ["अत्यधिक उच्च आवर्धन","कम आवर्धन","तापमान मापन","वोल्टेज मापन"], answer: "अत्यधिक उच्च आवर्धन", chapter: "अनुप्रयोग" },
+            { id: 56, question: "वह उपकरण जो प्रकाश ऊर्जा को विद्युत ऊर्जा में बदलता है, क्या कहलाता है?", options: ["फोटो-इलेक्ट्रिक सेल","जनरेटर","ट्रांसफॉर्मर","कैपेसिटर"], answer: "फोटो-इलेक्ट्रिक सेल", chapter: "अनुप्रयोग" },
+            { id: 57, question: "फोटॉन ऊर्जा किस पर निर्भर करती है?", options: ["केवल आवृत्ति पर","केवल तीव्रता पर","दोनों आवृत्ति और तीव्रता पर","आयाम पर"], answer: "केवल आवृत्ति पर", chapter: "अनुप्रयोग" },
+            { id: 58, question: "कॉम्पटन तरंगदैर्ध्य बदलाव (Δλ) किस पर निर्भर करता है?", options: ["बिखराव कोण","विकिरण की तीव्रता","धातु का प्रकार","आपतित फोटॉन की ऊर्जा"], answer: "बिखराव कोण", chapter: "अनुप्रयोग" },
+            { id: 59, question: "जब प्रकाश एक कण की तरह व्यवहार करता है, तो उसे क्या कहा जाता है?", options: ["फोटॉन","क्वांटम","एनर्जी पैकेट","सभी विकल्प"], answer: "सभी विकल्प", chapter: "अनुप्रयोग" },
+            { id: 60, question: "डी ब्रोगली तरंगें केवल तभी महत्वपूर्ण होती हैं जब कण का आकार क्या हो?", options: ["बहुत छोटा","बहुत बड़ा","मध्यम","किसी भी आकार का"], answer: "बहुत छोटा", chapter: "अनुप्रयोग" },
+            
+            // गणितीय संबंध और ग्राफ़ (Mathematical Relations & Graphs)
+            { id: 61, question: "यदि E गतिज ऊर्जा और p संवेग हो, तो डी ब्रोगली तरंगदैर्ध्य को गतिज ऊर्जा के संदर्भ में क्या लिखा जाता है?", options: ["λ = h/v2mE","λ = hv2mE","λ = E/p","λ = hE/p"], answer: "λ = h/v2mE", chapter: "संबंध" },
+            { id: 62, question: "Kmax बनाम ν ग्राफ का y-इंटरसेप्ट क्या दर्शाता है?", options: ["कार्य फलन (-ϕ₀)","प्लैंक नियतांक","निरोधी विभव","थ्रेशोल्ड आवृत्ति"], answer: "कार्य फलन (-ϕ₀)", chapter: "संबंध" },
+            { id: 63, question: "प्रकाश-विद्युत प्रभाव के ग्राफ में, Kmax बनाम ν ग्राफ की प्रकृति कैसी होती है?", options: ["सीधी रेखा","परवलयिक","अतिपरवलयिक","आवर्ती"], answer: "सीधी रेखा", chapter: "संबंध" },
+            { id: 64, question: "यदि दो धातुओं के लिए Kmax बनाम ν ग्राफ बनाए जाएं, तो दोनों रेखाओं का ढलान क्या होगा?", options: ["समान (h)","भिन्न","शून्य","अनंत"], answer: "समान (h)", chapter: "संबंध" },
+            { id: 65, question: "फोटॉन की ऊर्जा E को तरंगदैर्ध्य (λ) के संदर्भ में कैसे लिखा जाता है?", options: ["E = hc/λ","E = hλ/c","E = hλ","E = c/hλ"], answer: "E = hc/λ", chapter: "संबंध" },
+            { id: 66, question: "निरोधी विभव (V₀) और Kmax में क्या संबंध है?", options: ["Kmax = eV₀","V₀ = eKmax","Kmax = hνV₀","Kmax = 1/V₀"], answer: "Kmax = eV₀", chapter: "संबंध" },
+            { id: 67, question: "निरोधी विभव बनाम तीव्रता ग्राफ की प्रकृति क्या होती है (आवृत्ति स्थिर है)?", options: ["तीव्रता अक्ष के समानांतर सीधी रेखा","ढलानदार सीधी रेखा","परवलयिक","शून्य"], answer: "तीव्रता अक्ष के समानांतर सीधी रेखा", chapter: "संबंध" },
+            { id: 68, question: "यदि λ और v डी ब्रोगली तरंगदैर्ध्य और वेग हों, तो v और λ में क्या संबंध है?", options: ["λv = h/m","λv = m/h","λv = E/m","λ = hv"], answer: "λv = h/m", chapter: "संबंध" },
+            { id: 69, question: "प्रकाश-विद्युत समीकरण को निरोधी विभव के संदर्भ में कैसे लिखा जाता है?", options: ["eV₀ = hν - ϕ₀","eV₀ = ϕ₀ - hν","V₀ = hν - ϕ₀","V₀ = eV₀"], answer: "eV₀ = hν - ϕ₀", chapter: "संबंध" },
+            { id: 70, question: "यदि आपतित प्रकाश की तीव्रता दोगुनी हो जाए तो संतृप्ति धारा (Saturation current) पर क्या प्रभाव पड़ेगा?", options: ["दोगुनी हो जाएगी","आधा हो जाएगी","समान रहेगी","चौगुनी हो जाएगी"], answer: "दोगुनी हो जाएगी", chapter: "संबंध" },
+            
+            // क्वांटम सिद्धांत और मैक्स प्लैंक (Quantum Theory & Max Planck)
+            { id: 71, question: "मैक्स प्लैंक ने किस विकिरण का वर्णन करने के लिए क्वांटम सिद्धांत प्रस्तावित किया?", options: ["ब्लैक बॉडी विकिरण","दृश्य प्रकाश","रेडियो तरंगें","अल्ट्रासाउंड"], answer: "ब्लैक बॉडी विकिरण", chapter: "क्वांटम" },
+            { id: 72, question: "क्वांटम सिद्धांत के अनुसार ऊर्जा का न्यूनतम संभव मान क्या है?", options: ["ΔE = hν","शून्य","अनंत","इलेक्ट्रॉन की ऊर्जा"], answer: "ΔE = hν", chapter: "क्वांटम" },
+            { id: 73, question: "ऊर्जा क्वांटाइजेशन (Quantization) का अर्थ क्या है?", options: ["ऊर्जा असतत मानों में मौजूद है","ऊर्जा सतत मानों में मौजूद है","ऊर्जा हमेशा बढ़ती है","ऊर्जा हमेशा घटती है"], answer: "ऊर्जा असतत मानों में मौजूद है", chapter: "क्वांटम" },
+            { id: 74, question: "प्लैंक नियतांक का विमा (Dimension) किसके समान है?", options: ["कोणीय संवेग","रैखिक संवेग","ऊर्जा","शक्ति"], answer: "कोणीय संवेग", chapter: "क्वांटम" },
+            { id: 75, question: "फोटॉन की ऊर्जा और तीव्रता के बीच क्या अंतर है?", options: ["ऊर्जा आवृत्ति पर निर्भर करती है; तीव्रता फोटॉन संख्या पर निर्भर करती है","ऊर्जा तीव्रता पर निर्भर करती है; तीव्रता आवृत्ति पर निर्भर करती है","दोनों समान हैं","कोई संबंध नहीं"], answer: "ऊर्जा आवृत्ति पर निर्भर करती है; तीव्रता फोटॉन संख्या पर निर्भर करती है", chapter: "क्वांटम" },
+            { id: 76, question: "थ्रेशोल्ड तरंगदैर्ध्य किसे कहते हैं?", options: ["वह अधिकतम तरंगदैर्ध्य जो उत्सर्जन का कारण बनती है","वह न्यूनतम तरंगदैर्ध्य","माध्यम की तरंगदैर्ध्य","फोटॉन की तरंगदैर्ध्य"], answer: "वह अधिकतम तरंगदैर्ध्य जो उत्सर्जन का कारण बनती है", chapter: "क्वांटम" },
+            { id: 77, question: "फोटॉन के सिद्धांत के अनुसार, प्रकाश की प्रकृति क्या है?", options: ["कण प्रकृति","तरंग प्रकृति","द्वैत प्रकृति","स्थिर"], answer: "कण प्रकृति", chapter: "क्वांटम" },
+            { id: 78, question: "मैक्स प्लैंक का सिद्धांत कब आया?", options: ["1900","1880","1920","1950"], answer: "1900", chapter: "क्वांटम" },
+            { id: 79, question: "फोटोकरंट की इकाई क्या है?", options: ["एम्पीयर","वोल्ट","ओम","वाट"], answer: "एम्पीयर", chapter: "क्वांटम" },
+            { id: 80, question: "निरोधी विभव किस पर निर्भर करता है?", options: ["प्रकाश की आवृत्ति","प्रकाश की तीव्रता","आवेश","समय"], answer: "प्रकाश की आवृत्ति", chapter: "क्वांटम" },
+
+            // विविध और उन्नत विषय (Miscellaneous & Advanced Topics)
+            { id: 81, question: "यदि V निरोधी विभव और V₀ थ्रेशोल्ड विभव हो, तो Kmax = ?", options: ["e(V - V₀)","e(V + V₀)","hν","mc²"], answer: "e(V - V₀)", chapter: "विविध" },
+            { id: 82, question: "एक न्यूट्रॉन से जुड़ी डी ब्रोगली तरंगदैर्ध्य को तापमान (T) के संदर्भ में कैसे लिखा जाता है?", options: ["λ = h/v3mₙkBT","λ = hT","λ = 1/T","λ = vT"], answer: "λ = h/v3mₙkBT", chapter: "विविध" },
+            { id: 83, question: "डी ब्रोगली तरंगदैर्ध्य को vV के विपरीत आलेखित करने पर ग्राफ कैसा होगा?", options: ["एक ढलानदार सीधी रेखा","एक परवलयिक वक्र","एक हाइपरबोला","शून्य"], answer: "एक ढलानदार सीधी रेखा", chapter: "विविध" },
+            { id: 84, question: "कॉम्पटन प्रभाव में, अधिकतम तरंगदैर्ध्य बदलाव (Δλmax) कब होता है?", options: ["180° पर बिखराव","90° पर बिखराव","0° पर बिखराव","हमेशा"], answer: "180° पर बिखराव", chapter: "विविध" },
+            { id: 85, question: "डी ब्रोगली तरंगदैर्ध्य का मान मैक्रोस्कोपिक (बड़ी) वस्तुओं के लिए क्यों नगण्य होता है?", options: ["उनका संवेग बहुत बड़ा होता है","उनका वेग शून्य होता है","वे प्रकाश को उत्सर्जित नहीं करते","वे आवेशित नहीं होते"], answer: "उनका संवेग बहुत बड़ा होता है", chapter: "विविध" },
+            { id: 86, question: "इलेक्ट्रॉन की क्वांटम प्रकृति की पुष्टि किस घटना से हुई?", options: ["इलेक्ट्रॉन का विवर्तन (diffraction)","प्रकाश का अपवर्तन","रंगों का पृथक्करण","चुंबकत्व"], answer: "इलेक्ट्रॉन का विवर्तन (diffraction)", chapter: "विविध" },
+            { id: 87, question: "निरोधी विभव का दूसरा नाम क्या है?", options: ["कट-ऑफ विभव","कार्य विभव","संतृप्ति विभव","उत्सर्जन विभव"], answer: "कट-ऑफ विभव", chapter: "विविध" },
+            { id: 88, question: "आवृत्ति (ν) को तरंगदैर्ध्य (λ) के संदर्भ में कैसे लिखा जाता है?", options: ["ν = c/λ","ν = cλ","ν = 1/λ","ν = λ/c"], answer: "ν = c/λ", chapter: "विविध" },
+            { id: 89, question: "कॉम्पटन शिफ्ट का सूत्र क्या है?", options: ["Δλ = h/mₑc (1 - cos θ)","Δλ = hλ","Δλ = c/h","Δλ = 0"], answer: "Δλ = h/mₑc (1 - cos θ)", chapter: "विविध" },
+            { id: 90, question: "फोटॉन को 'कण' माना जाता है क्योंकि:", options: ["इसका निश्चित ऊर्जा और संवेग है","यह स्थिर है","यह द्रव्यमान रखता है","यह आवेश रखता है"], answer: "इसका निश्चित ऊर्जा और संवेग है", chapter: "विविध" },
+            { id: 91, question: "यदि आपतित विकिरण का तरंगदैर्ध्य बढ़ाया जाए, तो उत्सर्जित इलेक्ट्रॉनों की गतिज ऊर्जा पर क्या प्रभाव पड़ेगा?", options: ["घटेगी","बढ़ेगी","कोई परिवर्तन नहीं","शून्य हो जाएगी"], answer: "घटेगी", chapter: "विविध" },
+            { id: 92, question: "धातु से इलेक्ट्रॉन निकालने के लिए, hν का मान ϕ₀ से कैसा होना चाहिए?", options: ["बड़ा या बराबर","छोटा","हमेशा शून्य","हमेशा अनंत"], answer: "बड़ा या बराबर", chapter: "विविध" },
+            { id: 93, question: "प्रकाश के तरंग सिद्धांत का समर्थन कौन सी घटना करती है?", options: ["व्यतिकरण (Interference)","प्रकाश-विद्युत प्रभाव","ब्लैक बॉडी विकिरण","कॉम्पटन प्रभाव"], answer: "व्यतिकरण (Interference)", chapter: "विविध" },
+            { id: 94, question: "प्रकाश के कण सिद्धांत का समर्थन कौन सी घटना करती है?", options: ["प्रकाश-विद्युत प्रभाव","विवर्तन (Diffraction)","व्यतिकरण","ध्रुवीकरण"], answer: "प्रकाश-विद्युत प्रभाव", chapter: "विविध" },
+            { id: 95, question: "यदि V एक इलेक्ट्रॉन को त्वरित करने वाला विभव है, तो λ_electron = ?", options: ["12.27/vV Å","12.27/V Å","1.227/vV Å","1.227/V Å"], answer: "12.27/vV Å", chapter: "विविध" },
+            { id: 96, question: "पदार्थ तरंगों के वेग और कण के वेग में क्या संबंध है?", options: ["पदार्थ तरंगों का वेग कण के वेग से अधिक होता है","पदार्थ तरंगों का वेग कण के वेग से कम होता है","दोनों समान होते हैं","कोई संबंध नहीं"], answer: "पदार्थ तरंगों का वेग कण के वेग से अधिक होता है", chapter: "विविध" },
+            { id: 97, question: "उत्सर्जित इलेक्ट्रॉनों की अधिकतम गतिज ऊर्जा का मान किस पर निर्भर करता है?", options: ["आपतित प्रकाश की आवृत्ति और धातु के कार्य फलन","केवल तीव्रता","केवल दूरी","केवल तापमान"], answer: "आपतित प्रकाश की आवृत्ति और धातु के कार्य फलन", chapter: "विविध" },
+            { id: 98, question: "प्रकाश-विद्युत धारा क्यों संतृप्त हो जाती है?", options: ["सभी उत्सर्जक इलेक्ट्रॉनों को संग्राहक तक पहुंचने के कारण","कार्य फलन के कारण","प्लैंक नियतांक के कारण","तीव्रता घटने के कारण"], answer: "सभी उत्सर्जक इलेक्ट्रॉनों को संग्राहक तक पहुंचने के कारण", chapter: "विविध" },
+            { id: 99, question: "डी ब्रोगली तरंगदैर्ध्य को vP के विपरीत आलेखित करने पर ग्राफ कैसा होगा?", options: ["अतिपरवलयिक","सीधी रेखा","परवलयिक","शून्य"], answer: "अतिपरवलयिक", chapter: "विविध" },
+            { id: 100, question: "प्रकाश का द्वैत सिद्धांत क्या बताता है?", options: ["प्रकाश कुछ परिस्थितियों में तरंग की तरह और कुछ में कण की तरह व्यवहार करता है","प्रकाश केवल कण है","प्रकाश केवल तरंग है","प्रकाश केवल निर्वात में गति करता है"], answer: "प्रकाश कुछ परिस्थितियों में तरंग की तरह और कुछ में कण की तरह व्यवहार करता है", chapter: "विविध" }
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            let currentChapter = '';
+
+            testQuestions.forEach((mcq, index) => {
+                // अध्याय के आधार पर हेडिंग जोड़ना
+                if (mcq.chapter !== currentChapter) {
+                    htmlContent += `<h3>${mcq.chapter.toUpperCase()}</h3>`;
+                    currentChapter = mcq.chapter;
+                }
+
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    // गणितीय अभिव्यक्तियों को HTML एंटिटी में बदलने का प्रयास (जैसे स्क्वायर रूट vV के लिए)
+                    const displayOption = option.replace(/vV/g, '√V').replace(/v2mK/g, '√(2mK)').replace(/v3mₙkBT/g, '√(3mₙkBT)').replace(/ϕ₀/g, 'φ₀').replace(/hν/g, 'hν').replace(/λ/g, 'λ').replace(/ν/g, 'ν').replace(/Å/g, 'Å');
+                    
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${displayOption}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+
+                const correctAnswerDisplay = mcq.answer.replace(/vV/g, '√V').replace(/v2mK/g, '√(2mK)').replace(/v3mₙkBT/g, '√(3mₙkBT)').replace(/ϕ₀/g, 'φ₀').replace(/hν/g, 'hν').replace(/λ/g, 'λ').replace(/ν/g, 'ν').replace(/Å/g, 'Å');
+
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${correctAnswerDisplay}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! द्वैत प्रकृति पर आपकी पकड़ मजबूत है। 🌟' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। मुख्य सिद्धांतों पर अधिक ध्यान दें।' : 'सिद्धांतों को फिर से दोहराएं।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

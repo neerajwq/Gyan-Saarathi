@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कक्षा 12 जीव विज्ञान: मॉक टेस्ट 1 (संपूर्ण पाठ्यक्रम)</title>
+    <style>
+        /* CSS Styling from user's template */
+        :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #38761d; /* Dark Green for Bio */
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .question-box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .options label:hover {
+            background-color: #ebf5d2;
+        }
+        .submit-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            background-color: #2980b9; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #1a648b;
+        }
+        #results {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #38761d;
+            border-radius: 8px;
+            background-color: #e6ffe6;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .incorrect-highlight {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1>Gyan Saarathi</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="course.html" >COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <!-- <a href="mock test.html" class="btn-mock-test">मॉक टेस्ट</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <div class="header">
+        <h1>कक्षा 12 जीव विज्ञान - मॉक टेस्ट 1 🌱</h1>
+        <h2>संपूर्ण पाठ्यक्रम (100 MCQs)</h2>
+        <p>समय: 60 मिनट | कुल अंक: 100 (वर्तमान में 30 नमूना प्रश्न)</p>
+    </div>
+
+    <form id="quizForm">
+        </form>
+    
+    <button class="submit-btn" onclick="checkAnswers(event)">टेस्ट जमा करें और स्कोर देखें</button>
+
+    <div id="results"></div>
+
+    <script>
+        // --- 100 MCQs का डेटा सरणी (30 नमूना प्रश्न) ---
+        const testQuestions = [
+            // जनन (Reproduction)
+            { id: 1, question: "पुष्पी पौधों में मादा युग्मकोद्भिद् (Female gametophyte) किसे कहते हैं?", options: ["बीजांड", "अंडाशय", "भ्रूणकोष (Embryo Sac)", "बीजांड काय"], answer: "भ्रूणकोष (Embryo Sac)", chapter: "जनन" },
+            { id: 2, question: "मानव में निषेचन (Fertilization) कहाँ होता है?", options: ["गर्भाशय", "अंडाशय", "फैलोपियन ट्यूब", "योनि"], answer: "फैलोपियन ट्यूब", chapter: "जनन" },
+            { id: 3, question: "यौन संचारित रोग (STD) का उदाहरण जो जीवाणु (Bacteria) से होता है?", options: ["एड्स", "सिफलिस", "हेपेटाइटिस-बी", "मस्से (Warts)"], answer: "सिफलिस", chapter: "जनन" },
+            { id: 4, question: "भ्रूण (Embryo) को पोषण प्रदान करने वाली संरचना है:", options: ["अंडाशय", "कोरियन", "अपरा (Placenta)", "फैलोपियन ट्यूब"], answer: "अपरा (Placenta)", chapter: "जनन" },
+            { id: 5, question: "अलैंगिक जनन (Asexual Reproduction) में संतति होती है:", options: ["आनुवंशिक रूप से भिन्न", "आनुवंशिक रूप से समान (क्लोन)", "आधे गुणसूत्र वाली", "केवल नर"], answer: "आनुवंशिक रूप से समान (क्लोन)", chapter: "जनन" },
+            { id: 6, question: "अण्डोत्सर्ग (Ovulation) के लिए जिम्मेदार हार्मोन है:", options: ["प्रोजेस्टेरोन", "एस्ट्रोजन", "ल्यूटिनाइजिंग हार्मोन (LH)", "थायरोक्सिन"], answer: "ल्यूटिनाइजिंग हार्मोन (LH)", chapter: "जनन" },
+
+            // आनुवंशिकी और विकास (Genetics & Evolution)
+            { id: 7, question: "'सहलगनता' (Linkage) की घटना की खोज किसने की थी?", options: ["मेंडल", "मॉर्गन", "वाटसन और क्रिक", "डी व्रीस"], answer: "मॉर्गन", chapter: "आनुवंशिकी" },
+            { id: 8, question: "जीन विनिमय (Crossing Over) किस अवस्था में होता है?", options: ["प्रोफेज़ I", "मेटाफेज़ I", "एनाफेज़ II", "टीलोफेज़ II"], answer: "प्रोफेज़ I", chapter: "आनुवंशिकी" },
+            { id: 9, question: "डीएनए फिंगरप्रिंटिंग का आधार क्या है?", options: ["वीएनटीआर (VNTR)", "आरएनए", "प्रोटीन", "एटीपी"], answer: "वीएनटीआर (VNTR)", chapter: "आनुवंशिकी" },
+            { id: 10, question: "डीएनए से आरएनए बनने की प्रक्रिया क्या कहलाती है?", options: ["ट्रांसलेशन", "ट्रांसक्रिप्शन", "रेप्लिकेशन", "जीन एडिटिंग"], answer: "ट्रांसक्रिप्शन", chapter: "आनुवंशिकी" },
+            { id: 11, question: "उपयोग और अनुपयोग (Use and Disuse) का सिद्धांत किसने दिया?", options: ["चार्ल्स डार्विन", "जीन बैप्टिस्ट लैमार्क", "ह्यूगो डी व्रीस", "ग्रेगर मेंडल"], answer: "जीन बैप्टिस्ट लैमार्क", chapter: "विकास" },
+            { id: 12, question: "अपूर्ण प्रभाविता (Incomplete Dominance) का उदाहरण है:", options: ["मानव रक्त समूह", "स्नैपड्रैगन फूल (Mirabilis jalapa)", "मटर का पौधा", "ड्रोसोफिला"], answer: "स्नैपड्रैगन फूल (Mirabilis jalapa)", chapter: "आनुवंशिकी" },
+
+            // मानव कल्याण में जीव विज्ञान (Biology in Human Welfare)
+            { id: 13, question: "मलेरिया रोग किस परजीवी (Parasite) के कारण होता है?", options: ["अमीबा", "प्लास्मोडियम", "एंटअमीबा", "टीनिया"], answer: "प्लास्मोडियम", chapter: "मानव कल्याण" },
+            { id: 14, question: "मानव शरीर की सबसे बड़ी भक्षक कोशिका (Phagocytic Cell) कौन-सी है?", options: ["न्यूट्रोफिल", "लिम्फोसाइट", "मैक्रोफेज", "बेसोफिल"], answer: "मैक्रोफेज", chapter: "मानव कल्याण" },
+            { id: 15, question: "एंटीबॉडी (Antibody) किस प्रकार के प्रोटीन होते हैं?", options: ["एंजाइम", "ग्लोब्युलिन", "केसीन", "एल्बुमिन"], answer: "ग्लोब्युलिन", chapter: "मानव कल्याण" },
+            { id: 16, question: "बायोगैस का मुख्य घटक क्या है?", options: ["कार्बन डाइऑक्साइड", "हाइड्रोजन", "मीथेन", "ऑक्सीजन"], answer: "मीथेन", chapter: "मानव कल्याण" },
+            { id: 17, question: "जैव नियंत्रण (Biocontrol) एजेंट का एक उदाहरण है:", options: ["डीएनए", "प्लास्मिड", "ट्राइकोडर्मा (Trichoderma)", "एड्स वायरस"], answer: "ट्राइकोडर्मा (Trichoderma)", chapter: "मानव कल्याण" },
+            { id: 18, question: "HIV किस प्रकार की कोशिकाओं पर हमला करता है?", options: ["T-लिम्फोसाइट्स", "B-लिम्फोसाइट्स", "लाल रक्त कोशिकाएँ", "प्लेटलेट्स"], answer: "T-लिम्फोसाइट्स", chapter: "मानव कल्याण" },
+
+            // जैव प्रौद्योगिकी (Biotechnology)
+            { id: 19, question: "वह तकनीक जिसका उपयोग किसी जीन की लाखों प्रतियां बनाने के लिए किया जाता है?", options: ["इलेक्ट्रोफोरेसिस", "पीसीआर (PCR)", "क्लोनिंग", "ट्रांसक्रिप्शन"], answer: "पीसीआर (PCR)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 20, question: "प्लास्मिड (Plasmid) का उपयोग किस रूप में किया जाता है?", options: ["जीवाणु की कोशिका भित्ति", "वाहक (Vector)", "डीएनए काटना", "प्रोटीन संश्लेषण"], answer: "वाहक (Vector)", chapter: "जैव प्रौद्योगिकी" },
+            { id: 21, question: "प्रतिबंधन एंडोन्यूक्लिएज (Restriction Endonuclease) एंजाइम का कार्य है:", options: ["डीएनए को जोड़ना", "डीएनए को विशिष्ट स्थानों पर काटना", "आरएनए बनाना", "प्रोटीन का पाचन"], answer: "डीएनए को विशिष्ट स्थानों पर काटना", chapter: "जैव प्रौद्योगिकी" },
+            { id: 22, question: "आणविक कैंची (Molecular Scissors) किसे कहते हैं?", options: ["लाइगेज", "डीएनए पॉलीमरेज़", "रेस्ट्रिक्शन एंजाइम", "आरएनए पॉलीमरेज़"], answer: "रेस्ट्रिक्शन एंजाइम", chapter: "जैव प्रौद्योगिकी" },
+            { id: 23, question: "आनुवंशिक रूप से संशोधित (GM) फसल का उदाहरण क्या है?", options: ["चावल", "गेहूँ", "बीटी कपास", "मक्का"], answer: "बीटी कपास", chapter: "जैव प्रौद्योगिकी" },
+            { id: 24, question: "जीन थेरेपी (Gene Therapy) का उपयोग किस रोग के उपचार के लिए किया गया था?", options: ["कैंसर", "एड्स", "एडीएच (ADA) की कमी", "डायबिटीज"], answer: "एडीएच (ADA) की कमी", chapter: "जैव प्रौद्योगिकी" },
+
+            // पारिस्थितिकी और पर्यावरण (Ecology & Environment)
+            { id: 25, question: "एक आहार श्रृंखला में ऊर्जा का प्रवाह कैसा होता है?", options: ["चक्रीय", "द्विदिशात्मक", "एकदिशात्मक", "बहुदिशात्मक"], answer: "एकदिशात्मक", chapter: "पारिस्थितिकी" },
+            { id: 26, question: "किस पोषी स्तर (Trophic Level) पर ऊर्जा की हानि लगभग $90\%$ होती है?", options: ["उत्पादक से प्राथमिक उपभोक्ता", "प्राथमिक उपभोक्ता से द्वितीयक उपभोक्ता", "द्वितीयक उपभोक्ता से तृतीयक उपभोक्ता", "उपरोक्त सभी स्थानान्तरण पर"], answer: "उपरोक्त सभी स्थानान्तरण पर", chapter: "पारिस्थितिकी" },
+            { id: 27, question: "'जैव विविधता हॉटस्पॉट' (Biodiversity Hotspot) की मुख्य विशेषता क्या है?", options: ["उच्च तापमान", "उच्च वर्षा", "उच्च स्थानिकता (Endemism) और आवास हानि का ख़तरा", "कम प्रदूषण"], answer: "उच्च स्थानिकता (Endemism) और आवास हानि का ख़तरा", chapter: "पारिस्थितिकी" },
+            { id: 28, question: "ओजोन परत (Ozone layer) किस विकिरण (Radiation) से पृथ्वी की रक्षा करती है?", options: ["इन्फ्रारेड", "दृश्य प्रकाश", "पराबैंगनी (UV)", "रेडियो तरंगें"], answer: "पराबैंगनी (UV)", chapter: "पारिस्थितिकी" },
+            { id: 29, question: "राष्ट्रीय उद्यान किसका उदाहरण है?", options: ["बाह्य-स्थाने संरक्षण (Ex-situ)", "स्व-स्थाने संरक्षण (In-situ)", "जैविक संवर्धन", "जीन बैंक"], answer: "स्व-स्थाने संरक्षण (In-situ)", chapter: "पारिस्थितिकी" },
+            { id: 30, question: "किस गैस को 'ग्रीनहाउस गैस' नहीं माना जाता है?", options: ["मीथेन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "नाइट्रस ऑक्साइड"], answer: "नाइट्रोजन", chapter: "पारिस्थितिकी" }
+            
+            // **[यहां प्रश्न 31 से 100 तक जोड़े जाएंगे।]**
+        ];
+
+        // --- JavaScript फ़ंक्शंस (रेंडरिंग और चेकिंग लॉजिक) ---
+
+        function renderTest() {
+            const form = document.getElementById('quizForm');
+            let htmlContent = '';
+            testQuestions.forEach((mcq, index) => {
+                htmlContent += `<div class="question-box" data-id="${mcq.id}" data-answer="${mcq.answer}">`;
+                htmlContent += `<div class="question-text">${index + 1}. [${mcq.chapter}] ${mcq.question}</div>`;
+                htmlContent += `<div class="options">`;
+                mcq.options.forEach((option, optIndex) => {
+                    const optionChar = String.fromCharCode(65 + optIndex);
+                    htmlContent += `<label><input type="radio" name="q${mcq.id}" value="${option}"> ${optionChar}) ${option}</label>`;
+                });
+                htmlContent += `</div>`;
+                htmlContent += `<div class="feedback" id="feedback-q${mcq.id}" style="display:none;"></div>`;
+                htmlContent += `</div>`;
+            });
+            form.innerHTML = htmlContent;
+        }
+
+        function checkAnswers(event) {
+            if (event) event.preventDefault(); 
+            let score = 0;
+            const totalQuestions = testQuestions.length;
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('results');
+            testQuestions.forEach(mcq => {
+                const selectedOption = form.querySelector(`input[name="q${mcq.id}"]:checked`);
+                const questionBox = form.querySelector(`[data-id="${mcq.id}"]`);
+                const feedbackDiv = document.getElementById(`feedback-q${mcq.id}`);
+                questionBox.classList.remove('incorrect-highlight');
+                questionBox.style.border = '1px solid #ddd';
+                feedbackDiv.style.display = 'block';
+                if (selectedOption) {
+                    if (selectedOption.value === mcq.answer) {
+                        score++;
+                        questionBox.style.border = '1px solid green';
+                        feedbackDiv.innerHTML = `<span class="correct-answer">✔️ सही उत्तर!</span>`;
+                    } else {
+                        questionBox.classList.add('incorrect-highlight');
+                        questionBox.style.border = '1px solid red';
+                        feedbackDiv.innerHTML = `<span style="color:red;">❌ गलत।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                    }
+                } else {
+                    questionBox.style.border = '1px solid orange';
+                    feedbackDiv.innerHTML = `<span style="color:orange;">❓ आपने जवाब नहीं दिया।</span> <span class="correct-answer">सही उत्तर: ${mcq.answer}</span>`;
+                }
+            });
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>आपका स्कोर: ${score} / ${totalQuestions}</h2>
+                <p style="color: ${score / totalQuestions >= 0.8 ? 'green' : (score / totalQuestions >= 0.5 ? 'orange' : 'red')}; font-size: 1.2em;">
+                    ${score / totalQuestions >= 0.8 ? 'उत्कृष्ट! जीव विज्ञान की तैयारी शानदार है। 🔬' : (score / totalQuestions >= 0.5 ? 'अच्छा प्रयास। कमजोर अध्यायों पर पुनर्विचार करें।' : 'बुनियादी बातों पर काम करने की आवश्यकता है।')}
+                </p>
+                <p>कुल सही उत्तर: ${score}</p>
+                <p>कुल गलत/छोड़े गए उत्तर: ${totalQuestions - score}</p>
+            `;
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = renderTest;
+
+    </script>
+
+</body>
+</html>

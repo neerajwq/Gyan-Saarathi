@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अम्ल, क्षारक एवं लवण - Class 10</title>
+
+<style>
+     :root {
+            --primary-blue: #1A237E;
+            --light-blue: #81D4FA;
+            --accent-orange: #FFB300;
+            --light-gray: #EEEEEE;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-radius: 12px;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        /* हेडर स्टाइलिंग */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-section { display: flex; align-items: center; }
+        .logo-img { height: 40px; margin-right: 15px; border-radius: 50%; }
+        .logo-text h1 { font-size: 1.5em; margin: 0; line-height: 1; }
+        .main-nav a { color: var(--text-light); text-decoration: none; margin: 0 15px; padding: 5px 0; transition: color 0.3s; }
+        .btn-mock-test { background-color: var(--accent-orange); color: var(--primary-blue) !important; padding: 8px 15px; border-radius: var(--border-radius); font-weight: bold; cursor: pointer; }
+        .user-info i { font-size: 1.5em; cursor: pointer; }
+
+    .box {
+        background:#fff;
+        margin:20px;
+        padding:20px;
+        border-radius:12px;
+        box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1,h2 { color:#1A237E; }
+    .formula {
+        background:#e3f2fd;
+        padding:8px 12px;
+        display:inline-block;
+        border-radius:8px;
+        font-weight:bold;
+        margin:8px 0;
+    }
+    svg { display:block; margin:20px auto; max-width:100%; }
+    li { margin-bottom:6px; }
+</style>
+</head>
+   <header>
+        <div class="logo-section">
+            <img src="my logo.jpg" alt="ज्ञान सारथी लोगो" class="logo-img">
+            <div class="logo-text">
+                <h1 class="editable" data-field="site_title">Gyan Saarathi</h1>
+                <p class="editable" data-field="site_tagline">आपकी परीक्षा तैयारी का डिजिटल साथी</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">HOME</a>
+            <a href="Course.html">COURSE</a>
+            <a href="exersize.html">EXERSIZE</a>
+            <!-- <a href="riport.html">RIPORT</a> -->
+            <a href="model paper.html" class="btn-mock-test">MODEL PAPER</a>
+        </nav>
+    </header>
+<body>
+
+<!-- शीर्षक बॉक्स -->
+<div class="box">
+<h1>अध्याय – अम्ल, क्षारक एवं लवण</h1>
+<p>
+इस अध्याय में आप जानेंगे कि अम्ल (Acids), क्षारक (Bases) और लवण (Salts) क्या होते हैं, इन्हें कैसे पहचाना जाता है, इनके उपयोग, गुण, तथा इनके बीच होने वाली अभिक्रियाएँ।
+</p>
+</div>
+
+<!-- 1. अम्ल -->
+<div class="box">
+<h2>1. अम्ल (Acids)</h2>
+
+<ul>
+    <li>अम्ल वे पदार्थ होते हैं जो पानी में घुलकर <b>H⁺ आयन</b> देते हैं।</li>
+    <li>खट्टा स्वाद रखते हैं।</li>
+    <li>नीले लिटमस को लाल करते हैं।</li>
+</ul>
+
+<h3>उदाहरण:</h3>
+<ul>
+    <li>HCl (Hydrochloric Acid)</li>
+    <li>H₂SO₄ (Sulphuric Acid)</li>
+    <li>CH₃COOH (Acetic Acid)</li>
+</ul>
+
+<h3>SVG — Acid releasing H⁺ ions</h3>
+<svg width="350" height="180">
+  <rect x="50" y="40" width="250" height="100" fill="#bbdefb" stroke="#000"/>
+  <text x="130" y="30" font-size="16">Acid Solution</text>
+
+  <circle cx="120" cy="90" r="15" fill="#e57373"/>
+  <text x="113" y="95" font-size="12">H⁺</text>
+
+  <circle cx="200" cy="90" r="15" fill="#64b5f6"/>
+  <text x="192" y="95" font-size="12">Cl⁻</text>
+</svg>
+
+</div>
+
+<!-- 2. क्षारक -->
+<div class="box">
+<h2>2. क्षारक (Bases)</h2>
+
+<ul>
+    <li>क्षारक वे पदार्थ हैं जो पानी में घुलकर <b>OH⁻ आयन</b> देते हैं।</li>
+    <li>कड़वा स्वाद और फिसलन देते हैं।</li>
+    <li>लाल लिटमस को नीला करते हैं।</li>
+</ul>
+
+<h3>उदाहरण:</h3>
+<ul>
+    <li>NaOH (Sodium Hydroxide)</li>
+    <li>KOH (Potassium Hydroxide)</li>
+    <li>Mg(OH)₂ (Magnesium Hydroxide)</li>
+</ul>
+
+<h3>SVG — Base releasing OH⁻ ions</h3>
+<svg width="350" height="180">
+  <rect x="50" y="40" width="250" height="100" fill="#c8e6c9" stroke="#000"/>
+  <text x="130" y="30" font-size="16">Base Solution</text>
+
+  <circle cx="120" cy="90" r="15" fill="#81c784"/>
+  <text x="112" y="95" font-size="12">Na⁺</text>
+
+  <circle cx="200" cy="90" r="15" fill="#4fc3f7"/>
+  <text x="192" y="95" font-size="12">OH⁻</text>
+</svg>
+
+</div>
+
+<!-- 3. लवण -->
+<div class="box">
+<h2>3. लवण (Salts)</h2>
+
+<p>अम्ल + क्षारक की अभिक्रिया से बनने वाले पदार्थ को <b>लवण</b> कहते हैं।</p>
+
+<div class="formula">Acid + Base → Salt + Water</div>
+
+<h3>उदाहरण:</h3>
+<div class="formula">HCl + NaOH → NaCl + H₂O</div>
+
+<h3>SVG — Salt Formation</h3>
+<svg width="360" height="200">
+  <circle cx="80" cy="100" r="20" fill="#ffab91"/>
+  <text x="65" y="105" font-size="12">H⁺</text>
+
+  <circle cx="150" cy="100" r="20" fill="#90caf9"/>
+  <text x="138" y="105" font-size="12">Cl⁻</text>
+
+  <circle cx="220" cy="100" r="20" fill="#a5d6a7"/>
+  <text x="205" y="105" font-size="12">Na⁺</text>
+
+  <circle cx="290" cy="100" r="20" fill="#4fc3f7"/>
+  <text x="280" y="105" font-size="12">OH⁻</text>
+
+  <text x="110" y="50" font-size="14">→ मिलकर</text>
+  <text x="150" y="160" font-size="16">NaCl + H₂O</text>
+</svg>
+
+</div>
+
+<!-- 4. इंडिकेटर्स -->
+<div class="box">
+<h2>4. सूचक (Indicators)</h2>
+<p>सूचक वे पदार्थ हैं जो अम्ल और क्षारक की पहचान के लिए रंग बदलते हैं।</p>
+
+<ul>
+    <li>लिटमस – अम्ल में लाल, क्षारक में नीला</li>
+    <li>फिनॉल्फ्थैलेन – अम्ल में रंगहीन, क्षारक में गुलाबी</li>
+    <li>मिथाइल ऑरेंज – अम्ल में लाल, क्षारक में पीला</li>
+</ul>
+
+<h3>SVG — Litmus Test</h3>
+<svg width="340" height="150">
+  <rect x="30" y="60" width="80" height="60" fill="#e57373"/>
+  <text x="40" y="50" font-size="12">Acid</text>
+
+  <rect x="230" y="60" width="80" height="60" fill="#64b5f6"/>
+  <text x="240" y="50" font-size="12">Base</text>
+
+  <text x="40" y="135" font-size="12">Blue → Red</text>
+  <text x="240" y="135" font-size="12">Red → Blue</text>
+</svg>
+
+</div>
+
+<!-- 5. पीएच स्केल -->
+<div class="box">
+<h2>5. pH स्केल</h2>
+
+<ul>
+    <li>pH 0–6 → अम्लीय</li>
+    <li>pH 7 → उदासीन</li>
+    <li>pH 8–14 → क्षारीय</li>
+</ul>
+
+<h3>SVG — pH Scale</h3>
+<svg width="350" height="100">
+  <rect x="20" y="40" width="30" height="20" fill="#f44336"/>
+  <rect x="50" y="40" width="30" height="20" fill="#ff7043"/>
+  <rect x="80" y="40" width="30" height="20" fill="#ff9800"/>
+  <rect x="110" y="40" width="30" height="20" fill="#ffca28"/>
+  <rect x="140" y="40" width="30" height="20" fill="#fff176"/>
+  <rect x="170" y="40" width="30" height="20" fill="#aed581"/>
+  <rect x="200" y="40" width="30" height="20" fill="#81c784"/>
+  <rect x="230" y="40" width="30" height="20" fill="#4db6ac"/>
+  <rect x="260" y="40" width="30" height="20" fill="#4fc3f7"/>
+  <rect x="290" y="40" width="30" height="20" fill="#42a5f5"/>
+
+  <text x="140" y="30" font-size="14">pH Scale (0–14)</text>
+</svg>
+
+</div>
+
+<!-- 6. लवणों के उपयोग -->
+<div class="box">
+<h2>6. प्रमुख लवण एवं उनके उपयोग</h2>
+
+<ul>
+    <li><b>NaCl</b> – खाने का नमक</li>
+    <li><b>NaHCO₃</b> – बेकिंग सोडा</li>
+    <li><b>CaOCl₂</b> – ब्लीचिंग पाउडर</li>
+    <li><b>Na₂CO₃</b> – वॉशिंग सोडा</li>
+    <li><b>Plaster of Paris</b> – CaSO₄ · ½H₂O</li>
+</ul>
+</div>
+
+<!-- 7. महत्वपूर्ण प्रश्न -->
+<div class="box">
+<h2>7. महत्वपूर्ण प्रश्न</h2>
+<ol>
+    <li>अम्ल और क्षारक में अंतर लिखिए।</li>
+    <li>pH स्केल क्या है? इसका उपयोग बताइए।</li>
+    <li>ब्लीचिंग पाउडर कैसे बनता है?</li>
+    <li>अम्ल + क्षारक → लवण + जल अभिक्रिया लिखिए।</li>
+    <li>बेकिंग सोडा और वॉशिंग सोडा में अंतर बताइए।</li>
+</ol>
+</div>
+
+</body>
+</html>
